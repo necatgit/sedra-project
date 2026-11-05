@@ -35,6 +35,7 @@ This project exists because communication around Sedra has been poor. Every publ
 | Overview of phases and status | `ROADMAP.md` (tick items, link issues) |
 | One piece of work, its discussion and outcome | A GitHub issue; close it with a summary comment linking the evidence |
 | Research findings with evidence | `research/NNNN-short-name.md`, numbered by issue |
+| Unedited original reports (kept for later reference) | `research/archive/YYYY-MM-DD-NNNN-*-raw.md`, never edited |
 | Questions, who they were asked, answers and sources | `QUESTIONS.md` |
 | Formal consensus proposals | `proposals/SIP-NNNN-*.md` |
 | Dated progress posts | `updates/YYYY-MM-DD-*.md` |
