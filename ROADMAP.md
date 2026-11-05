@@ -10,16 +10,16 @@ Status: `[ ]` open · `[~]` in progress · `[x]` done · `[-]` dropped
 ## Phase 0: Research and planning (current)
 
 - [x] Set up the project repository (2026-11-05)
-- [~] Review what the current mainnet release `2.0.0-relaunch` changed and how it was activated (#1)
-- [~] Study the ZKas AuxPoW design (#2)
-- [ ] Find out whether one Kaspa block can carry commitments for both ZKas and Sedra (#3)
-- [ ] Decide the implementation path: add AuxPoW to the Go node (`sedrad`) or move Sedra to the Rust codebase (#4)
+- [x] Review what the current mainnet release `2.0.0-relaunch` changed and how it was activated (#1, [research/0001](research/0001-relaunch-review.md))
+- [x] Study the ZKas AuxPoW design (#2, [research/0002](research/0002-zkas-auxpow.md))
+- [x] Find out whether one Kaspa block can carry commitments for both ZKas and Sedra (#3): yes, but only just
+- [~] Decide the implementation path: add AuxPoW to the Go node (`sedrad`) or move Sedra to the Rust codebase (#4)
 - [ ] Rough effort and timeline estimate (#5)
 - [ ] Publish the first full draft of SIP-0001 (#6)
 
 ## Phase 1: Community and coordination
 
-- [ ] Contact the Sedra owner: support, repository access, infrastructure (#7)
+- [~] Contact the Sedra owner: support, repository access, infrastructure (#7): questions sent 2026-11-05
 - [ ] Open SIP-0001 for public comment (#8)
 - [ ] Reach out to pools, explorers and exchanges (#9)
 
