@@ -1,0 +1,200 @@
+== build 2026-11-05T20:53:50Z commit 4a1153d go version go1.22.2 linux/amd64
+go: downloading github.com/pkg/errors v0.9.1
+go: downloading github.com/jessevdk/go-flags v1.4.0
+go: downloading google.golang.org/protobuf v1.28.1
+go: downloading google.golang.org/grpc v1.38.0
+go: downloading github.com/sedracoin/go-secp256k1 v1.0.2
+go: downloading github.com/gofrs/flock v0.8.1
+go: downloading github.com/tyler-smith/go-bip39 v1.1.0
+go: downloading golang.org/x/crypto v0.1.0
+go: downloading golang.org/x/term v0.5.0
+go: downloading golang.org/x/exp v0.0.0-20220414153411-bcd21879b8fd
+go: downloading github.com/golang/protobuf v1.5.2
+go: downloading github.com/btcsuite/btcutil v1.0.2
+go: downloading github.com/btcsuite/go-socks v0.0.0-20170105172521-4720035b7bfd
+go: downloading github.com/jrick/logrotate v1.0.0
+go: downloading github.com/sedracoin/go-muhash v1.0.1
+go: downloading golang.org/x/net v0.7.0
+go: downloading google.golang.org/genproto v0.0.0-20210604141403-392c879c8b08
+go: downloading github.com/syndtr/goleveldb v1.0.1-0.20190923125748-758128399b1d
+go: downloading golang.org/x/sys v0.5.0
+go: downloading github.com/davecgh/go-spew v1.1.1
+go: downloading github.com/golang/snappy v0.0.1
+go: downloading golang.org/x/text v0.7.0
+build exit: 0
+== test 2026-11-05T20:54:13Z
+?   	github.com/sedracoin/sedrad	[no test files]
+?   	github.com/sedracoin/sedrad/app	[no test files]
+?   	github.com/sedracoin/sedrad/app/protocol	[no test files]
+?   	github.com/sedracoin/sedrad/app/protocol/common	[no test files]
+?   	github.com/sedracoin/sedrad/app/protocol/flowcontext	[no test files]
+?   	github.com/sedracoin/sedrad/app/protocol/flows/handshake	[no test files]
+?   	github.com/sedracoin/sedrad/app/protocol/flows/ready	[no test files]
+?   	github.com/sedracoin/sedrad/app/protocol/flows/v5	[no test files]
+?   	github.com/sedracoin/sedrad/app/protocol/flows/v5/addressexchange	[no test files]
+ok  	github.com/sedracoin/sedrad/app/appmessage	0.005s
+?   	github.com/sedracoin/sedrad/app/protocol/flows/v5/ping	[no test files]
+?   	github.com/sedracoin/sedrad/app/protocol/flows/v5/rejects	[no test files]
+ok  	github.com/sedracoin/sedrad/app/protocol/flows/v5/blockrelay	0.013s
+ok  	github.com/sedracoin/sedrad/app/protocol/flows/v5/testing	0.051s
+?   	github.com/sedracoin/sedrad/app/protocol/peer	[no test files]
+?   	github.com/sedracoin/sedrad/app/protocol/protocolerrors	[no test files]
+?   	github.com/sedracoin/sedrad/app/rpc	[no test files]
+?   	github.com/sedracoin/sedrad/app/rpc/rpccontext	[no test files]
+?   	github.com/sedracoin/sedrad/cmd/genkeypair	[no test files]
+?   	github.com/sedracoin/sedrad/cmd/sedractl	[no test files]
+?   	github.com/sedracoin/sedrad/cmd/sedraminer	[no test files]
+?   	github.com/sedracoin/sedrad/cmd/sedraminer/templatemanager	[no test files]
+?   	github.com/sedracoin/sedrad/cmd/sedrawallet	[no test files]
+?   	github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/client	[no test files]
+?   	github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/pb	[no test files]
+?   	github.com/sedracoin/sedrad/cmd/sedrawallet/keys	[no test files]
+?   	github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet/serialization	[no test files]
+?   	github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet/serialization/protoserialization	[no test files]
+ok  	github.com/sedracoin/sedrad/app/protocol/flows/v5/transactionrelay	2.689s
+ok  	github.com/sedracoin/sedrad/app/rpc/rpchandlers	0.749s
+ok  	github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/server	0.381s
+ok  	github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet	1.347s
+ok  	github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet/bip32	0.121s
+ok  	github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet/bip32/base58	0.003s
+ok  	github.com/sedracoin/sedrad/cmd/sedrawallet/utils	0.015s
+?   	github.com/sedracoin/sedrad/domain/consensus/database	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/database/binaryserialization	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/datastructures/acceptancedatastore	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/datastructures/blockheaderstore	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/datastructures/blockrelationstore	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/datastructures/blockstatusstore	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/datastructures/blockstore	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/datastructures/blockwindowheapslicestore	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/datastructures/consensusstatestore	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/datastructures/daablocksstore	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/datastructures/daawindowstore	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/datastructures/finalitystore	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/datastructures/ghostdagdatastore	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/datastructures/headersselectedchainstore	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/datastructures/headersselectedtipstore	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/datastructures/mergedepthrootstore	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/datastructures/multisetstore	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/datastructures/pruningstore	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/datastructures/reachabilitydatastore	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/datastructures/utxodiffstore	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/model/testapi	[no test files]
+ok  	github.com/sedracoin/sedrad/domain	1.323s
+?   	github.com/sedracoin/sedrad/domain/consensus/processes/blockparentbuilder	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/processes/blockprocessor/blocklogger	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/processes/finalitymanager	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/processes/ghostdag2	[no test files]
+ok  	github.com/sedracoin/sedrad/domain/consensus	4.741s
+ok  	github.com/sedracoin/sedrad/domain/consensus/database/serialization	0.005s
+ok  	github.com/sedracoin/sedrad/domain/consensus/model	0.006s
+ok  	github.com/sedracoin/sedrad/domain/consensus/model/externalapi	0.017s
+ok  	github.com/sedracoin/sedrad/domain/consensus/processes/blockbuilder	0.227s
+ok  	github.com/sedracoin/sedrad/domain/consensus/processes/blockprocessor	2.397s
+ok  	github.com/sedracoin/sedrad/domain/consensus/processes/blockvalidator	3.844s
+ok  	github.com/sedracoin/sedrad/domain/consensus/processes/coinbasemanager	0.456s
+?   	github.com/sedracoin/sedrad/domain/consensus/processes/mergedepthmanager	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/processes/parentsmanager	[no test files]
+ok  	github.com/sedracoin/sedrad/domain/consensus/processes/consensusstatemanager	4.698s
+ok  	github.com/sedracoin/sedrad/domain/consensus/processes/dagtopologymanager	0.393s
+ok  	github.com/sedracoin/sedrad/domain/consensus/processes/dagtraversalmanager	0.450s
+?   	github.com/sedracoin/sedrad/domain/consensus/processes/pruningproofmanager	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/utils/constants	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/utils/hashset	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/utils/lrucache	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/utils/lrucacheghostdagdata	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/utils/lrucachehashandwindowsizetoblockghostdagdatahashpairs	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/utils/lrucachehashpairtoblockghostdagdatahashpair	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/utils/lrucacheuint64tohash	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/utils/merkle	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/utils/mining	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/utils/multiset	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/utils/serialization	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/utils/sorters	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/utils/subnetworks	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/utils/testutils	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/utils/transactionhelper	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/utils/transactionid	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/utils/utxolrucache	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensus/utils/virtual	[no test files]
+?   	github.com/sedracoin/sedrad/domain/consensusreference	[no test files]
+?   	github.com/sedracoin/sedrad/domain/miningmanager/blocktemplatebuilder	[no test files]
+?   	github.com/sedracoin/sedrad/domain/miningmanager/mempool/model	[no test files]
+?   	github.com/sedracoin/sedrad/domain/miningmanager/model	[no test files]
+?   	github.com/sedracoin/sedrad/domain/prefixmanager	[no test files]
+?   	github.com/sedracoin/sedrad/domain/prefixmanager/prefix	[no test files]
+?   	github.com/sedracoin/sedrad/infrastructure/logger	[no test files]
+?   	github.com/sedracoin/sedrad/infrastructure/network/connmanager	[no test files]
+?   	github.com/sedracoin/sedrad/infrastructure/network/dnsseed	[no test files]
+?   	github.com/sedracoin/sedrad/infrastructure/network/dnsseed/pb	[no test files]
+?   	github.com/sedracoin/sedrad/infrastructure/network/netadapter/id	[no test files]
+?   	github.com/sedracoin/sedrad/infrastructure/network/netadapter/router	[no test files]
+?   	github.com/sedracoin/sedrad/infrastructure/network/netadapter/server	[no test files]
+?   	github.com/sedracoin/sedrad/infrastructure/network/netadapter/server/grpcserver	[no test files]
+?   	github.com/sedracoin/sedrad/infrastructure/network/netadapter/server/grpcserver/protowire	[no test files]
+?   	github.com/sedracoin/sedrad/infrastructure/network/netadapter/standalone	[no test files]
+?   	github.com/sedracoin/sedrad/infrastructure/network/rpcclient	[no test files]
+?   	github.com/sedracoin/sedrad/infrastructure/network/rpcclient/grpcclient	[no test files]
+?   	github.com/sedracoin/sedrad/infrastructure/os/execenv	[no test files]
+?   	github.com/sedracoin/sedrad/infrastructure/os/limits	[no test files]
+?   	github.com/sedracoin/sedrad/infrastructure/os/signal	[no test files]
+?   	github.com/sedracoin/sedrad/infrastructure/os/winservice	[no test files]
+?   	github.com/sedracoin/sedrad/stability-tests/application-level-garbage	[no test files]
+?   	github.com/sedracoin/sedrad/stability-tests/common	[no test files]
+?   	github.com/sedracoin/sedrad/stability-tests/common/mine	[no test files]
+?   	github.com/sedracoin/sedrad/stability-tests/common/rpc	[no test files]
+ok  	github.com/sedracoin/sedrad/domain/consensus/processes/difficultymanager	23.456s
+ok  	github.com/sedracoin/sedrad/domain/consensus/processes/ghostdagmanager	0.045s
+ok  	github.com/sedracoin/sedrad/domain/consensus/processes/headersselectedtipmanager	0.316s
+ok  	github.com/sedracoin/sedrad/domain/consensus/processes/pastmediantimemanager	1.879s
+?   	github.com/sedracoin/sedrad/stability-tests/infra-level-garbage	[no test files]
+?   	github.com/sedracoin/sedrad/stability-tests/many-tips	[no test files]
+?   	github.com/sedracoin/sedrad/stability-tests/minejson	[no test files]
+?   	github.com/sedracoin/sedrad/stability-tests/netsync	[no test files]
+?   	github.com/sedracoin/sedrad/stability-tests/netsync/chain_generator	[no test files]
+?   	github.com/sedracoin/sedrad/stability-tests/orphans	[no test files]
+?   	github.com/sedracoin/sedrad/stability-tests/reorg	[no test files]
+?   	github.com/sedracoin/sedrad/stability-tests/rpc-idle-clients	[no test files]
+?   	github.com/sedracoin/sedrad/stability-tests/rpc-stability	[no test files]
+?   	github.com/sedracoin/sedrad/stability-tests/sedradsanity	[no test files]
+?   	github.com/sedracoin/sedrad/stability-tests/simple-sync	[no test files]
+?   	github.com/sedracoin/sedrad/util/locks	[no test files]
+?   	github.com/sedracoin/sedrad/util/network	[no test files]
+?   	github.com/sedracoin/sedrad/util/panics	[no test files]
+?   	github.com/sedracoin/sedrad/util/profiling	[no test files]
+?   	github.com/sedracoin/sedrad/util/staging	[no test files]
+?   	github.com/sedracoin/sedrad/util/txmass	[no test files]
+?   	github.com/sedracoin/sedrad/version	[no test files]
+ok  	github.com/sedracoin/sedrad/domain/consensus/processes/pruningmanager	31.889s
+ok  	github.com/sedracoin/sedrad/domain/consensus/processes/reachabilitymanager	52.987s
+ok  	github.com/sedracoin/sedrad/domain/consensus/processes/syncmanager	0.842s
+ok  	github.com/sedracoin/sedrad/domain/consensus/processes/transactionvalidator	0.686s
+ok  	github.com/sedracoin/sedrad/domain/consensus/ruleerrors	0.006s
+ok  	github.com/sedracoin/sedrad/domain/consensus/utils/blockheader	0.013s
+ok  	github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing	0.039s
+ok  	github.com/sedracoin/sedrad/domain/consensus/utils/hashes	0.012s
+ok  	github.com/sedracoin/sedrad/domain/consensus/utils/pow	0.015s
+ok  	github.com/sedracoin/sedrad/domain/consensus/utils/reachabilitydata	0.015s
+ok  	github.com/sedracoin/sedrad/domain/consensus/utils/txscript	0.468s
+ok  	github.com/sedracoin/sedrad/domain/consensus/utils/utxo	0.015s
+ok  	github.com/sedracoin/sedrad/domain/dagconfig	0.010s
+ok  	github.com/sedracoin/sedrad/domain/miningmanager	4.526s
+ok  	github.com/sedracoin/sedrad/domain/miningmanager/mempool	0.685s
+ok  	github.com/sedracoin/sedrad/domain/utxoindex	0.051s
+ok  	github.com/sedracoin/sedrad/infrastructure/config	0.016s
+ok  	github.com/sedracoin/sedrad/infrastructure/db/database	0.386s
+ok  	github.com/sedracoin/sedrad/infrastructure/db/database/ldb	0.450s
+ok  	github.com/sedracoin/sedrad/infrastructure/network/addressmanager	0.336s
+ok  	github.com/sedracoin/sedrad/infrastructure/network/netadapter	0.128s
+ok  	github.com/sedracoin/sedrad/stability-tests/daa	0.055s
+ok  	github.com/sedracoin/sedrad/stability-tests/mempool-limits	0.063s
+ok  	github.com/sedracoin/sedrad/stability-tests/netsync/fast-pruning-ibd-test	0.049s
+ok  	github.com/sedracoin/sedrad/testing/integration	47.419s
+ok  	github.com/sedracoin/sedrad/util	0.025s
+ok  	github.com/sedracoin/sedrad/util/bech32	0.025s
+ok  	github.com/sedracoin/sedrad/util/binaryserializer	0.013s
+ok  	github.com/sedracoin/sedrad/util/difficulty	0.077s
+ok  	github.com/sedracoin/sedrad/util/math	0.009s
+ok  	github.com/sedracoin/sedrad/util/mstime	0.006s
+ok  	github.com/sedracoin/sedrad/util/random	0.003s
+test exit: 0
+== end 2026-11-05T20:55:40Z
