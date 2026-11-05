@@ -1,0 +1,62 @@
+# AGENTS.md: working rules for this project
+
+These rules apply to everyone working on the project, people and AI agents alike. They follow the same standards as
+the Miningcore pool project this effort grew out of.
+
+## What this repository is
+
+The public home of the Sedra merged-mining proposal: plan, roadmap, proposals (SIPs), research, questions and
+answers, and progress updates. Node code lives in a separate repository (a fork of `sedracoin/sedrad`) once
+implementation starts. That repository gets its own AGENTS.md with build and test rules.
+
+## Public identity
+
+- Everything is published as **Nec** (GitHub `necatgit`). Commits use the GitHub noreply address.
+- Never write a real name, private email, wallet address, holdings detail beyond the README disclosure, or anything
+  from private notes into this repository.
+- Check before every commit: `git config user.name` must be `Nec`, and `git diff --cached` must contain no personal data.
+
+## Truthfulness: no false hopes
+
+This project exists because communication around Sedra has been poor. Every public statement must hold up.
+
+- Label every finding **Verified** (with evidence), **Inferred** (say from what), or **Unknown**.
+- Evidence means something a reader can check themselves: `file:line@commit`, a commit hash, a command and its
+  output, or an API URL and the returned value, with the date it was checked.
+- Never present a plan, estimate or hope as a fact. Never promise dates, prices, listings or outcomes.
+- Every research document ends with a **"What this does NOT mean"** section, to prevent over-reading.
+- Bad news is published like good news: failed tests, slipped dates, dropped ideas, unanswered questions.
+- Correct mistakes visibly. Add a dated correction note; never silently rewrite a published claim.
+
+## Where things go
+
+| What | Where |
+|---|---|
+| Overview of phases and status | `ROADMAP.md` (tick items, link issues) |
+| One piece of work, its discussion and outcome | A GitHub issue; close it with a summary comment linking the evidence |
+| Research findings with evidence | `research/NNNN-short-name.md`, numbered by issue |
+| Questions, who they were asked, answers and sources | `QUESTIONS.md` |
+| Formal consensus proposals | `proposals/SIP-NNNN-*.md` |
+| Dated progress posts | `updates/YYYY-MM-DD-*.md` |
+
+## Changes, commits and pushes
+
+- Documentation commits go to `main` and are pushed when complete. Code repositories work on `dev`, and code is
+  pushed only after its tests pass.
+- Commit messages say what changed and why.
+- **Ask first** before bigger changes: anything that changes the proposal's substance (SIP specification, activation,
+  emission, treasury stance), the roadmap's scope or dates, or the repository's visibility.
+- Never force-push, rewrite history or delete branches without explicit approval.
+
+## Testing and verification
+
+- Research: re-run the evidence commands before publishing; quote outputs, never paraphrase numbers.
+- Code (once it exists): build plus the full test suite before any push. Consensus changes need tests for valid and
+  invalid cases and for the activation boundary. A bug fix always comes with a regression test.
+- Never claim something was built, tested or verified unless that was actually run, and report the real results.
+
+## Safety
+
+- Never interact with mainnet nodes, wallets or pools except through read-only public APIs.
+- Never use real wallets or keys in tests. Testnet or devnet only.
+- Consensus, treasury and emission topics are high-risk: verify twice and ask when in doubt.

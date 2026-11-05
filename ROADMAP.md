@@ -10,8 +10,8 @@ Status: `[ ]` open · `[~]` in progress · `[x]` done · `[-]` dropped
 ## Phase 0: Research and planning (current)
 
 - [x] Set up the project repository (2026-11-05)
-- [ ] Review what the current mainnet release `2.0.0-relaunch` changed and how it was activated (#1)
-- [ ] Study the ZKas AuxPoW design (#2)
+- [~] Review what the current mainnet release `2.0.0-relaunch` changed and how it was activated (#1)
+- [~] Study the ZKas AuxPoW design (#2)
 - [ ] Find out whether one Kaspa block can carry commitments for both ZKas and Sedra (#3)
 - [ ] Decide the implementation path: add AuxPoW to the Go node (`sedrad`) or move Sedra to the Rust codebase (#4)
 - [ ] Rough effort and timeline estimate (#5)

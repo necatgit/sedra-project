@@ -31,6 +31,9 @@ draft until the feasibility study is done.
 
 - **[ROADMAP.md](ROADMAP.md)**: phases, current status and target dates
 - **[updates/](updates/)**: dated progress updates, newest first
+- **[research/](research/)**: findings with evidence anyone can check
+- **[QUESTIONS.md](QUESTIONS.md)**: open questions, who was asked, and the answers
+- **[AGENTS.md](AGENTS.md)**: the working rules, including how claims are verified
 - **Issues**: one issue per piece of work. Anyone can comment, ask questions or point out problems
 - **Watch** this repository on GitHub to get notified of new updates and releases
 
@@ -38,7 +41,9 @@ draft until the feasibility study is done.
 
 Developed by **Nec** ([@necatgit](https://github.com/necatgit)).
 
-<!-- TODO before going public: holder disclosure. Nec holds SDR; state it here plainly (amount optional). -->
+**Disclosure:** Nec holds about 250M SDR (roughly 1% of circulating supply) and has a direct interest in Sedra
+succeeding. This proposal creates no new coins for Nec: no premine, no developer fee. Nec will not sell SDR from the
+public announcement of the activation date until 30 days after activation.
 
 ## Status
 
