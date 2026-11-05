@@ -29,7 +29,7 @@ Step 1: a Rust node with exactly Sedra mainnet's current consensus, running next
 Code: `necatgit/sedra-rusty`, branch `dev`.
 
 - [x] M0: Sedra's genesis hash reproduced with rusty-kaspa's hashing rules ([research/0004](research/0004-rust-path.md))
-- [~] M1: Sedra network on rusty-kaspa v1.0.1 (#20)
+- [x] M1: Sedra network on rusty-kaspa v1.0.1 (#20, `sedra-rusty@7fa343ab`)
 - [ ] M2: Subsidy parity with sedrad (#21)
 - [ ] M3: Real Sedra headers decode and validate offline (#22)
 - [ ] M4: P2P v5 handshake with a local Go node (#23)
