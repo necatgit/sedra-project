@@ -1,0 +1,6 @@
+== m1-first-vm-run 2026-11-05T23:44:01Z 7fa343a | Ubuntu 26.04 LTS | rustc 1.99.1 (58cf8f9c3 2026-10-13) | 6 cpus
+error: failed to run custom build command for `librocksdb-sys v0.16.0+8.10.0`
+build exit: 101 (207s)
+error: failed to run custom build command for `librocksdb-sys v0.16.0+8.10.0`
+test exit: 101 (306s)
+== end 2026-11-05T23:52:34Z
