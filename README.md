@@ -46,7 +46,34 @@ Developed by **Nec** ([@necatgit](https://github.com/necatgit)).
 succeeding. This proposal creates no new coins for Nec: no premine, no developer fee. Nec will not sell SDR from the
 public announcement of the activation date until 30 days after activation.
 
+## How this project is built
+
+This project is developed together with an AI, and that is stated openly.
+
+**Claude** (an AI model by Anthropic, used through Claude Code) does most of the hands-on work: the research and code
+reviews, the Rust node code and its tests, setting up and running the test environment, measuring, and writing the
+documentation, proposals and progress updates. Commits it writes carry a `Co-Authored-By: Claude` line.
+
+**Nec** leads the project: sets the goals and priorities, makes every decision that matters (such as the move to the
+Rust codebase), reviews the results, talks to the Sedra team and the community, and provides the infrastructure:
+the hardware, the test server, and the pool that runs Sedra and Kaspa nodes.
+
+Because AI output can be wrong in the same confident tone as when it is right, the work follows strict checking rules
+([AGENTS.md](AGENTS.md)):
+
+- Expected values in tests come from Sedra's own Go code or from the real chain, never from the new code itself.
+- Every new test is shown to fail when the rule it guards is deliberately broken.
+- Findings are labelled Verified, Inferred or Unknown, with evidence anyone can re-check in [research/](research/).
+- Nothing touches the live network, wallets or the pool's production systems without Nec's explicit approval.
+
+How much time and AI work each milestone took is recorded in [TIMELINE.md](TIMELINE.md).
+
 ## Status
 
-**Phase 0: research and planning.** No consensus code has been written yet. Nothing here affects the running
-Sedra network.
+**Phase 2, step 1: a Rust node with exactly Sedra mainnet's current rules** (no fork yet). Research and the decision
+to build on rusty-kaspa are done (#1-#4). The Rust node carries Sedra's network, block rewards and both v2.0.0
+relaunch rules, checked against sedrad and real Sedra blocks (milestones M1-M4 and M6). The full sync against a Go node
+(M5) is the current step. See [ROADMAP.md](ROADMAP.md) for details.
+
+The merged-mining fork itself (step 2) has not been started. Nothing here affects the running Sedra network: all tests
+run on a separate test machine, and the Rust node under test connects only to a local Go node.
