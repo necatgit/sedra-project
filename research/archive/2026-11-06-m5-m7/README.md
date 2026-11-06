@@ -7,7 +7,8 @@ starts with an empty database and connects only to that local Go node.
 
 **M5 (#24), full sync:** started 17:11:52 UTC, proof received 17:12:10 (75,884 headers, 24,479 unique), trusted data
 accepted (no "DAA window data" error), synced at 17:19 UTC: Rust and Go at the same virtual DAA score 61,212,190.
-The one-hour follow check runs separately (`m5-follow.log`, added when done).
+One-hour follow check 17:20-18:20 UTC (`m5-follow.log`): 120 of 120 checks at 30 s intervals with the Rust node at
+exactly the Go node's virtual DAA score (maximum difference 0), always synced, service always active.
 
 **M7 (#26), state parity** (`m7-comparison.txt`, two samples): same tip, same pruning point, same UTXO commitment in
 the same block, identical circulating supply (26,690,835,727.40495147 SDR at DAA 61,212,260), and identical balances
@@ -24,3 +25,4 @@ rebuild of the lower levels differs from the Go node's. Cause still open.
 |---|---|
 | `rust-sync-log.txt` | Key lines of the Rust node's log, all its warnings, the systemd unit and the binary used |
 | `m7-comparison.txt` | Supply, balances and UTXO counts on both nodes |
+| `m5-follow.log` | The one-hour follow check |

@@ -72,8 +72,8 @@ How much time and AI work each milestone took is recorded in [TIMELINE.md](TIMEL
 
 **Phase 2, step 1: a Rust node with exactly Sedra mainnet's current rules** (no fork yet). Research and the decision
 to build on rusty-kaspa are done (#1-#4). The Rust node carries Sedra's network, block rewards and both v2.0.0
-relaunch rules, checked against sedrad and real Sedra blocks (milestones M1-M4 and M6). The full sync against a Go node
-(M5) is the current step. See [ROADMAP.md](ROADMAP.md) for details.
+relaunch rules, checked against sedrad and real Sedra blocks (M1-M4, M6, M8). It has synced the live Sedra chain
+from a Go node and holds exactly the same state (M5, M7). Next: a seven-day run next to Go nodes (M9). See [ROADMAP.md](ROADMAP.md) for details.
 
 The merged-mining fork itself (step 2) has not been started. Nothing here affects the running Sedra network: all tests
 run on a separate test machine, and the Rust node under test connects only to a local Go node.
