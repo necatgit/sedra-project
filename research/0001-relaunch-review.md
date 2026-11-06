@@ -63,15 +63,15 @@ Labels: **Verified** = checked in code or data, with a reference. **Inferred** =
 
 ## Questions sent to the Sedra owner (2026-11-05)
 
-Status is tracked in [QUESTIONS.md](../QUESTIONS.md) (Q4).
+Each question is tracked in [QUESTIONS.md](../QUESTIONS.md) under the ID in brackets.
 
-1. Is the treasury's vesting enforced some other way, or is the "CLTV-timelocked" description out of date?
-2. Who holds the three treasury keys?
-3. Where did the ~1.997B SDR that left the treasury go, and is there a plan for how the treasury is used?
-4. Can the explorer's transaction index be repaired?
-5. Where does the ~6.0B SDR difference between circulating supply and the published emission come from?
-6. Which commit and toolchain built the mainnet binaries, and can checksums and a signed tag be published?
-7. Who mined the blocks in the reset and treasury windows, and were independent miners online?
+1. Is the treasury's vesting enforced some other way, or is the "CLTV-timelocked" description out of date? (Q10)
+2. Who holds the three treasury keys? (Q11)
+3. Where did the ~1.997B SDR that left the treasury go, and is there a plan for how the treasury is used? (Q12)
+4. Can the explorer's transaction index be repaired? (Q13)
+5. Where does the ~6.0B SDR difference between circulating supply and the published emission come from? (Q14)
+6. Which commit and toolchain built the mainnet binaries, and can checksums and a signed tag be published? (Q15, Q16)
+7. Who mined the blocks in the reset and treasury windows, and were independent miners online? (Q17)
 
 ## Review notes
 

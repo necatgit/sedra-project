@@ -8,7 +8,7 @@ Every document follows the same structure:
 2. **Summary**: the main findings in a few bullets
 3. **Findings**: each one labeled **Verified**, **Inferred** or **Unknown**
 4. **Evidence**: commands, file references (`file:line@commit`), API URLs and their outputs, so anyone can check
-5. **Open questions**: added to [QUESTIONS.md](../QUESTIONS.md)
+5. **Open questions**: each one added to [QUESTIONS.md](../QUESTIONS.md) with a new ID; the document refers to the IDs
 6. **What this does NOT mean**: limits of the findings, to prevent over-reading
 
 A finding that turns out wrong gets a dated correction note in place. It is never silently removed.

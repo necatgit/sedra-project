@@ -36,7 +36,7 @@ This project exists because communication around Sedra has been poor. Every publ
 | One piece of work, its discussion and outcome | A GitHub issue; close it with a summary comment linking the evidence |
 | Research findings with evidence | `research/NNNN-short-name.md`, numbered by issue |
 | Unedited original reports (kept for later reference) | `research/archive/YYYY-MM-DD-NNNN-*-raw.md`, never edited |
-| Questions, who they were asked, answers and sources | `QUESTIONS.md` |
+| Every question: who it was asked, status, answer and source | `QUESTIONS.md`, the **one** list of questions. Every new question gets the next free ID there first, with a link to where it came from; other documents refer to it by ID ("Q22") instead of keeping their own list |
 | Formal consensus proposals | `proposals/SIP-NNNN-*.md` |
 | Dated progress posts | `updates/YYYY-MM-DD-*.md` |
 | Time per milestone and AI effort | `TIMELINE.md`, regenerated with `tools/update_timeline.py` whenever an issue is closed |

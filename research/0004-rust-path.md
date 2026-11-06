@@ -71,16 +71,20 @@ Each milestone is a yes/no check, tracked as an issue.
 
 ## Risks and open questions
 
+Open questions are tracked in [QUESTIONS.md](../QUESTIONS.md) under the IDs in brackets.
+
 - **Subsidy table change in April 2025 (Unknown).** If it applied to months already mined, the chain contains two
-  subsidy tables. A normal sync is not affected, but full verification from genesis would need the switch point.
+  subsidy tables. A normal sync is not affected, but full verification from genesis would need the switch point (Q26).
 - **Sedra's own copies of two libraries** (`sedracoin/go-muhash` v1.0.1, `sedracoin/go-secp256k1` v1.0.2) have not been
-  compared with Kaspa's originals (Unknown). M7 would catch a difference in the first.
+  compared with Kaspa's originals (Unknown). M7 would catch a difference in the first (Q28).
 - **Coinbase output limit in the treasury windows (Inferred).** Why only 163 of 200 and 400 of 454 slots paid out is
-  not explained; the Rust node must reproduce Go's behaviour exactly.
+  not explained; the Rust node must reproduce Go's behaviour exactly (Q29).
 - **Maintenance burden** of a frozen base, and possible code paths that assume the disabled Kaspa features eventually
-  activate.
+  activate (back-port triage: Q31).
 - **Pool and explorer compatibility.** The Rust node's RPC differs from the Go node's. Miningcore already talks to
-  rusty-kaspa nodes for Kaspa, which is encouraging, but the Sedra integration has not been checked.
+  rusty-kaspa nodes for Kaspa, which is encouraging, but the Sedra integration has not been checked (Q32).
+- Further open questions from this research: an archival node from genesis (Q27), other Go-vs-Rust differences near
+  genesis (Q30).
 
 ## What this does NOT mean
 

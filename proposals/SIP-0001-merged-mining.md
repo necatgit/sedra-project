@@ -182,12 +182,14 @@ the decoder. As in step 1, each test must be shown to fail when its rule is brok
 
 ## 10. Open questions
 
-1. Is the free-hashrate trade-off (section 8) acceptable to Sedra holders, and is any mitigation wanted?
-2. Should Sedra coordinate a shared commitment format with ZKas, to save coinbase space for pools?
-3. How does Sedra keep up with future Kaspa header changes (4.6)?
-4. Which Kaspa pools besides PuddlePool would support Sedra?
-5. How should the activation DAA score and the notice period be decided, and with whom?
-6. Does the Sedra team support this proposal (asked 2026-11-05, see QUESTIONS.md Q3)?
+Tracked in [QUESTIONS.md](../QUESTIONS.md) under the IDs in brackets.
+
+1. Is the free-hashrate trade-off (section 8) acceptable to Sedra holders, and is any mitigation wanted? (Q22)
+2. Should Sedra coordinate a shared commitment format with ZKas, to save coinbase space for pools? (Q18)
+3. How does Sedra keep up with future Kaspa header changes (4.6)? (Q20)
+4. Which Kaspa pools besides PuddlePool would support Sedra? (Q21)
+5. How should the activation DAA score and the notice period be decided, and with whom? (Q33)
+6. Does the Sedra team support this proposal (asked 2026-11-05)? (Q3)
 
 ## What this does NOT mean
 

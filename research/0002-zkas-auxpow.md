@@ -50,11 +50,15 @@ Labels: **Verified** = checked in code or data, with a reference. **Inferred** =
 
 ## Open questions
 
-- Byte budget: do other pools use longer payout scripts or tags? Is a shorter commitment, or a shared multi-chain
-  commitment with ZKas, worth considering? (#3)
-- Does the community accept the merged-mining security model, and is any mitigation wanted?
-- How does Sedra's difficulty react to large merged hashrate joining or leaving?
-- How would Sedra keep up if Kaspa changes its header format in a future hard fork?
+Tracked in [QUESTIONS.md](../QUESTIONS.md):
+
+- Byte budget for pools, shorter or shared commitment with ZKas: Q18; raw-bytes commitment: Q25
+- Whether Sedra's hashing of Kaspa parent headers matches Kaspa's exactly: Q19
+- Keeping up with Kaspa header format changes: Q20
+- Which other Kaspa pools would add Sedra: Q21
+- Whether the merged-mining security model is acceptable: Q22
+- How Sedra's difficulty reacts to large merged hashrate joining or leaving: Q23
+- Scope of Sedra's self-parent ban: Q24
 
 ## What this does NOT mean
 
