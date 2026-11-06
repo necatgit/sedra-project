@@ -1,0 +1,6 @@
+2026-11-06T16:41:40Z start: Rust node b8182ca syncs from production 192.168.0.23:22111
+16:42:13 prod_rpc_ms=30017 prod_daa=none lag_vs_local=61210080 bad=1
+16:42:53 prod_rpc_ms=30016 prod_daa=none lag_vs_local=61210094 bad=2
+2026-11-06T16:43:30Z MANUAL STOP by operator: production RPC timed out (30 s) twice
+16:43:33 prod_rpc_ms=30017 prod_daa=none lag_vs_local=61210100 bad=3
+2026-11-06T16:43:33Z EMERGENCY STOP: production slow or behind

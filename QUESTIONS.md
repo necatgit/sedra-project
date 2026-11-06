@@ -11,7 +11,7 @@ Rules:
 Status: **Open** (not asked yet) · **Asked** (sent to someone, waiting) · **Investigating** (being worked on in this
 project) · **Proposed** (a draft answer exists, not decided) · **Answered** · **Dropped**
 
-Summary (2026-11-06): 36 questions; 5 answered, 13 asked and waiting, 14 open, 2 being investigated, 1 proposed,
+Summary (2026-11-06): 38 questions; 5 answered, 13 asked and waiting, 15 open, 3 being investigated, 1 proposed,
 1 split.
 
 ## A. Working with the Sedra team
@@ -68,6 +68,8 @@ Summary (2026-11-06): 36 questions; 5 answered, 13 asked and waiting, 14 open, 2
 | Q34 | Why did one synthetic block in `bounded_merge_depth_test` get block level 3 with Sedra's genesis data? | M1 (#20), M3 (#22) | — | Open | Real Sedra blocks show no such anomaly (2001 blocks, M3) |
 | Q35 | What causes the Rust node's 154 warnings "Locally built proof for level N does not match the applied one" after accepting the Go node's pruning proof? | M5 (#24) | — | Investigating | Possibly a result of the incomplete DAA window (Q5); re-check after the pruning point moves |
 | Q36 | Does the inherited `isStaged()` bug in sedrad (checks `addedByIndex` twice, never `removedByIndex`) have any practical effect, and should it be fixed in the Go node? | [research/0005](research/0005-test-coverage.md) | — (research) | Answered | No practical effect: the only write to `removedByIndex` (`headers_selected_chain_store.go:56`) is always followed by one to `removedByHash`, so `isStaged()` still returns true. Redundant code, not a functional defect; fixing it is optional (2026-11-06). [Evidence](research/archive/2026-11-06-q28-q36/README.md) |
+| Q37 | Does sedrad (Go) block its RPC while serving a syncing peer, and does it recover without a restart? Observed: a production node's RPC was frozen ~8 minutes until restarted | M5 (#24), [incident](research/archive/2026-11-06-m5-production-sync-incident/README.md) | — | Investigating | Observed 2026-11-06; cause not yet confirmed in the Go code |
+| Q38 | Does the Rust node block its RPC in the same way when it serves a syncing peer? | M5 (#24), incident 2026-11-06 | — | Open | To be tested on the test VM, never against production |
 
 ## E. The public Sedra network
 
