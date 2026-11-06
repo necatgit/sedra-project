@@ -33,9 +33,9 @@ Code: `necatgit/sedra-rusty`, branch `dev`.
 - [x] M2: Subsidy parity with sedrad (#21, `sedra-rusty@8aa3d981`, 813 vectors from sedrad)
 - [x] M3: Real Sedra headers decode and validate offline (#22, `sedra-rusty@b9b51075`, 2001 real blocks; GHOSTDAG/DAA in M5)
 - [x] M4: P2P v5 handshake with a local Go node (#23, 2026-11-06)
-- [~] M5: Full sync from a local Go node (#24): blocked until the next pruning point move (incomplete DAA window from public peers)
+- [~] M5: Full sync from a local Go node (#24): synced 2026-11-06 17:19 UTC; one-hour follow check running
 - [x] M6: v2.0.0 rules behave exactly like Go (#25, `sedra-rusty@4873e9af`)
-- [ ] M7: UTXO commitment and supply parity (#26)
+- [x] M7: UTXO commitment and supply parity (#26, 2026-11-06: identical supply, commitment, balances and UTXOs)
 - [x] M8: Mining parity on an isolated test setup (#27, private devnet, 1400 blocks)
 - [~] Security back-ports from later rusty-kaspa releases (#29, [research/0006](research/0006-security-backports.md)): the four must-fix items done (`sedra-rusty@c0b14ccd`); should/optional items open; required before M9
 - [ ] M9: Seven-day soak next to Go nodes (#28)

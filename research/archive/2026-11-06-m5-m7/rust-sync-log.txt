@@ -1,0 +1,80 @@
+#### Go node database copy
+Copied from the long-running node with rsync while it ran: 8.3 GB (datadir2), first pass 6:44 at ~21 MB/s, then 3 short passes (1 changed file each).
+Go node started cleanly on the copy, caught up ~50 blocks from public peers, window for pruning point a990faed: 2641 of 2641 (1560 chain steps).
+
+#### Rust node sync log (key lines)
+2026-11-06 17:11:52.152+00:00 [INFO ] kaspad v1.0.1-b8182ca
+2026-11-06 17:11:52.202+00:00 [INFO ] Registering p2p flows for peer 127.0.0.1:22111 for protocol version 5
+2026-11-06 17:11:52.207+00:00 [INFO ] IBD started with peer 127.0.0.1:22111
+2026-11-06 17:11:52.224+00:00 [INFO ] Starting IBD with headers proof with peer 127.0.0.1:22111
+2026-11-06 17:12:10.654+00:00 [INFO ] Received headers proof with overall 75884 headers (24479 unique)
+2026-11-06 17:12:34.501+00:00 [INFO ] Built headers proof with overall 0 headers (0 unique)
+2026-11-06 17:12:44.995+00:00 [INFO ] Setting a990faed46ff230a9deef9db3bacda7f22b64276e3ea42aa36e4b20cb43c20ed as the staging pruning point
+2026-11-06 17:13:14.991+00:00 [INFO ] Built headers proof with overall 77382 headers (24514 unique)
+2026-11-06 17:13:39.156+00:00 [INFO ] Starting to process 2647 trusted blocks
+2026-11-06 17:13:39.597+00:00 [INFO ] Done processing trusted blocks
+2026-11-06 17:13:41.673+00:00 [INFO ] IBD: Processed 3075 block headers (1%) last block timestamp: 2026-11-03 23:02:40.000:+0000
+2026-11-06 17:13:42.910+00:00 [INFO ] IBD: Processed 5124 block headers (2%) last block timestamp: 2026-11-03 23:37:35.000:+0000
+2026-11-06 17:13:44.872+00:00 [INFO ] IBD: Processed 8196 block headers (3%) last block timestamp: 2026-11-04 00:28:58.000:+0000
+2026-11-06 17:13:46.312+00:00 [INFO ] IBD: Processed 10246 block headers (4%) last block timestamp: 2026-11-04 01:03:18.000:+0000
+2026-11-06 17:13:47.698+00:00 [INFO ] IBD: Processed 12294 block headers (5%) last block timestamp: 2026-11-04 01:37:21.000:+0000
+2026-11-06 17:13:49.874+00:00 [INFO ] IBD: Processed 15367 block headers (6%) last block timestamp: 2026-11-04 02:29:28.000:+0000
+2026-11-06 17:13:51.213+00:00 [INFO ] IBD: Processed 17417 block headers (7%) last block timestamp: 2026-11-04 03:01:32.000:+0000
+2026-11-06 17:13:52.612+00:00 [INFO ] IBD: Processed 19465 block headers (8%) last block timestamp: 2026-11-04 03:36:40.000:+0000
+2026-11-06 17:13:54.735+00:00 [INFO ] IBD: Processed 22536 block headers (9%) last block timestamp: 2026-11-04 04:27:47.000:+0000
+2026-11-06 17:13:56.267+00:00 [INFO ] IBD: Processed 24582 block headers (10%) last block timestamp: 2026-11-04 05:02:29.000:+0000
+2026-11-06 17:13:57.728+00:00 [INFO ] IBD: Processed 26632 block headers (11%) last block timestamp: 2026-11-04 05:35:37.000:+0000
+2026-11-06 17:14:00.020+00:00 [INFO ] IBD: Processed 29704 block headers (12%) last block timestamp: 2026-11-04 06:26:10.000:+0000
+2026-11-06 17:14:01.521+00:00 [INFO ] IBD: Processed 31752 block headers (13%) last block timestamp: 2026-11-04 06:59:44.000:+0000
+2026-11-06 17:14:03.180+00:00 [INFO ] IBD: Processed 33802 block headers (14%) last block timestamp: 2026-11-04 07:35:13.000:+0000
+2026-11-06 17:14:05.272+00:00 [INFO ] IBD: Processed 36877 block headers (15%) last block timestamp: 2026-11-04 08:25:49.000:+0000
+2026-11-06 17:14:06.788+00:00 [INFO ] IBD: Processed 38927 block headers (16%) last block timestamp: 2026-11-04 08:59:31.000:+0000
+2026-11-06 17:14:09.099+00:00 [INFO ] IBD: Processed 41999 block headers (17%) last block timestamp: 2026-11-04 09:52:16.000:+0000
+2026-11-06 17:14:10.684+00:00 [INFO ] IBD: Processed 44048 block headers (18%) last block timestamp: 2026-11-04 10:26:02.000:+0000
+2026-11-06 17:14:12.227+00:00 [INFO ] IBD: Processed 46097 block headers (19%) last block timestamp: 2026-11-04 11:00:23.000:+0000
+2026-11-06 17:14:14.518+00:00 [INFO ] IBD: Processed 49169 block headers (20%) last block timestamp: 2026-11-04 11:51:18.000:+0000
+2026-11-06 17:14:16.036+00:00 [INFO ] IBD: Processed 51217 block headers (21%) last block timestamp: 2026-11-04 12:27:20.000:+0000
+2026-11-06 17:14:17.551+00:00 [INFO ] IBD: Processed 53267 block headers (22%) last block timestamp: 2026-11-04 13:01:38.000:+0000
+2026-11-06 17:14:20.019+00:00 [INFO ] IBD: Processed 56342 block headers (23%) last block timestamp: 2026-11-04 13:50:06.000:+0000
+2026-11-06 17:14:21.613+00:00 [INFO ] IBD: Processed 58391 block headers (24%) last block timestamp: 2026-11-04 14:24:48.000:+0000
+2026-11-06 17:14:23.225+00:00 [INFO ] IBD: Processed 60440 block headers (25%) last block timestamp: 2026-11-04 14:58:38.000:+0000
+2026-11-06 17:14:25.590+00:00 [INFO ] IBD: Processed 63510 block headers (26%) last block timestamp: 2026-11-04 15:49:54.000:+0000
+2026-11-06 17:14:27.209+00:00 [INFO ] IBD: Processed 65559 block headers (27%) last block timestamp: 2026-11-04 16:25:03.000:+0000
+2026-11-06 17:14:28.824+00:00 [INFO ] IBD: Processed 67609 block headers (28%) last block timestamp: 2026-11-04 16:59:41.000:+0000
+2026-11-06 17:14:31.609+00:00 [INFO ] IBD: Processed 70683 block headers (29%) last block timestamp: 2026-11-04 17:50:42.000:+0000
+2026-11-06 17:14:33.130+00:00 [INFO ] IBD: Processed 72732 block headers (30%) last block timestamp: 2026-11-04 18:24:33.000:+0000
+
+#### Rust node warnings/errors (all)
+2026-11-06 17:13:14.991+00:00 [WARN ] Locally built proof for level 0 does not match the applied one
+2026-11-06 17:13:14.991+00:00 [WARN ] Locally built proof for level 1 does not match the applied one
+2026-11-06 17:13:14.991+00:00 [WARN ] Locally built proof for level 2 does not match the applied one
+2026-11-06 17:13:14.991+00:00 [WARN ] Locally built proof for level 3 does not match the applied one
+2026-11-06 17:13:14.991+00:00 [WARN ] Locally built proof for level 4 does not match the applied one
+2026-11-06 17:13:14.991+00:00 [WARN ] Locally built proof for level 5 does not match the applied one
+2026-11-06 17:13:14.991+00:00 [WARN ] Locally built proof for level 6 does not match the applied one
+2026-11-06 17:13:14.991+00:00 [WARN ] Locally built proof for level 7 does not match the applied one
+2026-11-06 17:13:14.991+00:00 [WARN ] Locally built proof for level 8 does not match the applied one
+2026-11-06 17:13:14.991+00:00 [WARN ] Locally built proof for level 9 does not match the applied one
+2026-11-06 17:13:14.991+00:00 [WARN ] Locally built proof for level 10 does not match the applied one
+2026-11-06 17:13:14.991+00:00 [WARN ] Locally built proof for level 11 does not match the applied one
+2026-11-06 17:13:14.991+00:00 [WARN ] Locally built proof for level 12 does not match the applied one
+2026-11-06 17:13:14.991+00:00 [WARN ] Locally built proof for level 13 does not match the applied one
+
+#### systemd unit
+[Unit]
+Description=Sedra Rust node (sedra-rusty b9b5107) under test: connects ONLY to the local Go node, never to the public network
+After=sedrad-dev.service
+Wants=sedrad-dev.service
+
+[Service]
+User=nec
+ExecStart=/data/bin/sedra-kaspad --appdir=/data/sedra-rusty-node --connect=127.0.0.1:22111 --listen=127.0.0.1:23111 --rpclisten=127.0.0.1:23110 --nodnsseed --disable-upnp --utxoindex --yes
+Restart=no
+Nice=10
+IOSchedulingClass=best-effort
+IOSchedulingPriority=7
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
+/data/bin/sedra-kaspad-b8182ca
