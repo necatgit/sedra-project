@@ -1,0 +1,827 @@
+2026-11-06 21:20:26.658+00:00 [INFO ] kaspad v1.0.1-210a906
+2026-11-06 21:20:26.658+00:00 [INFO ] Application directory: /data/sedra-proof-test
+2026-11-06 21:20:26.658+00:00 [INFO ] Data directory: /data/sedra-proof-test/sedra-mainnet/datadir
+2026-11-06 21:20:26.658+00:00 [INFO ] Logs directory: /data/sedra-proof-test/sedra-mainnet/logs
+2026-11-06 21:20:26.686+00:00 [INFO ] GRPC Server starting on: 127.0.0.1:24110
+2026-11-06 21:20:26.688+00:00 [INFO ] Registering p2p flows for peer 127.0.0.1:22111 for protocol version 5
+2026-11-06 21:20:26.688+00:00 [INFO ] P2P Connected to outgoing peer 127.0.0.1:22111 (outbound: 1)
+2026-11-06 21:20:26.690+00:00 [INFO ] P2P, incoming stream ended from peer 127.0.0.1:22111
+2026-11-06 21:20:26.694+00:00 [INFO ] IBD started with peer 127.0.0.1:22111
+2026-11-06 21:20:26.708+00:00 [INFO ] Upgrading database to include and populate the pruning samples store
+2026-11-06 21:20:26.708+00:00 [INFO ] Done upgrading database (populated 0 entries)
+2026-11-06 21:20:26.708+00:00 [INFO ] Starting IBD with headers proof with peer 127.0.0.1:22111
+2026-11-06 21:20:30.429+00:00 [INFO ] Received headers proof with overall 75884 headers (24479 unique)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 225 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 224 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 223 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 222 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 221 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 220 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 219 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 218 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 217 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 216 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 215 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 214 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 213 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 212 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 211 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 210 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 209 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 208 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 207 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 206 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 205 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 204 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 203 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 202 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 201 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 200 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 199 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 198 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 197 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 196 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.457+00:00 [INFO ] Validating level 195 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 194 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 193 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 192 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 191 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 190 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 189 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 188 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 187 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 186 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 185 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 184 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 183 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 182 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 181 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 180 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 179 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 178 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 177 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 176 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 175 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 174 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 173 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 172 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 171 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 170 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 169 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 168 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 167 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 166 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 165 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 164 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 163 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 162 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 161 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 160 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 159 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.458+00:00 [INFO ] Validating level 158 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 157 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 156 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 155 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 154 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 153 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 152 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 151 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 150 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 149 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 148 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 147 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 146 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 145 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 144 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 143 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 142 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 141 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 140 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 139 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 138 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 137 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 136 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 135 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 134 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 133 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 132 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 131 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 130 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 129 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 128 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 127 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 126 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.459+00:00 [INFO ] Validating level 125 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 124 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 123 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 122 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 121 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 120 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 119 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 118 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 117 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 116 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 115 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 114 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 113 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 112 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 111 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 110 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 109 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 108 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 107 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 106 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 105 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 104 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 103 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 102 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 101 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 100 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 99 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 98 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 97 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 96 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 95 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 94 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 93 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 92 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 91 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 90 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 89 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.460+00:00 [INFO ] Validating level 88 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 87 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 86 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 85 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 84 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 83 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 82 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 81 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 80 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 79 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 78 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 77 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 76 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 75 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 74 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 73 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 72 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 71 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 70 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 69 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 68 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 67 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 66 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 65 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 64 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 63 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 62 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 61 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 60 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 59 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 58 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 57 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 56 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 55 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 54 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 53 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 52 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 51 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.461+00:00 [INFO ] Validating level 50 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.462+00:00 [INFO ] Validating level 49 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.462+00:00 [INFO ] Validating level 48 from the pruning point proof (1 headers)
+2026-11-06 21:20:30.462+00:00 [INFO ] Validating level 47 from the pruning point proof (2 headers)
+2026-11-06 21:20:30.462+00:00 [INFO ] Validating level 46 from the pruning point proof (3 headers)
+2026-11-06 21:20:30.462+00:00 [INFO ] Validating level 45 from the pruning point proof (4 headers)
+2026-11-06 21:20:30.462+00:00 [INFO ] Validating level 44 from the pruning point proof (5 headers)
+2026-11-06 21:20:30.463+00:00 [INFO ] Validating level 43 from the pruning point proof (8 headers)
+2026-11-06 21:20:30.464+00:00 [INFO ] Validating level 42 from the pruning point proof (15 headers)
+2026-11-06 21:20:30.466+00:00 [INFO ] Validating level 41 from the pruning point proof (32 headers)
+2026-11-06 21:20:30.470+00:00 [INFO ] Validating level 40 from the pruning point proof (75 headers)
+2026-11-06 21:20:30.480+00:00 [INFO ] Validating level 39 from the pruning point proof (154 headers)
+2026-11-06 21:20:30.507+00:00 [INFO ] Validating level 38 from the pruning point proof (340 headers)
+2026-11-06 21:20:30.583+00:00 [INFO ] Validating level 37 from the pruning point proof (630 headers)
+2026-11-06 21:20:30.737+00:00 [INFO ] Validating level 36 from the pruning point proof (1369 headers)
+2026-11-06 21:20:31.116+00:00 [INFO ] Validating level 35 from the pruning point proof (2002 headers)
+2026-11-06 21:20:31.670+00:00 [INFO ] Validating level 34 from the pruning point proof (2011 headers)
+2026-11-06 21:20:32.239+00:00 [INFO ] Validating level 33 from the pruning point proof (2007 headers)
+2026-11-06 21:20:32.801+00:00 [INFO ] Validating level 32 from the pruning point proof (2063 headers)
+2026-11-06 21:20:33.388+00:00 [INFO ] Validating level 31 from the pruning point proof (2002 headers)
+2026-11-06 21:20:33.956+00:00 [INFO ] Validating level 30 from the pruning point proof (2002 headers)
+2026-11-06 21:20:34.535+00:00 [INFO ] Validating level 29 from the pruning point proof (2002 headers)
+2026-11-06 21:20:35.122+00:00 [INFO ] Validating level 28 from the pruning point proof (2084 headers)
+2026-11-06 21:20:35.724+00:00 [INFO ] Validating level 27 from the pruning point proof (2002 headers)
+2026-11-06 21:20:36.297+00:00 [INFO ] Validating level 26 from the pruning point proof (2035 headers)
+2026-11-06 21:20:36.688+00:00 [INFO ] Processed 0 blocks and 0 headers in the last 10.00s (0 transactions; 0 UTXO-validated blocks; 0.00 parents; 0.00 mergeset; 0.00 TPB; 0.0 mass)
+2026-11-06 21:20:36.891+00:00 [INFO ] Validating level 25 from the pruning point proof (2002 headers)
+2026-11-06 21:20:37.485+00:00 [INFO ] Validating level 24 from the pruning point proof (2002 headers)
+2026-11-06 21:20:38.084+00:00 [INFO ] Validating level 23 from the pruning point proof (2002 headers)
+2026-11-06 21:20:38.656+00:00 [INFO ] Validating level 22 from the pruning point proof (2038 headers)
+2026-11-06 21:20:39.260+00:00 [INFO ] Validating level 21 from the pruning point proof (2032 headers)
+2026-11-06 21:20:39.876+00:00 [INFO ] Validating level 20 from the pruning point proof (2019 headers)
+2026-11-06 21:20:40.491+00:00 [INFO ] Validating level 19 from the pruning point proof (2048 headers)
+2026-11-06 21:20:41.139+00:00 [INFO ] Validating level 18 from the pruning point proof (2024 headers)
+2026-11-06 21:20:41.877+00:00 [INFO ] Validating level 17 from the pruning point proof (2055 headers)
+2026-11-06 21:20:42.556+00:00 [INFO ] Validating level 16 from the pruning point proof (2092 headers)
+2026-11-06 21:20:43.224+00:00 [INFO ] Validating level 15 from the pruning point proof (2003 headers)
+2026-11-06 21:20:43.878+00:00 [INFO ] Validating level 14 from the pruning point proof (2024 headers)
+2026-11-06 21:20:44.566+00:00 [INFO ] Validating level 13 from the pruning point proof (2037 headers)
+2026-11-06 21:20:45.238+00:00 [INFO ] Validating level 12 from the pruning point proof (2037 headers)
+2026-11-06 21:20:45.896+00:00 [INFO ] Validating level 11 from the pruning point proof (2037 headers)
+2026-11-06 21:20:46.507+00:00 [INFO ] Validating level 10 from the pruning point proof (2037 headers)
+2026-11-06 21:20:47.119+00:00 [INFO ] Validating level 9 from the pruning point proof (2037 headers)
+2026-11-06 21:20:47.799+00:00 [INFO ] Validating level 8 from the pruning point proof (2037 headers)
+2026-11-06 21:20:48.504+00:00 [INFO ] Validating level 7 from the pruning point proof (2037 headers)
+2026-11-06 21:20:49.241+00:00 [INFO ] Validating level 6 from the pruning point proof (2037 headers)
+2026-11-06 21:20:50.008+00:00 [INFO ] Validating level 5 from the pruning point proof (2037 headers)
+2026-11-06 21:20:50.778+00:00 [INFO ] Validating level 4 from the pruning point proof (2037 headers)
+2026-11-06 21:20:51.502+00:00 [INFO ] Validating level 3 from the pruning point proof (2037 headers)
+2026-11-06 21:20:52.237+00:00 [INFO ] Validating level 2 from the pruning point proof (2037 headers)
+2026-11-06 21:20:52.988+00:00 [INFO ] Validating level 1 from the pruning point proof (2037 headers)
+2026-11-06 21:20:53.563+00:00 [INFO ] Validating level 0 from the pruning point proof (2037 headers)
+2026-11-06 21:20:54.151+00:00 [INFO ] Built headers proof with overall 0 headers (0 unique)
+2026-11-06 21:21:00.322+00:00 [INFO ] Setting a990faed46ff230a9deef9db3bacda7f22b64276e3ea42aa36e4b20cb43c20ed as the staging pruning point
+2026-11-06 21:21:00.322+00:00 [INFO ] Building the proof which was just applied (sanity test)
+2026-11-06 21:21:31.878+00:00 [INFO ] Built headers proof with overall 77382 headers (24514 unique)
+2026-11-06 21:21:31.878+00:00 [WARN ] Locally built proof for level 0 does not match the applied one
+2026-11-06 21:21:31.878+00:00 [WARN ] Locally built proof for level 1 does not match the applied one
+2026-11-06 21:21:31.878+00:00 [WARN ] Locally built proof for level 2 does not match the applied one
+2026-11-06 21:21:31.878+00:00 [WARN ] Locally built proof for level 3 does not match the applied one
+2026-11-06 21:21:31.878+00:00 [WARN ] Locally built proof for level 4 does not match the applied one
+2026-11-06 21:21:31.878+00:00 [WARN ] Locally built proof for level 5 does not match the applied one
+2026-11-06 21:21:31.878+00:00 [WARN ] Locally built proof for level 6 does not match the applied one
+2026-11-06 21:21:31.878+00:00 [WARN ] Locally built proof for level 7 does not match the applied one
+2026-11-06 21:21:31.878+00:00 [WARN ] Locally built proof for level 8 does not match the applied one
+2026-11-06 21:21:31.878+00:00 [WARN ] Locally built proof for level 9 does not match the applied one
+2026-11-06 21:21:31.878+00:00 [WARN ] Locally built proof for level 10 does not match the applied one
+2026-11-06 21:21:31.878+00:00 [WARN ] Locally built proof for level 11 does not match the applied one
+2026-11-06 21:21:31.878+00:00 [WARN ] Locally built proof for level 12 does not match the applied one
+2026-11-06 21:21:31.878+00:00 [WARN ] Locally built proof for level 13 does not match the applied one
+2026-11-06 21:21:31.880+00:00 [INFO ] Validating the locally built proof (sanity test fallback #2)
+2026-11-06 21:21:31.886+00:00 [INFO ] Validating level 225 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.886+00:00 [INFO ] Validating level 224 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.886+00:00 [INFO ] Validating level 223 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.886+00:00 [INFO ] Validating level 222 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.886+00:00 [INFO ] Validating level 221 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.886+00:00 [INFO ] Validating level 220 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.886+00:00 [INFO ] Validating level 219 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.886+00:00 [INFO ] Validating level 218 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.886+00:00 [INFO ] Validating level 217 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.886+00:00 [INFO ] Validating level 216 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.886+00:00 [INFO ] Validating level 215 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.886+00:00 [INFO ] Validating level 214 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.886+00:00 [INFO ] Validating level 213 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.886+00:00 [INFO ] Validating level 212 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.886+00:00 [INFO ] Validating level 211 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.886+00:00 [INFO ] Validating level 210 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.886+00:00 [INFO ] Validating level 209 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.886+00:00 [INFO ] Validating level 208 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.886+00:00 [INFO ] Validating level 207 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.886+00:00 [INFO ] Validating level 206 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.886+00:00 [INFO ] Validating level 205 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.886+00:00 [INFO ] Validating level 204 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.886+00:00 [INFO ] Validating level 203 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.886+00:00 [INFO ] Validating level 202 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.886+00:00 [INFO ] Validating level 201 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 200 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 199 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 198 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 197 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 196 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 195 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 194 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 193 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 192 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 191 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 190 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 189 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 188 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 187 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 186 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 185 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 184 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 183 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 182 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 181 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 180 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 179 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 178 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 177 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 176 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 175 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 174 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 173 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 172 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 171 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 170 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 169 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 168 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 167 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 166 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 165 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 164 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.887+00:00 [INFO ] Validating level 163 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 162 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 161 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 160 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 159 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 158 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 157 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 156 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 155 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 154 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 153 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 152 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 151 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 150 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 149 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 148 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 147 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 146 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 145 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 144 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 143 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 142 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 141 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 140 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 139 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 138 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 137 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 136 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 135 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 134 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 133 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 132 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 131 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 130 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 129 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 128 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 127 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 126 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.888+00:00 [INFO ] Validating level 125 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 124 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 123 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 122 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 121 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 120 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 119 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 118 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 117 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 116 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 115 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 114 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 113 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 112 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 111 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 110 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 109 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 108 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 107 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 106 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 105 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 104 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 103 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 102 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 101 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 100 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 99 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 98 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 97 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 96 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 95 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 94 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 93 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 92 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 91 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 90 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 89 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 88 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.889+00:00 [INFO ] Validating level 87 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 86 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 85 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 84 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 83 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 82 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 81 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 80 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 79 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 78 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 77 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 76 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 75 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 74 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 73 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 72 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 71 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 70 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 69 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 68 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 67 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 66 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 65 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 64 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 63 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 62 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 61 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 60 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 59 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 58 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 57 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 56 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 55 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 54 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 53 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 52 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.890+00:00 [INFO ] Validating level 51 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.891+00:00 [INFO ] Validating level 50 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.891+00:00 [INFO ] Validating level 49 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.891+00:00 [INFO ] Validating level 48 from the pruning point proof (1 headers)
+2026-11-06 21:21:31.891+00:00 [INFO ] Validating level 47 from the pruning point proof (2 headers)
+2026-11-06 21:21:31.891+00:00 [INFO ] Validating level 46 from the pruning point proof (3 headers)
+2026-11-06 21:21:31.891+00:00 [INFO ] Validating level 45 from the pruning point proof (4 headers)
+2026-11-06 21:21:31.891+00:00 [INFO ] Validating level 44 from the pruning point proof (5 headers)
+2026-11-06 21:21:31.892+00:00 [INFO ] Validating level 43 from the pruning point proof (8 headers)
+2026-11-06 21:21:31.893+00:00 [INFO ] Validating level 42 from the pruning point proof (15 headers)
+2026-11-06 21:21:31.894+00:00 [INFO ] Validating level 41 from the pruning point proof (32 headers)
+2026-11-06 21:21:31.898+00:00 [INFO ] Validating level 40 from the pruning point proof (75 headers)
+2026-11-06 21:21:31.907+00:00 [INFO ] Validating level 39 from the pruning point proof (154 headers)
+2026-11-06 21:21:31.934+00:00 [INFO ] Validating level 38 from the pruning point proof (340 headers)
+2026-11-06 21:21:32.010+00:00 [INFO ] Validating level 37 from the pruning point proof (630 headers)
+2026-11-06 21:21:32.165+00:00 [INFO ] Validating level 36 from the pruning point proof (1369 headers)
+2026-11-06 21:21:32.527+00:00 [INFO ] Validating level 35 from the pruning point proof (2002 headers)
+2026-11-06 21:21:33.074+00:00 [INFO ] Validating level 34 from the pruning point proof (2011 headers)
+2026-11-06 21:21:33.651+00:00 [INFO ] Validating level 33 from the pruning point proof (2007 headers)
+2026-11-06 21:21:34.234+00:00 [INFO ] Validating level 32 from the pruning point proof (2063 headers)
+2026-11-06 21:21:34.840+00:00 [INFO ] Validating level 31 from the pruning point proof (2002 headers)
+2026-11-06 21:21:35.440+00:00 [INFO ] Validating level 30 from the pruning point proof (2002 headers)
+2026-11-06 21:21:36.042+00:00 [INFO ] Validating level 29 from the pruning point proof (2002 headers)
+2026-11-06 21:21:36.629+00:00 [INFO ] Validating level 28 from the pruning point proof (2084 headers)
+2026-11-06 21:21:37.246+00:00 [INFO ] Validating level 27 from the pruning point proof (2002 headers)
+2026-11-06 21:21:37.824+00:00 [INFO ] Validating level 26 from the pruning point proof (2035 headers)
+2026-11-06 21:21:38.436+00:00 [INFO ] Validating level 25 from the pruning point proof (2002 headers)
+2026-11-06 21:21:39.060+00:00 [INFO ] Validating level 24 from the pruning point proof (2002 headers)
+2026-11-06 21:21:39.661+00:00 [INFO ] Validating level 23 from the pruning point proof (2002 headers)
+2026-11-06 21:21:40.238+00:00 [INFO ] Validating level 22 from the pruning point proof (2038 headers)
+2026-11-06 21:21:40.880+00:00 [INFO ] Validating level 21 from the pruning point proof (2032 headers)
+2026-11-06 21:21:41.495+00:00 [INFO ] Validating level 20 from the pruning point proof (2019 headers)
+2026-11-06 21:21:42.100+00:00 [INFO ] Validating level 19 from the pruning point proof (2048 headers)
+2026-11-06 21:21:42.712+00:00 [INFO ] Validating level 18 from the pruning point proof (2024 headers)
+2026-11-06 21:21:43.331+00:00 [INFO ] Validating level 17 from the pruning point proof (2055 headers)
+2026-11-06 21:21:44.006+00:00 [INFO ] Validating level 16 from the pruning point proof (2092 headers)
+2026-11-06 21:21:44.677+00:00 [INFO ] Validating level 15 from the pruning point proof (2003 headers)
+2026-11-06 21:21:45.310+00:00 [INFO ] Validating level 14 from the pruning point proof (2024 headers)
+2026-11-06 21:21:45.984+00:00 [INFO ] Validating level 13 from the pruning point proof (2144 headers)
+2026-11-06 21:21:46.678+00:00 [INFO ] Validating level 12 from the pruning point proof (2144 headers)
+2026-11-06 21:21:47.388+00:00 [INFO ] Validating level 11 from the pruning point proof (2144 headers)
+2026-11-06 21:21:48.112+00:00 [INFO ] Validating level 10 from the pruning point proof (2144 headers)
+2026-11-06 21:21:48.745+00:00 [INFO ] Validating level 9 from the pruning point proof (2144 headers)
+2026-11-06 21:21:49.468+00:00 [INFO ] Validating level 8 from the pruning point proof (2144 headers)
+2026-11-06 21:21:50.213+00:00 [INFO ] Validating level 7 from the pruning point proof (2144 headers)
+2026-11-06 21:21:50.953+00:00 [INFO ] Validating level 6 from the pruning point proof (2144 headers)
+2026-11-06 21:21:51.722+00:00 [INFO ] Validating level 5 from the pruning point proof (2144 headers)
+2026-11-06 21:21:52.513+00:00 [INFO ] Validating level 4 from the pruning point proof (2144 headers)
+2026-11-06 21:21:53.323+00:00 [INFO ] Validating level 3 from the pruning point proof (2144 headers)
+2026-11-06 21:21:54.150+00:00 [INFO ] Validating level 2 from the pruning point proof (2144 headers)
+2026-11-06 21:21:54.841+00:00 [INFO ] Validating level 1 from the pruning point proof (2144 headers)
+2026-11-06 21:21:55.462+00:00 [INFO ] Validating level 0 from the pruning point proof (2144 headers)
+2026-11-06 21:21:56.205+00:00 [INFO ] Locally built proof was validated successfully
+2026-11-06 21:21:56.206+00:00 [INFO ] Starting to process 2647 trusted blocks
+2026-11-06 21:21:56.637+00:00 [INFO ] Done processing trusted blocks
+2026-11-06 21:21:56.695+00:00 [INFO ] Processed 4 blocks and 2647 headers in the last 10.00s (7 transactions; 0 UTXO-validated blocks; 1.74 parents; 1.74 mergeset; 1.75 TPB; 10750.5 mass)
+2026-11-06 21:21:58.747+00:00 [INFO ] IBD: Processed 3075 block headers (1%) last block timestamp: 2026-11-03 23:02:40.000:+0000
+2026-11-06 21:22:00.577+00:00 [INFO ] IBD: Processed 6147 block headers (2%) last block timestamp: 2026-11-03 23:55:18.000:+0000
+2026-11-06 21:22:01.865+00:00 [INFO ] IBD: Processed 8196 block headers (3%) last block timestamp: 2026-11-04 00:28:58.000:+0000
+2026-11-06 21:22:03.905+00:00 [INFO ] IBD: Processed 11271 block headers (4%) last block timestamp: 2026-11-04 01:20:49.000:+0000
+2026-11-06 21:22:05.297+00:00 [INFO ] IBD: Processed 13318 block headers (5%) last block timestamp: 2026-11-04 01:54:13.000:+0000
+2026-11-06 21:22:06.696+00:00 [INFO ] Processed 0 blocks and 15134 headers in the last 10.00s (0 transactions; 0 UTXO-validated blocks; 1.67 parents; 1.67 mergeset; 0.00 TPB; 0.0 mass)
+2026-11-06 21:22:07.556+00:00 [INFO ] IBD: Processed 16392 block headers (6%) last block timestamp: 2026-11-04 02:45:25.000:+0000
+2026-11-06 21:22:08.989+00:00 [INFO ] IBD: Processed 18442 block headers (7%) last block timestamp: 2026-11-04 03:19:48.000:+0000
+2026-11-06 21:22:11.167+00:00 [INFO ] IBD: Processed 21513 block headers (8%) last block timestamp: 2026-11-04 04:10:50.000:+0000
+2026-11-06 21:22:12.657+00:00 [INFO ] IBD: Processed 23558 block headers (9%) last block timestamp: 2026-11-04 04:45:27.000:+0000
+2026-11-06 21:22:14.962+00:00 [INFO ] IBD: Processed 26632 block headers (10%) last block timestamp: 2026-11-04 05:35:37.000:+0000
+2026-11-06 21:22:16.543+00:00 [INFO ] IBD: Processed 28679 block headers (11%) last block timestamp: 2026-11-04 06:09:58.000:+0000
+2026-11-06 21:22:16.698+00:00 [INFO ] Processed 0 blocks and 13741 headers in the last 10.00s (0 transactions; 0 UTXO-validated blocks; 1.69 parents; 1.69 mergeset; 0.00 TPB; 0.0 mass)
+2026-11-06 21:22:18.916+00:00 [INFO ] IBD: Processed 31752 block headers (12%) last block timestamp: 2026-11-04 06:59:44.000:+0000
+2026-11-06 21:22:20.516+00:00 [INFO ] IBD: Processed 33802 block headers (13%) last block timestamp: 2026-11-04 07:35:13.000:+0000
+2026-11-06 21:22:22.706+00:00 [INFO ] IBD: Processed 36877 block headers (14%) last block timestamp: 2026-11-04 08:25:49.000:+0000
+2026-11-06 21:22:24.217+00:00 [INFO ] IBD: Processed 38927 block headers (15%) last block timestamp: 2026-11-04 08:59:31.000:+0000
+2026-11-06 21:22:26.579+00:00 [INFO ] IBD: Processed 41999 block headers (16%) last block timestamp: 2026-11-04 09:52:16.000:+0000
+2026-11-06 21:22:26.698+00:00 [INFO ] Processed 0 blocks and 13256 headers in the last 10.00s (0 transactions; 0 UTXO-validated blocks; 1.74 parents; 1.74 mergeset; 0.00 TPB; 0.0 mass)
+2026-11-06 21:22:28.113+00:00 [INFO ] IBD: Processed 44048 block headers (17%) last block timestamp: 2026-11-04 10:26:02.000:+0000
+2026-11-06 21:22:30.390+00:00 [INFO ] IBD: Processed 47120 block headers (18%) last block timestamp: 2026-11-04 11:16:37.000:+0000
+2026-11-06 21:22:31.928+00:00 [INFO ] IBD: Processed 49169 block headers (19%) last block timestamp: 2026-11-04 11:51:18.000:+0000
+2026-11-06 21:22:34.473+00:00 [INFO ] IBD: Processed 52242 block headers (20%) last block timestamp: 2026-11-04 12:45:17.000:+0000
+2026-11-06 21:22:36.005+00:00 [INFO ] IBD: Processed 54292 block headers (21%) last block timestamp: 2026-11-04 13:18:31.000:+0000
+2026-11-06 21:22:36.700+00:00 [INFO ] Processed 0 blocks and 13067 headers in the last 10.00s (0 transactions; 0 UTXO-validated blocks; 1.71 parents; 1.72 mergeset; 0.00 TPB; 0.0 mass)
+2026-11-06 21:22:38.459+00:00 [INFO ] IBD: Processed 57367 block headers (22%) last block timestamp: 2026-11-04 14:07:44.000:+0000
+2026-11-06 21:22:39.999+00:00 [INFO ] IBD: Processed 59415 block headers (23%) last block timestamp: 2026-11-04 14:41:05.000:+0000
+2026-11-06 21:22:42.477+00:00 [INFO ] IBD: Processed 62485 block headers (24%) last block timestamp: 2026-11-04 15:33:20.000:+0000
+2026-11-06 21:22:44.057+00:00 [INFO ] IBD: Processed 64534 block headers (25%) last block timestamp: 2026-11-04 16:07:05.000:+0000
+2026-11-06 21:22:46.446+00:00 [INFO ] IBD: Processed 67609 block headers (26%) last block timestamp: 2026-11-04 16:59:41.000:+0000
+2026-11-06 21:22:46.701+00:00 [INFO ] Processed 0 blocks and 12734 headers in the last 10.00s (0 transactions; 0 UTXO-validated blocks; 1.71 parents; 1.71 mergeset; 0.00 TPB; 0.0 mass)
+2026-11-06 21:22:48.066+00:00 [INFO ] IBD: Processed 69658 block headers (27%) last block timestamp: 2026-11-04 17:33:42.000:+0000
+2026-11-06 21:22:50.473+00:00 [INFO ] IBD: Processed 72732 block headers (28%) last block timestamp: 2026-11-04 18:24:33.000:+0000
+2026-11-06 21:22:52.171+00:00 [INFO ] IBD: Processed 74782 block headers (29%) last block timestamp: 2026-11-04 18:57:54.000:+0000
+2026-11-06 21:22:54.858+00:00 [INFO ] IBD: Processed 77856 block headers (30%) last block timestamp: 2026-11-04 19:50:05.000:+0000
+2026-11-06 21:22:56.489+00:00 [INFO ] IBD: Processed 79904 block headers (31%) last block timestamp: 2026-11-04 20:23:46.000:+0000
+2026-11-06 21:22:56.701+00:00 [INFO ] Processed 0 blocks and 12218 headers in the last 10.00s (0 transactions; 0 UTXO-validated blocks; 1.71 parents; 1.72 mergeset; 0.00 TPB; 0.0 mass)
+2026-11-06 21:22:59.005+00:00 [INFO ] IBD: Processed 82977 block headers (32%) last block timestamp: 2026-11-04 21:14:13.000:+0000
+2026-11-06 21:23:00.783+00:00 [INFO ] IBD: Processed 85026 block headers (33%) last block timestamp: 2026-11-04 21:48:45.000:+0000
+2026-11-06 21:23:03.129+00:00 [INFO ] IBD: Processed 88099 block headers (34%) last block timestamp: 2026-11-04 22:39:51.000:+0000
+2026-11-06 21:23:04.819+00:00 [INFO ] IBD: Processed 90145 block headers (35%) last block timestamp: 2026-11-04 23:14:37.000:+0000
+2026-11-06 21:23:06.703+00:00 [INFO ] Processed 0 blocks and 12509 headers in the last 10.00s (0 transactions; 0 UTXO-validated blocks; 1.69 parents; 1.69 mergeset; 0.00 TPB; 0.0 mass)
+2026-11-06 21:23:07.164+00:00 [INFO ] IBD: Processed 93219 block headers (36%) last block timestamp: 2026-11-05 00:05:02.000:+0000
+2026-11-06 21:23:08.822+00:00 [INFO ] IBD: Processed 95269 block headers (37%) last block timestamp: 2026-11-05 00:39:23.000:+0000
+2026-11-06 21:23:11.304+00:00 [INFO ] IBD: Processed 98340 block headers (38%) last block timestamp: 2026-11-05 01:31:06.000:+0000
+2026-11-06 21:23:12.878+00:00 [INFO ] IBD: Processed 100390 block headers (39%) last block timestamp: 2026-11-05 02:05:07.000:+0000
+2026-11-06 21:23:15.362+00:00 [INFO ] IBD: Processed 103464 block headers (40%) last block timestamp: 2026-11-05 02:56:53.000:+0000
+2026-11-06 21:23:16.704+00:00 [INFO ] Processed 0 blocks and 12506 headers in the last 10.00s (0 transactions; 0 UTXO-validated blocks; 1.76 parents; 1.77 mergeset; 0.00 TPB; 0.0 mass)
+2026-11-06 21:23:16.980+00:00 [INFO ] IBD: Processed 105513 block headers (41%) last block timestamp: 2026-11-05 03:29:39.000:+0000
+2026-11-06 21:23:19.453+00:00 [INFO ] IBD: Processed 108587 block headers (42%) last block timestamp: 2026-11-05 04:21:59.000:+0000
+2026-11-06 21:23:21.172+00:00 [INFO ] IBD: Processed 110636 block headers (43%) last block timestamp: 2026-11-05 04:55:06.000:+0000
+2026-11-06 21:23:23.740+00:00 [INFO ] IBD: Processed 113709 block headers (44%) last block timestamp: 2026-11-05 05:45:59.000:+0000
+2026-11-06 21:23:25.338+00:00 [INFO ] IBD: Processed 115758 block headers (45%) last block timestamp: 2026-11-05 06:20:49.000:+0000
+2026-11-06 21:23:26.704+00:00 [INFO ] Processed 0 blocks and 12282 headers in the last 10.00s (0 transactions; 0 UTXO-validated blocks; 1.75 parents; 1.76 mergeset; 0.00 TPB; 0.0 mass)
+2026-11-06 21:23:27.752+00:00 [INFO ] IBD: Processed 118831 block headers (46%) last block timestamp: 2026-11-05 07:12:03.000:+0000
+2026-11-06 21:23:29.341+00:00 [INFO ] IBD: Processed 120878 block headers (47%) last block timestamp: 2026-11-05 07:46:27.000:+0000
+2026-11-06 21:23:31.788+00:00 [INFO ] IBD: Processed 123950 block headers (48%) last block timestamp: 2026-11-05 08:38:05.000:+0000
+2026-11-06 21:23:33.493+00:00 [INFO ] IBD: Processed 126000 block headers (49%) last block timestamp: 2026-11-05 09:12:13.000:+0000
+2026-11-06 21:23:36.145+00:00 [INFO ] IBD: Processed 129072 block headers (50%) last block timestamp: 2026-11-05 10:00:11.000:+0000
+2026-11-06 21:23:36.706+00:00 [INFO ] Processed 0 blocks and 12288 headers in the last 10.00s (0 transactions; 0 UTXO-validated blocks; 1.81 parents; 1.82 mergeset; 0.00 TPB; 0.0 mass)
+2026-11-06 21:23:37.819+00:00 [INFO ] IBD: Processed 131122 block headers (51%) last block timestamp: 2026-11-05 10:33:00.000:+0000
+2026-11-06 21:23:40.252+00:00 [INFO ] IBD: Processed 134195 block headers (52%) last block timestamp: 2026-11-05 11:23:32.000:+0000
+2026-11-06 21:23:41.950+00:00 [INFO ] IBD: Processed 136244 block headers (53%) last block timestamp: 2026-11-05 11:57:54.000:+0000
+2026-11-06 21:23:44.519+00:00 [INFO ] IBD: Processed 139319 block headers (54%) last block timestamp: 2026-11-05 12:49:35.000:+0000
+2026-11-06 21:23:46.120+00:00 [INFO ] IBD: Processed 141368 block headers (55%) last block timestamp: 2026-11-05 13:25:06.000:+0000
+2026-11-06 21:23:46.707+00:00 [INFO ] Processed 0 blocks and 12365 headers in the last 10.00s (0 transactions; 0 UTXO-validated blocks; 1.63 parents; 1.63 mergeset; 0.00 TPB; 0.0 mass)
+2026-11-06 21:23:48.598+00:00 [INFO ] IBD: Processed 144440 block headers (56%) last block timestamp: 2026-11-05 14:18:10.000:+0000
+2026-11-06 21:23:50.342+00:00 [INFO ] IBD: Processed 146490 block headers (57%) last block timestamp: 2026-11-05 14:51:55.000:+0000
+2026-11-06 21:23:53.073+00:00 [INFO ] IBD: Processed 149561 block headers (58%) last block timestamp: 2026-11-05 15:43:11.000:+0000
+2026-11-06 21:23:54.801+00:00 [INFO ] IBD: Processed 151606 block headers (59%) last block timestamp: 2026-11-05 16:18:11.000:+0000
+2026-11-06 21:23:56.708+00:00 [INFO ] Processed 0 blocks and 11638 headers in the last 10.00s (0 transactions; 0 UTXO-validated blocks; 1.82 parents; 1.82 mergeset; 0.00 TPB; 0.0 mass)
+2026-11-06 21:23:57.493+00:00 [INFO ] IBD: Processed 154679 block headers (60%) last block timestamp: 2026-11-05 17:08:32.000:+0000
+2026-11-06 21:23:59.472+00:00 [INFO ] IBD: Processed 156725 block headers (61%) last block timestamp: 2026-11-05 17:43:05.000:+0000
+2026-11-06 21:24:02.159+00:00 [INFO ] IBD: Processed 159798 block headers (62%) last block timestamp: 2026-11-05 18:35:16.000:+0000
+2026-11-06 21:24:04.024+00:00 [INFO ] IBD: Processed 161848 block headers (63%) last block timestamp: 2026-11-05 19:08:51.000:+0000
+2026-11-06 21:24:06.643+00:00 [INFO ] IBD: Processed 164920 block headers (64%) last block timestamp: 2026-11-05 19:59:59.000:+0000
+2026-11-06 21:24:06.709+00:00 [INFO ] Processed 0 blocks and 11251 headers in the last 10.00s (0 transactions; 0 UTXO-validated blocks; 1.78 parents; 1.78 mergeset; 0.00 TPB; 0.0 mass)
+2026-11-06 21:24:08.407+00:00 [INFO ] IBD: Processed 166968 block headers (65%) last block timestamp: 2026-11-05 20:33:42.000:+0000
+2026-11-06 21:24:10.978+00:00 [INFO ] IBD: Processed 170042 block headers (66%) last block timestamp: 2026-11-05 21:25:19.000:+0000
+2026-11-06 21:24:12.800+00:00 [INFO ] IBD: Processed 172090 block headers (67%) last block timestamp: 2026-11-05 21:57:52.000:+0000
+2026-11-06 21:24:15.486+00:00 [INFO ] IBD: Processed 175165 block headers (68%) last block timestamp: 2026-11-05 22:50:05.000:+0000
+2026-11-06 21:24:16.710+00:00 [INFO ] Processed 0 blocks and 11559 headers in the last 10.00s (0 transactions; 0 UTXO-validated blocks; 1.78 parents; 1.78 mergeset; 0.00 TPB; 0.0 mass)
+2026-11-06 21:24:17.256+00:00 [INFO ] IBD: Processed 177215 block headers (69%) last block timestamp: 2026-11-05 23:24:23.000:+0000
+2026-11-06 21:24:19.855+00:00 [INFO ] IBD: Processed 180288 block headers (70%) last block timestamp: 2026-11-06 00:15:19.000:+0000
+2026-11-06 21:24:21.485+00:00 [INFO ] IBD: Processed 182338 block headers (71%) last block timestamp: 2026-11-06 00:49:23.000:+0000
+2026-11-06 21:24:24.133+00:00 [INFO ] IBD: Processed 185412 block headers (72%) last block timestamp: 2026-11-06 01:40:21.000:+0000
+2026-11-06 21:24:25.856+00:00 [INFO ] IBD: Processed 187458 block headers (73%) last block timestamp: 2026-11-06 02:14:11.000:+0000
+2026-11-06 21:24:26.711+00:00 [INFO ] Processed 0 blocks and 11936 headers in the last 10.00s (0 transactions; 0 UTXO-validated blocks; 1.78 parents; 1.79 mergeset; 0.00 TPB; 0.0 mass)
+2026-11-06 21:24:28.479+00:00 [INFO ] IBD: Processed 190528 block headers (74%) last block timestamp: 2026-11-06 03:07:47.000:+0000
+2026-11-06 21:24:30.232+00:00 [INFO ] IBD: Processed 192578 block headers (75%) last block timestamp: 2026-11-06 03:40:09.000:+0000
+2026-11-06 21:24:32.923+00:00 [INFO ] IBD: Processed 195650 block headers (76%) last block timestamp: 2026-11-06 04:32:03.000:+0000
+2026-11-06 21:24:34.620+00:00 [INFO ] IBD: Processed 197699 block headers (77%) last block timestamp: 2026-11-06 05:05:37.000:+0000
+2026-11-06 21:24:36.713+00:00 [INFO ] Processed 0 blocks and 11601 headers in the last 10.00s (0 transactions; 0 UTXO-validated blocks; 1.87 parents; 1.89 mergeset; 0.00 TPB; 0.0 mass)
+2026-11-06 21:24:37.252+00:00 [INFO ] IBD: Processed 200774 block headers (78%) last block timestamp: 2026-11-06 05:56:38.000:+0000
+2026-11-06 21:24:39.012+00:00 [INFO ] IBD: Processed 202820 block headers (79%) last block timestamp: 2026-11-06 06:30:46.000:+0000
+2026-11-06 21:24:41.697+00:00 [INFO ] IBD: Processed 205894 block headers (80%) last block timestamp: 2026-11-06 07:22:55.000:+0000
+2026-11-06 21:24:43.456+00:00 [INFO ] IBD: Processed 207944 block headers (81%) last block timestamp: 2026-11-06 07:56:31.000:+0000
+2026-11-06 21:24:46.137+00:00 [INFO ] IBD: Processed 211014 block headers (82%) last block timestamp: 2026-11-06 08:48:19.000:+0000
+2026-11-06 21:24:46.715+00:00 [INFO ] Processed 0 blocks and 11527 headers in the last 10.00s (0 transactions; 0 UTXO-validated blocks; 1.78 parents; 1.79 mergeset; 0.00 TPB; 0.0 mass)
+2026-11-06 21:24:48.089+00:00 [INFO ] IBD: Processed 213062 block headers (83%) last block timestamp: 2026-11-06 09:21:29.000:+0000
+2026-11-06 21:24:50.883+00:00 [INFO ] IBD: Processed 216134 block headers (84%) last block timestamp: 2026-11-06 10:13:25.000:+0000
+2026-11-06 21:24:52.759+00:00 [INFO ] IBD: Processed 218183 block headers (85%) last block timestamp: 2026-11-06 10:46:45.000:+0000
+2026-11-06 21:24:55.548+00:00 [INFO ] IBD: Processed 221256 block headers (86%) last block timestamp: 2026-11-06 11:38:57.000:+0000
+2026-11-06 21:24:56.715+00:00 [INFO ] Processed 0 blocks and 10936 headers in the last 10.00s (0 transactions; 0 UTXO-validated blocks; 1.76 parents; 1.77 mergeset; 0.00 TPB; 0.0 mass)
+2026-11-06 21:24:57.342+00:00 [INFO ] IBD: Processed 223306 block headers (87%) last block timestamp: 2026-11-06 12:12:54.000:+0000
+2026-11-06 21:24:59.926+00:00 [INFO ] IBD: Processed 226381 block headers (88%) last block timestamp: 2026-11-06 13:03:07.000:+0000
+2026-11-06 21:25:01.798+00:00 [INFO ] IBD: Processed 228429 block headers (89%) last block timestamp: 2026-11-06 13:37:40.000:+0000
+2026-11-06 21:25:04.784+00:00 [INFO ] IBD: Processed 231501 block headers (90%) last block timestamp: 2026-11-06 14:28:09.000:+0000
+2026-11-06 21:25:06.644+00:00 [INFO ] IBD: Processed 233549 block headers (91%) last block timestamp: 2026-11-06 15:02:07.000:+0000
+2026-11-06 21:25:06.717+00:00 [INFO ] Processed 0 blocks and 11067 headers in the last 10.00s (0 transactions; 0 UTXO-validated blocks; 1.73 parents; 1.74 mergeset; 0.00 TPB; 0.0 mass)
+2026-11-06 21:25:09.612+00:00 [INFO ] IBD: Processed 236623 block headers (92%) last block timestamp: 2026-11-06 15:52:39.000:+0000
+2026-11-06 21:25:11.431+00:00 [INFO ] IBD: Processed 238672 block headers (93%) last block timestamp: 2026-11-06 16:26:37.000:+0000
+2026-11-06 21:25:14.152+00:00 [INFO ] IBD: Processed 241744 block headers (94%) last block timestamp: 2026-11-06 17:19:55.000:+0000
+2026-11-06 21:25:15.968+00:00 [INFO ] IBD: Processed 243793 block headers (95%) last block timestamp: 2026-11-06 17:51:49.000:+0000
+2026-11-06 21:25:16.717+00:00 [INFO ] Processed 0 blocks and 10987 headers in the last 10.00s (0 transactions; 0 UTXO-validated blocks; 1.97 parents; 2.05 mergeset; 0.00 TPB; 0.0 mass)
+2026-11-06 21:25:18.776+00:00 [INFO ] IBD: Processed 246867 block headers (96%) last block timestamp: 2026-11-06 18:42:14.000:+0000
+2026-11-06 21:25:20.757+00:00 [INFO ] IBD: Processed 248912 block headers (97%) last block timestamp: 2026-11-06 19:17:17.000:+0000
+2026-11-06 21:25:23.579+00:00 [INFO ] IBD: Processed 251985 block headers (98%) last block timestamp: 2026-11-06 20:10:05.000:+0000
+2026-11-06 21:25:25.624+00:00 [INFO ] IBD: Processed 254033 block headers (99%) last block timestamp: 2026-11-06 20:43:38.000:+0000
+2026-11-06 21:25:26.718+00:00 [INFO ] Processed 0 blocks and 10616 headers in the last 10.00s (0 transactions; 0 UTXO-validated blocks; 1.76 parents; 1.77 mergeset; 0.00 TPB; 0.0 mass)
+2026-11-06 21:25:27.630+00:00 [INFO ] IBD: Processed 256227 block headers (100%)
+2026-11-06 21:25:34.435+00:00 [INFO ] Received 99 UTXO set chunks so far, totaling in 99000 UTXOs
+2026-11-06 21:25:34.851+00:00 [INFO ] Received 198 UTXO set chunks so far, totaling in 198000 UTXOs
+2026-11-06 21:25:35.258+00:00 [INFO ] Received 297 UTXO set chunks so far, totaling in 297000 UTXOs
+2026-11-06 21:25:35.663+00:00 [INFO ] Received 396 UTXO set chunks so far, totaling in 396000 UTXOs
+2026-11-06 21:25:36.039+00:00 [INFO ] Received 495 UTXO set chunks so far, totaling in 495000 UTXOs
+2026-11-06 21:25:36.450+00:00 [INFO ] Received 594 UTXO set chunks so far, totaling in 594000 UTXOs
+2026-11-06 21:25:36.719+00:00 [INFO ] Processed 0 blocks and 1006 headers in the last 10.00s (0 transactions; 0 UTXO-validated blocks; 1.74 parents; 1.74 mergeset; 0.00 TPB; 0.0 mass)
+2026-11-06 21:25:36.949+00:00 [INFO ] Received 693 UTXO set chunks so far, totaling in 693000 UTXOs
+2026-11-06 21:25:37.378+00:00 [INFO ] Received 792 UTXO set chunks so far, totaling in 792000 UTXOs
+2026-11-06 21:25:37.779+00:00 [INFO ] Received 891 UTXO set chunks so far, totaling in 891000 UTXOs
+2026-11-06 21:25:38.141+00:00 [INFO ] Received 990 UTXO set chunks so far, totaling in 990000 UTXOs
+2026-11-06 21:25:38.537+00:00 [INFO ] Received 1089 UTXO set chunks so far, totaling in 1089000 UTXOs
+2026-11-06 21:25:38.955+00:00 [INFO ] Received 1188 UTXO set chunks so far, totaling in 1188000 UTXOs
+2026-11-06 21:25:39.356+00:00 [INFO ] Received 1287 UTXO set chunks so far, totaling in 1287000 UTXOs
+2026-11-06 21:25:39.878+00:00 [INFO ] Received 1386 UTXO set chunks so far, totaling in 1386000 UTXOs
+2026-11-06 21:25:40.252+00:00 [INFO ] Received 1485 UTXO set chunks so far, totaling in 1485000 UTXOs
+2026-11-06 21:25:40.669+00:00 [INFO ] Received 1584 UTXO set chunks so far, totaling in 1584000 UTXOs
+2026-11-06 21:25:41.093+00:00 [INFO ] Received 1683 UTXO set chunks so far, totaling in 1683000 UTXOs
+2026-11-06 21:25:41.473+00:00 [INFO ] Received 1782 UTXO set chunks so far, totaling in 1782000 UTXOs
+2026-11-06 21:25:41.910+00:00 [INFO ] Received 1881 UTXO set chunks so far, totaling in 1881000 UTXOs
+2026-11-06 21:25:42.292+00:00 [INFO ] Received 1980 UTXO set chunks so far, totaling in 1980000 UTXOs
+2026-11-06 21:25:42.779+00:00 [INFO ] Received 2079 UTXO set chunks so far, totaling in 2079000 UTXOs
+2026-11-06 21:25:43.186+00:00 [INFO ] Received 2178 UTXO set chunks so far, totaling in 2178000 UTXOs
+2026-11-06 21:25:43.548+00:00 [INFO ] Received 2277 UTXO set chunks so far, totaling in 2277000 UTXOs
+2026-11-06 21:25:43.959+00:00 [INFO ] Received 2376 UTXO set chunks so far, totaling in 2376000 UTXOs
+2026-11-06 21:25:44.369+00:00 [INFO ] Received 2475 UTXO set chunks so far, totaling in 2475000 UTXOs
+2026-11-06 21:25:44.775+00:00 [INFO ] Received 2574 UTXO set chunks so far, totaling in 2574000 UTXOs
+2026-11-06 21:25:45.207+00:00 [INFO ] Received 2673 UTXO set chunks so far, totaling in 2673000 UTXOs
+2026-11-06 21:25:45.658+00:00 [INFO ] Received 2772 UTXO set chunks so far, totaling in 2772000 UTXOs
+2026-11-06 21:25:46.049+00:00 [INFO ] Received 2871 UTXO set chunks so far, totaling in 2871000 UTXOs
+2026-11-06 21:25:46.454+00:00 [INFO ] Received 2970 UTXO set chunks so far, totaling in 2970000 UTXOs
+2026-11-06 21:25:46.840+00:00 [INFO ] Received 3069 UTXO set chunks so far, totaling in 3069000 UTXOs
+2026-11-06 21:25:47.270+00:00 [INFO ] Received 3168 UTXO set chunks so far, totaling in 3168000 UTXOs
+2026-11-06 21:25:47.639+00:00 [INFO ] Received 3267 UTXO set chunks so far, totaling in 3267000 UTXOs
+2026-11-06 21:25:48.119+00:00 [INFO ] Received 3366 UTXO set chunks so far, totaling in 3366000 UTXOs
+2026-11-06 21:25:48.521+00:00 [INFO ] Received 3465 UTXO set chunks so far, totaling in 3465000 UTXOs
+2026-11-06 21:25:48.910+00:00 [INFO ] Received 3564 UTXO set chunks so far, totaling in 3564000 UTXOs
+2026-11-06 21:25:49.311+00:00 [INFO ] Received 3663 UTXO set chunks so far, totaling in 3663000 UTXOs
+2026-11-06 21:25:49.711+00:00 [INFO ] Received 3762 UTXO set chunks so far, totaling in 3762000 UTXOs
+2026-11-06 21:25:50.110+00:00 [INFO ] Received 3861 UTXO set chunks so far, totaling in 3861000 UTXOs
+2026-11-06 21:25:50.593+00:00 [INFO ] Received 3960 UTXO set chunks so far, totaling in 3960000 UTXOs
+2026-11-06 21:25:50.978+00:00 [INFO ] Received 4059 UTXO set chunks so far, totaling in 4059000 UTXOs
+2026-11-06 21:25:51.363+00:00 [INFO ] Received 4158 UTXO set chunks so far, totaling in 4158000 UTXOs
+2026-11-06 21:25:51.786+00:00 [INFO ] Received 4257 UTXO set chunks so far, totaling in 4257000 UTXOs
+2026-11-06 21:25:52.170+00:00 [INFO ] Received 4356 UTXO set chunks so far, totaling in 4356000 UTXOs
+2026-11-06 21:25:52.580+00:00 [INFO ] Received 4455 UTXO set chunks so far, totaling in 4455000 UTXOs
+2026-11-06 21:25:53.056+00:00 [INFO ] Received 4554 UTXO set chunks so far, totaling in 4554000 UTXOs
+2026-11-06 21:25:53.453+00:00 [INFO ] Received 4653 UTXO set chunks so far, totaling in 4653000 UTXOs
+2026-11-06 21:25:53.908+00:00 [INFO ] Received 4752 UTXO set chunks so far, totaling in 4752000 UTXOs
+2026-11-06 21:25:54.296+00:00 [INFO ] Received 4851 UTXO set chunks so far, totaling in 4851000 UTXOs
+2026-11-06 21:25:54.701+00:00 [INFO ] Received 4950 UTXO set chunks so far, totaling in 4950000 UTXOs
+2026-11-06 21:25:55.094+00:00 [INFO ] Received 5049 UTXO set chunks so far, totaling in 5049000 UTXOs
+2026-11-06 21:25:55.561+00:00 [INFO ] Received 5148 UTXO set chunks so far, totaling in 5148000 UTXOs
+2026-11-06 21:25:55.973+00:00 [INFO ] Received 5247 UTXO set chunks so far, totaling in 5247000 UTXOs
+2026-11-06 21:25:56.365+00:00 [INFO ] Received 5346 UTXO set chunks so far, totaling in 5346000 UTXOs
+2026-11-06 21:25:56.775+00:00 [INFO ] Received 5445 UTXO set chunks so far, totaling in 5445000 UTXOs
+2026-11-06 21:25:57.175+00:00 [INFO ] Received 5544 UTXO set chunks so far, totaling in 5544000 UTXOs
+2026-11-06 21:25:57.569+00:00 [INFO ] Received 5643 UTXO set chunks so far, totaling in 5643000 UTXOs
+2026-11-06 21:25:58.034+00:00 [INFO ] Received 5742 UTXO set chunks so far, totaling in 5742000 UTXOs
+2026-11-06 21:25:58.546+00:00 [INFO ] Received 5841 UTXO set chunks so far, totaling in 5841000 UTXOs
+2026-11-06 21:25:58.769+00:00 [INFO ] Finished receiving the UTXO set. Total UTXOs: 5893646
+2026-11-06 21:25:58.769+00:00 [INFO ] Importing the UTXO set of the pruning point a990faed46ff230a9deef9db3bacda7f22b64276e3ea42aa36e4b20cb43c20ed
+2026-11-06 21:26:15.565+00:00 [INFO ] Header download stage of IBD with headers proof completed successfully from 127.0.0.1:22111. Committed staging consensus.
+2026-11-06 21:26:16.723+00:00 [INFO ] Processed 177 blocks and 0 headers in the last 10.00s (184 transactions; 103 UTXO-validated blocks; 0.00 parents; 0.00 mergeset; 1.04 TPB; 522.7 mass)
+2026-11-06 21:26:18.003+00:00 [INFO ] IBD: Processed 3069 blocks (1%) last block timestamp: 2026-11-03 23:02:36.000:+0000
+2026-11-06 21:26:18.900+00:00 [INFO ] IBD: Processed 5445 blocks (2%) last block timestamp: 2026-11-03 23:42:53.000:+0000
+2026-11-06 21:26:19.751+00:00 [INFO ] IBD: Processed 7821 blocks (3%) last block timestamp: 2026-11-04 00:23:21.000:+0000
+2026-11-06 21:26:20.722+00:00 [INFO ] IBD: Processed 10791 blocks (4%) last block timestamp: 2026-11-04 01:12:53.000:+0000
+2026-11-06 21:26:21.459+00:00 [INFO ] IBD: Processed 13167 blocks (5%) last block timestamp: 2026-11-04 01:50:49.000:+0000
+2026-11-06 21:26:22.285+00:00 [INFO ] IBD: Processed 15543 blocks (6%) last block timestamp: 2026-11-04 02:31:43.000:+0000
+2026-11-06 21:26:23.391+00:00 [INFO ] IBD: Processed 18513 blocks (7%) last block timestamp: 2026-11-04 03:21:07.000:+0000
+2026-11-06 21:26:24.284+00:00 [INFO ] IBD: Processed 20889 blocks (8%) last block timestamp: 2026-11-04 04:00:09.000:+0000
+2026-11-06 21:26:25.007+00:00 [INFO ] IBD: Processed 23265 blocks (9%) last block timestamp: 2026-11-04 04:40:09.000:+0000
+2026-11-06 21:26:25.686+00:00 [INFO ] IBD: Processed 25641 blocks (10%) last block timestamp: 2026-11-04 05:19:25.000:+0000
+2026-11-06 21:26:26.487+00:00 [INFO ] IBD: Processed 28611 blocks (11%) last block timestamp: 2026-11-04 06:08:51.000:+0000
+2026-11-06 21:26:26.724+00:00 [INFO ] Processed 29304 blocks and 0 headers in the last 10.00s (30767 transactions; 17848 UTXO-validated blocks; 0.00 parents; 0.00 mergeset; 1.05 TPB; 1589.9 mass)
+2026-11-06 21:26:27.289+00:00 [INFO ] IBD: Processed 30987 blocks (12%) last block timestamp: 2026-11-04 06:46:57.000:+0000
+2026-11-06 21:26:28.062+00:00 [INFO ] IBD: Processed 33363 blocks (13%) last block timestamp: 2026-11-04 07:27:59.000:+0000
+2026-11-06 21:26:28.977+00:00 [INFO ] IBD: Processed 36333 blocks (14%) last block timestamp: 2026-11-04 08:17:11.000:+0000
+2026-11-06 21:26:29.663+00:00 [INFO ] IBD: Processed 38709 blocks (15%) last block timestamp: 2026-11-04 08:55:40.000:+0000
+2026-11-06 21:26:30.385+00:00 [INFO ] IBD: Processed 41085 blocks (16%) last block timestamp: 2026-11-04 09:36:27.000:+0000
+2026-11-06 21:26:31.275+00:00 [INFO ] IBD: Processed 44055 blocks (17%) last block timestamp: 2026-11-04 10:26:09.000:+0000
+2026-11-06 21:26:31.964+00:00 [INFO ] IBD: Processed 46431 blocks (18%) last block timestamp: 2026-11-04 11:05:13.000:+0000
+2026-11-06 21:26:32.735+00:00 [INFO ] IBD: Processed 48807 blocks (19%) last block timestamp: 2026-11-04 11:45:27.000:+0000
+2026-11-06 21:26:33.560+00:00 [INFO ] IBD: Processed 51777 blocks (20%) last block timestamp: 2026-11-04 12:36:56.000:+0000
+2026-11-06 21:26:34.284+00:00 [INFO ] IBD: Processed 54153 blocks (21%) last block timestamp: 2026-11-04 13:16:39.000:+0000
+2026-11-06 21:26:34.949+00:00 [INFO ] IBD: Processed 56529 blocks (22%) last block timestamp: 2026-11-04 13:52:48.000:+0000
+2026-11-06 21:26:35.772+00:00 [INFO ] IBD: Processed 59499 blocks (23%) last block timestamp: 2026-11-04 14:42:30.000:+0000
+2026-11-06 21:26:36.348+00:00 [INFO ] IBD: Processed 61875 blocks (24%) last block timestamp: 2026-11-04 15:23:19.000:+0000
+2026-11-06 21:26:36.725+00:00 [INFO ] Processed 33832 blocks and 0 headers in the last 10.00s (35762 transactions; 20069 UTXO-validated blocks; 0.00 parents; 0.00 mergeset; 1.06 TPB; 1655.1 mass)
+2026-11-06 21:26:37.042+00:00 [INFO ] IBD: Processed 64251 blocks (25%) last block timestamp: 2026-11-04 16:02:27.000:+0000
+2026-11-06 21:26:37.585+00:00 [INFO ] IBD: Processed 66627 blocks (26%) last block timestamp: 2026-11-04 16:42:55.000:+0000
+2026-11-06 21:26:38.317+00:00 [INFO ] IBD: Processed 69597 blocks (27%) last block timestamp: 2026-11-04 17:32:40.000:+0000
+2026-11-06 21:26:38.955+00:00 [INFO ] IBD: Processed 71973 blocks (28%) last block timestamp: 2026-11-04 18:11:54.000:+0000
+2026-11-06 21:26:39.707+00:00 [INFO ] IBD: Processed 74349 blocks (29%) last block timestamp: 2026-11-04 18:50:50.000:+0000
+2026-11-06 21:26:40.421+00:00 [INFO ] IBD: Processed 77319 blocks (30%) last block timestamp: 2026-11-04 19:41:38.000:+0000
+2026-11-06 21:26:41.100+00:00 [INFO ] IBD: Processed 79695 blocks (31%) last block timestamp: 2026-11-04 20:20:33.000:+0000
+2026-11-06 21:26:41.662+00:00 [INFO ] IBD: Processed 82071 blocks (32%) last block timestamp: 2026-11-04 21:00:03.000:+0000
+2026-11-06 21:26:42.392+00:00 [INFO ] IBD: Processed 85041 blocks (33%) last block timestamp: 2026-11-04 21:48:59.000:+0000
+2026-11-06 21:26:42.947+00:00 [INFO ] IBD: Processed 87417 blocks (34%) last block timestamp: 2026-11-04 22:28:38.000:+0000
+2026-11-06 21:26:43.492+00:00 [INFO ] IBD: Processed 89793 blocks (35%) last block timestamp: 2026-11-04 23:08:31.000:+0000
+2026-11-06 21:26:44.204+00:00 [INFO ] IBD: Processed 92763 blocks (36%) last block timestamp: 2026-11-04 23:57:03.000:+0000
+2026-11-06 21:26:44.770+00:00 [INFO ] IBD: Processed 95139 blocks (37%) last block timestamp: 2026-11-05 00:37:03.000:+0000
+2026-11-06 21:26:45.319+00:00 [INFO ] IBD: Processed 97515 blocks (38%) last block timestamp: 2026-11-05 01:17:23.000:+0000
+2026-11-06 21:26:46.073+00:00 [INFO ] IBD: Processed 100485 blocks (39%) last block timestamp: 2026-11-05 02:06:27.000:+0000
+2026-11-06 21:26:46.604+00:00 [INFO ] IBD: Processed 102861 blocks (40%) last block timestamp: 2026-11-05 02:47:03.000:+0000
+2026-11-06 21:26:46.727+00:00 [INFO ] Processed 39746 blocks and 0 headers in the last 10.00s (42096 transactions; 23915 UTXO-validated blocks; 0.00 parents; 0.00 mergeset; 1.06 TPB; 2257.6 mass)
+2026-11-06 21:26:47.490+00:00 [INFO ] IBD: Processed 105237 blocks (41%) last block timestamp: 2026-11-05 03:24:57.000:+0000
+2026-11-06 21:26:48.186+00:00 [INFO ] IBD: Processed 108207 blocks (42%) last block timestamp: 2026-11-05 04:15:35.000:+0000
+2026-11-06 21:26:48.762+00:00 [INFO ] IBD: Processed 110583 blocks (43%) last block timestamp: 2026-11-05 04:54:06.000:+0000
+2026-11-06 21:26:49.345+00:00 [INFO ] IBD: Processed 112959 blocks (44%) last block timestamp: 2026-11-05 05:33:35.000:+0000
+2026-11-06 21:26:50.022+00:00 [INFO ] IBD: Processed 115335 blocks (45%) last block timestamp: 2026-11-05 06:13:57.000:+0000
+2026-11-06 21:26:50.630+00:00 [INFO ] IBD: Processed 118305 blocks (46%) last block timestamp: 2026-11-05 07:03:25.000:+0000
+2026-11-06 21:26:51.161+00:00 [INFO ] IBD: Processed 120681 blocks (47%) last block timestamp: 2026-11-05 07:43:00.000:+0000
+2026-11-06 21:26:51.691+00:00 [INFO ] IBD: Processed 123057 blocks (48%) last block timestamp: 2026-11-05 08:22:25.000:+0000
+2026-11-06 21:26:52.381+00:00 [INFO ] IBD: Processed 126027 blocks (49%) last block timestamp: 2026-11-05 09:12:35.000:+0000
+2026-11-06 21:26:52.950+00:00 [INFO ] IBD: Processed 128403 blocks (50%) last block timestamp: 2026-11-05 09:50:29.000:+0000
+2026-11-06 21:26:53.528+00:00 [INFO ] IBD: Processed 130779 blocks (51%) last block timestamp: 2026-11-05 10:26:59.000:+0000
+2026-11-06 21:26:54.284+00:00 [INFO ] IBD: Processed 133749 blocks (52%) last block timestamp: 2026-11-05 11:16:01.000:+0000
+2026-11-06 21:26:54.924+00:00 [INFO ] IBD: Processed 136125 blocks (53%) last block timestamp: 2026-11-05 11:55:59.000:+0000
+2026-11-06 21:26:55.456+00:00 [INFO ] IBD: Processed 138501 blocks (54%) last block timestamp: 2026-11-05 12:35:25.000:+0000
+2026-11-06 21:26:56.134+00:00 [INFO ] IBD: Processed 141471 blocks (55%) last block timestamp: 2026-11-05 13:26:45.000:+0000
+2026-11-06 21:26:56.647+00:00 [INFO ] IBD: Processed 143847 blocks (56%) last block timestamp: 2026-11-05 14:08:03.000:+0000
+2026-11-06 21:26:56.727+00:00 [INFO ] Processed 41271 blocks and 0 headers in the last 10.00s (43717 transactions; 24483 UTXO-validated blocks; 0.00 parents; 0.00 mergeset; 1.06 TPB; 1933.8 mass)
+2026-11-06 21:26:57.196+00:00 [INFO ] IBD: Processed 146223 blocks (57%) last block timestamp: 2026-11-05 14:47:18.000:+0000
+2026-11-06 21:26:57.829+00:00 [INFO ] IBD: Processed 149193 blocks (58%) last block timestamp: 2026-11-05 15:36:51.000:+0000
+2026-11-06 21:26:58.352+00:00 [INFO ] IBD: Processed 151569 blocks (59%) last block timestamp: 2026-11-05 16:17:33.000:+0000
+2026-11-06 21:26:58.865+00:00 [INFO ] IBD: Processed 153945 blocks (60%) last block timestamp: 2026-11-05 16:56:55.000:+0000
+2026-11-06 21:26:59.447+00:00 [INFO ] IBD: Processed 156321 blocks (61%) last block timestamp: 2026-11-05 17:36:41.000:+0000
+2026-11-06 21:27:00.173+00:00 [INFO ] IBD: Processed 159291 blocks (62%) last block timestamp: 2026-11-05 18:26:03.000:+0000
+2026-11-06 21:27:00.719+00:00 [INFO ] IBD: Processed 161667 blocks (63%) last block timestamp: 2026-11-05 19:06:13.000:+0000
+2026-11-06 21:27:01.297+00:00 [INFO ] IBD: Processed 164043 blocks (64%) last block timestamp: 2026-11-05 19:45:36.000:+0000
+2026-11-06 21:27:01.968+00:00 [INFO ] IBD: Processed 167013 blocks (65%) last block timestamp: 2026-11-05 20:34:35.000:+0000
+2026-11-06 21:27:02.441+00:00 [INFO ] IBD: Processed 169389 blocks (66%) last block timestamp: 2026-11-05 21:14:43.000:+0000
+2026-11-06 21:27:02.957+00:00 [INFO ] IBD: Processed 171765 blocks (67%) last block timestamp: 2026-11-05 21:53:01.000:+0000
+2026-11-06 21:27:03.647+00:00 [INFO ] IBD: Processed 174735 blocks (68%) last block timestamp: 2026-11-05 22:42:31.000:+0000
+2026-11-06 21:27:04.160+00:00 [INFO ] IBD: Processed 177111 blocks (69%) last block timestamp: 2026-11-05 23:22:41.000:+0000
+2026-11-06 21:27:04.659+00:00 [INFO ] IBD: Processed 179487 blocks (70%) last block timestamp: 2026-11-06 00:02:21.000:+0000
+2026-11-06 21:27:05.308+00:00 [INFO ] IBD: Processed 182457 blocks (71%) last block timestamp: 2026-11-06 00:51:21.000:+0000
+2026-11-06 21:27:05.843+00:00 [INFO ] IBD: Processed 184833 blocks (72%) last block timestamp: 2026-11-06 01:30:51.000:+0000
+2026-11-06 21:27:06.333+00:00 [INFO ] IBD: Processed 187209 blocks (73%) last block timestamp: 2026-11-06 02:10:17.000:+0000
+2026-11-06 21:27:06.728+00:00 [INFO ] Processed 44849 blocks and 0 headers in the last 10.00s (47400 transactions; 25692 UTXO-validated blocks; 0.00 parents; 0.00 mergeset; 1.06 TPB; 1848.4 mass)
+2026-11-06 21:27:06.975+00:00 [INFO ] IBD: Processed 190179 blocks (74%) last block timestamp: 2026-11-06 03:01:58.000:+0000
+2026-11-06 21:27:07.430+00:00 [INFO ] IBD: Processed 192555 blocks (75%) last block timestamp: 2026-11-06 03:39:49.000:+0000
+2026-11-06 21:27:07.972+00:00 [INFO ] IBD: Processed 194931 blocks (76%) last block timestamp: 2026-11-06 04:20:05.000:+0000
+2026-11-06 21:27:08.545+00:00 [INFO ] IBD: Processed 197307 blocks (77%) last block timestamp: 2026-11-06 04:58:34.000:+0000
+2026-11-06 21:27:09.215+00:00 [INFO ] IBD: Processed 200277 blocks (78%) last block timestamp: 2026-11-06 05:48:26.000:+0000
+2026-11-06 21:27:09.776+00:00 [INFO ] IBD: Processed 202653 blocks (79%) last block timestamp: 2026-11-06 06:27:20.000:+0000
+2026-11-06 21:27:10.328+00:00 [INFO ] IBD: Processed 205029 blocks (80%) last block timestamp: 2026-11-06 07:09:27.000:+0000
+2026-11-06 21:27:10.950+00:00 [INFO ] IBD: Processed 207999 blocks (81%) last block timestamp: 2026-11-06 07:57:19.000:+0000
+2026-11-06 21:27:11.440+00:00 [INFO ] IBD: Processed 210375 blocks (82%) last block timestamp: 2026-11-06 08:38:03.000:+0000
+2026-11-06 21:27:12.060+00:00 [INFO ] IBD: Processed 212751 blocks (83%) last block timestamp: 2026-11-06 09:16:59.000:+0000
+2026-11-06 21:27:12.695+00:00 [INFO ] IBD: Processed 215721 blocks (84%) last block timestamp: 2026-11-06 10:07:03.000:+0000
+2026-11-06 21:27:13.255+00:00 [INFO ] IBD: Processed 218097 blocks (85%) last block timestamp: 2026-11-06 10:45:20.000:+0000
+2026-11-06 21:27:13.725+00:00 [INFO ] IBD: Processed 220473 blocks (86%) last block timestamp: 2026-11-06 11:25:53.000:+0000
+2026-11-06 21:27:14.321+00:00 [INFO ] IBD: Processed 223443 blocks (87%) last block timestamp: 2026-11-06 12:15:23.000:+0000
+2026-11-06 21:27:14.862+00:00 [INFO ] IBD: Processed 225819 blocks (88%) last block timestamp: 2026-11-06 12:54:14.000:+0000
+2026-11-06 21:27:15.519+00:00 [INFO ] IBD: Processed 228195 blocks (89%) last block timestamp: 2026-11-06 13:34:06.000:+0000
+2026-11-06 21:27:16.205+00:00 [INFO ] IBD: Processed 231165 blocks (90%) last block timestamp: 2026-11-06 14:22:17.000:+0000
+2026-11-06 21:27:16.730+00:00 [INFO ] Processed 44364 blocks and 0 headers in the last 10.00s (47015 transactions; 25516 UTXO-validated blocks; 0.00 parents; 0.00 mergeset; 1.06 TPB; 1977.6 mass)
+2026-11-06 21:27:16.767+00:00 [INFO ] IBD: Processed 233541 blocks (91%) last block timestamp: 2026-11-06 15:02:03.000:+0000
+2026-11-06 21:27:17.295+00:00 [INFO ] IBD: Processed 235917 blocks (92%) last block timestamp: 2026-11-06 15:41:05.000:+0000
+2026-11-06 21:27:18.144+00:00 [INFO ] IBD: Processed 238887 blocks (93%) last block timestamp: 2026-11-06 16:30:16.000:+0000
+2026-11-06 21:27:18.630+00:00 [INFO ] IBD: Processed 241263 blocks (94%) last block timestamp: 2026-11-06 17:13:06.000:+0000
+2026-11-06 21:27:19.116+00:00 [INFO ] IBD: Processed 243639 blocks (95%) last block timestamp: 2026-11-06 17:49:13.000:+0000
+2026-11-06 21:27:19.616+00:00 [INFO ] IBD: Processed 246015 blocks (96%) last block timestamp: 2026-11-06 18:28:13.000:+0000
+2026-11-06 21:27:20.274+00:00 [INFO ] IBD: Processed 248985 blocks (97%) last block timestamp: 2026-11-06 19:18:27.000:+0000
+2026-11-06 21:27:20.734+00:00 [INFO ] IBD: Processed 251361 blocks (98%) last block timestamp: 2026-11-06 19:59:33.000:+0000
+2026-11-06 21:27:21.209+00:00 [INFO ] IBD: Processed 253737 blocks (99%) last block timestamp: 2026-11-06 20:39:07.000:+0000
+2026-11-06 21:27:21.795+00:00 [INFO ] IBD: Processed 256224 blocks (100%)
+2026-11-06 21:27:21.795+00:00 [INFO ] IBD with peer 127.0.0.1:22111 completed successfully
+2026-11-06 21:27:21.996+00:00 [INFO ] IBD started with peer 127.0.0.1:22111
+2026-11-06 21:27:23.291+00:00 [INFO ] IBD: Processed 432 block headers (100%)
+2026-11-06 21:27:23.296+00:00 [INFO ] Received a block with 1 missing ancestors, adding to orphan pool: c10b2a721a689c6b591efcdf559da13575323168dae390b190f873b417bdba36
+2026-11-06 21:27:23.297+00:00 [INFO ] Received a block with 1 missing ancestors, adding to orphan pool: 4557ecdfe4774a21213ad6e7fe8d6e46616f9314f3ffed9ba03a8bba05f9d71c
+2026-11-06 21:27:23.297+00:00 [INFO ] Received a block with 1 missing ancestors, adding to orphan pool: 034ffe5eb255a45b26d40ad5eced13f7cd900d7ff7938615a4d3508f2926c51a
+2026-11-06 21:27:23.298+00:00 [INFO ] Received a block with 1 missing ancestors, adding to orphan pool: eabd069ce09151b5bddbe6a486ebff17d8b67f7034bfd971e50bfe97bad99bb9
+2026-11-06 21:27:23.299+00:00 [INFO ] Received a block with 2 missing ancestors, adding to orphan pool: 54452ac52e6e6c1701c7e2970bc60ba5582f5e0c95b866a0ddabdfd6da33c031
+2026-11-06 21:27:23.299+00:00 [INFO ] Received a block with 1 missing ancestors, adding to orphan pool: e2a812066c24ed6569907a9494edd82448c29cf8289cb444a01c3f35c80151d4
+2026-11-06 21:27:23.300+00:00 [INFO ] Received a block with 1 missing ancestors, adding to orphan pool: 74346c6c3689238adf1b16154b3b1d3df095a0e2b78bf426cd4e727e945d7b33
+2026-11-06 21:27:23.300+00:00 [INFO ] Received a block with 1 missing ancestors, adding to orphan pool: d70b339865b84f34846bda1ec704756f020262bdb67b619bcf24fda622dab589
+2026-11-06 21:27:23.301+00:00 [INFO ] Received a block with 2 missing ancestors, adding to orphan pool: a13e6d3ef949605fe2e35bb75a2fc643760d253c6c0fa6bc8635c5fe5c9f9fb1
+2026-11-06 21:27:23.302+00:00 [INFO ] Received a block with 2 missing ancestors, adding to orphan pool: 9f65372a707a40a74401449b6757a88e1b1796920b443de1bfa4bd2a1df8b644
+2026-11-06 21:27:23.302+00:00 [INFO ] Received a block with 2 missing ancestors, adding to orphan pool: 5047b4a57485861ea4c42b0406d47fb4ed15d50fd1374cbb0e7294a5157da544
+2026-11-06 21:27:23.303+00:00 [INFO ] Received a block with 1 missing ancestors, adding to orphan pool: ce4e5ef109df4882073775fa11ea83c8a8b71a18769bbf3e09bf9aea669019a2
+2026-11-06 21:27:23.304+00:00 [INFO ] Received a block with 4 missing ancestors, adding to orphan pool: 5b328be29c71eeff7c7fb6e2bc96599c52d815d42e26c22aa06d78e26a29faf9
+2026-11-06 21:27:23.305+00:00 [INFO ] Received a block with 3 missing ancestors, adding to orphan pool: a1da7357bb2ce41e141161abd51ab692cced5e3b742b8655c7a478fce6b0fc8b
+2026-11-06 21:27:23.307+00:00 [INFO ] Received a block with 2 missing ancestors, adding to orphan pool: e93e45ff074fc69969ec2b0ac1d78c19b4754b00805799949a97a8aa3f022718
+2026-11-06 21:27:23.312+00:00 [INFO ] Received a block with 2 missing ancestors, adding to orphan pool: 1259c04e6f118ff099e39fd286619d0ea51fcf2b6d1b35c04a40ef5b312a6eee
+2026-11-06 21:27:23.319+00:00 [INFO ] Received a block with 2 missing ancestors, adding to orphan pool: 0d46d1896d2cd31de821099ca3b90befc705d3fc60577ae245070e04f3054e81
+2026-11-06 21:27:23.330+00:00 [INFO ] Received a block with 1 missing ancestors, adding to orphan pool: 8933e3c2c544a720635d45e9681d6bfc7c29e09b9c5402d7b825129d96ce285d
+2026-11-06 21:27:23.333+00:00 [INFO ] IBD: Processed 99 blocks (22%) last block timestamp: 2026-11-06 21:21:40.000:+0000
+2026-11-06 21:27:23.334+00:00 [INFO ] Received a block with 5 missing ancestors, adding to orphan pool: 60357b882b5266c3704563ba964430529a7639aa07730719ff3c8954ff0ae4ef
+2026-11-06 21:27:23.345+00:00 [INFO ] Received a block with 3 missing ancestors, adding to orphan pool: 24cc67ad10af52eb89009e3f4218a50ea0902886f953663af6e672eacb429561
+2026-11-06 21:27:23.350+00:00 [INFO ] Received a block with 2 missing ancestors, adding to orphan pool: c5af86292fd5868ff09a334590013cbbce1f6a13f92414c7d5480c2eabdbc626
+2026-11-06 21:27:23.355+00:00 [INFO ] Received a block with 3 missing ancestors, adding to orphan pool: 6732e20fbb77b3f7d59630ec7ae8ce043197b2e52cb84c767bc2658bae3880be
+2026-11-06 21:27:23.362+00:00 [INFO ] Received a block with 1 missing ancestors, adding to orphan pool: 919ad8f3957963210d05db080ba1e99563735738ebfcf26994d3070b85ba38d5
+2026-11-06 21:27:23.363+00:00 [INFO ] Received a block with 3 missing ancestors, adding to orphan pool: 6b3d464b37da080547b973145f70f0ac414acc10408357d9cfad59da2c2dd937
+2026-11-06 21:27:23.368+00:00 [INFO ] Received a block with 6 missing ancestors, adding to orphan pool: 49a86f3d8a848d887e0819ccdf655dd340ab67e5185522b7970b1a039bf484b2
+2026-11-06 21:27:23.369+00:00 [INFO ] Received a block with 6 missing ancestors, adding to orphan pool: 2996ea130ee5d87df5959d4b6fe647a5528b91cf01a8cec01bda717f0b751c8b
+2026-11-06 21:27:23.371+00:00 [INFO ] Received a block with 3 missing ancestors, adding to orphan pool: b1b33a9b1d770df9fbdb95270a4f7848b01d6eaa6144f29cb4d376fc8537a068
+2026-11-06 21:27:23.379+00:00 [INFO ] Unorphaned 23 blocks: c10b2a721a689c6b591efcdf559da13575323168dae390b190f873b417bdba36, 5b328be29c71eeff7c7fb6e2bc96599c52d815d42e26c22aa06d78e26a29faf9, e93e45ff074fc69969ec2b0ac1d78c19b4754b00805799949a97a8aa3f022718, 0d46d1896d2cd31de821099ca3b90befc705d3fc60577ae245070e04f3054e81, ce4e5ef109df4882073775fa11ea83c8a8b71a18769bbf3e09bf9aea669019a2, 74346c6c3689238adf1b16154b3b1d3df095a0e2b78bf426cd4e727e945d7b33, 034ffe5eb255a45b26d40ad5eced13f7cd900d7ff7938615a4d3508f2926c51a, d70b339865b84f34846bda1ec704756f020262bdb67b619bcf24fda622dab589, a1da7357bb2ce41e141161abd51ab692cced5e3b742b8655c7a478fce6b0fc8b, 24cc67ad10af52eb89009e3f4218a50ea0902886f953663af6e672eacb429561, 5047b4a57485861ea4c42b0406d47fb4ed15d50fd1374cbb0e7294a5157da544, 4557ecdfe4774a21213ad6e7fe8d6e46616f9314f3ffed9ba03a8bba05f9d71c, 54452ac52e6e6c1701c7e2970bc60ba5582f5e0c95b866a0ddabdfd6da33c031, 2996ea130ee5d87df5959d4b6fe647a5528b91cf01a8cec01bda717f0b751c8b, 6732e20fbb77b3f7d59630ec7ae8ce043197b2e52cb84c767bc2658bae3880be, c5af86292fd5868ff09a334590013cbbce1f6a13f92414c7d5480c2eabdbc626, 9f65372a707a40a74401449b6757a88e1b1796920b443de1bfa4bd2a1df8b644, 1259c04e6f118ff099e39fd286619d0ea51fcf2b6d1b35c04a40ef5b312a6eee, 49a86f3d8a848d887e0819ccdf655dd340ab67e5185522b7970b1a039bf484b2, 60357b882b5266c3704563ba964430529a7639aa07730719ff3c8954ff0ae4ef, a13e6d3ef949605fe2e35bb75a2fc643760d253c6c0fa6bc8635c5fe5c9f9fb1, e2a812066c24ed6569907a9494edd82448c29cf8289cb444a01c3f35c80151d4, eabd069ce09151b5bddbe6a486ebff17d8b67f7034bfd971e50bfe97bad99bb9
+2026-11-06 21:27:23.384+00:00 [INFO ] Received a block with 1 missing ancestors, adding to orphan pool: af62d099a2d7bc9e44e12e28335570804fb8c73f389fd6ee86b5069f703a57a1
+2026-11-06 21:27:23.385+00:00 [INFO ] IBD: Processed 432 blocks (100%)
+2026-11-06 21:27:23.385+00:00 [INFO ] IBD with peer 127.0.0.1:22111 completed successfully
+2026-11-06 21:27:23.386+00:00 [INFO ] Accepted block 6f0f2caa3a0db0ee1af3125304cca19aa5c1e2d42cb3eebbc2c056b63003cf16 via relay
+2026-11-06 21:27:23.391+00:00 [INFO ] Unorphaned block af62d099a2d7bc9e44e12e28335570804fb8c73f389fd6ee86b5069f703a57a1
+2026-11-06 21:27:23.394+00:00 [INFO ] Accepted block 4a3ceef4216f593c723b23c67e033a33edd380243cea7873060e7d0f63792020 via relay
+2026-11-06 21:27:23.395+00:00 [INFO ] Accepted block d34efec0d7dd6e23fb08968e20068ab292e74efeef5015277dcc15b93e015454 via relay
+2026-11-06 21:27:24.862+00:00 [INFO ] Accepted block 0cf3291f79c7d2d64bf21fd1715ae6341dd9d1613e21037183d6796e88a6bcf3 via relay
+2026-11-06 21:27:25.458+00:00 [INFO ] Accepted block 16a0e1220b75d61c4b4ed64da8f4490dab9654a6adf1dc95a5567b0ff89fa840 via relay
+2026-11-06 21:27:25.526+00:00 [INFO ] Accepted block f8df9853337234f7f3851e2ce261c176b7a9e24cee56cc92c5d0403d5912ddce via relay
+2026-11-06 21:27:25.672+00:00 [INFO ] Accepted block e10d64d1625acb87da91966aeb1c8de9767b2c366ae62167b59b696f7999d721 via relay
+2026-11-06 21:27:26.731+00:00 [INFO ] Processed 23121 blocks and 440 headers in the last 10.00s (24346 transactions; 13028 UTXO-validated blocks; 1.62 parents; 1.63 mergeset; 1.05 TPB; 1629.8 mass)
+^SIGTERM - shutting down...
+2026-11-06 21:27:26.833+00:00 [INFO ] GRPC Server stopped on: 127.0.0.1:24110
+2026-11-06 21:27:28.146+00:00 [INFO ] Kaspad has stopped...

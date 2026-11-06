@@ -71,6 +71,12 @@ the full test suite (517 passed, 0 failed). Evidence:
 [archive/2026-11-06-security-merge/](archive/2026-11-06-security-merge/README.md). Open: the two pruning-proof checks
 (to be tested against a real Sedra proof) and the optional cherry-picks.
 
+*Update 2026-11-06, late evening:* the two pruning-proof checks were tested with a fresh sync from a local sedrad.
+`11ffbcc6` is applied. `48b63582` is **not**: the real Sedra proof fails it (level 13: blue score 1998 < 2000), so the
+Rust node could not sync from any Go node. While adapting it, a crash on proofs with an empty level was found in v1.0.1
+and fixed (`7863751e`, regression test). Merged into `dev` (`9cb74efc`), 518 tests pass. Evidence:
+[archive/2026-11-06-proof-checks/](archive/2026-11-06-proof-checks/README.md). Open: the optional cherry-picks.
+
 ## Every fix is done the same way as the milestones
 
 A regression test that crashes or fails **before** the fix and passes after it, the full test suite on the test VM,
