@@ -39,6 +39,7 @@ This project exists because communication around Sedra has been poor. Every publ
 | Questions, who they were asked, answers and sources | `QUESTIONS.md` |
 | Formal consensus proposals | `proposals/SIP-NNNN-*.md` |
 | Dated progress posts | `updates/YYYY-MM-DD-*.md` |
+| Time per milestone and AI effort | `TIMELINE.md`, regenerated with `tools/update_timeline.py` whenever an issue is closed |
 
 ## Changes, commits and pushes
 

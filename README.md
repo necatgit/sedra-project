@@ -33,6 +33,7 @@ draft until the feasibility study is done.
 - **[updates/](updates/)**: dated progress updates, newest first
 - **[research/](research/)**: findings with evidence anyone can check
 - **[QUESTIONS.md](QUESTIONS.md)**: open questions, who was asked, and the answers
+- **[TIMELINE.md](TIMELINE.md)**: how long each milestone took from the start, and how much AI work went into it
 - **[AGENTS.md](AGENTS.md)**: the working rules, including how claims are verified
 - **Issues**: one issue per piece of work. Anyone can comment, ask questions or point out problems
 - **Watch** this repository on GitHub to get notified of new updates and releases
