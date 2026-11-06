@@ -37,4 +37,4 @@ Read from the pool's own Miningcore log (read-only; miner addresses, workers and
   and **not credited** (the pool's normal rule; no shares were credited twice).
 - **Verified:** about nine minutes without any Sedra block from the pool. At the usual rate that is roughly 250-290
   blocks the pool's miners did not find. **Not measured:** what that means in SDR for each miner. The pool's Kaspa
-  side was not affected (separate node).
+  side (its own node) logged no errors, stalls or reconnects in the same window.
