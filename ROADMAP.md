@@ -37,6 +37,7 @@ Code: `necatgit/sedra-rusty`, branch `dev`.
 - [x] M6: v2.0.0 rules behave exactly like Go (#25, `sedra-rusty@4873e9af`)
 - [ ] M7: UTXO commitment and supply parity (#26)
 - [x] M8: Mining parity on an isolated test setup (#27, private devnet, 1400 blocks)
+- [ ] Security back-ports from later rusty-kaspa releases (#29, [research/0006](research/0006-security-backports.md)): required before M9
 - [ ] M9: Seven-day soak next to Go nodes (#28)
 
 Step 2: the merged-mining hard fork.

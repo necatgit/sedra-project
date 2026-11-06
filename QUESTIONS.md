@@ -11,7 +11,7 @@ Rules:
 Status: **Open** (not asked yet) · **Asked** (sent to someone, waiting) · **Investigating** (being worked on in this
 project) · **Proposed** (a draft answer exists, not decided) · **Answered** · **Dropped**
 
-Summary (2026-11-06): 36 questions; 4 answered, 13 asked and waiting, 15 open, 2 being investigated, 1 proposed,
+Summary (2026-11-06): 36 questions; 5 answered, 13 asked and waiting, 14 open, 2 being investigated, 1 proposed,
 1 split.
 
 ## A. Working with the Sedra team
@@ -63,7 +63,7 @@ Summary (2026-11-06): 36 questions; 4 answered, 13 asked and waiting, 15 open, 2
 | Q27 | Does any archival Sedra node (full history from genesis) exist? Without one, rules before the pruning point can only be checked partially. | research/0004 | — | Open | |
 | Q28 | Are `sedracoin/go-muhash` v1.0.1 and `sedracoin/go-secp256k1` v1.0.2 identical to Kaspa's originals? | research/0004 | — (research) | Answered | Yes, in code: no difference in any code file after normalising the module name; only `go.mod`, fuzz-test corpus and `.gitattributes` differ (2026-11-06). [Evidence](research/archive/2026-11-06-q28-q36/README.md) |
 | Q30 | Are there other Go-vs-Rust differences near genesis besides the minimum difficulty window (2641 vs 150, fixed in M1)? | research/0004 | — | Open | |
-| Q31 | Which rusty-kaspa fixes after v1.0.1 are security-relevant for a 1-block-per-second legacy node and must be back-ported? | research/0004 | — | Open | |
+| Q31 | Which rusty-kaspa fixes after v1.0.1 are security-relevant for a 1-block-per-second legacy node and must be back-ported? | research/0004 | — (research) | Answered | Four must-fix crash/validation fixes and several recommended ones; most hidden in large upstream commits, re-applied by hand. [research/0006](research/0006-security-backports.md), tracked in #29 (2026-11-06) |
 | Q32 | Does PuddlePool's Miningcore Sedra integration work against the Rust node's gRPC interface? | research/0004 | — | Open | Partly: Sedra's own `sedractl` and `sedraminer` work against the Rust node (M4, M8) |
 | Q34 | Why did one synthetic block in `bounded_merge_depth_test` get block level 3 with Sedra's genesis data? | M1 (#20), M3 (#22) | — | Open | Real Sedra blocks show no such anomaly (2001 blocks, M3) |
 | Q35 | What causes the Rust node's 154 warnings "Locally built proof for level N does not match the applied one" after accepting the Go node's pruning proof? | M5 (#24) | — | Investigating | Possibly a result of the incomplete DAA window (Q5); re-check after the pruning point moves |
