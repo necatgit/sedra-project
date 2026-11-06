@@ -66,6 +66,11 @@ Go node connecting into the Rust node confirmed the rebuilt inbound path. Upstre
 (256 MB) was not taken, because Sedra's pruning proof travels as one message of possibly that size. Evidence:
 [archive/2026-11-06-hardening/](archive/2026-11-06-hardening/README.md). Open: the optional cherry-picks.
 
+*Update 2026-11-06, night:* `deps-security` and `hardening` are merged into `dev` (`36cf4cbf`); the merged code passes
+the full test suite (517 passed, 0 failed). Evidence:
+[archive/2026-11-06-security-merge/](archive/2026-11-06-security-merge/README.md). Open: the two pruning-proof checks
+(to be tested against a real Sedra proof) and the optional cherry-picks.
+
 ## Every fix is done the same way as the milestones
 
 A regression test that crashes or fails **before** the fix and passes after it, the full test suite on the test VM,
