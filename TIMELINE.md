@@ -2,7 +2,7 @@
 
 How long each step took from the start of the project, and how much AI work went into it. Regenerated with `python tools/update_timeline.py <transcripts>`; see the notes at the end for what the numbers mean.
 
-**Project start:** 2026-11-05 07:19 UTC (first message of the session in which the project began). **Last update:** 2026-11-06 08:45 UTC.
+**Project start:** 2026-11-05 07:19 UTC (first message of the session in which the project began). **Last update:** 2026-11-06 08:48 UTC.
 
 ## Milestones and closed issues
 
@@ -16,7 +16,7 @@ How long each step took from the start of the project, and how much AI work went
 | 2026-11-06 07:03 | 23 h 44 min | #21 M2: Subsidy parity with sedrad at every month boundary | 88 | 547 k / 72 k |
 | 2026-11-06 07:51 | 24 h 32 min | #22 M3: Decode and validate real Sedra headers offline | 21 | 32 k / 23 k |
 | 2026-11-06 08:25 | 25 h 06 min | #23 M4: P2P v5 handshake with a local Go sedrad | 30 | 46 k / 27 k |
-| (open) | 25 h 26 min | work since the last closed issue | 31 | 75 k / 50 k |
+| 2026-11-06 08:48 | 25 h 29 min | #25 M6: v2.0.0 rules (difficulty reset, treasury outputs) behave exactly like Go | 37 | 80 k / 54 k |
 
 A phase counts **all** AI work between two closed issues, not only the issue in that row. For example, the first row includes the project setup (repository, rules, identity), and the M2 row includes setting up the test VM, the build fix for GCC 15 and the coverage measurement. Several issues closed in the same minute share one phase; their AI effort is counted on the first of them.
 
@@ -24,10 +24,10 @@ A phase counts **all** AI work between two closed issues, not only the issue in 
 
 | | Tokens |
 |---|---|
-| Model calls | 527 (of which 166 by research agents) |
-| Fresh input (new text read: messages, files, command output) | 2,139,381 |
-| Output (text and code written by the AI) | 513,206 |
-| Re-read from cache (the conversation so far, read again on every call) | 145,758,845 |
+| Model calls | 533 (of which 166 by research agents) |
+| Fresh input (new text read: messages, files, command output) | 2,143,866 |
+| Output (text and code written by the AI) | 517,310 |
+| Re-read from cache (the conversation so far, read again on every call) | 149,634,808 |
 
 ## Notes
 
