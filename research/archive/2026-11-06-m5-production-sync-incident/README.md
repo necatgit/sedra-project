@@ -20,3 +20,21 @@ starting a sync. For a pool node this means no new work for miners in that time.
 production node. Whether the Rust node behaves the same is open (Q38).
 
 `watchdog.log`: the checks from the test VM (RPC response time of the production node, DAA lag).
+
+## Pool impact (added 2026-11-06, 21:00 UTC)
+
+Read from the pool's own Miningcore log (read-only; miner addresses, workers and IPs not reproduced):
+
+| Time (UTC) | Sedra block candidates submitted by the pool |
+|---|---|
+| 16:00-16:41 | 1,164 (28 per minute) |
+| 16:42-16:50 | **0** |
+| 16:51-17:30 | 1,248 (32 per minute) |
+
+- From 16:43 the pool reported "block templates still stalled" and rebuilt its template subscription repeatedly; from
+  16:48 to 16:50 the node's RPC refused connections (the restart).
+- Miners kept hashing on the last job, so their submissions were duplicates: 679 were answered as duplicate shares
+  and **not credited** (the pool's normal rule; no shares were credited twice).
+- **Verified:** about nine minutes without any Sedra block from the pool. At the usual rate that is roughly 250-290
+  blocks the pool's miners did not find. **Not measured:** what that means in SDR for each miner. The pool's Kaspa
+  side was not affected (separate node).
