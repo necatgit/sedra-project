@@ -43,6 +43,14 @@ Labels: **Verified** (checked in the code), **Inferred** (reasoned), **Unknown**
 | Optional | `1fe3697b`, `8ae55970`, `d2901794`, `07941fa1`, `6a94fac3` | Shutdown panic, file-descriptor overflow and smaller fixes; `6a94fac3` removes duplicate hashes from `GetBlocks`, which PuddlePool's payout handler calls | Clean cherry-picks (Inferred) |
 | Not applicable | `4e8f3135` and bridge, wallet, Toccata/covenant fixes | Fix regressions or code added after v1.0.1 | — |
 
+## Status
+
+*Update 2026-11-06:* the four must-fix items are done in sedra-rusty `c0b14ccd`. Each has a regression test that
+fails with the original code (two overflow/out-of-bounds panics, the coinbase transaction accepted, the address
+assertion), and the full test suite passes on the test VM (511 passed, 0 failed). Evidence:
+[archive/2026-11-06-security-backports/](archive/2026-11-06-security-backports/README.md). The "should" and
+"optional" items are still open (#29).
+
 ## Every fix is done the same way as the milestones
 
 A regression test that crashes or fails **before** the fix and passes after it, the full test suite on the test VM,
