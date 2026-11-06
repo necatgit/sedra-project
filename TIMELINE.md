@@ -2,7 +2,7 @@
 
 How long each step took from the start of the project, and how much AI work went into it. Regenerated with `python tools/update_timeline.py <transcripts>`; see the notes at the end for what the numbers mean.
 
-**Project start:** 2026-11-05 07:19 UTC (first message of the session in which the project began). **Last update:** 2026-11-06 12:31 UTC.
+**Project start:** 2026-11-05 07:19 UTC (first message of the session in which the project began). **Last update:** 2026-11-06 15:20 UTC.
 
 ## Milestones and closed issues
 
@@ -18,7 +18,7 @@ How long each step took from the start of the project, and how much AI work went
 | 2026-11-06 08:25 | 25 h 06 min | #23 M4: P2P v5 handshake with a local Go sedrad | 30 | 46 k / 27 k |
 | 2026-11-06 08:48 | 25 h 29 min | #25 M6: v2.0.0 rules (difficulty reset, treasury outputs) behave exactly like Go | 37 | 80 k / 54 k |
 | 2026-11-06 09:04 | 25 h 45 min | #27 M8: Mining parity on an isolated test setup | 19 | 26 k / 20 k |
-| (open) | 29 h 12 min | work since the last closed issue | 158 | 421 k / 166 k |
+| (open) | 32 h 01 min | work since the last closed issue | 190 | 1,291 k / 203 k |
 
 A phase counts **all** AI work between two closed issues, not only the issue in that row. For example, the first row includes the project setup (repository, rules, identity), and the M2 row includes setting up the test VM, the build fix for GCC 15 and the coverage measurement. Several issues closed in the same minute share one phase; their AI effort is counted on the first of them.
 
@@ -26,10 +26,10 @@ A phase counts **all** AI work between two closed issues, not only the issue in 
 
 | | Tokens |
 |---|---|
-| Model calls | 710 (of which 242 by research agents) |
-| Fresh input (new text read: messages, files, command output) | 2,590,201 |
-| Output (text and code written by the AI) | 703,491 |
-| Re-read from cache (the conversation so far, read again on every call) | 236,289,053 |
+| Model calls | 742 (of which 242 by research agents) |
+| Fresh input (new text read: messages, files, command output) | 3,460,950 |
+| Output (text and code written by the AI) | 740,582 |
+| Re-read from cache (the conversation so far, read again on every call) | 263,253,319 |
 
 ## Notes
 

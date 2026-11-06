@@ -59,6 +59,13 @@ Both changes pass the full test suite (512 passed, 0 failed). The two pruning-pr
 are held back until after the M5 sync, so they can be tested against a real Sedra proof first. Evidence:
 [archive/2026-11-06-cargo-audit/](archive/2026-11-06-cargo-audit/README.md).
 
+*Update 2026-11-06, evening:* the remaining "should" items are done on branch `hardening`: storage mass without
+division by zero (checked: not a consensus change on Sedra), a 2 MB cap on decoded P2P block messages, and bounded,
+concurrent inbound handshakes. 517 tests pass, each new test fails with the original code, and a devnet test with the
+Go node connecting into the Rust node confirmed the rebuilt inbound path. Upstream's lower overall message limit
+(256 MB) was not taken, because Sedra's pruning proof travels as one message of possibly that size. Evidence:
+[archive/2026-11-06-hardening/](archive/2026-11-06-hardening/README.md). Open: the optional cherry-picks.
+
 ## Every fix is done the same way as the milestones
 
 A regression test that crashes or fails **before** the fix and passes after it, the full test suite on the test VM,

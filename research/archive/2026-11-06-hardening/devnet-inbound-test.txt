@@ -1,0 +1,13 @@
+#### miners
+miner-go.log: found 150, rejected 0
+miner-rust.log: found 150, rejected 0
+#### rust node (inbound handshake)
+2026-11-06 15:18:02.011+00:00 [INFO ] Registering p2p flows for peer 127.0.0.1:44284 for protocol version 5
+2026-11-06 15:18:02.011+00:00 [INFO ] P2P Connected to incoming peer 127.0.0.1:44284 (inbound: 1)
+2026-11-06 15:18:31.254+00:00 [INFO ] GRPC, new incoming connection b14622a5-d8e6-4bcd-9edd-6aba5baec959@127.0.0.1:48926 #1
+2026-11-06 15:19:14.799+00:00 [INFO ] GRPC, new incoming connection 651829c6-ee13-4a1a-b185-800b59628159@127.0.0.1:45410 #1
+2026-11-06 15:19:14.805+00:00 [INFO ] GRPC, new incoming connection 5f60b72b-97d8-41f6-80c4-26c343f4658d@127.0.0.1:45414 #1
+2026-11-06 15:19:14.811+00:00 [INFO ] GRPC, new incoming connection 47c1558d-d408-46c1-93ea-67355fff09bd@127.0.0.1:45428 #1
+#### go node
+2026-11-06 15:18:02.009 [INF] TXMP: P2P Connected to 127.0.0.1:23611
+2026-11-06 15:18:02.011 [INF] PROT: Registering p2p flows for peer <659fdec7b6fb48ccadc890aa2549acae: 127.0.0.1:23611> for protocol version 5
