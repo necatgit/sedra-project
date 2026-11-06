@@ -62,7 +62,9 @@ comparison.
    `isStaged()` checks `len(addedByIndex) != 0` twice and never `len(removedByIndex) != 0`. The same mistake is in
    Kaspa's Go node v0.12.15, which Sedra copied; Kaspa fixed it later (current kaspad has `removedByIndex`). Effect:
    pending changes that consist **only** of index removals are not committed. Those removals normally come together with
-   other changes, so the practical impact is probably small (Inferred), but it is a real defect in the Go node. The Rust
+   other changes, so the practical impact is probably small (Inferred), but it is a real defect in the Go node.
+   *Update 2026-11-06:* checked in the code; it has no practical effect (QUESTIONS.md Q36). The only write to
+   `removedByIndex` is always paired with a write to `removedByHash`, so `isStaged()` still returns true. The Rust
    node has its own implementation and is not affected. Because of this, the Go figures above were measured with
    `-vet=off`; with the check on, that one package fails to build for tests and the total is otherwise unchanged
    (51.0 %).
