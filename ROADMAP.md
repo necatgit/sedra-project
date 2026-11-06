@@ -30,7 +30,7 @@ Code: `necatgit/sedra-rusty`, branch `dev`.
 
 - [x] M0: Sedra's genesis hash reproduced with rusty-kaspa's hashing rules ([research/0004](research/0004-rust-path.md))
 - [x] M1: Sedra network on rusty-kaspa v1.0.1 (#20, `sedra-rusty@7fa343ab`)
-- [ ] M2: Subsidy parity with sedrad (#21)
+- [x] M2: Subsidy parity with sedrad (#21, `sedra-rusty@8aa3d981`, 813 vectors from sedrad)
 - [ ] M3: Real Sedra headers decode and validate offline (#22)
 - [ ] M4: P2P v5 handshake with a local Go node (#23)
 - [ ] M5: Full sync from a local Go node (#24)
