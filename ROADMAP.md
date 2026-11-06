@@ -36,7 +36,7 @@ Code: `necatgit/sedra-rusty`, branch `dev`.
 - [~] M5: Full sync from a local Go node (#24): blocked until the next pruning point move (incomplete DAA window from public peers)
 - [x] M6: v2.0.0 rules behave exactly like Go (#25, `sedra-rusty@4873e9af`)
 - [ ] M7: UTXO commitment and supply parity (#26)
-- [ ] M8: Mining parity on an isolated test setup (#27)
+- [x] M8: Mining parity on an isolated test setup (#27, private devnet, 1400 blocks)
 - [ ] M9: Seven-day soak next to Go nodes (#28)
 
 Step 2: the merged-mining hard fork.

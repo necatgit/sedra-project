@@ -1,0 +1,109 @@
+#### miner-go.log
+2026-11-06 08:59:22.778 [INF] KSMN: Version 2.0.0
+2026-11-06 08:59:22.782 [INF] KSMN: Connected to localhost:22610
+2026-11-06 08:59:22.782 [INF] KSMN: Minimum average time per 10 blocks: 2.5s, smaller minimum time per block: 25ms
+2026-11-06 08:59:22.783 [INF] KSMN: Waiting for the initial template
+2026-11-06 08:59:23.285 [INF] KSMN: Submitting block e3ffe60e13684550104bd8808c9cf03bbb389848f3b89a32527506d5d630af33 to localhost:22610
+2026-11-06 08:59:23.298 [INF] KSMN: Submitting block 0b631d619d15d3c0adb220ed8198999c0f2a1c6fe18c7434deb6528ef4053d78 to localhost:22610
+2026-11-06 08:59:23.314 [INF] KSMN: Submitting block d736c3abb874ef043b13f13e66f265bc81d87543aaf605b19bb7139d01db54fe to localhost:22610
+2026-11-06 08:59:23.344 [INF] KSMN: Submitting block 4baa0769a9422108f6b2201165f1b3baf944b50e4cee9e511c076d51566ac79a to localhost:22610
+2026-11-06 08:59:23.361 [INF] KSMN: Submitting block 2abaa92c057690e5d05730477b633b31acfbb07c616540da317285c3b6facea4 to localhost:22610
+2026-11-06 08:59:23.398 [INF] KSMN: Submitting block a731f42c3fd59806d53101ca8334abaf9634743db0d56081774a16dc773cc3f9 to localhost:22610
+2026-11-06 08:59:23.413 [INF] KSMN: Submitting block 7906993748e432e71afe462be5bd3a6856256ceeae0e2eb1841eb27153068022 to localhost:22610
+2026-11-06 08:59:23.433 [INF] KSMN: Submitting block 76bedfb8bf9a14f79a5524a5b6ef54b6445f8910b7b6f3ff296949b06149e7ed to localhost:22610
+2026-11-06 08:59:23.467 [INF] KSMN: Submitting block f83c20e87c318ed05362ab17afba639f5e51ac107ec90929f67ce8da393a90b0 to localhost:22610
+2026-11-06 08:59:23.484 [INF] KSMN: Submitting block e3def04421b2c5f0a50aa9bdc81a09008966250c32cc0737b826bd362cc110f2 to localhost:22610
+2026-11-06 08:59:25.283 [INF] KSMN: Finished mining 10 blocks in: 2.500661758s. slept for: 1.7756477s
+2026-11-06 08:59:25.304 [INF] KSMN: Submitting block a28f124ce5491ac723939886db085e232eadbb6e246c80a71da6545365f86825 to localhost:22610
+2026-11-06 08:59:25.307 [INF] KSMN: Submitting block 86c7d36c701fe0788d5734ab12dc745d7d7991294388755a7df935668e216d59 to localhost:22610
+2026-11-06 08:59:25.310 [INF] KSMN: Submitting block 67eb1ba53c0f7e4dab477e474a0bb96fb8a6765a9cf2f07a6673b79289e555b9 to localhost:22610
+2026-11-06 08:59:25.334 [INF] KSMN: Submitting block da6e34ac26eb768eca183d8deef25e7f585ddbecb566e85a0ebd78d83a7397a7 to localhost:22610
+2026-11-06 08:59:25.359 [INF] KSMN: Submitting block 0e67b85535bae664b2eb828936c52718012c71b6cf9c4d5dc09d6f2e4d1b668e to localhost:22610
+(Found block lines: 300)
+#### miner-rust.log
+2026-11-06 09:01:04.051 [INF] KSMN: Version 2.0.0
+2026-11-06 09:01:04.055 [INF] KSMN: Connected to localhost:23610
+2026-11-06 09:01:04.055 [INF] KSMN: Minimum average time per 10 blocks: 2.5s, smaller minimum time per block: 25ms
+2026-11-06 09:01:04.055 [INF] KSMN: Waiting for the initial template
+2026-11-06 09:01:04.558 [INF] KSMN: Submitting block ffd48aeaa2525bed8af708041f7e563fee3fbd8c7e083321f9b90a2d829ecddc to localhost:23610
+2026-11-06 09:01:04.568 [INF] KSMN: Submitting block 0b324afbe5a35cfef99d6aa39b7214698fff22e0e28ba3d7565b6c2287331e8a to localhost:23610
+2026-11-06 09:01:04.582 [INF] KSMN: Submitting block 314d54ac79bf508a56c0fa50b3cd0fd355fb200ef5dd4d839102b29f3e781770 to localhost:23610
+2026-11-06 09:01:04.615 [INF] KSMN: Submitting block 008d0fa576ddee57afb2686b9a096083729744279eb1443952dfafeeccc99a6a to localhost:23610
+2026-11-06 09:01:04.639 [INF] KSMN: Submitting block 1403f615352f38dbfd3aa3df447539a47d5fdc85968e2b088981cda4c9e0e018 to localhost:23610
+2026-11-06 09:01:04.660 [INF] KSMN: Submitting block 84e9b5b0f74a4a07a46bf942e1e937f0a323c3c3c203476223db9384f632203e to localhost:23610
+2026-11-06 09:01:04.684 [INF] KSMN: Submitting block f3196de3f1a008f0526fc11262dd014dddcd8e97c930f5b5dab770c89cbb1a28 to localhost:23610
+2026-11-06 09:01:04.722 [INF] KSMN: Submitting block 221f7666034bbb8b8ae2b1639d5fc5e97f3320c5e0e631cdfc4af2b1e9a39ec1 to localhost:23610
+2026-11-06 09:01:04.732 [INF] KSMN: Submitting block 6459ec13503cad15e197dc3168a26f29ccda9f61547b47e7804a51d93e4f8e46 to localhost:23610
+2026-11-06 09:01:04.765 [INF] KSMN: Submitting block e05f87f5045ffcfc037a9ae63755e2d374bf2197193ec00f32081fcd54e26a97 to localhost:23610
+2026-11-06 09:01:06.556 [INF] KSMN: Finished mining 10 blocks in: 2.500931971s. slept for: 1.775700231s
+2026-11-06 09:01:06.558 [INF] KSMN: Submitting block b38af3554d0f2b885d41e4f2729beed1a22f679b227c697f862699cdfa0aa75d to localhost:23610
+2026-11-06 09:01:06.560 [INF] KSMN: Submitting block bb23f116bac14e36b43bb0cd3aab766eb97ce37cf8af1f5849fc7a51c7b129c4 to localhost:23610
+2026-11-06 09:01:06.582 [INF] KSMN: Submitting block 3bcb1a91e0b91e61ab12e95b321c584e985b9e7427bd9ee5aa321d32b2973bf9 to localhost:23610
+2026-11-06 09:01:06.611 [INF] KSMN: Submitting block 865df4dfae0062d102eb346e9b879ce94d8d4090a7df42522debc2f3f9d47986 to localhost:23610
+2026-11-06 09:01:06.636 [INF] KSMN: Submitting block fe7fb6e641e63ccb1f5008941fed38cf50219c8b8f3ac9d543915ffcf2b84d27 to localhost:23610
+(Found block lines: 300)
+#### miner-c-go.log
+2026-11-06 09:03:03.009 [INF] KSMN: Version 2.0.0
+2026-11-06 09:03:03.013 [INF] KSMN: Connected to localhost:22610
+2026-11-06 09:03:03.013 [INF] KSMN: Minimum average time per 10 blocks: 1.25s, smaller minimum time per block: 12.5ms
+2026-11-06 09:03:03.013 [INF] KSMN: Waiting for the initial template
+2026-11-06 09:03:03.521 [INF] KSMN: Submitting block 759a0598b323e0316c9f50dfff383c7346b152e35763610297cc6000254c6dc2 to localhost:22610
+2026-11-06 09:03:03.529 [INF] KSMN: Submitting block cb4ba75842d4f54c7f3f1e017054164742d642998651717272c56359f131c730 to localhost:22610
+2026-11-06 09:03:03.533 [INF] KSMN: Submitting block 8b87be1de9ab86fa06a8cb401fc90429d13712f353d6868859c83ec371cf192d to localhost:22610
+2026-11-06 09:03:03.539 [INF] KSMN: Submitting block 9ef2857783ff0a3e320dc76b6ae6fcbf2002d3dd2587406f7bd8ba483232eabd to localhost:22610
+2026-11-06 09:03:03.567 [INF] KSMN: Submitting block dc8b05984928fa4c2843ee8d8da840b717efad597a4ed1af86e53eed615b62e3 to localhost:22610
+2026-11-06 09:03:03.573 [INF] KSMN: Submitting block 9e10f05e92c15c28359a7b091873999e51efd3f9206c635b283c76510f6102c4 to localhost:22610
+2026-11-06 09:03:03.579 [INF] KSMN: Submitting block d01dc70a7c5bbab89113e133603015bfa96968c93565098e147ef2da888cd076 to localhost:22610
+2026-11-06 09:03:03.593 [INF] KSMN: Submitting block 00841139f5811dc0ee6042fada86804b5f29b977143a352d7ee1ea24f068ba90 to localhost:22610
+2026-11-06 09:03:03.603 [INF] KSMN: Submitting block 4cccc3e333dcfef2a15ddf1bb0751d0a14ceda1bbe85460651f43edccb4c9d2f to localhost:22610
+2026-11-06 09:03:03.616 [INF] KSMN: Submitting block 8a0bc482f51be768cd35d60624190df4366ca367c2757c7d262d291a515418fc to localhost:22610
+2026-11-06 09:03:04.264 [INF] KSMN: Finished mining 10 blocks in: 1.250941503s. slept for: 638.11289ms
+2026-11-06 09:03:04.277 [INF] KSMN: Submitting block 92865727c859dc989ad9255b920dd317fd5cd559b286b28324f88f811ac78ae4 to localhost:22610
+2026-11-06 09:03:04.281 [INF] KSMN: Submitting block 2b80e206dab5b2ae73010d02c8c8862c628bebed1c0d06cb0f5e6f6f6489254c to localhost:22610
+2026-11-06 09:03:04.285 [INF] KSMN: Submitting block d788cea5ab172443cc7357bf66eb4c820a361bfa7e9ce4f267bca8179dffd613 to localhost:22610
+2026-11-06 09:03:04.290 [INF] KSMN: Submitting block fa0b2169fd873929b1f1ef3c0013c81c73f5c310db0e0bd78544c1ddba4af180 to localhost:22610
+2026-11-06 09:03:04.302 [INF] KSMN: Submitting block 972d4b82a29ff3dd404b925a1c46e9af369c04e8af6e35c7377cd48ab0b39e83 to localhost:22610
+(Found block lines: 400)
+#### miner-c-rust.log
+2026-11-06 09:03:03.008 [INF] KSMN: Version 2.0.0
+2026-11-06 09:03:03.013 [INF] KSMN: Connected to localhost:23610
+2026-11-06 09:03:03.013 [INF] KSMN: Minimum average time per 10 blocks: 1.25s, smaller minimum time per block: 12.5ms
+2026-11-06 09:03:03.013 [INF] KSMN: Waiting for the initial template
+2026-11-06 09:03:03.543 [INF] KSMN: Submitting block 30a612e855f1416d61043780084b6aecdbbf998734360db0f1ea416d97308656 to localhost:23610
+2026-11-06 09:03:03.548 [INF] KSMN: Submitting block 2b48d150f42331fbc27ad8af1a696fb72a6e0812b2b44f213c6a48868a00b443 to localhost:23610
+2026-11-06 09:03:03.553 [INF] KSMN: Submitting block 621084f6e731cbca64e7fcfa3a210026cb92c74c0899435e14f345f3d1a6c5b6 to localhost:23610
+2026-11-06 09:03:03.566 [INF] KSMN: Submitting block 1f87ca0d98037d281f8b878e9afb43a05995df0555fcd24d539860235a0e7e5c to localhost:23610
+2026-11-06 09:03:03.577 [INF] KSMN: Submitting block aec40236272c25e7fe62ffc7d06352433bd15e3917783ad606bd5d568759cb60 to localhost:23610
+2026-11-06 09:03:03.589 [INF] KSMN: Submitting block 4bf3d137b845abd7614f8616ace2a92da888d1e6d40b58db646416bf7f2cf73d to localhost:23610
+2026-11-06 09:03:03.624 [INF] KSMN: Submitting block 66c2069629c2c36ab4bc3f76329476bb58704d4d7928dd3994ae989b5b7237a2 to localhost:23610
+2026-11-06 09:03:03.628 [INF] KSMN: Submitting block 2a6e0e8cdd1f4dce1c09af44815104ef8f145c03d474709e77ce1a80dd0dd08f to localhost:23610
+2026-11-06 09:03:03.630 [INF] KSMN: Submitting block 197218f4e2a9438ed0025d57fd01cd2fa0d27e9c73a728837b4015166c3251b4 to localhost:23610
+2026-11-06 09:03:03.639 [INF] KSMN: Submitting block fe965e67c36dbe777942f9e8135a32c5d1241982c47596bd5c998e23410b954e to localhost:23610
+2026-11-06 09:03:04.264 [INF] KSMN: Finished mining 10 blocks in: 1.250328605s. slept for: 612.336666ms
+2026-11-06 09:03:04.266 [INF] KSMN: Submitting block ea91cf95719997bb1f3f0a982bb0bbdae1abb6b035e90c1b1a5016d9c0506faf to localhost:23610
+2026-11-06 09:03:04.268 [INF] KSMN: Submitting block 1d9084096645942145cd7be881740665f016ec077c4164a0b568394f406ab5be to localhost:23610
+2026-11-06 09:03:04.278 [INF] KSMN: Submitting block e3357166392555ecd7eff875ed6fed773ad1b8f16c9a7a29c72bcc9996aa81f5 to localhost:23610
+2026-11-06 09:03:04.291 [INF] KSMN: Submitting block 3204a7445e26c950825a99d0664aba3757a03f9c4aaa7300bef3889dded8bf90 to localhost:23610
+2026-11-06 09:03:04.308 [INF] KSMN: Submitting block dd4d533934fd5dd8b4573e518fbbb9c9c2cf8109d25492ac8b5bbf50c8c2a942 to localhost:23610
+(Found block lines: 400)
+#### systemd units
+[Unit]
+Description=M8 isolated devnet: Sedra Go node (localhost only)
+[Service]
+User=nec
+ExecStart=/data/bin/sedrad --devnet --appdir=/data/devnet/go --listen=127.0.0.1:22611 --rpclisten=127.0.0.1:22610 --nodnsseed --utxoindex --allow-submit-block-when-not-synced
+Nice=10
+[Unit]
+Description=M8 isolated devnet: Sedra Rust node 4873e9a (connects only to the local Go devnet node)
+After=devnet-go.service
+[Service]
+User=nec
+ExecStart=/data/bin/sedra-kaspad-4873e9a --devnet --appdir=/data/devnet/rust --connect=127.0.0.1:22611 --listen=127.0.0.1:23611 --rpclisten=127.0.0.1:23610 --nodnsseed --disable-upnp --enable-unsynced-mining --utxoindex --yes
+Nice=10
+#### go node log (connections, IBD, errors)
+2026-11-06 08:52:50.046 [INF] PROT: Registering p2p flows for peer <ece5f71668a043889b7f803bfa07fd66: 127.0.0.1:36268> for protocol version 5
+2026-11-06 08:59:10.832 [INF] PROT: Registering p2p flows for peer <eee5c49801e34b7f98d3d9bdde6f80cc: 127.0.0.1:34614> for protocol version 5
+#### rust node log (connections, errors)
+2026-11-06 08:52:50.047+00:00 [INFO ] Registering p2p flows for peer 127.0.0.1:22611 for protocol version 5
+2026-11-06 08:59:10.833+00:00 [INFO ] Registering p2p flows for peer 127.0.0.1:22611 for protocol version 5
+#### rust err log lines: 0
