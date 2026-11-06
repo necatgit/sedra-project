@@ -51,6 +51,14 @@ assertion), and the full test suite passes on the test VM (511 passed, 0 failed)
 [archive/2026-11-06-security-backports/](archive/2026-11-06-security-backports/README.md). The "should" and
 "optional" items are still open (#29).
 
+*Update 2026-11-06, afternoon:* also done: the block-count underflow during sync (upstream `cea06453`, sedra-rusty
+`b8182ca8`, regression test fails with the original code), which the project's own sync monitoring would otherwise
+trigger. `cargo audit` was run for the first time: 28 vulnerabilities before, 10 after a small lockfile update on
+branch `deps-security` (`49e314f6`), none of the remaining 10 reachable from the network in the node as run here.
+Both changes pass the full test suite (512 passed, 0 failed). The two pruning-proof checks (`11ffbcc6`, `48b63582`)
+are held back until after the M5 sync, so they can be tested against a real Sedra proof first. Evidence:
+[archive/2026-11-06-cargo-audit/](archive/2026-11-06-cargo-audit/README.md).
+
 ## Every fix is done the same way as the milestones
 
 A regression test that crashes or fails **before** the fix and passes after it, the full test suite on the test VM,

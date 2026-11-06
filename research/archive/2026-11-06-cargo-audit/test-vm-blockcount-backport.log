@@ -1,0 +1,715 @@
+== blockcount-backport 2026-11-06T12:10:28Z b8182ca | Ubuntu 26.04 LTS | rustc 1.99.1 (58cf8f9c3 2026-10-13) | 6 cpus | CXXFLAGS(env)=unset
+    Finished `release` profile [optimized] target(s) in 1m 29s
+build exit: 0 (89s)
+     Running unittests src/lib.rs (target/release/deps/kaspa_addresses-32e50a85b24b9ae0)
+test tests::sedra_wrong_payload_length_is_an_error_test ... ok
+test tests::test_errors ... ok
+test tests::check_into_string ... ok
+test tests::check_from_string ... ok
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_addressmanager-c07eb310ffad7fe3)
+test address_store_with_cache::tests::test_weighted_iterator ... ok
+test address_store_with_cache::tests::test_network_distribution_weighting ... ok
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.49s
+     Running unittests src/lib.rs (target/release/deps/kaspa_alloc-8b839a4a674043a1)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_bip32-57ab89771337177a)
+test xkey::tests::bip32_test_vector_1_xprv ... ok
+test derivation_path::tests::parent ... ok
+test xkey::tests::bip32_test_vector_1_xpub ... ok
+test derivation_path::tests::round_trip ... ok
+test prefix::tests::constants ... ok
+test mnemonic::phrase::tests::tests ... ok
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+     Running unittests src/lib.rs (target/release/deps/kaspa_cli_lib-2ea82d5555d2a093)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/main.rs (target/release/deps/kaspa_cli-6f31cc7cf9d7994a)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_connectionmanager-4612eb6baa8ac0fc)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_consensus-e3173449e2d02eba)
+test consensus::sedra_backport_tests::block_count_estimate_does_not_underflow_during_ibd_test ... ok
+test model::services::reachability::tests::test_iterator_boundaries ... ok
+test model::services::reachability::tests::test_forward_iterator ... ok
+test model::stores::ghostdag::tests::test_mergeset_iterators ... ok
+test model::stores::reachability::tests::test_store_basics ... ok
+test model::stores::utxo_set::tests::test_utxo_key_conversion ... ok
+test model::stores::relations::tests::test_memory_relations_store ... ok
+test model::stores::relations::tests::test_db_relations_store ... ok
+test model::stores::tips::tests::test_update_tips ... ok
+test pipeline::body_processor::body_validation_in_isolation::tests::validate_body_in_isolation_test ... ok
+test pipeline::body_processor::body_validation_in_isolation::tests::merkle_root_missing_parents_known_invalid_test ... ok
+test pipeline::virtual_processor::utxo_validation::tests::test_rayon_reduce_retains_order ... ok
+test processes::coinbase::tests::calc_high_bps_total_rewards_delta ... ok
+test processes::coinbase::tests::modify_payload_test ... ok
+test processes::coinbase::tests::payload_serialization_test ... ok
+test processes::coinbase::tests::sedra_subsidy_parity_with_go_test ... ok
+test processes::coinbase::tests::subsidy_by_month_table_test ... ok
+test processes::coinbase::tests::subsidy_test ... ok
+test processes::coinbase::tests::verify_crescendo_emission_schedule ... ignored, long
+test processes::difficulty::tests::test_base_level_work ... ok
+test processes::difficulty::tests::test_target_levels ... ok
+test processes::parents_builder::tests::test_calc_block_parents ... ok
+test processes::parents_builder::tests::test_multiple_pruned_parents ... ok
+test processes::pruning::tests::assert_pruning_depth_consistency ... ok
+test processes::reachability::inquirer::tests::test_add_early_blocks ... ok
+test processes::reachability::inquirer::tests::test_add_tree_blocks ... ok
+test pipeline::body_processor::body_validation_in_context::tests::validate_body_in_context_test ... ok
+test processes::reachability::interval::tests::test_contains ... ok
+test processes::reachability::interval::tests::test_exponential_fractions ... ok
+test pipeline::virtual_processor::tests::basic_utxo_disqualified_test ... ok
+test processes::reachability::interval::tests::test_interval_basics ... ok
+test processes::reachability::interval::tests::test_split_exact ... ok
+test processes::reachability::interval::tests::test_split_exponential ... ok
+test processes::reachability::reindex::tests::test_count_subtrees ... ok
+test processes::relations::tests::test_delete_level_relations_zero_cache ... ok
+test processes::sedra_relaunch_rules_test::sedra_difficulty_reset_parity_with_go_test ... ok
+test processes::sedra_relaunch_rules_test::sedra_expected_coinbase_includes_treasury_output_test ... ok
+test processes::sedra_relaunch_rules_test::sedra_relaunch_rules_dormant_outside_mainnet_test ... ok
+test processes::sedra_relaunch_rules_test::sedra_treasury_allocation_parity_with_go_test ... ok
+test processes::transaction_validator::tx_validation_in_isolation::tests::validate_tx_in_isolation_test ... ok
+test pipeline::virtual_processor::tests::template_mining_sanity_test ... ok
+test processes::transaction_validator::tx_validation_in_utxo_context::tests::check_empty_incorrect_multi_signature_test ... ok
+test processes::transaction_validator::tx_validation_in_utxo_context::tests::check_incorrect_signature_test ... ok
+test processes::transaction_validator::tx_validation_in_utxo_context::tests::check_first_sig_incorrect_multi_signature_test ... ok
+test processes::transaction_validator::tx_validation_in_utxo_context::tests::check_multi_signature_test ... ok
+test processes::transaction_validator::tx_validation_in_utxo_context::tests::check_non_push_only_script_sig_test ... ok
+test processes::transaction_validator::tx_validation_in_utxo_context::tests::check_signature_test ... ok
+test processes::transaction_validator::tx_validation_in_utxo_context::tests::check_last_sig_incorrect_multi_signature_test ... ok
+test processes::transaction_validator::tx_validation_in_utxo_context::tests::test_sign ... ok
+test pipeline::virtual_processor::tests::antichain_merge_test ... ok
+test pipeline::virtual_processor::tests::double_search_disqualified_test ... ok
+test processes::sedra_real_headers_test::sedra_real_headers_hash_pow_and_levels_test ... ok
+test processes::reachability::inquirer::tests::test_dag_building_and_removal ... ok
+test result: ok. 52 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 3.86s
+     Running unittests src/lib.rs (target/release/deps/kaspa_consensus_client-8ff8f5a94de2f8ba)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_consensus_core-4380ff57fe602da2)
+test config::bps::tests::gen_ghostdag_table ... ignored
+test config::constants::tests::test_difficulty_max_consts ... ok
+test config::genesis::tests::gen_testnet11_genesis ... ok
+test hashing::header::tests::test_hash_blue_work ... ok
+test hashing::header::tests::test_header_hashing ... ok
+test config::genesis::tests::test_genesis_hashes ... ok
+test hashing::tx::tests::test_transaction_hashing ... ok
+test config::genesis::tests::test_sedra_mainnet_genesis ... ok
+test mass::tests::verify_utxo_plurality_limits ... ok
+test hashing::sighash::tests::test_signature_hash ... ok
+test mass::tests::test_storage_mass ... ok
+test network::tests::test_network_id_parse ... ok
+test network::tests::test_network_id_parse_roundtrip ... ok
+test header::tests::test_header_ser ... ok
+test mass::tests::test_storage_mass_pluralities ... ok
+test merkle::tests::merkle_root_test ... ok
+test tests::test_block_hasher ... ok
+test tx::script_public_key::tests::test_spk_borsh ... ok
+test tx::script_public_key::tests::test_spk_serde_json ... ok
+test tx::tests::test_spk_borsh ... ok
+test tx::tests::test_spk_serde_json ... ok
+test tx::tests::test_transaction_json ... ok
+test tx::tests::test_transaction_bincode ... ok
+test utxo::utxo_diff::tests::test_utxo_diff_rules ... ok
+test sign::tests::test_and_verify_sign ... ok
+test result: ok. 24 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_consensus_notify-a774ff25e8f5c33a)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_consensus_wasm-7d40dd97daad1510)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_consensusmanager-1839be2d571594ae)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_core-7b67c6521803b96f)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_daemon-ca7bf54aeaa16b78)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_database-951c290b2cdc9f2b)
+test registry::tests::test_as_ref ... ok
+test key::tests::test_key_display ... ok
+test set_access::tests::test_delete_bucket ... ok
+test access::tests::test_delete_all ... ok
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_grpc_client-7e5f617cb0db11d5)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_grpc_core-bcf1213078d2be52)
+test convert::header::tests::test_rpc_block_level_parents ... ok
+test convert::header::tests::test_rpc_block ... ok
+test convert::message::tests::test_submit_block_response ... ok
+test convert::header::tests::test_rpc_header ... ok
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_grpc_server-302db3a1f215d2e8)
+test tests::client_server::test_client_server_sanity_check ... ok
+test tests::client_server::test_client_server_notifications ... ok
+test tests::client_server::test_client_server_connections ... ok
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.30s
+     Running unittests src/lib.rs (target/release/deps/kaspa_hashes-25f102ed55ee088d)
+test pow_hashers::tests::test_heavy_hash ... ok
+test hashers::tests::test_vectors ... ok
+test tests::test_hash_basics ... ok
+test pow_hashers::tests::test_pow_hash ... ok
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_index_core-214ab4c0a8169239)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_index_processor-6bec4cf0c0782c15)
+test processor::tests::test_pruning_point_utxo_set_override_notification ... ok
+test processor::tests::test_utxos_changed_notification ... ok
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.01s
+     Running unittests src/lib.rs (target/release/deps/kaspa_math-152627c579b5a126)
+test int::tests::test_partial_cmp ... ok
+test int::tests::test_partial_eq ... ok
+test tests::test_overflow_bug ... ok
+test uint::tests::test_saturating_ops ... ok
+test tests::div_rem_u3072_bug ... ok
+test uint::tests::test_mod_inv ... ok
+test uint::tests::test_u128 ... ok
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.17s
+     Running unittests src/lib.rs (target/release/deps/kaspa_merkle-8a84b83b7dea3465)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_metrics_core-38cec75e470762bf)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_mining-019d85d389b9dd48)
+test feerate::tests::test_min_feerate_estimations ... ok
+test feerate::tests::test_zero_values ... ok
+test manager::tests::feerate_stats_inconsistent_test ... ok
+test manager::tests::feerate_stats_test ... ok
+test feerate::tests::test_feerate_estimations ... ok
+test manager::tests::feerate_stats_empty_test ... ok
+test manager_tests::tests::sedra_reject_coinbase_transaction_test ... ok
+test manager_tests::tests::sedra_reject_impossible_outpoint_test ... ok
+test manager_tests::tests::test_double_spend_in_mempool ... ok
+test manager_tests::tests::test_handle_new_block_transactions ... ok
+test manager_tests::tests::test_double_spend_with_block ... ok
+test manager_tests::tests::test_evict ... ok
+test manager_tests::tests::test_high_priority_transactions ... ok
+test manager_tests::tests::test_insert_double_transactions_to_mempool ... ok
+test manager_tests::tests::test_simulated_error_in_consensus ... ok
+test manager_tests::tests::test_revalidate_high_priority_transactions ... ok
+test mempool::check_transaction_standard::tests::test_calc_min_required_tx_relay_fee ... ok
+test manager_tests::tests::test_orphan_transactions ... ok
+test mempool::check_transaction_standard::tests::test_is_transaction_output_dust ... ok
+test mempool::check_transaction_standard::tests::test_check_transaction_standard_in_isolation ... ok
+test manager_tests::tests::test_validate_and_insert_transaction ... ok
+test manager_tests::tests::test_replace_by_fee_in_mempool ... ok
+test block_template::selector::tests::test_reject_transaction ... ok
+test manager_tests::tests::test_modify_block_template ... ok
+test mempool::model::frontier::tests::test_feerate_estimator_with_less_than_block_capacity ... ok
+test mempool::model::frontier::tests::test_highly_irregular_sampling ... ok
+test mempool::model::frontier::tests::test_feerate_estimator ... ok
+test mempool::model::frontier::tests::test_mempool_sampling_small ... ok
+test model::topological_index::tests::test_check_topological_order ... ok
+test model::topological_index::tests::test_topological_index ... ok
+test mempool::model::frontier::tests::test_total_mass_tracking ... ok
+test mempool::model::frontier::tests::test_feerate_estimator_with_low_mass_outliers ... ok
+test mempool::model::frontier::search_tree::tests::test_tree_rev_iter ... ok
+test mempool::model::frontier::tests::test_constant_feerate_estimator ... ok
+test mempool::model::frontier::search_tree::tests::test_feerate_weight_queries ... ok
+test result: ok. 35 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
+     Running unittests src/lib.rs (target/release/deps/kaspa_mining_errors-4b9cd770a47619b3)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_muhash-47b9b605890abc1c)
+test tests::test_parse_muhash_fail ... ok
+test tests::test_serialize ... ok
+test tests::test_empty_hash ... ok
+test tests::test_new_pre_computed ... ok
+test tests::test_vectors_add_remove ... ok
+test tests::test_vectors_combine_subtract ... ok
+test tests::test_vectors_hash ... ok
+test u3072::tests::test_mul ... ok
+test u3072::tests::test_inverse_edge_case ... ok
+test u3072::tests::test_mul_max ... ok
+test u3072::tests::test_inverse ... ok
+test tests::test_vectors_commutativity ... ok
+test u3072::tests::test_muladd3 ... ok
+test u3072::tests::test_muln2 ... ok
+test u3072::tests::test_mulnadd3 ... ok
+test tests::test_random_muhash_arithmetic ... ok
+test u3072::tests::test_mul_div ... ok
+test tests::test_muhash_add_remove ... ok
+test result: ok. 18 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+     Running unittests src/lib.rs (target/release/deps/kaspa_notify-997f7a3d745bdff4)
+test address::tracker::tests::test_index_map_capacity ... ok
+test address::tracker::tests::test_index_map_replace ... ok
+test address::tracker::tests::test_indexes_eq ... ok
+test address::tracker::tests::test_tracker_capacity_and_entry_recycling ... 2026-11-06 12:17:36.725+00:00 [DEBUG] [Collector test] notification stream ended
+test collector::tests::test_collector_from ... 2026-11-06 12:17:36.726+00:00 [TRACE] UtxosChanged broadcast #1 - L0[0] <= N[0]: L0 Mutation { command: Start, scope: UtxosChanged(UtxosChangedScope { addresses: [sedra:qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqs45pz860] }) }
+test broadcaster::tests::test_overall ... ok
+test subscription::array::tests::test_array_builder ... 2026-11-06 12:17:36.727+00:00 [TRACE] [Broadcaster-test-0] sent notification VirtualChainChanged #3 to listener 0
+test subscription::compounded::tests::test_overall_compounding ... 2026-11-06 12:17:36.728+00:00 [TRACE] [Notifier test] stop notifying listener 4202297559425124107 about VirtualChainChangedScope involves 1 mutations
+test broadcaster::tests::test_virtual_chain_changed ... 2026-11-06 12:17:36.728+00:00 [TRACE] [Broadcaster-test-0] sent notification UtxosChanged #7 to listener 2
+test notifier::tests::test_virtual_chain_changed ... ok
+test subscription::context::tests::test_counter_map_size ... ignored, measuring consumed memory
+test subscription::context::tests::test_emptied_hash_set_u32_size ... 2026-11-06 12:17:36.728+00:00 [TRACE] UtxosChangedSubscription: 11 in total (drop none)
+test notifier::tests::test_overall ... 2026-11-06 12:17:36.729+00:00 [TRACE] 14: state = UtxosChangedSubscription { all: 1, indexes: CounterMap({1: 0, 0: 1}) }
+test subscription::context::tests::test_hash_map_u32_u16_size ... 2026-11-06 12:17:36.729+00:00 [TRACE] [Broadcaster-test-0] sent notification UtxosChanged #6 to listener 17862550698092056381
+test subscription::context::tests::test_hash_set_u32_size ... 2026-11-06 12:17:36.729+00:00 [TRACE] 15: remove all 1, revealing a0
+test subscription::context::tests::test_index_set_size ... 2026-11-06 12:17:36.729+00:00 [TRACE] UtxosChangedSubscription: 4 in total (drop all)
+test subscription::context::tests::test_subscription_context_size ... ignored, measuring consumed memory
+test subscription::compounded::tests::test_utxos_changed_compounding ... 2026-11-06 12:17:36.729+00:00 [DEBUG] Memory configuration: UTXO changed events wil be tracked for at most 1835007 addresses
+test subscription::compounded::tests::test_virtual_chain_changed_compounding ... ok2026-11-06 12:17:36.729+00:00 [DEBUG] [Notifier test] start notifying about UtxosChangedScope (all) to listener 6497825143151577736 - test
+test subscription::context::tests::test_vec_u32_size ... 2026-11-06 12:17:36.729+00:00 [TRACE] Broadcasting plan: removed listener 6497825143151577736
+test broadcaster::tests::test_utxos_changed ... ok2026-11-06 12:17:36.729+00:00 [TRACE] Sending notification #7
+test subscription::single::tests::test_overall_mutation ... ok
+test subscription::single::tests::test_virtual_chain_changed_mutation ... 2026-11-06 12:17:36.729+00:00 [TRACE] AddressTracker inc count #0 to 2
+test subscription::single::tests::test_subscription_hash ... 2026-11-06 12:17:36.729+00:00 [DEBUG] [Notifier test] stop notifying about UtxosChangedScope (sedra:qqqszqgpqyqszqgpqyqszqgpqyqszqgpqyqszqgpqyqszqgpqyqsz65egv5zp) to listener 6497825143151577736 - test
+test notifier::tests::test_utxos_changed ... 2026-11-06 12:17:36.730+00:00 [TRACE] UtxosChangedSubscription: 29 in total (drop all)
+test subscription::single::tests::test_utxos_changed_mutation ... ok
+test result: ok. 19 passed; 0 failed; 7 ignored; 0 measured; 0 filtered out; finished in 0.01s
+     Running unittests src/lib.rs (target/release/deps/kaspa_p2p_flows-9bb66b1ffb897334)
+test flow_context::sedra_backport_tests::handshake_time_offset_does_not_overflow_test ... ok
+test v5::txrelay::flow::tests::test_check_tx_throttling ... ok
+test flowcontext::process_queue::tests::test_process_queue ... ok
+test flowcontext::orphans::tests::test_orphan_pool_basics ... ok
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_p2p_lib-646a32a64b8c4bce)
+test convert::net_address::tests::test_netaddress ... ok
+test echo::tests::test_handshake ... ok
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 9.01s
+     Running unittests src/bin/client.rs (target/release/deps/kaspa_p2p_client-255164728bfbbf7f)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/bin/server.rs (target/release/deps/kaspa_p2p_server-574a1865eebda47f)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_p2p_mining-c496ae91e87399df)
+test rules::sync_rate_rule::tests::test_rule_end_to_end_flow ... ok
+test rules::sync_rate_rule::tests::test_sync_rate_window_update_result_when_window_is_filled ... ok
+test rules::sync_rate_rule::tests::test_rule_with_old_finality ... ok
+test rules::sync_rate_rule::tests::test_sync_rate_window_update_result_sample_sizes ... ok
+test rules::sync_rate_rule::tests::test_sync_rate_window_updates ... ok
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_perf_monitor-f8dd21ca651e67df)
+test tests::monitor_works ... ok
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 4.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_pow-816a679864279a74)
+test matrix::tests::test_heavy_hash ... ok
+test matrix::tests::test_generate_matrix ... ok
+test matrix::tests::test_compute_rank ... ok
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_rpc_core-63b0caa0c3a3f815)
+test model::hex_cnv::tests::test_blue_work_type_hex_convert ... ok
+test model::hex_cnv::tests::test_vec_hex_convert ... ok
+test model::hex_cnv::tests::test_smallvec_hex_convert ... ok
+test model::tests::mockery::test_misalignment ... ok
+test model::tests::mockery::test_wrpc_serializer_add_peer_response ... ok
+test model::tests::mockery::test_wrpc_serializer_add_peer_request ... ok
+test model::tests::mockery::test_wrpc_serializer_ban_request ... ok
+test model::tests::mockery::test_wrpc_serializer_ban_response ... ok
+test model::tests::mockery::test_wrpc_serializer_block_count ... ok
+test model::tests::mockery::test_wrpc_serializer_block_added_notification ... ok
+test model::tests::mockery::test_wrpc_serializer_estimate_network_hashes_per_second_request ... ok
+test model::tests::mockery::test_wrpc_serializer_estimate_network_hashes_per_second_response ... ok
+test model::tests::mockery::test_wrpc_serializer_finality_conflict_notification ... ok
+test model::tests::mockery::test_wrpc_serializer_finality_conflict_resolved_notification ... ok
+test model::tests::mockery::test_wrpc_serializer_get_balance_by_address_request ... ok
+test model::tests::mockery::test_wrpc_serializer_get_balance_by_address_response ... ok
+test model::tests::mockery::test_wrpc_serializer_get_balances_by_addresses_request ... ok
+test model::tests::mockery::test_wrpc_serializer_get_balances_by_addresses_response ... ok
+test model::tests::mockery::test_wrpc_serializer_get_block_count_request ... ok
+test model::tests::mockery::test_wrpc_serializer_get_block_dag_info_request ... ok
+test model::tests::mockery::test_wrpc_serializer_get_block_dag_info_response ... ok
+test model::tests::mockery::test_wrpc_serializer_get_block_template_request ... ok
+test model::tests::mockery::test_wrpc_serializer_get_block_request ... ok
+test model::tests::mockery::test_wrpc_serializer_get_block_response ... ok
+test model::tests::mockery::test_wrpc_serializer_get_blocks_request ... ok
+test model::tests::mockery::test_wrpc_serializer_get_coin_supply_request ... ok
+test model::tests::mockery::test_wrpc_serializer_get_block_template_response ... ok
+test model::tests::mockery::test_wrpc_serializer_get_coin_supply_response ... ok
+test model::tests::mockery::test_wrpc_serializer_get_blocks_response ... ok
+test model::tests::mockery::test_wrpc_serializer_get_connected_peer_info_response ... ok
+test model::tests::mockery::test_wrpc_serializer_get_connected_peer_info_request ... ok
+test model::tests::mockery::test_wrpc_serializer_get_connections_request ... ok
+test model::tests::mockery::test_wrpc_serializer_get_connections_response ... ok
+test model::tests::mockery::test_wrpc_serializer_get_current_network_request ... ok
+test model::tests::mockery::test_wrpc_serializer_get_current_network_response ... ok
+test model::tests::mockery::test_wrpc_serializer_get_daa_score_timestamp_estimate_request ... ok
+test model::tests::mockery::test_wrpc_serializer_get_daa_score_timestamp_estimate_response ... ok
+test model::tests::mockery::test_wrpc_serializer_get_headers_request ... ok
+test model::tests::mockery::test_wrpc_serializer_get_headers_response ... ok
+test model::tests::mockery::test_wrpc_serializer_get_info_request ... ok
+test model::tests::mockery::test_wrpc_serializer_get_info_response ... ok
+test model::tests::mockery::test_wrpc_serializer_get_mempool_entries_by_addresses_request ... ok
+test model::tests::mockery::test_wrpc_serializer_get_mempool_entries_request ... ok
+test model::tests::mockery::test_wrpc_serializer_get_mempool_entries_by_addresses_response ... ok
+test model::tests::mockery::test_wrpc_serializer_get_mempool_entries_response ... ok
+test model::tests::mockery::test_wrpc_serializer_get_mempool_entry_request ... ok
+test model::tests::mockery::test_wrpc_serializer_get_mempool_entry_response ... ok
+test model::tests::mockery::test_wrpc_serializer_get_metrics_request ... ok
+test model::tests::mockery::test_wrpc_serializer_get_peer_addresses_request ... ok
+test model::tests::mockery::test_wrpc_serializer_get_metrics_response ... ok
+test model::tests::mockery::test_wrpc_serializer_get_peer_addresses_response ... ok
+test model::tests::mockery::test_wrpc_serializer_get_server_info_request ... ok
+test model::tests::mockery::test_wrpc_serializer_get_server_info_response ... ok
+test model::tests::mockery::test_wrpc_serializer_get_sink_blue_score_request ... ok
+test model::tests::mockery::test_wrpc_serializer_get_sink_blue_score_response ... ok
+test model::tests::mockery::test_wrpc_serializer_get_sink_request ... ok
+test model::tests::mockery::test_wrpc_serializer_get_sink_response ... ok
+test model::tests::mockery::test_wrpc_serializer_get_subnetwork_request ... ok
+test model::tests::mockery::test_wrpc_serializer_get_subnetwork_response ... ok
+test model::tests::mockery::test_wrpc_serializer_get_sync_status_request ... ok
+test model::tests::mockery::test_wrpc_serializer_get_sync_status_response ... ok
+test model::tests::mockery::test_wrpc_serializer_get_system_info_request ... ok
+test model::tests::mockery::test_wrpc_serializer_get_system_info_response ... ok
+test model::tests::mockery::test_wrpc_serializer_get_utxos_by_addresses_request ... ok
+test model::tests::mockery::test_wrpc_serializer_get_utxos_by_addresses_response ... ok
+test model::tests::mockery::test_wrpc_serializer_get_virtual_chain_from_block_response ... ok
+test model::tests::mockery::test_wrpc_serializer_get_virtual_chain_from_block_request ... ok
+test model::tests::mockery::test_wrpc_serializer_new_block_template_notification ... ok
+test model::tests::mockery::test_wrpc_serializer_notify_block_added_request ... ok
+test model::tests::mockery::test_wrpc_serializer_notify_finality_conflict_request ... ok
+test model::tests::mockery::test_wrpc_serializer_notify_block_added_response ... ok
+test model::tests::mockery::test_wrpc_serializer_notify_finality_conflict_resolved_request ... ok
+test model::tests::mockery::test_wrpc_serializer_notify_finality_conflict_resolved_response ... ok
+test model::tests::mockery::test_wrpc_serializer_notify_finality_conflict_response ... ok
+test model::tests::mockery::test_wrpc_serializer_notify_new_block_template_request ... ok
+test model::tests::mockery::test_wrpc_serializer_notify_new_block_template_response ... ok
+test model::tests::mockery::test_wrpc_serializer_notify_pruning_point_utxo_set_override_request ... ok
+test model::tests::mockery::test_wrpc_serializer_notify_pruning_point_utxo_set_override_response ... ok
+test model::tests::mockery::test_wrpc_serializer_notify_sink_blue_score_changed_request ... ok
+test model::tests::mockery::test_wrpc_serializer_notify_sink_blue_score_changed_response ... ok
+test model::tests::mockery::test_wrpc_serializer_notify_utxos_changed_request ... ok
+test model::tests::mockery::test_wrpc_serializer_notify_utxos_changed_response ... ok
+test model::tests::mockery::test_wrpc_serializer_notify_virtual_chain_changed_request ... ok
+test model::tests::mockery::test_wrpc_serializer_notify_virtual_daa_score_changed_request ... ok
+test model::tests::mockery::test_wrpc_serializer_notify_virtual_chain_changed_response ... ok
+test model::tests::mockery::test_wrpc_serializer_notify_virtual_daa_score_changed_response ... ok
+test model::tests::mockery::test_wrpc_serializer_ping_request ... ok
+test model::tests::mockery::test_wrpc_serializer_ping_response ... ok
+test model::tests::mockery::test_wrpc_serializer_pruning_point_utxo_set_override_notification ... ok
+test model::tests::mockery::test_wrpc_serializer_resolve_finality_conflict_request ... ok
+test model::tests::mockery::test_wrpc_serializer_resolve_finality_conflict_response ... ok
+test model::tests::mockery::test_wrpc_serializer_shutdown_request ... ok
+test model::tests::mockery::test_wrpc_serializer_shutdown_response ... ok
+test model::tests::mockery::test_wrpc_serializer_sink_blue_score_changed_notification ... ok
+test model::tests::mockery::test_wrpc_serializer_submit_block_response ... ok
+test model::tests::mockery::test_wrpc_serializer_submit_block_request ... ok
+test model::tests::mockery::test_wrpc_serializer_submit_transaction_request ... ok
+test model::tests::mockery::test_wrpc_serializer_submit_transaction_response ... ok
+test model::tests::mockery::test_wrpc_serializer_subscribe_response ... ok
+test model::tests::mockery::test_wrpc_serializer_unban_request ... ok
+test model::tests::mockery::test_wrpc_serializer_unban_response ... ok
+test model::tests::mockery::test_wrpc_serializer_unsubscribe_response ... ok
+test model::tests::mockery::test_wrpc_serializer_utxos_changed_notification ... ok
+test model::tests::mockery::test_wrpc_serializer_virtual_chain_changed_notification ... ok
+test model::tests::mockery::test_wrpc_serializer_virtual_daa_score_changed_notification ... ok
+test result: ok. 105 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_rpc_macros-f49cd6e6cba11af3)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_rpc_service-5eb8a47c5097bc0c)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_testing_integration-00c239ae8f5fbae4)
+test consensus_integration_tests::consensus_sanity_test ... ok
+test consensus_integration_tests::goref_mainnet_concurrent_test ... ignored, long
+test consensus_integration_tests::goref_mainnet_test ... ignored, long
+test consensus_integration_tests::bounded_merge_depth_test ... ok
+test consensus_integration_tests::block_window_test ... ok
+test consensus_integration_tests::goref_tx_big_concurrent_test ... ignored
+test consensus_integration_tests::goref_tx_big_test ... ignored
+test consensus_integration_tests::ghostdag_test ... ok
+test consensus_integration_tests::goref_tx_small_concurrent_test ... ok
+test consensus_integration_tests::header_in_isolation_validation_test ... ok
+test consensus_integration_tests::incest_test ... ok
+test consensus_integration_tests::known_invalid_test ... ok
+test consensus_integration_tests::difficulty_test ... ok
+test consensus_integration_tests::median_time_test ... ok
+test consensus_integration_tests::missing_parents_test ... ok
+test consensus_integration_tests::mergeset_size_limit_test ... ok
+test consensus_integration_tests::payload_test ... ok
+test consensus_integration_tests::goref_tx_small_test ... ok
+test consensus_integration_tests::goref_custom_pruning_depth_test ... ok
+test consensus_integration_tests::sedra_difficulty_reset_wiring_test ... ok
+test consensus_integration_tests::selected_chain_test ... ok
+test consensus_integration_tests::staging_consensus_test ... ok
+test consensus_integration_tests::payload_activation_test ... ok
+test consensus_integration_tests::run_kip10_activation_test ... ok
+test consensus_pipeline_tests::test_concurrent_pipeline ... ok
+test consensus_integration_tests::runtime_sig_op_counting_test ... ok
+test consensus_integration_tests::goref_notx_concurrent_test ... ok
+test consensus_pipeline_tests::test_concurrent_pipeline_random ... ok
+test consensus_integration_tests::test_noattack_json ... ok
+test consensus_integration_tests::test_attack_json ... ok
+test daemon_integration_tests::daemon_cleaning_test ... ok
+test consensus_integration_tests::goref_notx_test ... ok
+test daemon_integration_tests::daemon_sanity_test ... ok
+test rpc_tests::sanity_test ... ok
+test daemon_integration_tests::daemon_mining_test ... ok
+test daemon_integration_tests::daemon_utxos_propagation_test ... ok
+test result: ok. 32 passed; 0 failed; 4 ignored; 0 measured; 0 filtered out; finished in 7.92s
+     Running unittests src/lib.rs (target/release/deps/kaspa_txscript-82087734551af870)
+test opcodes::test::kip10::test_input_amount ... ok
+test data_stack::tests::test_deserialize ... ok
+test data_stack::tests::test_serialize ... ok
+test opcodes::test::kip10::test_input_spk_basic ... ok
+test opcodes::test::kip10::test_counts ... ok
+test opcodes::test::kip10::test_input_spk_same ... ok
+test opcodes::test::kip10::test_op_input_output_count ... ok
+test opcodes::test::kip10::test_output_amount ... ok
+test opcodes::test::kip10::test_output_spk ... ok
+test opcodes::test::kip10::test_input_index ... ok
+test opcodes::test::kip10::test_input_spk_different ... ok
+test opcodes::test::kip10::test_unary_introspection_ops ... ok
+test opcodes::test::test_op2drop ... ok
+test opcodes::test::test_binary_num_ops ... ok
+test opcodes::test::test_op2dup ... ok
+test opcodes::test::test_logical_ops ... ok
+test opcodes::test::test_op2over ... ok
+test opcodes::test::test_op2rot ... ok
+test opcodes::test::test_op3dup ... ok
+test opcodes::test::test_opblake2b ... ok
+test opcodes::test::test_opchecklocktimeverify ... ok
+test opcodes::test::test_op2swap ... ok
+test opcodes::test::test_opchecksequencerify ... ok
+test opcodes::test::test_opcode_disabled ... ok
+test opcodes::test::test_opcode_invalid ... ok
+test opcodes::test::test_opcode_reserved ... ok
+test opcodes::test::test_opdrop ... ok
+test opcodes::test::test_opdepth ... ok
+test opcodes::test::test_opdup ... ok
+test opcodes::test::test_opequalverify ... ok
+test opcodes::test::test_opifdup ... ok
+test opcodes::test::test_opnip ... ok
+test opcodes::test::test_opnop ... ok
+test opcodes::test::test_oppick ... ok
+test opcodes::test::test_opover ... ok
+test opcodes::test::test_oprot ... ok
+test opcodes::test::test_opreturn ... ok
+test opcodes::test::test_oproll ... ok
+test opcodes::test::test_opsha256 ... ok
+test opcodes::test::test_opsize ... ok
+test opcodes::test::test_opswap ... ok
+test opcodes::test::test_optuck ... ok
+test opcodes::test::test_opverify ... ok
+test opcodes::test::test_opwithin ... ok
+test opcodes::test::test_push_num ... ok
+test opcodes::test::test_uniary_num_ops ... ok
+test opcodes::test::test_push_data ... ok
+test script_builder::tests::test_add_i64 ... ok
+test script_builder::tests::test_add_op ... ok
+test script_builder::tests::test_exceed_max_script_size ... ok
+test script_builder::tests::test_u64 ... ok
+test script_class::tests::test_script_class_from_script ... ok
+test standard::multisig::tests::test_empty_keys ... ok
+test script_builder::tests::test_add_data ... ok
+test standard::multisig::tests::test_multisig_not_enough ... ok
+test standard::multisig::tests::test_multisig_wrong_signer ... ok
+test standard::multisig::tests::test_too_many_required_sigs ... ok
+test standard::tests::test_extract_address_and_encode_script ... ok
+test tests::test_check_error_condition ... ok
+test tests::test_check_nestedif ... ok
+test tests::test_check_opelse ... ok
+test tests::test_check_opnotif ... ok
+test tests::test_check_pub_key_encode ... ok
+test tests::test_check_opif ... ok
+test standard::multisig::tests::test_multisig_2_2 ... ok
+test tests::test_get_sig_op_count ... ok
+test tests::test_is_unspendable ... ok
+test standard::multisig::tests::test_multisig_1_2 ... ok
+test tests::test_runtime_sig_op_count ... ok
+test bitcoind_tests::test_bitcoind_tests ... ok
+test result: ok. 70 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.21s
+     Running unittests src/lib.rs (target/release/deps/kaspa_txscript_errors-c907366f5013653a)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_utils-0ecff8e3d7e2d261)
+test expiring_cache::tests::test_expiring_cache ... ignored
+test any::tests::test_type_name_short ... ok
+test git::test_git_hash ... ok
+test fd_budget::tests::test_acquire_and_release_guards ... ok
+test hex::tests::test_smallvec_hex_convert ... ok
+test hex::tests::test_vec_hex_convert ... ok
+test networking::tests::test_contextual_address_ser ... ok
+test networking::tests::test_ip_address_borsh ... ok
+test networking::tests::test_net_address_from_str ... ok
+test networking::tests::test_is_publicly_routable ... ok
+test networking::tests::test_peer_id_borsh ... ok
+test networking::tests::test_prefix_bucket ... ok
+test sync::rwlock::tests::test_writer_reentrance ... ok
+test sync::rwlock::tests::test_readers_preferred ... ok
+test result: ok. 13 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 1.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_utils_tower-aeb4f6e1543e0826)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_utxoindex-ae9c896a3fcbaa66)
+test index::tests::test_utxoindex ... ok
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.55s
+     Running unittests src/main.rs (target/release/deps/kaspa_wallet-d665a23bf51369d8)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_wallet_cli_wasm-a99c70a290ec2bc2)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_wallet_core-e201ba66a0aaa9d4)
+test account::kind::tests::test_storage_account_kind ... ok
+test account::variants::multisig::tests::test_storage_multisig ... ok
+test account::variants::bip32watch::tests::test_storage_bip32watch ... ok
+test account::variants::bip32::tests::test_storage_bip32 ... ok
+test compat::gen1::test::deser_golang_wallet_test ... ok
+test compat::gen0::test_v0_keydata ... ok
+test account::tests::gen0_prv_keys ... ok
+test compat::gen0::test_v0_padding ... ok
+test message::tests::test_basic_sign_and_verify_sign ... ok
+test message::tests::test_basic_sign_without_rand_twice_should_get_same_signature ... ok
+test message::tests::test_fail_verify ... ok
+test message::tests::test_kanji_sign_and_verify_sign ... ok
+test message::tests::test_long_text_sign_and_verify_sign ... ok
+test message::tests::test_sign_and_verify_test_case_0 ... ok
+test message::tests::test_sign_and_verify_test_case_1 ... ok
+test message::tests::test_sign_and_verify_test_case_2 ... ok
+test message::tests::test_sign_and_verify_test_case_3 ... ok
+test storage::account::tests::test_storage_account_storage_wrapper ... ok
+test storage::keydata::assoc::tests::test_assoc_prv_key_data_ids ... ok
+test storage::keydata::data::tests::test_storage_prv_key_data ... ok
+test storage::local::payload::tests::test_storage_wallet_payload ... ok
+test encryption::tests::test_wallet_argon2 ... ok
+test storage::local::wallet::tests::test_storage_wallet_storage ... ok
+test compat::gen1::test::decrypt_go_encrypted_mnemonics_test ... ok
+test encryption::tests::test_wallet_encrypt_decrypt ... ok
+test tx::generator::test::test_generator_dust_1_1 ... ok
+test tx::generator::test::test_generator_empty_utxo_noop ... ok
+test tx::generator::test::test_generator_fan_out_1 ... ok
+test compat::gen1::test::import_golang_single_wallet_test ... ok
+test tx::generator::test::test_generator_inputs_100_outputs_1_fees_exclude_insufficient_funds ... ok
+test tx::generator::test::test_generator_inputs_100_outputs_1_fees_exclude_success ... ok
+test tx::generator::test::test_generator_inputs_100_outputs_1_fees_include_success ... ok
+test tx::generator::test::test_generator_inputs_1k_outputs_2_fees_exclude ... ok
+test tx::generator::test::test_generator_fee_rate_compound_200k_10kas_transactions ... ok
+test tx::generator::test::test_generator_inputs_2_outputs_2_fees_exclude ... ok
+test tx::generator::test::test_generator_compound_100k_random_transactions ... ok
+test tx::generator::test::test_generator_random_outputs ... ok
+test tx::generator::test::test_generator_sweep_single_utxo_noop ... ok
+test tx::generator::test::test_generator_sweep_two_utxos ... ok
+test tx::generator::test::test_generator_sweep_two_utxos_with_priority_fees_rejection ... ok
+test utxo::test::test_utxo_generator_empty_utxo_noop ... ok
+test utxo::test::test_utxo_subsystem_bootstrap ... ok
+test tx::generator::test::test_generator_inputs_32k_outputs_2_fees_exclude ... ok
+test storage::tests::test_storage_wallet_store_load ... ok
+test tx::generator::test::test_generator_compound_200k_10kas_transactions ... ok
+test tx::generator::test::test_generator_inputs_250k_outputs_2_sweep ... ok
+test compat::gen1::test::import_golang_multisig_v1_wallet_test ... ok
+test result: ok. 47 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.44s
+     Running unittests src/lib.rs (target/release/deps/kaspa_wallet_keys-79e8605dd06b1770)
+test derivation::gen1::hd::tests::address_test_by_ktrv ... ok
+test derivation::gen0::hd::tests::generate_kaspatest_addresses ... ok
+test derivation::gen1::hd::tests::generate_addresses_by_range ... ok
+test derivation::gen1::hd::tests::generate_kaspatest_addresses ... ok
+test derivation::gen1::hd::tests::wallet_from_mnemonic ... ok
+test derivation::gen0::hd::tests::hd_wallet_gen0 ... ok
+test derivation::gen0::hd::tests::generate_addresses_by_range ... ok
+test derivation::gen0::hd::tests::hd_wallet_gen0_set_key ... ok
+test derivation::gen1::hd::tests::hd_wallet_gen1 ... ok
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+     Running unittests src/lib.rs (target/release/deps/kaspa_wallet_macros-5883c483afaa1957)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_wasm_core-877859bdffbb4106)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_wrpc_client-c80dd233c85566c2)
+test parse::tests::numbers_domain ... ok
+test parse::tests::parse_host_domain ... ok
+test parse::tests::parse_host_domain_with_port ... ok
+test parse::tests::parse_host_hostname ... ok
+test parse::tests::parse_host_domain_with_port_and_scheme ... ok
+test parse::tests::parse_host_hostname_with_port_and_scheme ... ok
+test parse::tests::parse_host_hostname_with_port ... ok
+test parse::tests::parse_host_ip_v4_invalid ... ok
+test parse::tests::parse_host_ip_v4_loopback ... ok
+test parse::tests::parse_host_ip_v4_with_port ... ok
+test parse::tests::parse_host_ip_v4_with_port_and_loopback ... ok
+test parse::tests::parse_host_ip_v6_invalid ... ok
+test parse::tests::parse_host_ip_v6_loopback ... ok
+test parse::tests::parse_host_ip_v6_loopback_brackets ... ok
+test parse::tests::parse_host_ip_v6_loopback_with_port ... ok
+test parse::tests::parse_host_ip_v6_loopback_with_port_and_scheme ... ok
+test parse::tests::should_fail_empty ... ok
+test parse::tests::should_fail_invalid_port ... ok
+test parse::tests::should_fail_only_numbers_domain ... ok
+test parse::tests::should_fail_only_port ... ok
+test parse::tests::should_fail_only_scheme ... ok
+test parse::tests::wrpc_parse_mixed_subdomains ... ok
+test resolver::tests::test_resolver_config_1 ... ok
+test resolver::tests::test_resolver_config_2 ... ok
+test result: ok. 24 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/main.rs (target/release/deps/kaspa_wrpc_example_subscriber-f6ac7b77f038d089)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/main.rs (target/release/deps/kaspa_wrpc_proxy-ee298e62ede65f10)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_wrpc_server-1f5e1dbf86e986c6)
+test address::tests::test_wrpc_net_address_from_str ... ok
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/main.rs (target/release/deps/kaspa_wrpc_simple_client_example-8bbeb3c15035e370)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspa_wrpc_wasm-df93cb511f5034d6)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/lib.rs (target/release/deps/kaspad_lib-c96801224386798e)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/main.rs (target/release/deps/kaspad-b548fe4b271197de)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/main.rs (target/release/deps/rothschild-99dcd5f8eeedb578)
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+     Running unittests src/main.rs (target/release/deps/simpa-fe3972fab7bd63b9)
+test tests::test_pruning_via_simpa ... ok
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 7.90s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test components/addressmanager/src/lib.rs - address_store_with_cache::Store::iterate_prioritized_random_addresses (line 420) ... ignored
+test result: ok. 0 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test consensus/core/src/mass/mod.rs - mass::UtxoCell (line 115) ... ignored
+test consensus/core/src/mass/mod.rs - mass::calc_storage_mass (line 298) ... ignored
+test consensus/core/src/mass/mod.rs - mass::calc_storage_mass (line 311) ... ignored
+test consensus/core/src/mass/mod.rs - mass::calc_storage_mass (line 319) ... ignored
+test result: ok. 0 passed; 0 failed; 4 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test core/src/assert.rs - assert::assert_match (line 21) ... ignored
+test result: ok. 0 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test rpc/grpc/client/src/lib.rs - Inner (line 380) ... ok
+test rpc/grpc/client/src/lib.rs - Inner (line 375) ... ok
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.51s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test protocol/p2p/src/common.rs - common::dequeue (line 211) ... ignored
+test protocol/p2p/src/common.rs - common::dequeue_with_timeout (line 184) ... ignored
+test protocol/p2p/src/common.rs - common::make_message (line 115) ... ignored
+test protocol/p2p/src/common.rs - common::unwrap_message (line 149) ... ignored
+test result: ok. 0 passed; 0 failed; 4 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test crypto/txscript/src/script_builder.rs - script_builder::ScriptBuilder (line 52) ... ok
+test crypto/txscript/src/runtime_sig_op_counter.rs - runtime_sig_op_counter::RuntimeSigOpCounter::consume_sig_op (line 30) ... ok
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.72s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test utils/src/lib.rs - serde_bytes_fixed_ref (line 176) ... ok
+test utils/src/lib.rs - serde_bytes_fixed (line 108) ... ok
+test utils/src/lib.rs - serde_bytes_fixed_ref (line 134) ... ok
+test utils/src/lib.rs - serde_bytes_optional (line 79) ... ok
+test utils/src/lib.rs - serde_bytes (line 23) ... ok
+test utils/src/lib.rs - serde_bytes (line 49) ... ok
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.46s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test kaspad/src/daemon.rs - daemon::create_core_with_runtime (line 214) ... ignored
+test result: ok. 0 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test exit: 0 (379s)
+== end 2026-11-06T12:18:16Z

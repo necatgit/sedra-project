@@ -1,0 +1,93 @@
+## before (sedra-rusty c0b14cc, cargo-audit 0.22.2, 2026-11-06)
+vulnerabilities: 28 | dependencies in lockfile: 604
+VULN | bytes | 1.7.2 | RUSTSEC-2026-0007 | - | Integer overflow in `BytesMut::reserve` | >=1.11.1
+VULN | crossbeam-channel | 0.5.13 | RUSTSEC-2025-0024 | - | crossbeam-channel: double free on Drop | >=0.5.15
+VULN | crossbeam-epoch | 0.9.18 | RUSTSEC-2026-0204 | - | Invalid pointer dereference in `fmt::Pointer` impl for `Atomic` and `Shared` whe | >=0.9.20
+VULN | h2 | 0.3.26 | RUSTSEC-2026-0258 | - | h2 unbounded empty DATA frames | >=0.4.16
+VULN | h2 | 0.4.6 | RUSTSEC-2026-0258 | - | h2 unbounded empty DATA frames | >=0.4.16
+VULN | hashbrown | 0.15.0 | RUSTSEC-2024-0402 | - | Borsh serialization of HashMap is non-canonical | >=0.15.1
+VULN | idna | 0.5.0 | RUSTSEC-2024-0421 | - | `idna` accepts Punycode labels that do not produce any non-ASCII when decoded | >=1.0.0
+VULN | libz-sys | 1.1.20 | RUSTSEC-2026-0418 | - | libz-sys build script leaks environment variables in the build directory | >=1.1.31
+VULN | quinn-proto | 0.11.8 | RUSTSEC-2026-0037 | CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/V | Denial of service in Quinn endpoints | >=0.11.14
+VULN | quinn-proto | 0.11.8 | RUSTSEC-2026-0185 | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N |  Remote memory exhaustion in quinn-proto from unbounded out-of-order stream reas | >=0.11.15
+VULN | quinn-proto | 0.11.8 | RUSTSEC-2026-0338 | - | Remote peer can panic quinn-proto with zero-length STREAM frames during unordere | >=0.11.18
+VULN | quinn-proto | 0.11.8 | RUSTSEC-2026-0339 | - | Unbounded growth of pending connection ID retirements in quinn-proto | >=0.11.17
+VULN | quinn-proto | 0.11.8 | RUSTSEC-2026-0340 | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N | Peer minimum ACK delay can panic quinn-proto when ACK_FREQUENCY transmission is  | >=0.11.18
+VULN | quinn-proto | 0.11.8 | RUSTSEC-2026-0342 | - | Zero-length DATAGRAM frames bypass the receive buffer limit in quinn-proto | >=0.11.17
+VULN | ring | 0.17.8 | RUSTSEC-2025-0009 | - | Some AES functions may panic when overflow checking is enabled. | >=0.17.12
+VULN | rustls | 0.23.14 | RUSTSEC-2024-0399 | - | rustls network-reachable panic in `Acceptor::accept` | >=0.23.18
+VULN | rustls | 0.23.14 | RUSTSEC-2026-0285 | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N | TLS 1.3 handshake messages incorrectly accepted across encryption level boundari | >=0.23.45
+VULN | rustls | 0.23.14 | RUSTSEC-2026-0346 | CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:U/C:H/I:N | `Debug` impls for client session values expose TLS secrets | >=0.23.46
+VULN | rustls | 0.23.14 | RUSTSEC-2026-0348 | CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N | Brotli certificate decompression can allocate up to 1 GiB before authentication | >=0.23.46
+VULN | rustls | 0.23.14 | RUSTSEC-2026-0349 | CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N | Unauthenticated ServerHello can downgrade later connections to classical key exc | >=0.23.46
+VULN | rustls-webpki | 0.102.8 | RUSTSEC-2026-0049 | - | CRLs not considered authoritative by Distribution Point due to faulty matching l | >=0.103.10
+VULN | rustls-webpki | 0.102.8 | RUSTSEC-2026-0098 | - | Name constraints for URI names were incorrectly accepted | >=0.103.12, <0.104.0-alpha.1,>=0.104.0-a
+VULN | rustls-webpki | 0.102.8 | RUSTSEC-2026-0099 | - | Name constraints were accepted for certificates asserting a wildcard name | >=0.103.12, <0.104.0-alpha.1,>=0.104.0-a
+VULN | rustls-webpki | 0.102.8 | RUSTSEC-2026-0104 | - | Reachable panic in certificate revocation list parsing | >=0.103.13, <0.104.0-alpha.1,>=0.104.0-a
+VULN | rustls-webpki | 0.102.8 | RUSTSEC-2026-0382 | - | Certificate verification may accept distrusted intermediates | >=0.103.16, <0.104.0-alpha.1,>=0.104.0-a
+VULN | time | 0.3.36 | RUSTSEC-2026-0009 | CVSS:4.0/AV:N/AC:H/AT:N/PR:L/UI:A/VC:N/V | Denial of Service via Stack Exhaustion | >=0.3.47
+VULN | webpki-roots | 0.26.6 | RUSTSEC-2026-0381 | - | Bundled root certificates allow trust in distrusted emSign intermediates | >=1.0.10
+VULN | zstd-sys | 2.0.13+zstd.1.5.6 | RUSTSEC-2026-0410 | - | WebAssembly allocator shim corrupts memory on allocation failure | >=2.1.2
+WARN[unmaintained] | ansi_term 0.12.1 | RUSTSEC-2021-0139 | ansi_term is Unmaintained
+WARN[unmaintained] | async-std 1.13.0 | RUSTSEC-2025-0052 | async-std has been discontinued
+WARN[unmaintained] | atty 0.2.14 | RUSTSEC-2024-0375 | `atty` is unmaintained
+WARN[unmaintained] | bincode 1.3.3 | RUSTSEC-2025-0141 | Bincode is unmaintained
+WARN[unmaintained] | derivative 2.2.0 | RUSTSEC-2024-0388 | `derivative` is unmaintained; consider using an alternative
+WARN[unmaintained] | instant 0.1.13 | RUSTSEC-2024-0384 | `instant` is unmaintained
+WARN[unmaintained] | mach 0.3.2 | RUSTSEC-2020-0168 | mach is unmaintained
+WARN[unmaintained] | paste 1.0.15 | RUSTSEC-2024-0436 | paste - no longer maintained
+WARN[unmaintained] | pin-utils 0.1.0 | RUSTSEC-2026-0441 | `pin-utils` is unmaintained
+WARN[unmaintained] | proc-macro-error 1.0.4 | RUSTSEC-2024-0370 | proc-macro-error is unmaintained
+WARN[unmaintained] | rustls-pemfile 2.2.0 | RUSTSEC-2025-0134 | rustls-pemfile is unmaintained
+WARN[unmaintained] | unsafe-libyaml 0.2.11 | RUSTSEC-2024-0449 | unsafe-libyaml is unmaintained
+WARN[unsound] | anyhow 1.0.97 | RUSTSEC-2026-0190 | Unsoundness in `Error::downcast_mut()`
+WARN[unsound] | atty 0.2.14 | RUSTSEC-2021-0145 | Potential unaligned read
+WARN[unsound] | event-listener 5.3.1 | RUSTSEC-2026-0221 | `event-listener` allows `!Send` tags to cross thread boundaries via `S
+WARN[unsound] | faster-hex 0.9.0 | RUSTSEC-2026-0306 | `hex_decode_unchecked` AVX2 path reads past `src`
+WARN[unsound] | keccak 0.1.5 | RUSTSEC-2026-0012 | Unsoundness in opt-in ARMv8 assembly backend for `keccak`
+WARN[unsound] | linkme 0.2.10 | RUSTSEC-2024-0407 | Fails to ensure slice elements match the slice's declared type
+WARN[unsound] | lru 0.9.0 | RUSTSEC-2026-0253 | Potential use-after-free due to lack of panic safety in `LruCache::pop
+WARN[unsound] | lru 0.9.0 | RUSTSEC-2026-0002 | `IterMut` violates Stacked Borrows by invalidating internal pointer
+WARN[unsound] | rand 0.8.5 | RUSTSEC-2026-0097 | Rand is unsound with a custom logger using `rand::rng()`
+WARN[unsound] | tokio 1.40.0 | RUSTSEC-2025-0023 | Broadcast channel calls clone in parallel, but does not require `Sync`
+WARN[unsound] | tokio 1.40.0 | RUSTSEC-2026-0386 | `AsyncFd::new` and related constructors violate I/O safety
+WARN[yanked] | crossbeam-channel 0.5.13 | - | 
+WARN[yanked] | keccak 0.1.5 | - | 
+WARN[yanked] | spin 0.9.8 | - | 
+
+## after (deps-security 49e314f6)
+vulnerabilities: 10 | dependencies in lockfile: 606
+VULN | h2 | 0.3.26 | RUSTSEC-2026-0258 | - | h2 unbounded empty DATA frames | >=0.4.16
+VULN | idna | 0.5.0 | RUSTSEC-2024-0421 | - | `idna` accepts Punycode labels that do not produce any non-ASCII when decoded | >=1.0.0
+VULN | quinn-proto | 0.11.8 | RUSTSEC-2026-0037 | CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/V | Denial of service in Quinn endpoints | >=0.11.14
+VULN | quinn-proto | 0.11.8 | RUSTSEC-2026-0185 | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N |  Remote memory exhaustion in quinn-proto from unbounded out-of-order stream reas | >=0.11.15
+VULN | quinn-proto | 0.11.8 | RUSTSEC-2026-0338 | - | Remote peer can panic quinn-proto with zero-length STREAM frames during unordere | >=0.11.18
+VULN | quinn-proto | 0.11.8 | RUSTSEC-2026-0339 | - | Unbounded growth of pending connection ID retirements in quinn-proto | >=0.11.17
+VULN | quinn-proto | 0.11.8 | RUSTSEC-2026-0340 | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N | Peer minimum ACK delay can panic quinn-proto when ACK_FREQUENCY transmission is  | >=0.11.18
+VULN | quinn-proto | 0.11.8 | RUSTSEC-2026-0342 | - | Zero-length DATAGRAM frames bypass the receive buffer limit in quinn-proto | >=0.11.17
+VULN | time | 0.3.36 | RUSTSEC-2026-0009 | CVSS:4.0/AV:N/AC:H/AT:N/PR:L/UI:A/VC:N/V | Denial of Service via Stack Exhaustion | >=0.3.47
+VULN | zstd-sys | 2.0.13+zstd.1.5.6 | RUSTSEC-2026-0410 | - | WebAssembly allocator shim corrupts memory on allocation failure | >=2.1.2
+WARN[unmaintained] | ansi_term 0.12.1 | RUSTSEC-2021-0139 | ansi_term is Unmaintained
+WARN[unmaintained] | async-std 1.13.0 | RUSTSEC-2025-0052 | async-std has been discontinued
+WARN[unmaintained] | atty 0.2.14 | RUSTSEC-2024-0375 | `atty` is unmaintained
+WARN[unmaintained] | bincode 1.3.3 | RUSTSEC-2025-0141 | Bincode is unmaintained
+WARN[unmaintained] | derivative 2.2.0 | RUSTSEC-2024-0388 | `derivative` is unmaintained; consider using an alternative
+WARN[unmaintained] | instant 0.1.13 | RUSTSEC-2024-0384 | `instant` is unmaintained
+WARN[unmaintained] | mach 0.3.2 | RUSTSEC-2020-0168 | mach is unmaintained
+WARN[unmaintained] | paste 1.0.15 | RUSTSEC-2024-0436 | paste - no longer maintained
+WARN[unmaintained] | pin-utils 0.1.0 | RUSTSEC-2026-0441 | `pin-utils` is unmaintained
+WARN[unmaintained] | proc-macro-error 1.0.4 | RUSTSEC-2024-0370 | proc-macro-error is unmaintained
+WARN[unmaintained] | rustls-pemfile 2.2.0 | RUSTSEC-2025-0134 | rustls-pemfile is unmaintained
+WARN[unmaintained] | unsafe-libyaml 0.2.11 | RUSTSEC-2024-0449 | unsafe-libyaml is unmaintained
+WARN[unsound] | anyhow 1.0.97 | RUSTSEC-2026-0190 | Unsoundness in `Error::downcast_mut()`
+WARN[unsound] | atty 0.2.14 | RUSTSEC-2021-0145 | Potential unaligned read
+WARN[unsound] | event-listener 5.3.1 | RUSTSEC-2026-0221 | `event-listener` allows `!Send` tags to cross thread boundaries via `S
+WARN[unsound] | faster-hex 0.9.0 | RUSTSEC-2026-0306 | `hex_decode_unchecked` AVX2 path reads past `src`
+WARN[unsound] | keccak 0.1.5 | RUSTSEC-2026-0012 | Unsoundness in opt-in ARMv8 assembly backend for `keccak`
+WARN[unsound] | linkme 0.2.10 | RUSTSEC-2024-0407 | Fails to ensure slice elements match the slice's declared type
+WARN[unsound] | lru 0.9.0 | RUSTSEC-2026-0253 | Potential use-after-free due to lack of panic safety in `LruCache::pop
+WARN[unsound] | lru 0.9.0 | RUSTSEC-2026-0002 | `IterMut` violates Stacked Borrows by invalidating internal pointer
+WARN[unsound] | rand 0.8.5 | RUSTSEC-2026-0097 | Rand is unsound with a custom logger using `rand::rng()`
+WARN[unsound] | tokio 1.40.0 | RUSTSEC-2026-0386 | `AsyncFd::new` and related constructors violate I/O safety
+WARN[unsound] | tokio 1.40.0 | RUSTSEC-2025-0023 | Broadcast channel calls clone in parallel, but does not require `Sync`
+WARN[yanked] | keccak 0.1.5 | - | 
