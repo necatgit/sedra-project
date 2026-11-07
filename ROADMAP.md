@@ -37,7 +37,7 @@ Code: `necatgit/sedra-rusty`, branch `dev`.
 - [x] M6: v2.0.0 rules behave exactly like Go (#25, `sedra-rusty@4873e9af`)
 - [x] M7: UTXO commitment and supply parity (#26, 2026-11-06: identical supply, commitment, balances and UTXOs)
 - [x] M8: Mining parity on an isolated test setup (#27, private devnet, 1400 blocks)
-- [~] Security back-ports from later rusty-kaspa releases (#29, [research/0006](research/0006-security-backports.md)): must-fix and should items done and merged (`sedra-rusty@9cb74efc`, 518 tests pass; upstream `48b63582` deliberately not applied, it rejects real Sedra proofs); open: the optional cherry-picks; required before M9
+- [~] Security back-ports from later rusty-kaspa releases (#29, [research/0006](research/0006-security-backports.md)): must-fix and should items done and merged (`sedra-rusty@9cb74efc`, 518 tests pass; upstream `48b63582` deliberately not applied, it rejects real Sedra proofs); optional fixes ready on branch `optional-backports` (tested), to be merged after M9
 - [~] M9: Seven-day soak next to Go nodes (#28) (running 2026-11-07 07:20 to 2026-11-14 07:20 UTC)
 - [ ] After M9: a public Rust node of this project as the first independent public Sedra node, on a machine separate from any pool ([SIP-0002](proposals/SIP-0002-network-resilience.md), #30)
 

@@ -77,6 +77,12 @@ Rust node could not sync from any Go node. While adapting it, a crash on proofs 
 and fixed (`7863751e`, regression test). Merged into `dev` (`9cb74efc`), 518 tests pass. Evidence:
 [archive/2026-11-06-proof-checks/](archive/2026-11-06-proof-checks/README.md). Open: the optional cherry-picks.
 
+*Update 2026-11-07:* the five optional fixes are on branch `optional-backports` (all applied cleanly, `07941fa1` lands
+in protocol v5). Full suite 518 passed, 0 failed. Upstream shipped them without tests; regression tests were added for
+`8ae55970` and `d2901794`, both shown to fail with the original code; the other three would need a network or RPC test
+harness. To be merged into `dev` after M9. Evidence:
+[archive/2026-11-07-optional-backports/](archive/2026-11-07-optional-backports/mutation-and-suite.txt).
+
 ## Every fix is done the same way as the milestones
 
 A regression test that crashes or fails **before** the fix and passes after it, the full test suite on the test VM,
