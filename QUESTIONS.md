@@ -11,7 +11,7 @@ Rules:
 Status: **Open** (not asked yet) · **Asked** (sent to someone, waiting) · **Investigating** (being worked on in this
 project) · **Proposed** (a draft answer exists, not decided) · **Answered** · **Dropped**
 
-Summary (2026-11-07): 40 questions; 7 answered, 13 asked and waiting, 16 open, 2 being investigated, 1 proposed,
+Summary (2026-11-07): 40 questions; 8 answered, 13 asked and waiting, 14 open, 2 being investigated, 2 proposed,
 1 split.
 
 ## A. Working with the Sedra team
@@ -45,13 +45,13 @@ Summary (2026-11-07): 40 questions; 7 answered, 13 asked and waiting, 16 open, 2
 | ID | Question | Source | Asked whom / when | Status | Answer and source |
 |---|---|---|---|---|---|
 | Q1 | Can one Kaspa block carry merged-mining commitments for both ZKas and Sedra? | #3 | — (research) | Answered | Yes, but only just: ~145 bytes free, two 68-byte commitments leave ~9 bytes for the pool tag, a third never fits. [research/0002](research/0002-zkas-auxpow.md) |
-| Q18 | Should Sedra coordinate a shared commitment format with ZKas, or use a shorter commitment, to save coinbase space for pools? | [SIP-0001 §10](proposals/SIP-0001-merged-mining.md#10-open-questions) Q2; research/0002 | — | Open | |
+| Q18 | Should Sedra coordinate a shared commitment format with ZKas, or use a shorter commitment, to save coinbase space for pools? | [SIP-0001 §10](proposals/SIP-0001-merged-mining.md#10-open-questions) Q2; research/0002 | — | Answered | Decided by Nec on 2026-11-07: Sedra uses its own commitment (option A in the discussion), independent of ZKas, because no contact with the ZKas team exists and the separate format already works for ZKas on PuddlePool. The encoding inside it is Q25 |
 | Q20 | How does Sedra keep up with future Kaspa header format changes, which would stop merged mining until Sedra updates? | SIP-0001 §4.6 and §10 Q3; research/0002 | — | Open | |
 | Q21 | Which Kaspa pools besides PuddlePool would add Sedra merged mining? | SIP-0001 §10 Q4; research/0002 | — | Open | |
 | Q22 | Do Sedra holders accept that merged mining lets a large Kaspa pool dominate Sedra at no extra cost, and is any mitigation wanted? | SIP-0001 §8 and §10 Q1; research/0002 | — | Open | |
 | Q23 | How does Sedra's difficulty adjustment react when large merged hashrate joins or leaves suddenly? | SIP-0001 §8; research/0002 | — | Open | To be measured on the public testnet |
 | Q24 | Should Sedra's self-parent ban cover only Sedra's own tag, so Sedra blocks may keep carrying ZKas commitments? | research/0002 | — | Proposed | Yes: SIP-0001 §4.5 (draft, pending review) |
-| Q25 | Could a pool put a raw-bytes commitment into the Kaspa coinbase instead of hex (it would save space)? Kaspa's `getBlockTemplate` only takes a UTF-8 string. | research/0002 | — | Open | |
+| Q25 | Could a pool put a raw-bytes commitment into the Kaspa coinbase instead of hex (it would save space)? Kaspa's `getBlockTemplate` only takes a UTF-8 string. | research/0002 | — | Proposed | 2026-11-07: raw bytes would halve the size, but Kaspa's getBlockTemplate takes extra data only as a UTF-8 string, so pools could not use it through the normal node API. Proposed instead: a compact text encoding (base64url, 43 characters instead of 64 hex), saving about 21 bytes, so that KAS+ZKAS+SDR in one block leaves about 30 bytes for the pool tag instead of 9. Awaiting Nec's decision |
 | Q33 | How are the activation DAA score and the notice period decided, and with whom? | SIP-0001 §10 Q5 | — | Open | |
 
 ## D. Building the Rust node (technical)
@@ -59,7 +59,7 @@ Summary (2026-11-07): 40 questions; 7 answered, 13 asked and waiting, 16 open, 2
 | ID | Question | Source | Asked whom / when | Status | Answer and source |
 |---|---|---|---|---|---|
 | Q2 | Should AuxPoW be added to the Go node, or should Sedra move to the Rust codebase? | #4 | — (research + decision) | Answered | Rust, based on rusty-kaspa v1.0.1, in two steps; decided by Nec on 2026-11-05. [research/0004](research/0004-rust-path.md) |
-| Q19 | Does Sedra's code hash Kaspa parent headers (current Kaspa block version 2) byte for byte as Kaspa does? | research/0002; SIP-0001 §8 | — | Open | To be tested with real Kaspa mainnet headers in M10 (#10). For Sedra's own headers this is answered: 2001 real blocks match (M3, #22) |
+| Q19 | Does Sedra's code hash Kaspa parent headers (current Kaspa block version 2) byte for byte as Kaspa does? | research/0002; SIP-0001 §8 | — | Open | To be tested with real Kaspa mainnet headers in M10 (#10). For Sedra's own headers this is answered: 2001 real blocks match (M3, #22) Update 2026-11-07: 20 real Kaspa mainnet headers (version 2, 56 parent levels) re-hash correctly with rusty-kaspa's layout in an independent Python check; the Rust test follows in M10. [Evidence](research/archive/2026-11-07-kaspa-headers/README.md) |
 | Q27 | Does any archival Sedra node (full history from genesis) exist? Without one, rules before the pruning point can only be checked partially. | research/0004 | — | Open | |
 | Q28 | Are `sedracoin/go-muhash` v1.0.1 and `sedracoin/go-secp256k1` v1.0.2 identical to Kaspa's originals? | research/0004 | — (research) | Answered | Yes, in code: no difference in any code file after normalising the module name; only `go.mod`, fuzz-test corpus and `.gitattributes` differ (2026-11-06). [Evidence](research/archive/2026-11-06-q28-q36/README.md) |
 | Q30 | Are there other Go-vs-Rust differences near genesis besides the minimum difficulty window (2641 vs 150, fixed in M1)? | research/0004 | — | Open | |
