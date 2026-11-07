@@ -11,7 +11,7 @@ Rules:
 Status: **Open** (not asked yet) · **Asked** (sent to someone, waiting) · **Investigating** (being worked on in this
 project) · **Proposed** (a draft answer exists, not decided) · **Answered** · **Dropped**
 
-Summary (2026-11-06): 38 questions; 5 answered, 13 asked and waiting, 15 open, 3 being investigated, 1 proposed,
+Summary (2026-11-07): 39 questions; 5 answered, 13 asked and waiting, 16 open, 3 being investigated, 1 proposed,
 1 split.
 
 ## A. Working with the Sedra team
@@ -75,4 +75,5 @@ Summary (2026-11-06): 38 questions; 5 answered, 13 asked and waiting, 15 open, 3
 
 | ID | Question | Source | Asked whom / when | Status | Answer and source |
 |---|---|---|---|---|---|
+| Q39 | Will the Sedra team publish a sedrad maintenance release with updated network libraries (gRPC 1.38.0, x/net 0.7.0, protobuf 1.28.1 have 12 reachable known vulnerabilities), built with a current Go version and with checksums? | [research/0007](research/0007-go-node-security.md) | — | Open | To be asked after the owner has answered the first letter |
 | Q5 | Do the public fallback peers (169.58.111.191, 169.58.126.141) serve incomplete DAA windows to syncing nodes, and were they themselves synced via headers proof? A fresh Go node synced from them has 2,039 of 2,641 window blocks for the pruning point; a long-running node has all 2,641. | M5 (#24) | — | Open | |

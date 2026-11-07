@@ -1,0 +1,1153 @@
+=== Symbol Results ===
+
+Vulnerability #1: GO-2026-6809
+    Distrust compromised intermediate certificates in crypto/x509
+  More info: https://pkg.go.dev/vuln/GO-2026-6809
+  Standard library
+    Found in: crypto/x509@go1.22.2
+    Fixed in: crypto/x509@go1.26.10
+    Example traces found:
+      #1: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls x509.Certificate.Verify
+
+Vulnerability #2: GO-2026-6617
+    HTTP/2 server crash due to HPACK encoder race in net/http
+  More info: https://pkg.go.dev/vuln/GO-2026-6617
+  Module: golang.org/x/net
+    Found in: golang.org/x/net@v0.7.0
+    Fixed in: golang.org/x/net@v0.60.0
+    Example traces found:
+      #1: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.ConnectionError.Error
+      #2: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.ErrCode.String
+      #3: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.FrameHeader.String
+      #4: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.FrameType.String
+      #5: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.ReadFrame
+      #6: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteContinuation
+      #7: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteData
+      #8: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteGoAway
+      #9: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteHeaders
+      #10: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WritePing
+      #11: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteRSTStream
+      #12: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteSettings
+      #13: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteSettingsAck
+      #14: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteWindowUpdate
+      #15: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.Setting.String
+      #16: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.SettingID.String
+      #17: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.SettingsFrame.ForeachSetting
+      #18: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.StreamError.Error
+      #19: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http2.chunkWriter.Write
+      #20: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.connError.Error
+      #21: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.duplicatePseudoHeaderError.Error
+      #22: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.headerFieldNameError.Error
+      #23: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.headerFieldValueError.Error
+      #24: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.pseudoHeaderError.Error
+      #25: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.writeData.String
+
+  Standard library
+    Found in: net/http@go1.22.2
+    Fixed in: net/http@go1.26.9
+    Example traces found:
+      #1: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls http.CanonicalHeaderKey
+      #2: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls http.CanonicalHeaderKey
+      #3: util/profiling/profiling.go:32:14: profiling.Start calls http.Handle
+      #4: util/profiling/profiling.go:32:14: profiling.Start calls http.Handle
+      #5: util/profiling/profiling.go:13:2: profiling.init calls pprof.init, which eventually calls http.HandleFunc
+      #6: util/profiling/profiling.go:13:2: profiling.init calls pprof.init, which eventually calls http.HandleFunc
+      #7: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.Header.Add
+      #8: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.Header.Add
+      #9: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.Header.Del
+      #10: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.Header.Del
+      #11: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.Header.Get
+      #12: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.Header.Get
+      #13: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe
+      #14: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe
+      #15: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.ProxyFromEnvironment
+      #16: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.ProxyFromEnvironment
+      #17: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.ReadResponse
+      #18: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.ReadResponse
+      #19: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.Request.Write
+      #20: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.Request.Write
+      #21: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.Response.Write
+      #22: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.Response.Write
+      #23: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.body.Close
+      #24: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.body.Close
+      #25: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.body.Read
+      #26: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.body.Read
+      #27: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.bodyEOFSignal.Read
+      #28: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.bodyEOFSignal.Read
+      #29: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.bodyLocked.Read
+      #30: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.bodyLocked.Read
+      #31: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.bufioFlushWriter.Write
+      #32: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.bufioFlushWriter.Write
+      #33: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.checkConnErrorWriter.Write
+      #34: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.checkConnErrorWriter.Write
+      #35: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.chunkWriter.Write
+      #36: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.chunkWriter.Write
+      #37: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.connReader.Read
+      #38: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.connReader.Read
+      #39: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.expectContinueReader.Read
+      #40: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.expectContinueReader.Read
+      #41: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2ConnectionError.Error
+      #42: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2ConnectionError.Error
+      #43: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2ErrCode.String
+      #44: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2ErrCode.String
+      #45: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2FrameHeader.String
+      #46: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2FrameHeader.String
+      #47: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2FrameType.String
+      #48: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2FrameType.String
+      #49: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2FrameWriteRequest.String
+      #50: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2FrameWriteRequest.String
+      #51: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2Setting.String
+      #52: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2Setting.String
+      #53: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2SettingID.String
+      #54: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2SettingID.String
+      #55: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2StreamError.Error
+      #56: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2StreamError.Error
+      #57: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.http2chunkWriter.Write
+      #58: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.http2chunkWriter.Write
+      #59: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2connError.Error
+      #60: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2connError.Error
+      #61: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2duplicatePseudoHeaderError.Error
+      #62: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2duplicatePseudoHeaderError.Error
+      #63: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.http2gzipReader.Close
+      #64: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.http2gzipReader.Close
+      #65: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.http2gzipReader.Read
+      #66: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.http2gzipReader.Read
+      #67: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2headerFieldNameError.Error
+      #68: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2headerFieldNameError.Error
+      #69: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2headerFieldValueError.Error
+      #70: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2headerFieldValueError.Error
+      #71: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2pseudoHeaderError.Error
+      #72: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2pseudoHeaderError.Error
+      #73: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.http2requestBody.Read
+      #74: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.http2requestBody.Read
+      #75: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which calls http.http2responseWriter.Write
+      #76: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which calls http.http2responseWriter.Write
+      #77: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.http2responseWriter.WriteString
+      #78: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.http2responseWriter.WriteString
+      #79: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.http2stickyErrWriter.Write
+      #80: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.http2stickyErrWriter.Write
+      #81: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.http2transportResponseBody.Close
+      #82: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.http2transportResponseBody.Close
+      #83: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.http2transportResponseBody.Read
+      #84: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.http2transportResponseBody.Read
+      #85: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2writeData.String
+      #86: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2writeData.String
+      #87: infrastructure/logger/logger.go:68:21: logger.InitLog calls fmt.Fprintf, which calls http.loggingConn.Write
+      #88: infrastructure/logger/logger.go:68:21: logger.InitLog calls fmt.Fprintf, which calls http.loggingConn.Write
+      #89: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.maxBytesReader.Read
+      #90: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.maxBytesReader.Read
+      #91: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls http.onceCloseListener.Close
+      #92: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls http.onceCloseListener.Close
+      #93: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.response.ReadFrom
+      #94: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.response.ReadFrom
+      #95: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which calls http.response.Write
+      #96: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which calls http.response.Write
+      #97: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.response.WriteString
+      #98: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.response.WriteString
+
+Vulnerability #3: GO-2026-6613
+    HTTP/1 server connection desynchronization after 2xx CONNECT response in
+    net/http
+  More info: https://pkg.go.dev/vuln/GO-2026-6613
+  Standard library
+    Found in: net/http@go1.22.2
+    Fixed in: net/http@go1.26.9
+    Example traces found:
+      #1: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls http.CanonicalHeaderKey
+      #2: util/profiling/profiling.go:32:14: profiling.Start calls http.Handle
+      #3: util/profiling/profiling.go:13:2: profiling.init calls pprof.init, which eventually calls http.HandleFunc
+      #4: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.Header.Add
+      #5: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.Header.Del
+      #6: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.Header.Get
+      #7: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe
+      #8: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.ProxyFromEnvironment
+      #9: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.ReadResponse
+      #10: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.Request.Write
+      #11: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.Response.Write
+      #12: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.body.Close
+      #13: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.body.Read
+      #14: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.bodyEOFSignal.Read
+      #15: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.bodyLocked.Read
+      #16: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.bufioFlushWriter.Write
+      #17: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.checkConnErrorWriter.Write
+      #18: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.chunkWriter.Write
+      #19: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.connReader.Read
+      #20: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.expectContinueReader.Read
+      #21: infrastructure/logger/logger.go:68:21: logger.InitLog calls fmt.Fprintf, which calls http.loggingConn.Write
+      #22: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.maxBytesReader.Read
+      #23: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls http.onceCloseListener.Close
+      #24: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.response.ReadFrom
+      #25: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which calls http.response.Write
+      #26: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.response.WriteString
+
+Vulnerability #4: GO-2026-6612
+    Double flow control refund on HTTP/2 server streams in net/http
+  More info: https://pkg.go.dev/vuln/GO-2026-6612
+  Module: golang.org/x/net
+    Found in: golang.org/x/net@v0.7.0
+    Fixed in: golang.org/x/net@v0.60.0
+    Example traces found:
+      #1: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.ConnectionError.Error
+      #2: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.ErrCode.String
+      #3: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.FrameHeader.String
+      #4: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.FrameType.String
+      #5: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.ReadFrame
+      #6: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteContinuation
+      #7: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteData
+      #8: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteGoAway
+      #9: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteHeaders
+      #10: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WritePing
+      #11: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteRSTStream
+      #12: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteSettings
+      #13: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteSettingsAck
+      #14: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteWindowUpdate
+      #15: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.Setting.String
+      #16: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.SettingID.String
+      #17: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.SettingsFrame.ForeachSetting
+      #18: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.StreamError.Error
+      #19: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http2.chunkWriter.Write
+      #20: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.connError.Error
+      #21: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.duplicatePseudoHeaderError.Error
+      #22: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.headerFieldNameError.Error
+      #23: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.headerFieldValueError.Error
+      #24: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.pseudoHeaderError.Error
+      #25: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.writeData.String
+
+  Standard library
+    Found in: net/http@go1.22.2
+    Fixed in: net/http@go1.26.9
+    Example traces found:
+      #1: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls http.CanonicalHeaderKey
+      #2: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls http.CanonicalHeaderKey
+      #3: util/profiling/profiling.go:32:14: profiling.Start calls http.Handle
+      #4: util/profiling/profiling.go:32:14: profiling.Start calls http.Handle
+      #5: util/profiling/profiling.go:13:2: profiling.init calls pprof.init, which eventually calls http.HandleFunc
+      #6: util/profiling/profiling.go:13:2: profiling.init calls pprof.init, which eventually calls http.HandleFunc
+      #7: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.Header.Add
+      #8: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.Header.Add
+      #9: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.Header.Del
+      #10: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.Header.Del
+      #11: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.Header.Get
+      #12: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.Header.Get
+      #13: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe
+      #14: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe
+      #15: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.ProxyFromEnvironment
+      #16: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.ProxyFromEnvironment
+      #17: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.ReadResponse
+      #18: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.ReadResponse
+      #19: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.Request.Write
+      #20: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.Request.Write
+      #21: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.Response.Write
+      #22: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.Response.Write
+      #23: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.body.Close
+      #24: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.body.Close
+      #25: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.body.Read
+      #26: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.body.Read
+      #27: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.bodyEOFSignal.Read
+      #28: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.bodyEOFSignal.Read
+      #29: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.bodyLocked.Read
+      #30: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.bodyLocked.Read
+      #31: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.bufioFlushWriter.Write
+      #32: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.bufioFlushWriter.Write
+      #33: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.checkConnErrorWriter.Write
+      #34: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.checkConnErrorWriter.Write
+      #35: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.chunkWriter.Write
+      #36: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.chunkWriter.Write
+      #37: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.connReader.Read
+      #38: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.connReader.Read
+      #39: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.expectContinueReader.Read
+      #40: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.expectContinueReader.Read
+      #41: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2ConnectionError.Error
+      #42: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2ConnectionError.Error
+      #43: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2ErrCode.String
+      #44: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2ErrCode.String
+      #45: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2FrameHeader.String
+      #46: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2FrameHeader.String
+      #47: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2FrameType.String
+      #48: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2FrameType.String
+      #49: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2FrameWriteRequest.String
+      #50: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2FrameWriteRequest.String
+      #51: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2Setting.String
+      #52: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2Setting.String
+      #53: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2SettingID.String
+      #54: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2SettingID.String
+      #55: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2StreamError.Error
+      #56: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2StreamError.Error
+      #57: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.http2chunkWriter.Write
+      #58: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.http2chunkWriter.Write
+      #59: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2connError.Error
+      #60: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2connError.Error
+      #61: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2duplicatePseudoHeaderError.Error
+      #62: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2duplicatePseudoHeaderError.Error
+      #63: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.http2gzipReader.Close
+      #64: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.http2gzipReader.Close
+      #65: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.http2gzipReader.Read
+      #66: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.http2gzipReader.Read
+      #67: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2headerFieldNameError.Error
+      #68: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2headerFieldNameError.Error
+      #69: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2headerFieldValueError.Error
+      #70: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2headerFieldValueError.Error
+      #71: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2pseudoHeaderError.Error
+      #72: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2pseudoHeaderError.Error
+      #73: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.http2requestBody.Read
+      #74: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.http2requestBody.Read
+      #75: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which calls http.http2responseWriter.Write
+      #76: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which calls http.http2responseWriter.Write
+      #77: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.http2responseWriter.WriteString
+      #78: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.http2responseWriter.WriteString
+      #79: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.http2stickyErrWriter.Write
+      #80: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.http2stickyErrWriter.Write
+      #81: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.http2transportResponseBody.Close
+      #82: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.http2transportResponseBody.Close
+      #83: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.http2transportResponseBody.Read
+      #84: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.http2transportResponseBody.Read
+      #85: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2writeData.String
+      #86: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2writeData.String
+      #87: infrastructure/logger/logger.go:68:21: logger.InitLog calls fmt.Fprintf, which calls http.loggingConn.Write
+      #88: infrastructure/logger/logger.go:68:21: logger.InitLog calls fmt.Fprintf, which calls http.loggingConn.Write
+      #89: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.maxBytesReader.Read
+      #90: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.maxBytesReader.Read
+      #91: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls http.onceCloseListener.Close
+      #92: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls http.onceCloseListener.Close
+      #93: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.response.ReadFrom
+      #94: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.response.ReadFrom
+      #95: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which calls http.response.Write
+      #96: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which calls http.response.Write
+      #97: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.response.WriteString
+      #98: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.response.WriteString
+
+Vulnerability #5: GO-2026-6611
+    Excessive CPU consumption from repeated initial window changes in net/http
+  More info: https://pkg.go.dev/vuln/GO-2026-6611
+  Module: golang.org/x/net
+    Found in: golang.org/x/net@v0.7.0
+    Fixed in: golang.org/x/net@v0.60.0
+    Example traces found:
+      #1: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.ConnectionError.Error
+      #2: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.ErrCode.String
+      #3: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.FrameHeader.String
+      #4: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.FrameType.String
+      #5: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.ReadFrame
+      #6: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteContinuation
+      #7: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteData
+      #8: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteGoAway
+      #9: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteHeaders
+      #10: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WritePing
+      #11: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteRSTStream
+      #12: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteSettings
+      #13: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteSettingsAck
+      #14: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteWindowUpdate
+      #15: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.Setting.String
+      #16: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.SettingID.String
+      #17: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.SettingsFrame.ForeachSetting
+      #18: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.StreamError.Error
+      #19: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http2.chunkWriter.Write
+      #20: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.connError.Error
+      #21: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.duplicatePseudoHeaderError.Error
+      #22: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.headerFieldNameError.Error
+      #23: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.headerFieldValueError.Error
+      #24: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.pseudoHeaderError.Error
+      #25: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.writeData.String
+
+  Standard library
+    Found in: net/http@go1.22.2
+    Fixed in: net/http@go1.26.9
+    Example traces found:
+      #1: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls http.CanonicalHeaderKey
+      #2: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls http.CanonicalHeaderKey
+      #3: util/profiling/profiling.go:32:14: profiling.Start calls http.Handle
+      #4: util/profiling/profiling.go:32:14: profiling.Start calls http.Handle
+      #5: util/profiling/profiling.go:13:2: profiling.init calls pprof.init, which eventually calls http.HandleFunc
+      #6: util/profiling/profiling.go:13:2: profiling.init calls pprof.init, which eventually calls http.HandleFunc
+      #7: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.Header.Add
+      #8: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.Header.Add
+      #9: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.Header.Del
+      #10: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.Header.Del
+      #11: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.Header.Get
+      #12: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.Header.Get
+      #13: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe
+      #14: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe
+      #15: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.ProxyFromEnvironment
+      #16: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.ProxyFromEnvironment
+      #17: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.ReadResponse
+      #18: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.ReadResponse
+      #19: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.Request.Write
+      #20: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.Request.Write
+      #21: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.Response.Write
+      #22: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.Response.Write
+      #23: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.body.Close
+      #24: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.body.Close
+      #25: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.body.Read
+      #26: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.body.Read
+      #27: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.bodyEOFSignal.Read
+      #28: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.bodyEOFSignal.Read
+      #29: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.bodyLocked.Read
+      #30: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.bodyLocked.Read
+      #31: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.bufioFlushWriter.Write
+      #32: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.bufioFlushWriter.Write
+      #33: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.checkConnErrorWriter.Write
+      #34: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.checkConnErrorWriter.Write
+      #35: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.chunkWriter.Write
+      #36: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.chunkWriter.Write
+      #37: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.connReader.Read
+      #38: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.connReader.Read
+      #39: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.expectContinueReader.Read
+      #40: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.expectContinueReader.Read
+      #41: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2ConnectionError.Error
+      #42: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2ConnectionError.Error
+      #43: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2ErrCode.String
+      #44: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2ErrCode.String
+      #45: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2FrameHeader.String
+      #46: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2FrameHeader.String
+      #47: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2FrameType.String
+      #48: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2FrameType.String
+      #49: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2FrameWriteRequest.String
+      #50: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2FrameWriteRequest.String
+      #51: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2Setting.String
+      #52: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2Setting.String
+      #53: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2SettingID.String
+      #54: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2SettingID.String
+      #55: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2StreamError.Error
+      #56: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2StreamError.Error
+      #57: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.http2chunkWriter.Write
+      #58: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.http2chunkWriter.Write
+      #59: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2connError.Error
+      #60: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2connError.Error
+      #61: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2duplicatePseudoHeaderError.Error
+      #62: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2duplicatePseudoHeaderError.Error
+      #63: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.http2gzipReader.Close
+      #64: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.http2gzipReader.Close
+      #65: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.http2gzipReader.Read
+      #66: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.http2gzipReader.Read
+      #67: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2headerFieldNameError.Error
+      #68: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2headerFieldNameError.Error
+      #69: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2headerFieldValueError.Error
+      #70: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2headerFieldValueError.Error
+      #71: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2pseudoHeaderError.Error
+      #72: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2pseudoHeaderError.Error
+      #73: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.http2requestBody.Read
+      #74: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.http2requestBody.Read
+      #75: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which calls http.http2responseWriter.Write
+      #76: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which calls http.http2responseWriter.Write
+      #77: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.http2responseWriter.WriteString
+      #78: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.http2responseWriter.WriteString
+      #79: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.http2stickyErrWriter.Write
+      #80: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.http2stickyErrWriter.Write
+      #81: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.http2transportResponseBody.Close
+      #82: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.http2transportResponseBody.Close
+      #83: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.http2transportResponseBody.Read
+      #84: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.http2transportResponseBody.Read
+      #85: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2writeData.String
+      #86: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2writeData.String
+      #87: infrastructure/logger/logger.go:68:21: logger.InitLog calls fmt.Fprintf, which calls http.loggingConn.Write
+      #88: infrastructure/logger/logger.go:68:21: logger.InitLog calls fmt.Fprintf, which calls http.loggingConn.Write
+      #89: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.maxBytesReader.Read
+      #90: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.maxBytesReader.Read
+      #91: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls http.onceCloseListener.Close
+      #92: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls http.onceCloseListener.Close
+      #93: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.response.ReadFrom
+      #94: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.response.ReadFrom
+      #95: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which calls http.response.Write
+      #96: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which calls http.response.Write
+      #97: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.response.WriteString
+      #98: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.response.WriteString
+
+Vulnerability #6: GO-2026-6608
+    Memory limit bypass when parsing MIME headers in net/textproto,
+    mime/multipart
+  More info: https://pkg.go.dev/vuln/GO-2026-6608
+  Standard library
+    Found in: mime/multipart@go1.22.2
+    Fixed in: mime/multipart@go1.26.9
+    Example traces found:
+      #1: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe, which eventually calls multipart.Reader.ReadForm
+      #2: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls textproto.Reader.ReadMIMEHeader
+
+Vulnerability #7: GO-2026-6607
+    Reject malformed ECH outer extension references in crypto/tls
+  More info: https://pkg.go.dev/vuln/GO-2026-6607
+  Standard library
+    Found in: crypto/tls@go1.22.2
+    Fixed in: crypto/tls@go1.26.9
+    Example traces found:
+      #1: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe, which eventually calls tls.Conn.HandshakeContext
+      #2: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls tls.Conn.Read
+      #3: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls tls.Conn.Write
+
+Vulnerability #8: GO-2026-6603
+    HTTP/2 server memory exhaustion due to Trailer headers in net/http
+  More info: https://pkg.go.dev/vuln/GO-2026-6603
+  Module: golang.org/x/net
+    Found in: golang.org/x/net@v0.7.0
+    Fixed in: golang.org/x/net@v0.60.0
+    Example traces found:
+      #1: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.ConnectionError.Error
+      #2: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.ErrCode.String
+      #3: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.FrameHeader.String
+      #4: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.FrameType.String
+      #5: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.ReadFrame
+      #6: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteContinuation
+      #7: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteData
+      #8: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteGoAway
+      #9: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteHeaders
+      #10: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WritePing
+      #11: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteRSTStream
+      #12: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteSettings
+      #13: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteSettingsAck
+      #14: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteWindowUpdate
+      #15: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.Setting.String
+      #16: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.SettingID.String
+      #17: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.SettingsFrame.ForeachSetting
+      #18: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.StreamError.Error
+      #19: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http2.chunkWriter.Write
+      #20: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.connError.Error
+      #21: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.duplicatePseudoHeaderError.Error
+      #22: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.headerFieldNameError.Error
+      #23: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.headerFieldValueError.Error
+      #24: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.pseudoHeaderError.Error
+      #25: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.writeData.String
+
+  Standard library
+    Found in: net/http@go1.22.2
+    Fixed in: net/http@go1.26.9
+    Example traces found:
+      #1: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls http.CanonicalHeaderKey
+      #2: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls http.CanonicalHeaderKey
+      #3: util/profiling/profiling.go:32:14: profiling.Start calls http.Handle
+      #4: util/profiling/profiling.go:32:14: profiling.Start calls http.Handle
+      #5: util/profiling/profiling.go:13:2: profiling.init calls pprof.init, which eventually calls http.HandleFunc
+      #6: util/profiling/profiling.go:13:2: profiling.init calls pprof.init, which eventually calls http.HandleFunc
+      #7: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.Header.Add
+      #8: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.Header.Add
+      #9: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.Header.Del
+      #10: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.Header.Del
+      #11: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.Header.Get
+      #12: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.Header.Get
+      #13: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe
+      #14: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe
+      #15: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.ProxyFromEnvironment
+      #16: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.ProxyFromEnvironment
+      #17: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.ReadResponse
+      #18: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.ReadResponse
+      #19: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.Request.Write
+      #20: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.Request.Write
+      #21: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.Response.Write
+      #22: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.Response.Write
+      #23: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.body.Close
+      #24: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.body.Close
+      #25: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.body.Read
+      #26: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.body.Read
+      #27: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.bodyEOFSignal.Read
+      #28: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.bodyEOFSignal.Read
+      #29: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.bodyLocked.Read
+      #30: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.bodyLocked.Read
+      #31: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.bufioFlushWriter.Write
+      #32: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.bufioFlushWriter.Write
+      #33: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.checkConnErrorWriter.Write
+      #34: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.checkConnErrorWriter.Write
+      #35: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.chunkWriter.Write
+      #36: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.chunkWriter.Write
+      #37: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.connReader.Read
+      #38: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.connReader.Read
+      #39: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.expectContinueReader.Read
+      #40: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.expectContinueReader.Read
+      #41: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2ConnectionError.Error
+      #42: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2ConnectionError.Error
+      #43: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2ErrCode.String
+      #44: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2ErrCode.String
+      #45: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2FrameHeader.String
+      #46: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2FrameHeader.String
+      #47: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2FrameType.String
+      #48: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2FrameType.String
+      #49: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2FrameWriteRequest.String
+      #50: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2FrameWriteRequest.String
+      #51: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2Setting.String
+      #52: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2Setting.String
+      #53: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2SettingID.String
+      #54: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2SettingID.String
+      #55: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2StreamError.Error
+      #56: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2StreamError.Error
+      #57: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.http2chunkWriter.Write
+      #58: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.http2chunkWriter.Write
+      #59: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2connError.Error
+      #60: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2connError.Error
+      #61: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2duplicatePseudoHeaderError.Error
+      #62: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2duplicatePseudoHeaderError.Error
+      #63: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.http2gzipReader.Close
+      #64: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.http2gzipReader.Close
+      #65: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.http2gzipReader.Read
+      #66: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.http2gzipReader.Read
+      #67: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2headerFieldNameError.Error
+      #68: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2headerFieldNameError.Error
+      #69: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2headerFieldValueError.Error
+      #70: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2headerFieldValueError.Error
+      #71: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2pseudoHeaderError.Error
+      #72: domain/miningmanager/mempool/error.go:28:20: mempool.RuleError.Error calls http.http2pseudoHeaderError.Error
+      #73: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.http2requestBody.Read
+      #74: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.http2requestBody.Read
+      #75: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which calls http.http2responseWriter.Write
+      #76: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which calls http.http2responseWriter.Write
+      #77: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.http2responseWriter.WriteString
+      #78: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.http2responseWriter.WriteString
+      #79: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.http2stickyErrWriter.Write
+      #80: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.http2stickyErrWriter.Write
+      #81: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.http2transportResponseBody.Close
+      #82: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.http2transportResponseBody.Close
+      #83: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.http2transportResponseBody.Read
+      #84: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls http.http2transportResponseBody.Read
+      #85: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2writeData.String
+      #86: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http.http2writeData.String
+      #87: infrastructure/logger/logger.go:68:21: logger.InitLog calls fmt.Fprintf, which calls http.loggingConn.Write
+      #88: infrastructure/logger/logger.go:68:21: logger.InitLog calls fmt.Fprintf, which calls http.loggingConn.Write
+      #89: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.maxBytesReader.Read
+      #90: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.maxBytesReader.Read
+      #91: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls http.onceCloseListener.Close
+      #92: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls http.onceCloseListener.Close
+      #93: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.response.ReadFrom
+      #94: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls http.response.ReadFrom
+      #95: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which calls http.response.Write
+      #96: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which calls http.response.Write
+      #97: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.response.WriteString
+      #98: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http.response.WriteString
+
+Vulnerability #9: GO-2026-6600
+    Recognize yield as regexp preceder keyword in html/template
+  More info: https://pkg.go.dev/vuln/GO-2026-6600
+  Standard library
+    Found in: html/template@go1.22.2
+    Fixed in: html/template@go1.26.9
+    Example traces found:
+      #1: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe, which eventually calls template.Template.Execute
+      #2: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe, which eventually calls template.Template.ExecuteTemplate
+
+Vulnerability #10: GO-2026-6599
+    Reset context tracking on consecutive template expressions in html/template
+  More info: https://pkg.go.dev/vuln/GO-2026-6599
+  Standard library
+    Found in: html/template@go1.22.2
+    Fixed in: html/template@go1.26.9
+    Example traces found:
+      #1: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe, which eventually calls template.Template.Execute
+      #2: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe, which eventually calls template.Template.ExecuteTemplate
+
+Vulnerability #11: GO-2026-6443
+    Server panic via missing authority or Host headers in google.golang.org/grpc
+  More info: https://pkg.go.dev/vuln/GO-2026-6443
+  Module: google.golang.org/grpc
+    Found in: google.golang.org/grpc@v1.38.0
+    Fixed in: google.golang.org/grpc@v1.82.2
+    Example traces found:
+      #1: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls transport.http2Server.HandleStreams
+
+Vulnerability #12: GO-2026-6348
+    Heap Memory Exhaustion (OOM) via HTTP/2 DATA Frame Fragmentation in
+    google.golang.org/grpc
+  More info: https://pkg.go.dev/vuln/GO-2026-6348
+  Module: google.golang.org/grpc
+    Found in: google.golang.org/grpc@v1.38.0
+    Fixed in: google.golang.org/grpc@v1.83.1
+    Example traces found:
+      #1: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls transport.NewServerTransport
+      #2: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls transport.http2Client.Close
+      #3: infrastructure/network/rpcclient/grpcclient/grpcclient.go:52:27: grpcclient.GRPCClient.Close calls grpc.ClientConn.Close, which eventually calls transport.http2Client.GracefulClose
+      #4: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls transport.http2Client.NewStream
+      #5: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:85:16: grpcserver.gRPCServer.Stop calls grpc.Server.Stop, which calls transport.http2Server.Close
+      #6: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls transport.http2Server.HandleStreams
+      #7: infrastructure/network/netadapter/server/grpcserver/protowire/messages_grpc.pb.go:228:31: protowire.rPCMessageStreamServer.Send calls grpc.serverStream.SendMsg, which eventually calls transport.recvBuffer.put
+      #8: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls transport.transportReader.Read
+
+Vulnerability #13: GO-2026-6091
+    Fix Javascript regexp context tracking in html/template
+  More info: https://pkg.go.dev/vuln/GO-2026-6091
+  Standard library
+    Found in: html/template@go1.22.2
+    Fixed in: html/template@go1.25.13
+    Example traces found:
+      #1: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe, which eventually calls template.Template.Execute
+      #2: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe, which eventually calls template.Template.ExecuteTemplate
+
+Vulnerability #14: GO-2026-6090
+    Limit handshake messages we are willing to accept post-handshake in
+    crypto/tls
+  More info: https://pkg.go.dev/vuln/GO-2026-6090
+  Standard library
+    Found in: crypto/tls@go1.22.2
+    Fixed in: crypto/tls@go1.25.13
+    Example traces found:
+      #1: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe, which eventually calls tls.Conn.HandshakeContext
+      #2: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls tls.Conn.Read
+      #3: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls tls.Conn.Write
+
+Vulnerability #15: GO-2026-6089
+    Apply ReadHeaderTimeout when doing unencrypted HTTP/2 check in net/http
+  More info: https://pkg.go.dev/vuln/GO-2026-6089
+  Standard library
+    Found in: net/http@go1.22.2
+    Fixed in: net/http@go1.25.13
+    Example traces found:
+      #1: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe
+
+Vulnerability #16: GO-2026-6061
+    Vulnerabilities in the xDS RBAC authorization engine and the HTTP/2
+    transport server implementation in google.golang.org/grpc
+  More info: https://pkg.go.dev/vuln/GO-2026-6061
+  Module: google.golang.org/grpc
+    Found in: google.golang.org/grpc@v1.38.0
+    Fixed in: google.golang.org/grpc@v1.82.1
+    Example traces found:
+      #1: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls transport.NewServerTransport
+      #2: infrastructure/network/netadapter/server/grpcserver/protowire/messages_grpc.pb.go:228:31: protowire.rPCMessageStreamServer.Send calls grpc.serverStream.SendMsg, which eventually calls transport.controlBuffer.executeAndPut
+      #3: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls transport.http2Client.Close
+      #4: infrastructure/network/rpcclient/grpcclient/grpcclient.go:52:27: grpcclient.GRPCClient.Close calls grpc.ClientConn.Close, which eventually calls transport.http2Client.GracefulClose
+      #5: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls transport.http2Client.NewStream
+      #6: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:77:24: grpcserver.Stop calls grpc.Server.GracefulStop, which calls transport.http2Server.Drain
+      #7: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls transport.http2Server.HandleStreams
+      #8: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls transport.transportReader.Read
+
+Vulnerability #17: GO-2026-5972
+    Enforce maximum recursion depth in encoding/asn1
+  More info: https://pkg.go.dev/vuln/GO-2026-5972
+  Standard library
+    Found in: encoding/asn1@go1.22.2
+    Fixed in: encoding/asn1@go1.25.13
+    Example traces found:
+      #1: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls asn1.Unmarshal
+
+Vulnerability #18: GO-2026-5856
+    Invoking Encrypted Client Hello privacy leak in crypto/tls
+  More info: https://pkg.go.dev/vuln/GO-2026-5856
+  Standard library
+    Found in: crypto/tls@go1.22.2
+    Fixed in: crypto/tls@go1.25.12
+    Example traces found:
+      #1: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe, which eventually calls tls.Conn.HandshakeContext
+      #2: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls tls.Conn.Read
+      #3: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls tls.Conn.Write
+
+Vulnerability #19: GO-2026-5039
+    Arbitrary inputs are included in errors without any escaping in
+    net/textproto
+  More info: https://pkg.go.dev/vuln/GO-2026-5039
+  Standard library
+    Found in: net/textproto@go1.22.2
+    Fixed in: net/textproto@go1.25.11
+    Example traces found:
+      #1: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls textproto.Reader.ReadMIMEHeader
+
+Vulnerability #20: GO-2026-5037
+    Inefficient candidate hostname parsing in crypto/x509
+  More info: https://pkg.go.dev/vuln/GO-2026-5037
+  Standard library
+    Found in: crypto/x509@go1.22.2
+    Fixed in: crypto/x509@go1.25.11
+    Example traces found:
+      #1: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls x509.Certificate.Verify
+      #2: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls x509.Certificate.VerifyHostname
+      #3: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls x509.HostnameError.Error
+
+Vulnerability #21: GO-2026-4982
+    Bypass of meta content URL escaping causes XSS in html/template
+  More info: https://pkg.go.dev/vuln/GO-2026-4982
+  Standard library
+    Found in: html/template@go1.22.2
+    Fixed in: html/template@go1.25.10
+    Example traces found:
+      #1: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe, which eventually calls template.Template.Execute
+      #2: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe, which eventually calls template.Template.ExecuteTemplate
+
+Vulnerability #22: GO-2026-4980
+    Escaper bypass leads to XSS in html/template
+  More info: https://pkg.go.dev/vuln/GO-2026-4980
+  Standard library
+    Found in: html/template@go1.22.2
+    Fixed in: html/template@go1.25.10
+    Example traces found:
+      #1: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe, which eventually calls template.Template.Execute
+      #2: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe, which eventually calls template.Template.ExecuteTemplate
+
+Vulnerability #23: GO-2026-4971
+    Panic in Dial and LookupPort when handling NUL byte on Windows in net
+  More info: https://pkg.go.dev/vuln/GO-2026-4971
+  Standard library
+    Found in: net@go1.22.2
+    Fixed in: net@go1.25.10
+    Example traces found:
+      #1: stability-tests/infra-level-garbage/send.go:51:29: infra.dialToNode calls net.Dial
+      #2: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls net.Dialer.DialContext
+      #3: cmd/sedrawallet/daemon/server/server.go:62:29: server.Start calls net.Listen
+      #4: util/network/parse_listeners.go:63:36: network.ParseListeners calls net.LookupHost
+      #5: infrastructure/network/connmanager/connmanager.go:250:22: connmanager.ConnectionManager.extractAddressIPs calls net.LookupIP
+      #6: infrastructure/network/netadapter/server/grpcserver/p2pserver.go:52:47: grpcserver.p2pServer.Connect calls grpc.DialContext, which eventually calls net.Resolver.LookupHost
+      #7: infrastructure/network/netadapter/server/grpcserver/p2pserver.go:52:47: grpcserver.p2pServer.Connect calls grpc.DialContext, which eventually calls net.Resolver.LookupSRV
+      #8: infrastructure/network/netadapter/server/grpcserver/p2pserver.go:52:47: grpcserver.p2pServer.Connect calls grpc.DialContext, which eventually calls net.Resolver.LookupTXT
+
+Vulnerability #24: GO-2026-4947
+    Unexpected work during chain building in crypto/x509
+  More info: https://pkg.go.dev/vuln/GO-2026-4947
+  Standard library
+    Found in: crypto/x509@go1.22.2
+    Fixed in: crypto/x509@go1.25.9
+    Example traces found:
+      #1: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls x509.Certificate.Verify
+
+Vulnerability #25: GO-2026-4946
+    Inefficient policy validation in crypto/x509
+  More info: https://pkg.go.dev/vuln/GO-2026-4946
+  Standard library
+    Found in: crypto/x509@go1.22.2
+    Fixed in: crypto/x509@go1.25.9
+    Example traces found:
+      #1: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls x509.Certificate.Verify
+
+Vulnerability #26: GO-2026-4870
+    Unauthenticated TLS 1.3 KeyUpdate record can cause persistent connection
+    retention and DoS in crypto/tls
+  More info: https://pkg.go.dev/vuln/GO-2026-4870
+  Standard library
+    Found in: crypto/tls@go1.22.2
+    Fixed in: crypto/tls@go1.25.9
+    Example traces found:
+      #1: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe, which eventually calls tls.Conn.HandshakeContext
+      #2: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls tls.Conn.Read
+      #3: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls tls.Conn.Write
+
+Vulnerability #27: GO-2026-4865
+    JsBraceDepth Context Tracking Bugs (XSS) in html/template
+  More info: https://pkg.go.dev/vuln/GO-2026-4865
+  Standard library
+    Found in: html/template@go1.22.2
+    Fixed in: html/template@go1.25.9
+    Example traces found:
+      #1: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls template.Error.Error
+      #2: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe, which eventually calls template.Template.Execute
+      #3: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe, which eventually calls template.Template.ExecuteTemplate
+      #4: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls template.Template.Funcs
+      #5: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls template.Template.Parse
+      #6: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls template.context.String
+
+Vulnerability #28: GO-2026-4762
+    Authorization bypass in gRPC-Go via missing leading slash in :path in
+    google.golang.org/grpc
+  More info: https://pkg.go.dev/vuln/GO-2026-4762
+  Module: google.golang.org/grpc
+    Found in: google.golang.org/grpc@v1.38.0
+    Fixed in: google.golang.org/grpc@v1.79.3
+    Example traces found:
+      #1: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve
+      #2: cmd/sedrawallet/daemon/server/server.go:108:30: server.Start calls grpc.NewServer, which eventually calls grpc.Server.handleStream
+
+Vulnerability #29: GO-2026-4603
+    URLs in meta content attribute actions are not escaped in html/template
+  More info: https://pkg.go.dev/vuln/GO-2026-4603
+  Standard library
+    Found in: html/template@go1.22.2
+    Fixed in: html/template@go1.25.8
+    Example traces found:
+      #1: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe, which eventually calls template.Template.Execute
+      #2: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe, which eventually calls template.Template.ExecuteTemplate
+
+Vulnerability #30: GO-2026-4602
+    FileInfo can escape from a Root in os
+  More info: https://pkg.go.dev/vuln/GO-2026-4602
+  Standard library
+    Found in: os@go1.22.2
+    Fixed in: os@go1.25.8
+    Example traces found:
+      #1: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls os.ReadDir
+
+Vulnerability #31: GO-2026-4601
+    Incorrect parsing of IPv6 host literals in net/url
+  More info: https://pkg.go.dev/vuln/GO-2026-4601
+  Standard library
+    Found in: net/url@go1.22.2
+    Fixed in: net/url@go1.25.8
+    Example traces found:
+      #1: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls url.Parse
+      #2: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe, which eventually calls url.ParseRequestURI
+
+Vulnerability #32: GO-2026-4341
+    Memory exhaustion in query parameter parsing in net/url
+  More info: https://pkg.go.dev/vuln/GO-2026-4341
+  Standard library
+    Found in: net/url@go1.22.2
+    Fixed in: net/url@go1.24.12
+    Example traces found:
+      #1: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe, which eventually calls url.ParseQuery
+
+Vulnerability #33: GO-2026-4340
+    Handshake messages may be processed at the incorrect encryption level in
+    crypto/tls
+  More info: https://pkg.go.dev/vuln/GO-2026-4340
+  Standard library
+    Found in: crypto/tls@go1.22.2
+    Fixed in: crypto/tls@go1.24.12
+    Example traces found:
+      #1: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe, which eventually calls tls.Conn.HandshakeContext
+      #2: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls tls.Conn.Read
+      #3: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls tls.Conn.Write
+
+Vulnerability #34: GO-2026-4337
+    Unexpected session resumption in crypto/tls
+  More info: https://pkg.go.dev/vuln/GO-2026-4337
+  Standard library
+    Found in: crypto/tls@go1.22.2
+    Fixed in: crypto/tls@go1.24.13
+    Example traces found:
+      #1: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe, which eventually calls tls.Conn.HandshakeContext
+      #2: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls tls.Conn.Read
+      #3: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls tls.Conn.Write
+
+Vulnerability #35: GO-2025-4175
+    Improper application of excluded DNS name constraints when verifying
+    wildcard names in crypto/x509
+  More info: https://pkg.go.dev/vuln/GO-2025-4175
+  Standard library
+    Found in: crypto/x509@go1.22.2
+    Fixed in: crypto/x509@go1.24.11
+    Example traces found:
+      #1: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls x509.Certificate.Verify
+
+Vulnerability #36: GO-2025-4155
+    Excessive resource consumption when printing error string for host
+    certificate validation in crypto/x509
+  More info: https://pkg.go.dev/vuln/GO-2025-4155
+  Standard library
+    Found in: crypto/x509@go1.22.2
+    Fixed in: crypto/x509@go1.24.11
+    Example traces found:
+      #1: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls x509.Certificate.Verify
+      #2: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls x509.Certificate.VerifyHostname
+
+Vulnerability #37: GO-2025-4013
+    Panic when validating certificates with DSA public keys in crypto/x509
+  More info: https://pkg.go.dev/vuln/GO-2025-4013
+  Standard library
+    Found in: crypto/x509@go1.22.2
+    Fixed in: crypto/x509@go1.24.8
+    Example traces found:
+      #1: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls x509.Certificate.Verify
+
+Vulnerability #38: GO-2025-4011
+    Parsing DER payload can cause memory exhaustion in encoding/asn1
+  More info: https://pkg.go.dev/vuln/GO-2025-4011
+  Standard library
+    Found in: encoding/asn1@go1.22.2
+    Fixed in: encoding/asn1@go1.24.8
+    Example traces found:
+      #1: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls asn1.Unmarshal
+
+Vulnerability #39: GO-2025-4010
+    Insufficient validation of bracketed IPv6 hostnames in net/url
+  More info: https://pkg.go.dev/vuln/GO-2025-4010
+  Standard library
+    Found in: net/url@go1.22.2
+    Fixed in: net/url@go1.24.8
+    Example traces found:
+      #1: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls url.Parse
+      #2: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe, which eventually calls url.ParseRequestURI
+
+Vulnerability #40: GO-2025-4009
+    Quadratic complexity when parsing some invalid inputs in encoding/pem
+  More info: https://pkg.go.dev/vuln/GO-2025-4009
+  Standard library
+    Found in: encoding/pem@go1.22.2
+    Fixed in: encoding/pem@go1.24.8
+    Example traces found:
+      #1: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls pem.Decode
+
+Vulnerability #41: GO-2025-4008
+    ALPN negotiation error contains attacker controlled information in
+    crypto/tls
+  More info: https://pkg.go.dev/vuln/GO-2025-4008
+  Standard library
+    Found in: crypto/tls@go1.22.2
+    Fixed in: crypto/tls@go1.24.8
+    Example traces found:
+      #1: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe, which eventually calls tls.Conn.HandshakeContext
+      #2: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls tls.Conn.Read
+      #3: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls tls.Conn.Write
+
+Vulnerability #42: GO-2025-4007
+    Quadratic complexity when checking name constraints in crypto/x509
+  More info: https://pkg.go.dev/vuln/GO-2025-4007
+  Standard library
+    Found in: crypto/x509@go1.22.2
+    Fixed in: crypto/x509@go1.24.9
+    Example traces found:
+      #1: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls x509.CertPool.AppendCertsFromPEM
+      #2: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls x509.Certificate.Verify
+      #3: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls x509.ParseCertificate
+
+Vulnerability #43: GO-2025-3956
+    Unexpected paths returned from LookPath in os/exec
+  More info: https://pkg.go.dev/vuln/GO-2025-3956
+  Standard library
+    Found in: os/exec@go1.22.2
+    Fixed in: os/exec@go1.23.12
+    Example traces found:
+      #1: stability-tests/common/cmd.go:17:21: common.StartCmd calls exec.Command, which calls exec.LookPath
+
+Vulnerability #44: GO-2025-3750
+    Inconsistent handling of O_CREATE|O_EXCL on Unix and Windows in os in
+    syscall
+  More info: https://pkg.go.dev/vuln/GO-2025-3750
+  Standard library
+    Found in: os@go1.22.2
+    Fixed in: os@go1.23.10
+    Platforms: windows
+    Example traces found:
+      #1: stability-tests/netsync/chain_generator/main.go:55:21: chain_generator.openFile calls os.Create
+      #2: util/profiling/profiling.go:33:32: profiling.Start calls http.ListenAndServe, which eventually calls os.CreateTemp
+      #3: infrastructure/db/database/ldb/leveldb.go:30:40: ldb.NewLevelDB calls leveldb.RecoverFile, which eventually calls os.File.Readdirnames
+      #4: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which eventually calls os.Getwd
+      #5: infrastructure/logger/backend.go:164:24: logger.Backend.runBlocking calls rotator.Rotator.Write, which eventually calls os.Lstat
+      #6: infrastructure/config/config.go:280:19: config.LoadConfig calls os.MkdirAll
+      #7: domain/consensus/factory.go:579:32: consensus.factory.NewTestConsensus calls ioutil.TempDir, which calls os.MkdirTemp
+      #8: util/profiling/profiling.go:8:2: profiling.init calls os.init, which calls os.NewFile
+      #9: cmd/sedrawallet/keys/keys.go:240:22: keys.ReadKeysFile calls os.Open
+      #10: cmd/sedrawallet/keys/keys.go:304:26: keys.File.Save calls os.OpenFile
+      #11: domain/consensus/test_consensus_render_to_dot.go:62:33: consensus.renderDotScript calls exec.Cmd.StdinPipe, which calls os.Pipe
+      #12: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls os.ReadDir
+      #13: cmd/sedrawallet/parse.go:25:46: sedrawallet.parse calls ioutil.ReadFile, which calls os.ReadFile
+      #14: stability-tests/netsync/chain_generator/main.go:54:11: chain_generator.openFile calls os.Remove
+      #15: stability-tests/sedradsanity/commandloop.go:30:2: sedradsanity.commandLoop calls os.RemoveAll
+      #16: infrastructure/logger/backend.go:164:24: logger.Backend.runBlocking calls rotator.Rotator.Write, which eventually calls os.Rename
+      #17: stability-tests/common/cmd.go:21:18: common.StartCmd calls exec.Cmd.Start, which calls os.StartProcess
+      #18: infrastructure/config/config.go:252:23: config.LoadConfig calls os.Stat
+      #19: domain/consensus/test_consensus_render_to_dot.go:82:25: consensus.renderDotScript calls ioutil.WriteFile, which calls os.WriteFile
+      #20: cmd/sedrawallet/keys/keys.go:304:26: keys.File.Save calls os.OpenFile, which eventually calls syscall.Open
+
+Vulnerability #45: GO-2025-3563
+    Request smuggling due to acceptance of invalid chunked data in net/http
+  More info: https://pkg.go.dev/vuln/GO-2025-3563
+  Standard library
+    Found in: net/http/internal@go1.22.2
+    Fixed in: net/http/internal@go1.23.8
+    Example traces found:
+      #1: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls internal.chunkedReader.Read
+
+Vulnerability #46: GO-2025-3503
+    HTTP Proxy bypass using IPv6 Zone IDs in golang.org/x/net
+  More info: https://pkg.go.dev/vuln/GO-2025-3503
+  Module: golang.org/x/net
+    Found in: golang.org/x/net@v0.7.0
+    Fixed in: golang.org/x/net@v0.36.0
+
+  Standard library
+    Found in: net/http@go1.22.2
+    Fixed in: net/http@go1.23.7
+    Example traces found:
+      #1: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls http.ProxyFromEnvironment
+
+Vulnerability #47: GO-2025-3447
+    Timing sidechannel for P-256 on ppc64le in crypto/internal/nistec
+  More info: https://pkg.go.dev/vuln/GO-2025-3447
+  Standard library
+    Found in: crypto/internal/nistec@go1.22.2
+    Fixed in: crypto/internal/nistec@go1.22.12
+    Platforms: ppc64le
+    Example traces found:
+      #1: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls nistec.P256Point.ScalarBaseMult
+      #2: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls nistec.P256Point.ScalarMult
+      #3: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls nistec.P256Point.SetBytes
+
+Vulnerability #48: GO-2025-3373
+    Usage of IPv6 zone IDs can bypass URI name constraints in crypto/x509
+  More info: https://pkg.go.dev/vuln/GO-2025-3373
+  Standard library
+    Found in: crypto/x509@go1.22.2
+    Fixed in: crypto/x509@go1.22.11
+    Example traces found:
+      #1: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls x509.CertPool.AppendCertsFromPEM
+      #2: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls x509.Certificate.Verify
+      #3: util/binaryserializer/binaryserializer.go:82:26: binaryserializer.Uint64 calls io.ReadFull, which eventually calls x509.Certificate.VerifyHostname
+      #4: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls x509.HostnameError.Error
+      #5: infrastructure/network/netadapter/server/grpcserver/protowire/rpc.pb.go:6929:31: protowire.file_rpc_proto_rawDescGZIP calls sync.Once.Do, which eventually calls x509.ParseCertificate
+
+Vulnerability #49: GO-2024-2887
+    Unexpected behavior from Is methods for IPv4-mapped IPv6 addresses in
+    net/netip
+  More info: https://pkg.go.dev/vuln/GO-2024-2887
+  Standard library
+    Found in: net/netip@go1.22.2
+    Fixed in: net/netip@go1.22.4
+    Example traces found:
+      #1: util/network/parse_listeners.go:63:36: network.ParseListeners calls net.LookupHost, which eventually calls netip.Addr.IsLoopback
+      #2: util/network/parse_listeners.go:63:36: network.ParseListeners calls net.LookupHost, which eventually calls netip.Addr.IsMulticast
+
+Vulnerability #50: GO-2024-2824
+    Malformed DNS message can cause infinite loop in net
+  More info: https://pkg.go.dev/vuln/GO-2024-2824
+  Standard library
+    Found in: net@go1.22.2
+    Fixed in: net@go1.22.3
+    Example traces found:
+      #1: stability-tests/infra-level-garbage/send.go:51:29: infra.dialToNode calls net.Dial
+      #2: infrastructure/network/rpcclient/grpcclient/grpcclient.go:57:27: grpcclient.GRPCClient.Disconnect calls grpc.clientStream.CloseSend, which eventually calls net.Dialer.DialContext
+      #3: cmd/sedrawallet/daemon/server/server.go:62:29: server.Start calls net.Listen
+      #4: util/network/parse_listeners.go:63:36: network.ParseListeners calls net.LookupHost
+      #5: infrastructure/network/connmanager/connmanager.go:250:22: connmanager.ConnectionManager.extractAddressIPs calls net.LookupIP
+      #6: infrastructure/network/netadapter/server/grpcserver/p2pserver.go:52:47: grpcserver.p2pServer.Connect calls grpc.DialContext, which eventually calls net.Resolver.LookupHost
+      #7: infrastructure/network/netadapter/server/grpcserver/p2pserver.go:52:47: grpcserver.p2pServer.Connect calls grpc.DialContext, which eventually calls net.Resolver.LookupSRV
+      #8: infrastructure/network/netadapter/server/grpcserver/p2pserver.go:52:47: grpcserver.p2pServer.Connect calls grpc.DialContext, which eventually calls net.Resolver.LookupTXT
+
+Vulnerability #51: GO-2024-2687
+    HTTP/2 CONTINUATION flood in net/http
+  More info: https://pkg.go.dev/vuln/GO-2024-2687
+  Module: golang.org/x/net
+    Found in: golang.org/x/net@v0.7.0
+    Fixed in: golang.org/x/net@v0.23.0
+    Example traces found:
+      #1: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.ConnectionError.Error
+      #2: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.ErrCode.String
+      #3: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.FrameHeader.String
+      #4: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.FrameType.String
+      #5: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.ReadFrame
+      #6: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteContinuation
+      #7: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteData
+      #8: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteGoAway
+      #9: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteHeaders
+      #10: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WritePing
+      #11: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteRSTStream
+      #12: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteSettings
+      #13: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteSettingsAck
+      #14: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.Framer.WriteWindowUpdate
+      #15: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.Setting.String
+      #16: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.SettingID.String
+      #17: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls http2.SettingsFrame.ForeachSetting
+      #18: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.StreamError.Error
+      #19: infrastructure/config/network.go:81:19: config.NetworkFlags.ResolveNetwork calls flags.Parser.WriteHelp, which eventually calls http2.chunkWriter.Write
+      #20: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.connError.Error
+      #21: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.duplicatePseudoHeaderError.Error
+      #22: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.headerFieldNameError.Error
+      #23: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.headerFieldValueError.Error
+      #24: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.pseudoHeaderError.Error
+      #25: infrastructure/config/config.go:313:15: config.LoadConfig calls fmt.Fprintln, which eventually calls http2.writeData.String
+
+Vulnerability #52: GO-2024-2611
+    Infinite loop in JSON unmarshaling in google.golang.org/protobuf
+  More info: https://pkg.go.dev/vuln/GO-2024-2611
+  Module: google.golang.org/protobuf
+    Found in: google.golang.org/protobuf@v1.28.1
+    Fixed in: google.golang.org/protobuf@v1.33.0
+    Example traces found:
+      #1: infrastructure/network/rpcclient/grpcclient/post.go:16:28: grpcclient.GRPCClient.PostJSON calls protojson.Unmarshal, which eventually calls json.Decoder.Peek
+      #2: infrastructure/network/rpcclient/grpcclient/post.go:16:28: grpcclient.GRPCClient.PostJSON calls protojson.Unmarshal, which eventually calls json.Decoder.Read
+      #3: infrastructure/network/rpcclient/grpcclient/post.go:16:28: grpcclient.GRPCClient.PostJSON calls protojson.Unmarshal
+
+Vulnerability #53: GO-2023-2153
+    Denial of service from HTTP/2 Rapid Reset in google.golang.org/grpc
+  More info: https://pkg.go.dev/vuln/GO-2023-2153
+  Module: google.golang.org/grpc
+    Found in: google.golang.org/grpc@v1.38.0
+    Fixed in: google.golang.org/grpc@v1.56.3
+    Example traces found:
+      #1: cmd/sedrawallet/daemon/server/server.go:108:30: server.Start calls grpc.NewServer
+      #2: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve
+      #3: infrastructure/network/netadapter/server/grpcserver/grpc_server.go:62:24: grpcserver.listenOn calls grpc.Server.Serve, which eventually calls transport.NewServerTransport
+
+Your code is affected by 53 vulnerabilities from 3 modules and the Go standard library.
+This scan also found 20 vulnerabilities in packages you import and 51
+vulnerabilities in modules you require, but your code doesn't appear to call
+these vulnerabilities.
+Use '-show verbose' for more details.
