@@ -185,7 +185,9 @@ the decoder. As in step 1, each test must be shown to fail when its rule is brok
 Tracked in [QUESTIONS.md](../QUESTIONS.md) under the IDs in brackets.
 
 1. Is the free-hashrate trade-off (section 8) acceptable to Sedra holders, and is any mitigation wanted? (Q22)
-2. Should Sedra coordinate a shared commitment format with ZKas, to save coinbase space for pools? (Q18)
+2. ~~Should Sedra coordinate a shared commitment format with ZKas?~~ Decided 2026-11-07 (Q18): Sedra keeps its own
+   commitment, independent of ZKas. Still open: its encoding, hex (as in §4.2) or a compact text encoding such as
+   base64url that leaves more coinbase space when Kaspa, ZKas and Sedra are mined together (Q25).
 3. How does Sedra keep up with future Kaspa header changes (4.6)? (Q20)
 4. Which Kaspa pools besides PuddlePool would support Sedra? (Q21)
 5. How should the activation DAA score and the notice period be decided, and with whom? (Q33)
