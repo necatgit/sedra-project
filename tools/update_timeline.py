@@ -9,7 +9,9 @@ Usage:
   assigned to the phase (interval between two consecutive closed issues) in which it happened.
 """
 import datetime as dt
+import glob
 import json
+import os
 import subprocess
 import sys
 from collections import defaultdict
@@ -94,6 +96,23 @@ def main(paths):
              "first row includes the project setup (repository, rules, identity), and the M2 row includes setting up the "
              "test VM, the build fix for GCC 15 and the coverage measurement. Several issues closed in the same minute "
              "share one phase; their AI effort is counted on the first of them.\n")
+    # per UTC day, with links to that day's update posts (what happened), so work between closed issues shows up too
+    daily = defaultdict(lambda: defaultdict(int))
+    for t, u, who in cs:
+        d = daily[t.date()]
+        for key in KEYS:
+            d[key] += u.get(key, 0) or 0
+        d["calls"] += 1
+    L.append("## Per day\n")
+    L.append("| Day (UTC) | AI calls | Fresh tokens (in / out) | What happened |")
+    L.append("|---|---|---|---|")
+    for day in sorted(daily):
+        d = daily[day]
+        posts = sorted(glob.glob(f"updates/{day:%Y-%m-%d}-*.md"))
+        links = ", ".join(f"[{os.path.basename(x)[11:-3]}]({x.replace(os.sep, '/')})" for x in posts) or "-"
+        fresh_in = d["input_tokens"] + d["cache_creation_input_tokens"]
+        L.append(f"| {day:%Y-%m-%d} | {d['calls']:,} | {k(fresh_in)} / {k(d['output_tokens'])} | {links} |")
+    L.append("")
     L.append("## AI usage in total\n")
     L.append("| | Tokens |")
     L.append("|---|---|")
@@ -109,6 +128,8 @@ def main(paths):
              "cache; that is why the cache figure is so large. Fresh input and output reflect the actual work.")
     L.append("- Only token counts and timestamps are taken from the local transcripts; no conversation content is published.")
     L.append("- Not included: an earlier conversation about the idea before the project started, and the human time spent.")
+    L.append("- The same sessions also contain some work on Nec's pool PuddlePool (for example its solo pool on 2026-11-07); "
+             "it is counted here too, so the figures are an upper bound for this project.")
     open("TIMELINE.md", "w", encoding="utf-8").write("\n".join(L) + "\n")
     print("\n".join(L))
 

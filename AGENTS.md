@@ -39,7 +39,22 @@ This project exists because communication around Sedra has been poor. Every publ
 | Every question: who it was asked, status, answer and source | `QUESTIONS.md`, the **one** list of questions. Every new question gets the next free ID there first, with a link to where it came from; other documents refer to it by ID ("Q22") instead of keeping their own list |
 | Formal consensus proposals | `proposals/SIP-NNNN-*.md` |
 | Dated progress posts | `updates/YYYY-MM-DD-*.md` |
-| Time per milestone and AI effort | `TIMELINE.md`, regenerated with `tools/update_timeline.py` whenever an issue is closed |
+| Time per milestone and AI effort | `TIMELINE.md`, regenerated with `tools/update_timeline.py` together with every documentation update (it has a per-day table, so work between closed issues shows up too) |
+
+## Keeping documentation current
+
+The documents must always describe the current state. Not everything that happens needs to be written down, but
+whatever a document claims has to be true now. Whenever a piece of work is finished (a milestone, a finding, an
+answered question, a decision, a test result, a change to how something is run), update in the same session, before
+reporting the work as done:
+
+- every document whose statement it changes: `README.md` (status), `ROADMAP.md`, `QUESTIONS.md` (rows and summary
+  counts), the research note, the proposal, `SEDRA.md` in the code repository;
+- the evidence in `research/archive/`, and the issue (comment or close);
+- `TIMELINE.md` (regenerate) and, for bigger steps or at the end of a working day, a dated `updates/` post.
+
+Before ending a working session, check for documents that have fallen behind (stale status lines, open items that are
+done, numbers that changed) and fix them. Documentation that is wrong is worse than documentation that is missing.
 
 ## Changes, commits and pushes
 
