@@ -11,34 +11,39 @@ Rules:
 Status: **Open** (not asked yet) · **Asked** (sent to someone, waiting) · **Investigating** (being worked on in this
 project) · **Proposed** (a draft answer exists, not decided) · **Answered** · **Dropped**
 
-Summary (2026-11-07): 40 questions; 8 answered, 13 asked and waiting, 14 open, 2 being investigated, 2 proposed,
+Summary (2026-11-07): 45 questions; 11 answered, 15 asked and waiting, 14 open, 2 being investigated, 2 proposed,
 1 split.
 
 ## A. Working with the Sedra team
 
 | ID | Question | Source | Asked whom / when | Status | Answer and source |
 |---|---|---|---|---|---|
-| Q3 | Does the Sedra owner support the merged-mining fork, and should development happen in `sedracoin/sedrad` or a separate repository? | Owner letter; SIP-0001 §10 | Sedra owner, 2026-11-05 (direct message) | Asked | Acknowledged 2026-11-05: "Got it, I check later and give a response" |
+| Q3 | Does the Sedra owner support the merged-mining fork, and should development happen in `sedracoin/sedrad` or a separate repository? | Owner letter; SIP-0001 §10 | Sedra owner, 2026-11-05 (direct message) | Asked | Acknowledged 2026-11-05: "Got it, I check later and give a response". Sedra letter 2026-11-07: interested in merged mining, on condition of a public testnet, a written proposal and an activation date announced well in advance; against a fork soon after the relaunch. The repository question is not answered yet |
 | Q6 | Is there anyone else (developer, community manager, exchange contact) to talk to? | Owner letter | Sedra owner, 2026-11-05 | Asked | |
 | Q7 | Who runs the seed nodes, DNS seeders (`sedra-seed-1/2/3`), api.sedracoin.com, the explorer, the website and the two fallback peers? | Owner letter; [research/0004](research/0004-rust-path.md) | Sedra owner, 2026-11-05 | Asked | |
-| Q8 | Which exchanges list SDR, who has the contacts, and what have they said about delisting? | Owner letter | Sedra owner, 2026-11-05 | Asked | |
-| Q9 | Which announcement channels are official, and can Nec post updates there? | Owner letter | Sedra owner, 2026-11-05 | Asked | |
+| Q8 | Which exchanges list SDR, who has the contacts, and what have they said about delisting? | Owner letter | Sedra owner, 2026-11-05 | Asked | Sedra letter 2026-11-07: answer promised in a separate note the same week |
+| Q9 | Which announcement channels are official, and can Nec post updates there? | Owner letter | Sedra owner, 2026-11-05 | Asked | Sedra letter 2026-11-07: answer promised in a separate note the same week |
 
 ## B. The v2.0.0 relaunch: treasury, supply and releases
 
 | ID | Question | Source | Asked whom / when | Status | Answer and source |
 |---|---|---|---|---|---|
 | Q4 | (Collective question about the v2.0.0 relaunch) | [research/0001](research/0001-relaunch-review.md) | Sedra owner, 2026-11-05 | Split | Split into Q10-Q17 on 2026-11-06 to track each part separately |
-| Q10 | The code calls the treasury "CLTV-timelocked with multi-year vesting", but the on-chain script is a plain 2-of-3 multisig. Is vesting enforced some other way, or is the description out of date? | [research/0001](research/0001-relaunch-review.md#questions-sent-to-the-sedra-owner-2026-11-05) Q1; #19 | Sedra owner, 2026-11-05 | Asked | |
-| Q11 | Who holds the three treasury keys? | research/0001 Q2; #19 | Sedra owner, 2026-11-05 | Asked | |
-| Q12 | About 1.997B SDR has left the treasury address (balance 32.93M on 2026-11-05); only ~228M of the outflows are visible. Where did the rest go, and is there a plan for the treasury? | research/0001 Q3; #19 | Sedra owner, 2026-11-05 | Asked | |
-| Q13 | Can the explorer's transaction index ("Transactions not up to date") be repaired? | research/0001 Q4; #19 | Sedra owner, 2026-11-05 | Asked | |
-| Q14 | Circulating supply is about 6.0B SDR above what the published code can have emitted, including the treasury. Where does the difference come from? | research/0001 Q5; #19 | Sedra owner, 2026-11-05 | Asked | |
-| Q15 | Which commit and toolchain built the mainnet binaries? | research/0001 Q6; #19 | Sedra owner, 2026-11-05 | Asked | |
-| Q16 | Can checksums for the release binaries and a signed `v2.0.0` tag be published? | research/0001 Q6; #19 | Sedra owner, 2026-11-05 | Asked | |
+| Q10 | The code calls the treasury "CLTV-timelocked with multi-year vesting", but the on-chain script is a plain 2-of-3 multisig. Is vesting enforced some other way, or is the description out of date? | [research/0001](research/0001-relaunch-review.md#questions-sent-to-the-sedra-owner-2026-11-05) Q1; #19 | Sedra owner, 2026-11-05 | Answered | Sedra letter 2026-11-07: the comment is wrong and will be corrected; no vesting is enforced. Verified on chain: the redeem script revealed by a treasury spend is a plain 2-of-3 multisig without `OP_CHECKLOCKTIMEVERIFY` ([archive](research/archive/2026-11-07-treasury-utxos/README.md)) |
+| Q11 | Who holds the three treasury keys? | research/0001 Q2; #19 | Sedra owner, 2026-11-05 | Asked | Sedra letter 2026-11-07: answer promised in a separate note the same week |
+| Q12 | About 1.997B SDR has left the treasury address (balance 32.93M on 2026-11-05); only ~228M of the outflows are visible. Where did the rest go, and is there a plan for the treasury? | research/0001 Q3; #19 | Sedra owner, 2026-11-05 | Asked | Not addressed in the Sedra letter 2026-11-07; asked again. Balance unchanged on 2026-11-07: 32,931,757.98 SDR in 43 non-coinbase outputs, no mint output left unspent ([archive](research/archive/2026-11-07-treasury-utxos/README.md)) |
+| Q13 | Can the explorer's transaction index ("Transactions not up to date") be repaired? | research/0001 Q4; #19 | Sedra owner, 2026-11-05 | Answered | Sedra letter 2026-11-07: an indexing bug on Sedra's side, to be repaired. Not fixed yet: the API still reports 16 transactions on 2026-11-07 ([archive](research/archive/2026-11-07-treasury-utxos/README.md)) |
+| Q14 | Circulating supply is about 6.0B SDR above what the published code can have emitted, including the treasury. Where does the difference come from? | research/0001 Q5; #19 | Sedra owner, 2026-11-05 | Asked | Sedra letter 2026-11-07: confirms the ~6.0B and says it predates the restore point (DAA 53,625,512). That split is derived from today's total by assuming the post-relaunch emission, not measured; follow-ups Q41, Q42 |
+| Q15 | Which commit and toolchain built the mainnet binaries? | research/0001 Q6; #19 | Sedra owner, 2026-11-05 | Asked | Sedra letter 2026-11-07: answer promised in a separate note the same week |
+| Q16 | Can checksums for the release binaries and a signed `v2.0.0` tag be published? | research/0001 Q6; #19 | Sedra owner, 2026-11-05 | Answered | Sedra letter 2026-11-07: accepted. A maintenance release with updated libraries, a current Go toolchain, published checksums and a signed tag; pre-release build review offered to Nec. Not released yet |
 | Q17 | Who mined the blocks in the difficulty-reset and treasury windows (DAA ~53.63M), and were independent miners and nodes online? | research/0001 Q7; #19 | Sedra owner, 2026-11-05 | Asked | |
 | Q26 | Was the subsidy-table change of 2025-04-08 (`e61214d`, entries from month 8 = DAA 36,558,000) retroactive, i.e. had the chain already passed that DAA score? If so, old coinbases follow a different table. | [research/0004](research/0004-rust-path.md#risks-and-open-questions) | — | Open | Needs chain data (a coinbase at DAA ≈ 36.6-39M) or an answer from the team |
 | Q29 | Why did only 163 of 200 (window 1) and 400 of 454 (window 2) DAA scores carry a treasury output? | research/0001; research/0004 | — | Investigating | Likely because only chain blocks' coinbases enter the UTXO set (developer comment in sedrad `params.go`); not counted on chain yet, because those blocks are pruned |
+| Q41 | What was the measured supply at the restore point (DAA 53,625,512): the UTXO-set total there, or actual coinbase outputs summed before and after it? This decides whether the ~6.0B predates the relaunch (Q14) | Sedra letter 2026-11-07 | Sedra team, 2026-11-07 | Asked | Also investigable ourselves with an archival node, if the old blocks are still available |
+| Q42 | The Sedra letter gives 17.848B + 0.819B = 18.667B for the schedule to now, but also 18.652B for the schedule to DAA 61.27M. Can all figures (reported supply, emission before and after the restore point, treasury) be given at one stated DAA score and block hash? | Sedra letter 2026-11-07 | Sedra team, 2026-11-07 | Asked | With 18.652B the unexplained amount is 6.015B, not a round 6.000B |
+| Q43 | The code describes a 2B treasury allocation, but 2.03B was minted: window 1 filled 163 of 200 blocks (1.63B), then a second window added 400 × 1M. Why a second window, and why 30M over the stated 2B? | sedrad `domain/dagconfig/params.go@v2.0.0` (treasury params); Q29 | Sedra team, 2026-11-07 | Asked |  |
+| Q44 | The `v2.0.0` params comment says the treasury windows are set "exactly as mined (verified against on-chain outputs)". Were the consensus parameters written after the treasury blocks were mined, and if so, which rules validated those coinbase outputs when they were mined? | sedrad `domain/dagconfig/params.go@v2.0.0` (treasury params); Q17 | Sedra team, 2026-11-07 | Asked |  |
+| Q45 | `v2.0.0` names a "restored tip" at DAA 53,625,512 (difficulty reset) and a "frozen tip" at 53,632,352 (treasury activation). Which is the relaunch split point, and what was mined in the 6,840 DAA between them? | sedrad `domain/dagconfig/params.go@v2.0.0` (treasury params) | Sedra team, 2026-11-07 | Asked |  |
 
 ## C. The merged-mining proposal (SIP-0001)
 

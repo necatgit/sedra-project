@@ -1,0 +1,695 @@
+{
+    "getUtxosByAddressesResponse":  {
+        "entries":  [
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "2458574d887a1ab6cc13f867ee81281a081baf17a6aee0793035fc998669acf6",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "99999999920500",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "56322131",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "2962d0fa0045fda88efb0957a550881025b326fb617d2df1a9aa8c43f076723a",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "49999999949500",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60531336",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "3a13f7489b5e318da0d4ed46065383a43dc4095280171041b54c73aa653af16e",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "69999999980000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60519611",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "51beeb36071457506a36abba1e16e14a2b2b80555daef4d469545eb31d6efc34",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "39999999980000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60519406",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "7064af48412eb50d78a3e2e142b8e8b8e5a3a03ccd8ae2b1931b730c8d2c7795",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "99999999910000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "56715779",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "71b2fdb6f19814247ac5c7dc568150fabd2106e820976b53ffe37c570103d380",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "69999999980000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60519510",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "9da5af3ff2f09bd558cb594f9d2ddd5ad0258920f9886c2daf8cf73f77255258",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "69999999980000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60519574",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "b4d72059998f94cc9f97beb8ceecfbcbdaab0fb5be08e977f5dd29cbfc7e1a43",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "99999999920500",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "56322078",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "047bf71f4af45ec409b95b20d1b8ea23b76c56ace0aaa95a5fb0c40440e65e73",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "99999999920500",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "56318699",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "097bd8651609b507bcdc6fd8a473a0b8b8b6760d2c76c18d407ba4458bde2972",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "69999999980000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60519546",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "09bae272608390623f88c375976dc4e049ce3485d400b3454827b0da5ae4d380",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "99999999910000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "56712107",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "40a3d27c337b835ec3ceaaf0ace0f8e9570a5db97e4c70400afb7b39230902f0",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "69969999980000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60519477",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "4d8b9e3fee40a109ceaaf7269f6283ed1543f9f4099bf92c0862619633924714",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "49999999955500",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60531311",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "7094d6238b41d49e12493c0ee661f45f6bdbc8d69c9c954dc243fdc2c8051e32",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "99999999938000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60528660",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "87fd700e510e7ae24237e0efc49d9fd571fc0fd34423c6afc5f35903a098a131",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "99999999920500",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "56322103",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "8d64bc881d352cc5c79a605c8789f10462fe1181702613dffdc96f9007e506a0",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "99999999955500",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "56529253",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "650f1901295ab5e41c96e71e51361b79987d770c3a870beeca4a948655ad8af2",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "99999999955500",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "56690150",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "7c714aeb18764539fb7123d6223f9d8e3e944974e4cd5b89e3a1268bcaac697b",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "39999999980000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60519364",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "a3f333b91e9bf3c9d85f3124127dab294753689d096192bcf56c152512748582",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "69999999980000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60519499",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "d16a3cff597ce13aef472723e9c2249dcdd5a1edcca073f2c03ac48ff62471b6",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "32128099980000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60527130",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "f3d9c76ad6410fe540a4799f1a7933aaebe8e17d72103b6379e68205b0efa1bf",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "99999999920500",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60519217",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "f503a67cfee61a9b098bd25f00b69ea2f8b4e8cac9512885bfb0ea1aefb7249e",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "99999999920500",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "56318924",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "fbce99d76464c2e8b26cb91d0e7dad6ba0881ade7ab47d642eb4dd369cf54c68",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "96999999980000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60519648",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "86d6d76d902ce2e2a233f3fbc0165ae87109138e11ca240e8682ad138bb470ec",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "99999999955500",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "59045359",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "1fa9692165a8dced66d9b0b372a4d9aff0fbe2ef47d6974ee7f2906d02c652cf",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "43299999938000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60520465",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "20fdb1ace428de214bbfd1c6b395c43adbbe4b76e01da11be5e8446827e1a25a",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "69999999980000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60519562",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "219bb88d85974646b90407a61395d0cb683a9fabc4c6d75c0008fdd41a56f136",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "28099699980000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60519323",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "5b182eb1b81f1ffd62332ac11fa6bd4c75d7988f3016d734f156841ebd8f69bc",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "99999999927500",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60519245",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "6f014f51ef686441ec319d519a3ee9a8ccd9aeaa13dc8213b42927588245aaa5",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "21064999917000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60519204",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "b6b62c9222a7f8e129a8c583bca104e9e9bcac71696e8a20da72380abb62efe5",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "69999999980000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60519639",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "d8253b5549d234cdc1a0fa3c074c370d278783c40cbac1e259197f0cbb7cf18d",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "51871999980000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60519422",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "538a7bd85545bd8b6d073b688d8f4b324f2b0bb8054290abc46ea7bee18860dc",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "67751599980000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "57507960",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "7878a1df619d0ef2c171bd314bd53770151f934fd0cd6ea92b0a36d40601ac0c",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "99999999927500",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60527101",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "8168d639897a36f7b40e8ad91766ec8e5513cb31ab22a38669b345b424ecbd10",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "69999999980000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60519622",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "afaffd249c1651c2bc12145d192178b9923ac8b1cf8e00060c9ddb85bb909782",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "99999999920500",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "56318754",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "b92318320609da80ebbf76acc4a8d3f5477b5c39ba9c7012724d41dca41fedd5",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "69999999980000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60519591",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "e28a146bbfe2c4994122051926e6cfc1c612f59d638ab577012a5f5720456983",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "99999999973000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "58369365",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "7eb94b0f52622151d1c3e5a6e29c1958b7fb64ffd43710526cd4b8f715eb224b",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "97989499966000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60519281",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "8884b5d9606972f9f7f63fc734085b0908ad6bf1158c060b6ca429abc9f5d837",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "99999999920500",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "56318791",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "db9eeebf1432fb799a80909295738d3033979c0b4f1b4b4cb439b4393d518213",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "69999999980000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60519533",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "39ba175318e20255d731c6c12770bf7d469d682bdbacc81d3e0aca146f6eddb7",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "63999999980000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60519451",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "61f643bd11551e01566c1c9dacff4a392be424cb5ede6d7435a64041ab8926c3",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "99999899980000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "56316881",
+                    "isCoinbase":  false
+                }
+            },
+            {
+                "address":  "sedra:pp8a4l47q0qjwlwgqvnmp5ppssk6zpn9hat58vaw6jkxkee2aqduue9252wc3",
+                "outpoint":  {
+                    "transactionId":  "63a734b82b9906a41eb079c2f66bb28b2b0f119be4d4eb5aff9c596e09258df0",
+                    "index":  1
+                },
+                "utxoEntry":  {
+                    "amount":  "39999999980000",
+                    "scriptPublicKey":  {
+                        "version":  0,
+                        "scriptPublicKey":  "aa204fdafebe03c1277dc80327b0d021842da10665bf5743b3aed4ac6b672ae81bce87"
+                    },
+                    "blockDaaScore":  "60519346",
+                    "isCoinbase":  false
+                }
+            }
+        ],
+        "error":  null
+    }
+}
