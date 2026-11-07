@@ -1,0 +1,53 @@
+Running as unit: q38-a.service; invocation ID: b549e529d8184c41b5fe1d5533d85e98
+Running as unit: q38-b.service; invocation ID: 2831eaa35e59460981dfbfb54877f43c
+== latency (ms) per phase: count / max / >1000ms / failed
+base: 30 / 19 / 0 / 0
+during: 243 / 17 / 0 / 0
+after: 20 / 13 / 0 / 0
+== A: proof build
+2026-11-07 07:24:45.114+00:00 [INFO ] Built headers proof with overall 77382 headers (24514 unique)
+== B: proof
+2026-11-07 07:24:50.242+00:00 [INFO ] Received headers proof with overall 77382 headers (24514 unique)
+2026-11-07 07:26:00.400+00:00 [INFO ] Done processing trusted blocks
+== bytes sent by A on the P2P connection (max): 25257953
+== end
+2026-11-07 07:22:51.055+00:00 [INFO ] kaspad v1.0.1-210a906
+2026-11-07 07:22:51.055+00:00 [INFO ] Application directory: /data/sedra-proof-test
+2026-11-07 07:22:51.055+00:00 [INFO ] Data directory: /data/sedra-proof-test/sedra-mainnet/datadir
+2026-11-07 07:22:51.055+00:00 [INFO ] Logs directory: /data/sedra-proof-test/sedra-mainnet/logs
+2026-11-07 07:22:51.150+00:00 [INFO ] GRPC Server starting on: 127.0.0.1:24110
+2026-11-07 07:22:51.150+00:00 [INFO ] P2P Server starting on: 127.0.0.1:24111
+2026-11-07 07:23:36.049+00:00 [INFO ] GRPC, new incoming connection 1913fff8-8077-4039-aa54-82c197e35286@127.0.0.1:40716 #1
+2026-11-07 07:23:36.059+00:00 [INFO ] GRPC, end connection 1913fff8-8077-4039-aa54-82c197e35286@127.0.0.1:40716 #1
+2026-11-07 07:23:36.578+00:00 [INFO ] GRPC, new incoming connection 20009e49-7cf8-44c0-82e7-2d77e3cdd81b@127.0.0.1:49940 #1
+2026-11-07 07:23:36.580+00:00 [INFO ] GRPC, end connection 20009e49-7cf8-44c0-82e7-2d77e3cdd81b@127.0.0.1:49940 #1
+2026-11-07 07:23:37.097+00:00 [INFO ] GRPC, new incoming connection d2caf934-5a9c-4841-9514-ff77483d26a5@127.0.0.1:49954 #1
+2026-11-07 07:23:37.099+00:00 [INFO ] GRPC, end connection d2caf934-5a9c-4841-9514-ff77483d26a5@127.0.0.1:49954 #1
+2026-11-07 07:23:37.621+00:00 [INFO ] GRPC, new incoming connection 289bd2c3-c95f-4305-a45c-2d7e26912d3f@127.0.0.1:49968 #1
+2026-11-07 07:23:37.623+00:00 [INFO ] GRPC, end connection 289bd2c3-c95f-4305-a45c-2d7e26912d3f@127.0.0.1:49968 #1
+2026-11-07 07:23:38.140+00:00 [INFO ] GRPC, new incoming connection 09374b0c-5708-4bbb-83d0-f7e5cb846d63@127.0.0.1:49978 #1
+2026-11-07 07:23:38.142+00:00 [INFO ] GRPC, end connection 09374b0c-5708-4bbb-83d0-f7e5cb846d63@127.0.0.1:49978 #1
+2026-11-07 07:23:38.658+00:00 [INFO ] GRPC, new incoming connection 115b6fae-4a50-49e6-95c7-67563a2511af@127.0.0.1:49990 #1
+2026-11-07 07:23:38.660+00:00 [INFO ] GRPC, end connection 115b6fae-4a50-49e6-95c7-67563a2511af@127.0.0.1:49990 #1
+2026-11-07 07:23:39.178+00:00 [INFO ] GRPC, new incoming connection e563b470-a609-4e92-a016-39c8bfa505d5@127.0.0.1:50002 #1
+2026-11-07 07:23:39.179+00:00 [INFO ] GRPC, end connection e563b470-a609-4e92-a016-39c8bfa505d5@127.0.0.1:50002 #1
+2026-11-07 07:23:39.699+00:00 [INFO ] GRPC, new incoming connection c3ac9a96-3167-4390-9c66-ca78497cf16b@127.0.0.1:50004 #1
+2026-11-07 07:23:39.702+00:00 [INFO ] GRPC, end connection c3ac9a96-3167-4390-9c66-ca78497cf16b@127.0.0.1:50004 #1
+2026-11-07 07:23:40.220+00:00 [INFO ] GRPC, new incoming connection 7796bb03-2c0b-443a-9474-e867cf8ae26d@127.0.0.1:50010 #1
+2026-11-07 07:23:40.222+00:00 [INFO ] GRPC, end connection 7796bb03-2c0b-443a-9474-e867cf8ae26d@127.0.0.1:50010 #1
+2026-11-07 07:23:40.738+00:00 [INFO ] GRPC, new incoming connection 1356e93c-b123-4ebc-8d55-5d0fe415f266@127.0.0.1:50020 #1
+2026-11-07 07:23:40.740+00:00 [INFO ] GRPC, end connection 1356e93c-b123-4ebc-8d55-5d0fe415f266@127.0.0.1:50020 #1
+2026-11-07 07:23:41.257+00:00 [INFO ] GRPC, new incoming connection f43c8276-30d0-46d1-9139-19f54c00d71f@127.0.0.1:50028 #1
+2026-11-07 07:23:41.259+00:00 [INFO ] GRPC, end connection f43c8276-30d0-46d1-9139-19f54c00d71f@127.0.0.1:50028 #1
+2026-11-07 07:23:41.776+00:00 [INFO ] GRPC, new incoming connection d88b21ea-79a6-499d-84a6-a61930382d91@127.0.0.1:50034 #1
+2026-11-07 07:23:41.778+00:00 [INFO ] GRPC, end connection d88b21ea-79a6-499d-84a6-a61930382d91@127.0.0.1:50034 #1
+2026-11-07 07:23:42.295+00:00 [INFO ] GRPC, new incoming connection 7e46499a-1de1-4b12-a22c-4cb4e79fb671@127.0.0.1:50040 #1
+2026-11-07 07:23:42.297+00:00 [INFO ] GRPC, end connection 7e46499a-1de1-4b12-a22c-4cb4e79fb671@127.0.0.1:50040 #1
+2026-11-07 07:23:42.814+00:00 [INFO ] GRPC, new incoming connection 3dda1542-575a-4e0b-9552-6dc8f7ce638b@127.0.0.1:50054 #1
+2026-11-07 07:23:42.816+00:00 [INFO ] GRPC, end connection 3dda1542-575a-4e0b-9552-6dc8f7ce638b@127.0.0.1:50054 #1
+2026-11-07 07:23:43.334+00:00 [INFO ] GRPC, new incoming connection 7b9237b8-1c3d-400d-bf36-b32b89ac4420@127.0.0.1:50066 #1
+2026-11-07 07:23:43.335+00:00 [INFO ] GRPC, end connection 7b9237b8-1c3d-400d-bf36-b32b89ac4420@127.0.0.1:50066 #1
+2026-11-07 07:23:43.853+00:00 [INFO ] GRPC, new incoming connection 0a716b13-a4ec-42ee-a4a8-d420e958f0da@127.0.0.1:50078 #1
+2026-11-07 07:23:43.856+00:00 [INFO ] GRPC, end connection 0a716b13-a4ec-42ee-a4a8-d420e958f0da@127.0.0.1:50078 #1
+2026-11-07 07:23:44.374+00:00 [INFO ] GRPC, new incoming connection d7cd0831-51a2-47ab-b239-3520a7b3249b@127.0.0.1:50086 #1
+2026-11-07 07:23:44.376+00:00 [INFO ] GRPC, end connection d7cd0831-51a2-47ab-b239-3520a7b3249b@127.0.0.1:50086 #1
