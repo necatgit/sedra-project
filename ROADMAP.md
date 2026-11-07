@@ -38,7 +38,7 @@ Code: `necatgit/sedra-rusty`, branch `dev`.
 - [x] M7: UTXO commitment and supply parity (#26, 2026-11-06: identical supply, commitment, balances and UTXOs)
 - [x] M8: Mining parity on an isolated test setup (#27, private devnet, 1400 blocks)
 - [~] Security back-ports from later rusty-kaspa releases (#29, [research/0006](research/0006-security-backports.md)): must-fix and should items done and merged (`sedra-rusty@9cb74efc`, 518 tests pass; upstream `48b63582` deliberately not applied, it rejects real Sedra proofs); open: the optional cherry-picks; required before M9
-- [ ] M9: Seven-day soak next to Go nodes (#28)
+- [~] M9: Seven-day soak next to Go nodes (#28) (running 2026-11-07 07:20 to 2026-11-14 07:20 UTC)
 
 Step 2: the merged-mining hard fork.
 
