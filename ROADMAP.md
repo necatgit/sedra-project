@@ -55,7 +55,7 @@ Step 2: the merged-mining hard fork.
 
 ## Phase 4: Mainnet activation
 
-- [ ] Announce the activation point weeks in advance (#15)
+- [ ] Announce the activation point, agreed jointly with the Sedra team, with notice as short as the operators can safely upgrade (#15; decided 2026-11-09, Q33)
 - [ ] Release with checksums and build instructions (#16)
 - [ ] Track upgrade status of pools, exchanges and explorers publicly (#17)
 - [ ] Activation and follow-up (#18)
