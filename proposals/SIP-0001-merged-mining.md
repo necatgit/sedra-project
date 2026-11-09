@@ -201,7 +201,8 @@ Tracked in [QUESTIONS.md](../QUESTIONS.md) under the IDs in brackets.
    commitment. ~~Encoding?~~ Decided 2026-11-09 (Q25): base64url (section 4.2).
 3. ~~How does Sedra keep up with future Kaspa header changes?~~ Decided 2026-11-09 (Q20): a Sedra release before each
    Kaspa header fork; merged mining pauses if it is late (section 4.6).
-4. Which Kaspa pools besides PuddlePool would support Sedra? (Q21)
+4. Which Kaspa pools besides PuddlePool would support Sedra? (Q21) Pools known to mine SDR today (2026-11-09): Sedra's
+   own pool, jsmining and PuddlePool. Whether the other two also mine Kaspa and would add merged mining is unknown.
 5. ~~How are the activation DAA score and notice period decided?~~ Decided 2026-11-09 (Q33): jointly with the Sedra
    team after the public testnet, with notice as short as the few operators can safely upgrade (section 5).
 6. Does the Sedra team support this proposal? (Q3) Their letter of 2026-11-07: open to merged mining on condition of
