@@ -2,7 +2,7 @@
 
 How long each step took from the start of the project, and how much AI work went into it. Regenerated with `python tools/update_timeline.py <transcripts>`; see the notes at the end for what the numbers mean.
 
-**Project start:** 2026-11-05 07:19 UTC (first message of the session in which the project began). **Last update:** 2026-11-07 19:24 UTC.
+**Project start:** 2026-11-05 07:19 UTC (first message of the session in which the project began). **Last update:** 2026-11-09 08:17 UTC.
 
 ## Milestones and closed issues
 
@@ -20,7 +20,7 @@ How long each step took from the start of the project, and how much AI work went
 | 2026-11-06 09:04 | 25 h 45 min | #27 M8: Mining parity on an isolated test setup | 19 | 26 k / 20 k |
 | 2026-11-06 17:21 | 34 h 02 min | #26 M7: UTXO commitment and supply parity with the Go node | 228 | 2,221 k / 242 k |
 | 2026-11-06 18:20 | 35 h 01 min | #24 M5: Full sync from a local Go node, then follow the tip | 17 | 11 k / 5 k |
-| (open) | 60 h 05 min | work since the last closed issue | 377 | 1,769 k / 317 k |
+| (open) | 96 h 58 min | work since the last closed issue | 1405 | 5,281 k / 1,164 k |
 
 A phase counts **all** AI work between two closed issues, not only the issue in that row. For example, the first row includes the project setup (repository, rules, identity), and the M2 row includes setting up the test VM, the build fix for GCC 15 and the coverage measurement. Several issues closed in the same minute share one phase; their AI effort is counted on the first of them.
 
@@ -28,18 +28,22 @@ A phase counts **all** AI work between two closed issues, not only the issue in 
 
 | Day (UTC) | AI calls | Fresh tokens (in / out) | What happened |
 |---|---|---|---|
-| 2026-11-05 | 399 | 1,505 k / 374 k | [first-research](updates/2026-11-05-first-research.md), [project-start](updates/2026-11-05-project-start.md) |
+| 2026-11-03 | 675 | 1,248 k / 533 k | - |
+| 2026-11-04 | 207 | 1,668 k / 202 k | - |
+| 2026-11-05 | 410 | 1,553 k / 381 k | [first-research](updates/2026-11-05-first-research.md), [project-start](updates/2026-11-05-project-start.md) |
 | 2026-11-06 | 479 | 3,103 k / 464 k | [full-sync-and-security](updates/2026-11-06-full-sync-and-security.md), [rust-node-progress](updates/2026-11-06-rust-node-progress.md) |
-| 2026-11-07 | 296 | 1,563 k / 263 k | [soak-and-security-review](updates/2026-11-07-soak-and-security-review.md) |
+| 2026-11-07 | 302 | 1,664 k / 269 k | [soak-and-security-review](updates/2026-11-07-soak-and-security-review.md) |
+| 2026-11-08 | 25 | 161 k / 18 k | - |
+| 2026-11-09 | 104 | 286 k / 82 k | - |
 
 ## AI usage in total
 
 | | Tokens |
 |---|---|
-| Model calls | 1,174 (of which 296 by research agents) |
-| Fresh input (new text read: messages, files, command output) | 6,170,175 |
-| Output (text and code written by the AI) | 1,101,672 |
-| Re-read from cache (the conversation so far, read again on every call) | 398,099,797 |
+| Model calls | 2,202 (of which 308 by research agents) |
+| Fresh input (new text read: messages, files, command output) | 9,682,260 |
+| Output (text and code written by the AI) | 1,948,610 |
+| Re-read from cache (the conversation so far, read again on every call) | 703,517,358 |
 
 ## Notes
 
