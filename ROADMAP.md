@@ -15,7 +15,7 @@ Status: `[ ]` open · `[~]` in progress · `[x]` done · `[-]` dropped
 - [x] Find out whether one Kaspa block can carry commitments for both ZKas and Sedra (#3): yes, but only just
 - [x] Decide the implementation path (#4): **Rust node based on rusty-kaspa v1.0.1**, in two steps ([research/0004](research/0004-rust-path.md), decided 2026-11-05)
 - [ ] Rough effort and timeline estimate (#5)
-- [~] Publish the first full draft of SIP-0001 (#6): draft published 2026-11-06, awaiting review by Nec
+- [x] Publish the first full draft of SIP-0001 (#6): draft published 2026-11-06, reviewed by Nec 2026-11-09 (Q20, Q22, Q25, Q33 decided)
 
 ## Phase 1: Community and coordination
 

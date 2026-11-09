@@ -11,7 +11,7 @@ Rules:
 Status: **Open** (not asked yet) · **Asked** (sent to someone, waiting) · **Investigating** (being worked on in this
 project) · **Proposed** (a draft answer exists, not decided) · **Answered** · **Dropped**
 
-Summary (2026-11-09): 45 questions; 11 answered, 16 asked and waiting, 13 open, 2 being investigated, 2 proposed,
+Summary (2026-11-09): 45 questions; 15 answered, 16 asked and waiting, 10 open, 2 being investigated, 1 proposed,
 1 split.
 
 ## A. Working with the Sedra team
@@ -51,13 +51,13 @@ Summary (2026-11-09): 45 questions; 11 answered, 16 asked and waiting, 13 open, 
 |---|---|---|---|---|---|
 | Q1 | Can one Kaspa block carry merged-mining commitments for both ZKas and Sedra? | #3 | — (research) | Answered | Yes, but only just: ~145 bytes free, two 68-byte commitments leave ~9 bytes for the pool tag, a third never fits. [research/0002](research/0002-zkas-auxpow.md) |
 | Q18 | Should Sedra coordinate a shared commitment format with ZKas, or use a shorter commitment, to save coinbase space for pools? | [SIP-0001 §10](proposals/SIP-0001-merged-mining.md#10-open-questions) Q2; research/0002 | — | Answered | Decided by Nec on 2026-11-07: Sedra uses its own commitment (option A in the discussion), independent of ZKas, because no contact with the ZKas team exists and the separate format already works for ZKas on PuddlePool. The encoding inside it is Q25 |
-| Q20 | How does Sedra keep up with future Kaspa header format changes, which would stop merged mining until Sedra updates? | SIP-0001 §4.6 and §10 Q3; research/0002 | — | Open | |
+| Q20 | How does Sedra keep up with future Kaspa header format changes, which would stop merged mining until Sedra updates? | SIP-0001 §4.6 and §10 Q3; research/0002 | — | Answered | Decided by Nec on 2026-11-09: every Kaspa header change gets a Sedra node release before Kaspa's fork date; if it is late, merged mining pauses and native mining continues (SIP-0001 §4.6). |
 | Q21 | Which Kaspa pools besides PuddlePool would add Sedra merged mining? | SIP-0001 §10 Q4; research/0002 | — | Open | |
-| Q22 | Do Sedra holders accept that merged mining lets a large Kaspa pool dominate Sedra at no extra cost, and is any mitigation wanted? | SIP-0001 §8 and §10 Q1; research/0002 | — | Open | |
+| Q22 | Do Sedra holders accept that merged mining lets a large Kaspa pool dominate Sedra at no extra cost, and is any mitigation wanted? | SIP-0001 §8 and §10 Q1; research/0002 | — | Answered | Decided by Nec on 2026-11-09: accepted, no rule-level mitigation (checkpoints would put trust in a signer); stated openly in SIP-0001 §8, pool shares watched on the testnet. Holders can still comment in the public round (#8). |
 | Q23 | How does Sedra's difficulty adjustment react when large merged hashrate joins or leaves suddenly? | SIP-0001 §8; research/0002 | — | Open | To be measured on the public testnet |
 | Q24 | Should Sedra's self-parent ban cover only Sedra's own tag, so Sedra blocks may keep carrying ZKas commitments? | research/0002 | — | Proposed | Yes: SIP-0001 §4.5 (draft, pending review) |
-| Q25 | Could a pool put a raw-bytes commitment into the Kaspa coinbase instead of hex (it would save space)? Kaspa's `getBlockTemplate` only takes a UTF-8 string. | research/0002 | — | Proposed | 2026-11-07: raw bytes would halve the size, but Kaspa's getBlockTemplate takes extra data only as a UTF-8 string, so pools could not use it through the normal node API. Proposed instead: a compact text encoding (base64url, 43 characters instead of 64 hex), saving about 21 bytes, so that KAS+ZKAS+SDR in one block leaves about 30 bytes for the pool tag instead of 9. Awaiting Nec's decision |
-| Q33 | How are the activation DAA score and the notice period decided, and with whom? | SIP-0001 §10 Q5 | — | Open | |
+| Q25 | Could a pool put a raw-bytes commitment into the Kaspa coinbase instead of hex (it would save space)? Kaspa's `getBlockTemplate` only takes a UTF-8 string. | research/0002 | — | Answered | Decided by Nec on 2026-11-09: base64url without padding (43 characters, 47 bytes with the `SDM1` tag) instead of hex (68 bytes); UTF-8 safe for getBlockTemplate and leaves about 30 bytes for the pool tag when Kaspa, ZKas and Sedra are mined together (SIP-0001 §4.2, §6). Earlier: 2026-11-07: raw bytes would halve the size, but Kaspa's getBlockTemplate takes extra data only as a UTF-8 string, so pools could not use it through the normal node API. Proposed instead: a compact text encoding (base64url, 43 characters instead of 64 hex), saving about 21 bytes, so that KAS+ZKAS+SDR in one block leaves about 30 bytes for the pool tag instead of 9. Awaiting Nec's decision |
+| Q33 | How are the activation DAA score and the notice period decided, and with whom? | SIP-0001 §10 Q5 | — | Answered | Decided by Nec on 2026-11-09: agreed jointly with the Sedra team after the public testnet has passed; notice as short as the operators can safely upgrade (two or three pools, one exchange), set together with them (SIP-0001 §5). |
 
 ## D. Building the Rust node (technical)
 

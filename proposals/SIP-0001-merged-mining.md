@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | **Draft for review** (first full draft, 2026-11-06). Not final, not scheduled, not agreed with the Sedra team |
+| Status | **Draft**, reviewed by Nec 2026-11-09 (Q20, Q22, Q25, Q33 decided). Not final, not scheduled, not agreed with the Sedra team |
 | Author | Nec |
 | Created | 2026-11-05 |
 | Type | Consensus (hard fork) |
@@ -44,11 +44,11 @@ The rule change needs a node that can carry and check AuxPoW proofs. Sedra's cur
 Kaspa's Go node v0.12.15, which Kaspa no longer maintains (**Verified**, research 0004). This proposal therefore builds
 on the Sedra Rust node based on rusty-kaspa v1.0.1 that this project develops in step 1 (milestones M1-M9).
 
-Status on 2026-11-06 (**Verified**, evidence in `research/archive/`): the Rust node carries Sedra's network, block
-rewards and both v2.0.0 relaunch rules, validates 2001 real Sedra blocks, connects to Sedra's Go node over protocol
-version 5, and mines blocks that the Go node accepts and vice versa. Full sync against the live network (M5),
-UTXO/supply parity (M7) and a seven-day run next to Go nodes (M9) are still open. **This SIP cannot activate before
-step 1 is complete and the Rust node is in use by the network.**
+Status on 2026-11-09 (**Verified**, evidence in `research/archive/`): milestones M1-M8 are done. The Rust node
+carries Sedra's network, block rewards and both v2.0.0 relaunch rules, connects to Sedra's Go node over protocol
+version 5, syncs fully from a Go node and follows the tip (M5), matches the Go node's UTXO commitment and supply (M7),
+and mines blocks that the Go node accepts and vice versa (M8). The seven-day run next to a Go node (M9) is in progress
+until 2026-11-14. **This SIP cannot activate before step 1 is complete and the Rust node is in use by the network.**
 
 ## 4. Specification (Proposed)
 
@@ -74,16 +74,21 @@ Serialization: Borsh, as in ZKas, so pools can reuse one serializer. Limits: bra
 The parent's coinbase payload must contain the Sedra commitment **exactly once**:
 
 ```
-"SDM1" || lowercase-hex( H("sedra_aux_bind1" || sedra_genesis_hash || nonce_free_header_hash) )
+"SDM1" || base64url-nopad( H("sedra_aux_bind1" || sedra_genesis_hash || nonce_free_header_hash) )
 ```
 
 - `SDM1` (4 ASCII bytes) contains characters outside `0-9a-f`, so it can never appear inside another chain's hex
-  commitment, and it differs from ZKas's `ZKMM`/`ZKM1` tags. (ZKas only looks for its own exact tags, **Verified**.)
+  commitment (such as ZKas's), and it differs from ZKas's `ZKMM`/`ZKM1` tags. (ZKas only looks for its own exact tags,
+  **Verified**.)
 - `H` is the block-hash hasher; `nonce_free_header_hash` is the Sedra header hash with the nonce set to 0.
 - Binding Sedra's genesis hash prevents a commitment for another network (testnet, devnet) from being reused.
-- Hex rather than raw bytes, because Kaspa's `getBlockTemplate` passes `extraData` as a UTF-8 string (**Verified** for
-  ZKas). Total: 68 bytes.
-- Zero or more than one `SDM1` occurrence: the proof is invalid.
+- Encoding (decided 2026-11-09, Q25): base64url without padding (RFC 4648 §5), 43 characters for the 32-byte hash.
+  Not raw bytes, because Kaspa's `getBlockTemplate` passes `extraData` as a UTF-8 string (**Verified** for ZKas); not
+  hex, because hex needs 64 characters and leaves almost no coinbase space when Kaspa, ZKas and Sedra are mined
+  together (section 6). Total: 47 bytes.
+- Zero or more than one `SDM1` occurrence: the proof is invalid. Because base64url uses letters and digits, another
+  chain's base64 data could contain `SDM1` by chance; that would only make merged mining fail for that one block
+  (native mining is unaffected), and the pool building the coinbase can avoid it (**Inferred**).
 
 ### 4.3 Nonce binding
 
@@ -119,7 +124,8 @@ The parent is a **current** Kaspa header. Kaspa moved to block version 2 with co
 v1.0.1 (**Verified**, research 0004), while Sedra's own headers stay on version 1. The Sedra node therefore needs
 Kaspa's current header hashing for parents only. If Kaspa changes its header format again in a future hard fork, merged
 mining stops working until Sedra updates its parent decoder; native Sedra mining continues regardless (dual acceptance).
-How Sedra tracks Kaspa's header changes is an open question (section 10).
+Decided 2026-11-09 (Q20): every Kaspa header change gets a Sedra node release before Kaspa's fork date. If that release
+is late, merged mining pauses and native mining continues, so the chain does not stop.
 
 ### 4.7 Block level and pruning proof
 
@@ -136,7 +142,11 @@ proposal: no premine, no developer fee.
 
 - Activation by DAA score, `aux_pow_activation_daa_score`, an open-ended rule ("from DAA score X on"), using the same
   pattern as the v2.0.0 rules (research 0001).
-- The DAA score is chosen and announced only after a public testnet, with several weeks of notice.
+- The DAA score is chosen and announced only after a public testnet has passed, and it is agreed jointly with the Sedra
+  team (decided 2026-11-09, Q33; Sedra's letter of 2026-11-07 asked for a public testnet, a written proposal and an
+  activation date announced well in advance). The notice period should be as short as the operators can safely
+  upgrade: the network has two or three pools and one exchange, so it is set together with them rather than fixed in
+  weeks here.
 - A new P2P protocol version carries the witness field. After activation, nodes that do not understand AuxPoW (today's
   Go nodes) cannot validate merged-mined blocks and must be replaced by the Rust node. Before activation, the Rust node
   keeps protocol version 5 for compatibility with Go nodes.
@@ -145,9 +155,9 @@ proposal: no premine, no developer fee.
 ## 6. Pools and miners
 
 - Kaspa nodes need no change; the commitment goes into the pool's `extraData` (**Verified** for ZKas).
-- Space: Kaspa allows 204 bytes of coinbase payload; about 145 remain for the pool. `SDM1` and `ZKM1` together use
-  136 bytes, leaving about 9 bytes for the pool's own tag. A third chain does not fit (**Inferred**, arithmetic from
-  verified constants, research 0002).
+- Space: Kaspa allows 204 bytes of coinbase payload; about 145 remain for the pool. `SDM1` (47 bytes, base64url) and
+  `ZKM1` (68 bytes, hex) together use 115 bytes, leaving about 30 bytes for the pool's own tag. With hex for Sedra it
+  would have been 136 bytes and about 9 left (**Inferred**, arithmetic from verified constants, research 0002).
 - Pools need per-chain logic: a Sedra template subscription, a per-share check against Sedra's target, proof building
   and submission. PuddlePool's Miningcore supports one auxiliary chain per pool today and needs multi-aux support
   (milestone, issue #12).
@@ -161,8 +171,9 @@ mined blocks remain valid on both sides until the first merged-mined block appea
 ## 8. Security considerations
 
 - **Free hashrate cuts both ways (Inferred).** Merged mining attracts hashrate, but a large Kaspa pool could dominate
-  Sedra at no cost. Mitigations (for example checkpoints) are possible but have their own trust costs. This draft
-  proposes none and asks for discussion.
+  Sedra at no cost. Mitigations such as checkpoints put trust in whoever signs them. Decided 2026-11-09 (Q22): no
+  rule-level mitigation; the trade-off is accepted and stated openly. Sedra is as secure as the hashrate that mines it,
+  and the share of each pool is to be watched on the testnet and after activation.
 - **Difficulty swings (Unknown).** Sedra's difficulty adjustment has no merged-mining logic (as in ZKas). How fast it
   reacts when a large pool joins or leaves has not been measured; the testnet must test it.
 - **Witness outside the hash.** Peers can strip or replace the witness. Native proof of work is checked first, and a
@@ -184,19 +195,24 @@ the decoder. As in step 1, each test must be shown to fail when its rule is brok
 
 Tracked in [QUESTIONS.md](../QUESTIONS.md) under the IDs in brackets.
 
-1. Is the free-hashrate trade-off (section 8) acceptable to Sedra holders, and is any mitigation wanted? (Q22)
+1. ~~Is the free-hashrate trade-off acceptable, and is any mitigation wanted?~~ Decided 2026-11-09 (Q22): accepted,
+   no rule-level mitigation, stated openly (section 8). Holders can still comment in the public round (#8).
 2. ~~Should Sedra coordinate a shared commitment format with ZKas?~~ Decided 2026-11-07 (Q18): Sedra keeps its own
-   commitment, independent of ZKas. Still open: its encoding, hex (as in §4.2) or a compact text encoding such as
-   base64url that leaves more coinbase space when Kaspa, ZKas and Sedra are mined together (Q25).
-3. How does Sedra keep up with future Kaspa header changes (4.6)? (Q20)
+   commitment. ~~Encoding?~~ Decided 2026-11-09 (Q25): base64url (section 4.2).
+3. ~~How does Sedra keep up with future Kaspa header changes?~~ Decided 2026-11-09 (Q20): a Sedra release before each
+   Kaspa header fork; merged mining pauses if it is late (section 4.6).
 4. Which Kaspa pools besides PuddlePool would support Sedra? (Q21)
-5. How should the activation DAA score and the notice period be decided, and with whom? (Q33)
-6. Does the Sedra team support this proposal (asked 2026-11-05)? (Q3)
+5. ~~How are the activation DAA score and notice period decided?~~ Decided 2026-11-09 (Q33): jointly with the Sedra
+   team after the public testnet, with notice as short as the few operators can safely upgrade (section 5).
+6. Does the Sedra team support this proposal? (Q3) Their letter of 2026-11-07: open to merged mining on condition of
+   a public testnet, a written proposal and an activation date announced well in advance; against a fork soon after
+   the relaunch. Not agreed yet.
 
 ## What this does NOT mean
 
 - It does not mean merged mining will happen, or when. Nothing is scheduled.
-- It does not mean the Sedra team has agreed. They have been asked; no answer yet.
+- It does not mean the Sedra team has agreed. They are open to it on conditions (letter of 2026-11-07); nothing is
+  agreed.
 - It does not mean Sedra would inherit Kaspa's security.
 - It does not change emission or supply, and it does not create coins for the author.
 - It says nothing about prices, listings or adoption.
