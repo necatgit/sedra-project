@@ -20,7 +20,7 @@ Status: `[ ]` open · `[~]` in progress · `[x]` done · `[-]` dropped
 ## Phase 1: Community and coordination
 
 - [~] Contact the Sedra owner: support, repository access, infrastructure (#7): questions sent 2026-11-05
-- [ ] Open SIP-0001 for public comment (#8)
+- [~] Open SIP-0001 for public comment (#8): open since 2026-11-09 in the public repository [necatgit/sedra-sips](https://github.com/necatgit/sedra-sips) (comments: sedra-sips#1); this repository stays private until the security write-up (around 2026-11-23)
 - [ ] Reach out to pools, explorers and exchanges (#9): **for the Sedra team** (owner of the network and its contacts); Nec is not the owner and provides the technical information (SIP, node, test results) on request
 
 ## Phase 2: Implementation

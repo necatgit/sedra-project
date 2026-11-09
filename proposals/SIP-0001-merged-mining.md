@@ -6,7 +6,7 @@
 | Author | Nec |
 | Created | 2026-11-05 |
 | Type | Consensus (hard fork) |
-| Discussion | Issue #6 (draft), #8 (public comment, later) |
+| Discussion | Issue #6 (draft), #8; public comment since 2026-11-09 in [necatgit/sedra-sips](https://github.com/necatgit/sedra-sips) (public copy without links to private notes; keep both in sync) |
 | Based on | [research/0001](../research/0001-relaunch-review.md), [0002](../research/0002-zkas-auxpow.md), [0004](../research/0004-rust-path.md), [0005](../research/0005-test-coverage.md) |
 
 Labels used for claims: **Verified** (checked in code or data, see the referenced research), **Inferred** (reasoned,
