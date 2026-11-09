@@ -21,7 +21,7 @@ Status: `[ ]` open · `[~]` in progress · `[x]` done · `[-]` dropped
 
 - [~] Contact the Sedra owner: support, repository access, infrastructure (#7): questions sent 2026-11-05
 - [ ] Open SIP-0001 for public comment (#8)
-- [ ] Reach out to pools, explorers and exchanges (#9)
+- [ ] Reach out to pools, explorers and exchanges (#9): **for the Sedra team** (owner of the network and its contacts); Nec is not the owner and provides the technical information (SIP, node, test results) on request
 
 ## Phase 2: Implementation
 
