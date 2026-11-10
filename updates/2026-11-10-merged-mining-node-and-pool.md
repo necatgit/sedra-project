@@ -27,8 +27,14 @@ pool's live ZKas merged mining (not yet triggered, fix deployed the same day).
 The pool side (one Kaspa job carrying ZKas and Sedra commitments, a separate Sedra payout wallet, display and payout
 settings per chain) is ready on its own branch and goes live together with the node.
 
+## The existing wallet works with the Rust node
+
+Pools, games and exchanges pay out through the Go wallet daemon `sedrawallet`. Tested the same day on a local test
+network: the wallet from sedrad v2.0.0, connected to the Rust node, shows balances, sends, and pays out exactly as
+the pool software calls it; amounts and fees add up to the last unit. Operators who switch to the Rust node keep
+their wallet and only point it at the new node.
+
 ## Next
 
-- Test the existing Go wallet daemon `sedrawallet` against the Rust node: pools, games and exchanges pay out through it.
 - 2026-11-14: the seven-day run (M9) ends; then the Rust node is published as `v0.1.0`.
 - Activation needs a date agreed with the Sedra team (Phase 4).

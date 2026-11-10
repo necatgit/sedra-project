@@ -41,7 +41,7 @@ Code: `necatgit/sedra-rusty`, branch `dev`.
 - [~] M9: Seven-day soak next to Go nodes (#28) (running 2026-11-07 07:20 to 2026-11-14 07:20 UTC)
 - [ ] After M9: a public Rust node of this project as the first independent public Sedra node, on a machine separate from any pool ([SIP-0002](proposals/SIP-0002-network-resilience.md), #30)
   - [x] Release preparation (2026-11-09, `sedra-rusty@a87436d9`): Sedra version string (`0.1.0 (rusty-kaspa v1.0.1, commit …)`), reproducible build (`contrib/reproducible/`, pinned toolchain, image and Debian snapshot), `docs/RELEASE.md`, README for outsiders. Two clones built identical binaries on one host; the container route across two machines is still to be run
-  - [ ] The Go wallet daemon `sedrawallet` against the Rust node (balance, send, a pool payout) on a local devnet: not tested yet; pools, the game and exchanges pay out through it, so it has to work before anyone switches nodes
+  - [x] The Go wallet daemon `sedrawallet` (sedrad v2.0.0) against the Rust node on a local devnet (2026-11-10, `tools/e2e-merged-mining/wallet_test.sh`): addresses, balance, CLI send and the daemon's `Send` as Miningcore's payout calls it all work; amounts and fees add up exactly. Operators keep the Go wallet binary and point `--rpcserver` at the Rust node (started with `--utxoindex`)
   - [ ] On 2026-11-14: make `sedra-rusty` public, test the container build on the test VM, tag `v0.1.0`, turn the test VM into the public node (decided 2026-11-09: same host as the pool, so not fully independent; a separate machine later)
 
 Step 2: the merged-mining hard fork.

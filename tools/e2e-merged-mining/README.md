@@ -40,3 +40,16 @@ The miner computes kHeavyHash with sedra-rusty's own `kaspa-pow` and speaks the 
 
 Not covered: ZKAS and SDR in the same coinbase against real nodes (no local ZKas node; covered by unit tests),
 payouts (payment processing disabled), classification and maturity of the SDR blocks.
+
+## Wallet test 2026-11-10: Go `sedrawallet` against the Rust node
+
+`bash wallet_test.sh` (needs `~/repos/sedrad` at v2.0.0 and Go): one Rust devnet node with `--utxoindex`, merged
+mining off; the Go wallet daemon `sedrawallet` from sedrad v2.0.0 connected to it. `walletcheck/` is a small client
+that calls the daemon exactly as Miningcore's payout does (`GetBalance`, then `Send` with the password, change address
+reused).
+
+Result: devnet addresses, balance (available and pending), a CLI send (unsigned transaction, local signing, broadcast)
+and the daemon's own `Send` all work. 65,000 SDR before, 64,992.9998 after: exactly the 7 SDR payout to an outside
+address plus two fees of 0.0001; the 10 SDR sent to the wallet's second address stayed in the wallet. Both
+transactions were mined, no errors in the node or daemon logs. The node binary was `m10-auxpow`, which contains `dev`
+(the v0.1.0 candidate); without the activation flag its merged-mining code is inactive.
