@@ -42,7 +42,7 @@ Code: `necatgit/sedra-rusty`, branch `dev`.
 - [ ] After M9: a public Rust node of this project as the first independent public Sedra node, on a machine separate from any pool ([SIP-0002](proposals/SIP-0002-network-resilience.md), #30)
   - [x] Release preparation (2026-11-09, `sedra-rusty@a87436d9`): Sedra version string (`0.1.0 (rusty-kaspa v1.0.1, commit …)`), reproducible build (`contrib/reproducible/`, pinned toolchain, image and Debian snapshot), `docs/RELEASE.md`, README for outsiders. Two clones built identical binaries on one host; the container route across two machines is still to be run
   - [x] The Go wallet daemon `sedrawallet` (sedrad v2.0.0) against the Rust node on a local devnet (2026-11-10, `tools/e2e-merged-mining/wallet_test.sh`): addresses, balance, CLI send and the daemon's `Send` as Miningcore's payout calls it all work; amounts and fees add up exactly. Operators keep the Go wallet binary and point `--rpcserver` at the Rust node (started with `--utxoindex`)
-  - [ ] On 2026-11-14: make `sedra-rusty` public, test the container build on the test VM, tag `v0.1.0`, turn the test VM into the public node (decided 2026-11-09: same host as the pool, so not fully independent; a separate machine later)
+  - [ ] On 2026-11-14: release v0.1.0 following [release/v0.1.0-checklist.md](release/v0.1.0-checklist.md) (decisions D1-D3 first): make `sedra-rusty` public, test the container build on the test VM, tag `v0.1.0`, turn the test VM into the public node (decided 2026-11-09: same host as the pool, so not fully independent; a separate machine later)
 
 Step 2: the merged-mining hard fork.
 
@@ -65,7 +65,7 @@ Step 2: the merged-mining hard fork.
 
 ## Phase 3: Public testnet
 
-- [ ] Launch a public testnet with merged mining, with instructions so anyone can run a node and test (#13)
+- [~] Launch a public testnet with merged mining, with instructions so anyone can run a node and test (#13): plan drafted as [SIP-0003](proposals/SIP-0003-public-testnet.md) (2026-11-10), decisions Q46-Q51 open
 - [ ] Fix issues, publish release candidates (#14)
 
 ## Phase 4: Mainnet activation

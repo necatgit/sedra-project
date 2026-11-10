@@ -39,6 +39,7 @@ This project exists because communication around Sedra has been poor. Every publ
 | Every question: who it was asked, status, answer and source | `QUESTIONS.md`, the **one** list of questions. Every new question gets the next free ID there first, with a link to where it came from; other documents refer to it by ID ("Q22") instead of keeping their own list |
 | Formal consensus proposals | `proposals/SIP-NNNN-*.md` |
 | Dated progress posts | `updates/YYYY-MM-DD-*.md` |
+| Release checklists | `release/vX.Y.Z-checklist.md` |
 | Time per milestone and AI effort | `TIMELINE.md`, regenerated with `tools/update_timeline.py` together with every documentation update (it has a per-day table, so work between closed issues shows up too) |
 
 ## Keeping documentation current

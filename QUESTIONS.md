@@ -11,7 +11,7 @@ Rules:
 Status: **Open** (not asked yet) · **Asked** (sent to someone, waiting) · **Investigating** (being worked on in this
 project) · **Proposed** (a draft answer exists, not decided) · **Answered** · **Dropped**
 
-Summary (2026-11-10): 45 questions; 16 answered, 16 asked and waiting, 9 open, 2 being investigated, 1 proposed,
+Summary (2026-11-10): 52 questions; 16 answered, 16 asked and waiting, 10 open, 2 being investigated, 7 proposed,
 1 split.
 
 ## A. Working with the Sedra team
@@ -83,3 +83,15 @@ Summary (2026-11-10): 45 questions; 16 answered, 16 asked and waiting, 9 open, 2
 | Q39 | Will the Sedra team publish a sedrad maintenance release with updated network libraries (gRPC 1.38.0, x/net 0.7.0, protobuf 1.28.1 have 12 reachable known vulnerabilities), built with a current Go version and with checksums? | [research/0007](research/0007-go-node-security.md) | Sedra owner, 2026-11-09 (security notice) | Asked | Sent with the security notice |
 | Q40 | Who besides this project would run public Sedra nodes, DNS seeders or fallback peers, so that the network does not depend on a few servers? | [SIP-0002](proposals/SIP-0002-network-resilience.md), #30 | — | Open | |
 | Q5 | Do the public fallback peers (169.58.111.191, 169.58.126.141) serve incomplete DAA windows to syncing nodes, and were they themselves synced via headers proof? A fresh Go node synced from them has 2,039 of 2,641 window blocks for the pruning point; a long-running node has all 2,641. | M5 (#24) | — | Open | |
+
+## F. The public testnet (SIP-0003)
+
+| ID | Question | Source | Asked whom / when | Status | Answer and source |
+|---|---|---|---|---|---|
+| Q46 | Which Kaspa network is the testnet's parent: Kaspa's public testnet, our own Kaspa test network, or Kaspa mainnet? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.1, #13 | Nec, 2026-11-10 | Proposed | Draft: Kaspa's public testnet; mainnet later and optional as a dress rehearsal on PuddlePool only |
+| Q47 | Which Sedra test chain: the testnet already in the code, a new genesis, or a copy of mainnet? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.2, #13 | Nec, 2026-11-10 | Proposed | Draft: The existing testnet if Go and Rust agree on its rules (unmodified Go nodes can then join), otherwise a new genesis; mainnet parameters either way |
+| Q48 | Does merged mining activate on the testnet from the first block or after an announced native phase? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.3, #13 | Nec, 2026-11-10 | Proposed | Draft: After a native phase, announced at launch, to test the mainnet sequence including the ban window |
+| Q49 | Who runs the testnet's nodes, pool, faucet and explorer? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.4, #13 | Nec, 2026-11-10 | Proposed | Draft: This project starts them (pool separate from production), the Sedra team, pools and the exchange are invited to join |
+| Q50 | How do outsiders join (node release and guide, miners, pools, reports)? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.5, #13 | Nec, 2026-11-10 | Proposed | Draft: Verified testnet release with a one-page guide, public reference pool, GitHub issues |
+| Q51 | How long does the testnet run and what counts as passed? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.6, #13 | Nec, 2026-11-10 | Proposed | Draft: At least two weeks after activation, exit criteria in SIP-0003 section 3, then a dated report |
+| Q52 | Does anyone run Sedra's existing testnet (`testnet-10`, no seeders in the code), and do its rules match mainnet's v2.0.0 rules? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.2 | — (Sedra team) | Open | |

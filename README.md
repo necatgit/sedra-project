@@ -25,7 +25,8 @@ Kaspa-level work, while normal Sedra mining keeps working as before.
 | Treasury | Not part of this proposal |
 
 The full specification is in [proposals/SIP-0001-merged-mining.md](proposals/SIP-0001-merged-mining.md). It is a
-draft until the feasibility study is done.
+draft: reviewed by Nec on 2026-11-09 and open for public comment. The plan for the public testnet that has to come
+before any activation is [SIP-0003](proposals/SIP-0003-public-testnet.md) (draft).
 
 ## How to follow along
 
