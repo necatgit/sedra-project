@@ -11,7 +11,7 @@ Rules:
 Status: **Open** (not asked yet) · **Asked** (sent to someone, waiting) · **Investigating** (being worked on in this
 project) · **Proposed** (a draft answer exists, not decided) · **Answered** · **Dropped**
 
-Summary (2026-11-09): 45 questions; 15 answered, 16 asked and waiting, 10 open, 2 being investigated, 1 proposed,
+Summary (2026-11-10): 45 questions; 16 answered, 16 asked and waiting, 9 open, 2 being investigated, 1 proposed,
 1 split.
 
 ## A. Working with the Sedra team
@@ -64,7 +64,7 @@ Summary (2026-11-09): 45 questions; 15 answered, 16 asked and waiting, 10 open, 
 | ID | Question | Source | Asked whom / when | Status | Answer and source |
 |---|---|---|---|---|---|
 | Q2 | Should AuxPoW be added to the Go node, or should Sedra move to the Rust codebase? | #4 | — (research + decision) | Answered | Rust, based on rusty-kaspa v1.0.1, in two steps; decided by Nec on 2026-11-05. [research/0004](research/0004-rust-path.md) |
-| Q19 | Does Sedra's code hash Kaspa parent headers (current Kaspa block version 2) byte for byte as Kaspa does? | research/0002; SIP-0001 §8 | — | Open | To be tested with real Kaspa mainnet headers in M10 (#10). For Sedra's own headers this is answered: 2001 real blocks match (M3, #22) Update 2026-11-07: 20 real Kaspa mainnet headers (version 2, 56 parent levels) re-hash correctly with rusty-kaspa's layout in an independent Python check; the Rust test follows in M10. [Evidence](research/archive/2026-11-07-kaspa-headers/README.md) |
+| Q19 | Does Sedra's code hash Kaspa parent headers (current Kaspa block version 2) byte for byte as Kaspa does? | research/0002; SIP-0001 §8 | — | Answered | To be tested with real Kaspa mainnet headers in M10 (#10). For Sedra's own headers this is answered: 2001 real blocks match (M3, #22) Update 2026-11-07: 20 real Kaspa mainnet headers (version 2, 56 parent levels) re-hash correctly with rusty-kaspa's layout in an independent Python check; the Rust test follows in M10. [Evidence](research/archive/2026-11-07-kaspa-headers/README.md) **Answered 2026-11-10 (M10 step 1, `sedra-rusty@4638efe2`, branch `m10-auxpow`):** yes. The Rust test reproduces all 20 header hashes and their kHeavyHash. New finding: since Kaspa's Toccata fork the coinbase (Merkle leaf 0) is a **version 1** transaction, which the v1.0.1 code cannot hash, so the parent coinbase gets its own type with Kaspa's current hashing; checked against Kaspa's reported hashes of 20 real coinbases and their Merkle branches up to `hashMerkleRoot`. |
 | Q27 | Does any archival Sedra node (full history from genesis) exist? Without one, rules before the pruning point can only be checked partially. | research/0004 | — | Open | |
 | Q28 | Are `sedracoin/go-muhash` v1.0.1 and `sedracoin/go-secp256k1` v1.0.2 identical to Kaspa's originals? | research/0004 | — (research) | Answered | Yes, in code: no difference in any code file after normalising the module name; only `go.mod`, fuzz-test corpus and `.gitattributes` differ (2026-11-06). [Evidence](research/archive/2026-11-06-q28-q36/README.md) |
 | Q30 | Are there other Go-vs-Rust differences near genesis besides the minimum difficulty window (2641 vs 150, fixed in M1)? | research/0004 | — | Open | |
