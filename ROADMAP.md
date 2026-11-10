@@ -14,7 +14,7 @@ Status: `[ ]` open · `[~]` in progress · `[x]` done · `[-]` dropped
 - [x] Study the ZKas AuxPoW design (#2, [research/0002](research/0002-zkas-auxpow.md))
 - [x] Find out whether one Kaspa block can carry commitments for both ZKas and Sedra (#3): yes, but only just
 - [x] Decide the implementation path (#4): **Rust node based on rusty-kaspa v1.0.1**, in two steps ([research/0004](research/0004-rust-path.md), decided 2026-11-05)
-- [ ] Rough effort and timeline estimate (#5)
+- [x] Rough effort and timeline estimate (#5): actuals and remaining steps posted 2026-11-10 (mainnet activation not before January 2027, after the testnet report)
 - [x] Publish the first full draft of SIP-0001 (#6): draft published 2026-11-06, reviewed by Nec 2026-11-09 (Q20, Q22, Q25, Q33 decided)
 
 ## Phase 1: Community and coordination
@@ -46,7 +46,7 @@ Code: `necatgit/sedra-rusty`, branch `dev`.
 
 Step 2: the merged-mining hard fork.
 
-- [~] M10: Port the AuxPoW verifier into the Rust node behind an activation point (#10), branch `m10-auxpow` of `sedra-rusty`
+- [x] M10: Port the AuxPoW verifier into the Rust node behind an activation point (#10, closed 2026-11-10), branch `m10-auxpow` of `sedra-rusty`
   - [x] Step 1 (2026-11-10, `4638efe2`): Kaspa parents hashed as Kaspa does today; checked on 20 real Kaspa mainnet blocks (headers, kHeavyHash, coinbase hashes, Merkle branches). Finding: Kaspa coinbases are transaction version 1 since Toccata, so they need their own type (Q19 answered)
   - [x] Step 2 (2026-11-10, `f3f589c3`): the proof format and its structural rules (SDM1 base64url commitment, exactly once, nonce binding, limits), tested on a real Kaspa block with every rule broken once
   - [x] Step 3 (2026-11-10, `7f9a37b5`): the parent's work against the Sedra target, dual acceptance (native first, proof only after activation), block level from the parent's work; six rules mutation-checked
@@ -59,8 +59,8 @@ Step 2: the merged-mining hard fork.
     - [x] 5b `abffef04` (2026-11-10): two nodes, 240 blocks (half merged-mined) relayed through the P2P conversion, pruning proof with 319 merged-mined headers validated; a node without merged mining rejects block and proof; full suite 556 passed
     - [x] 5c (2026-11-10, sedra-rusty `9248ee20` devnet-only `--devnet-aux-pow-activation`; harness `tools/e2e-merged-mining/`): two Sedra and two Kaspa devnet nodes, Miningcore, CPU stratum miner; 401 of 401 merged-mined SDR blocks accepted, relayed to the second node, credited to the miner's SDR address. Found and fixed: a blue-work sign bug in the shared aux serializer (also latent for ZKAS in production, fixed on Miningcore `dev` `18862898`), the aux wallet host defaulting to the production ZKAS wallet IP, unrecognized Sedra test-network addresses
   - [x] Pool side (Miningcore branch `sedra-merged-mining`, 2026-11-10): serializer checked against the node's interop vector, several aux chains per parent (KAS jobs carry ZKM1 and SDM1), per-chain miner addresses, aux pool `kaspa1-sedra` with its own wallet, display of every aux chain, one payout-limit field per aux chain. The separate wallet exists (2026-11-10, its own wallet daemon); the pool configuration carries it as a disabled entry until go-live
-- [ ] Unit tests and consensus tests (#11)
-- [ ] Merged-mining support in a reference pool (#12)
+- [x] Unit tests and consensus tests (#11, closed 2026-11-10: covered in M10 steps 2-5)
+- [~] Merged-mining support in a reference pool (#12): implemented and tested in PuddlePool's Miningcore (branch, see M10 pool side); publishing it as a reference is planned with the testnet (SIP-0003 §4.5)
 - [ ] Network resilience in the node code: more seeders and fallback peers from independent operators; peer memory ("parents") design ([SIP-0002](proposals/SIP-0002-network-resilience.md), #30)
 
 ## Phase 3: Public testnet
