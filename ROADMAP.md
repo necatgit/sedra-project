@@ -53,10 +53,10 @@ Step 2: the merged-mining hard fork.
     - 4a `42ca58c8`: the proof as an optional header field outside the header hash, as ZKas does (decided 2026-11-10), nesting rejected, DB version 5 (existing Rust nodes resync once)
     - 4b `45e74643`: P2P field 15 (a bad proof from a peer is dropped, the header kept) and the mining RPC (`RpcRawHeader.auxPow`, gRPC field 16, wRPC format 2; a bad proof is an error the pool sees)
     - 4c `12630118`: `aux_pow_activation` (never on every network), the gate in header validation and pruning proof, self-parent ban from 2 × finality depth (~2 days) before activation (decided 2026-11-10, as in ZKas; SIP §4.5/§5 updated); tested through the real consensus pipeline on simnet
-  - [~] Step 5: tests beyond unit level
+  - [x] Step 5: tests beyond unit level
     - [x] 5a `f21ba68f` (2026-11-10): deterministic fuzzing of decoder, checks, PoW gate, P2P and RPC conversion; finding: the parent's cached hash field was the only free byte range, now normalized at both decode edges
     - [x] 5b `abffef04` (2026-11-10): two nodes, 240 blocks (half merged-mined) relayed through the P2P conversion, pruning proof with 319 merged-mined headers validated; a node without merged mining rejects block and proof; full suite 556 passed
-    - [ ] 5c: end to end with the pool software (Miningcore branch `sedra-merged-mining`): local Sedra devnet node with merged mining active, local Kaspa devnet parent, CPU miner
+    - [x] 5c (2026-11-10, sedra-rusty `9248ee20` devnet-only `--devnet-aux-pow-activation`; harness `tools/e2e-merged-mining/`): two Sedra and two Kaspa devnet nodes, Miningcore, CPU stratum miner; 401 of 401 merged-mined SDR blocks accepted, relayed to the second node, credited to the miner's SDR address. Found and fixed: a blue-work sign bug in the shared aux serializer (also latent for ZKAS in production, fixed on Miningcore `dev` `18862898`), the aux wallet host defaulting to the production ZKAS wallet IP, unrecognized Sedra test-network addresses
   - [x] Pool side (Miningcore branch `sedra-merged-mining`, 2026-11-10): serializer checked against the node's interop vector, several aux chains per parent (KAS jobs carry ZKM1 and SDM1), per-chain miner addresses, aux pool `kaspa1-sedra` with its own wallet, display of every aux chain
 - [ ] Unit tests and consensus tests (#11)
 - [ ] Merged-mining support in a reference pool (#12)
