@@ -76,5 +76,10 @@ relaunch rules, checked against sedrad and real Sedra blocks (M1-M4, M6, M8). It
 from a Go node and holds exactly the same state (M5, M7), and carries the security fixes from later Kaspa releases
 (#29). Now running: a seven-day run next to a Go node (M9, until 2026-11-14). See [ROADMAP.md](ROADMAP.md) for details.
 
-The merged-mining fork itself (step 2) has not been started. Nothing here affects the running Sedra network: all tests
-run on a separate test machine, and the Rust node under test connects only to a local Go node.
+**Step 2, the merged-mining fork, is implemented and tested but not active anywhere** (M10, branch `m10-auxpow`,
+2026-11-10): the verifier, the proof as a header field, P2P and mining RPC, the activation gate (`never` on every
+network) and the self-parent ban, tested by fuzzing, a two-node sync and an end-to-end run through a pool on a local
+test network (401 of 401 merged-mined blocks accepted). Activation needs a date agreed with the Sedra team.
+
+Nothing here affects the running Sedra network: all tests run on a separate test machine or a local test network, and
+the Rust node under test connects only to a local Go node.
