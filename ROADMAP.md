@@ -49,7 +49,10 @@ Step 2: the merged-mining hard fork.
   - [x] Step 1 (2026-11-10, `4638efe2`): Kaspa parents hashed as Kaspa does today; checked on 20 real Kaspa mainnet blocks (headers, kHeavyHash, coinbase hashes, Merkle branches). Finding: Kaspa coinbases are transaction version 1 since Toccata, so they need their own type (Q19 answered)
   - [x] Step 2 (2026-11-10, `f3f589c3`): the proof format and its structural rules (SDM1 base64url commitment, exactly once, nonce binding, limits), tested on a real Kaspa block with every rule broken once
   - [x] Step 3 (2026-11-10, `7f9a37b5`): the parent's work against the Sedra target, dual acceptance (native first, proof only after activation), block level from the parent's work; six rules mutation-checked
-  - [ ] Step 4: the proof as an optional header field outside the header hash, as ZKas does (decided 2026-11-10: travels with headers through sync, pruning proof and RPC; one DB version bump, so existing Rust nodes resync once), P2P/RPC transport, activation point
+  - [x] Step 4 (2026-11-10, in three commits; full suite 548 passed):
+    - 4a `42ca58c8`: the proof as an optional header field outside the header hash, as ZKas does (decided 2026-11-10), nesting rejected, DB version 5 (existing Rust nodes resync once)
+    - 4b `45e74643`: P2P field 15 (a bad proof from a peer is dropped, the header kept) and the mining RPC (`RpcRawHeader.auxPow`, gRPC field 16, wRPC format 2; a bad proof is an error the pool sees)
+    - 4c `12630118`: `aux_pow_activation` (never on every network), the gate in header validation and pruning proof, self-parent ban from 2 × finality depth (~2 days) before activation (decided 2026-11-10, as in ZKas; SIP §4.5/§5 updated); tested through the real consensus pipeline on simnet
   - [ ] Step 5: fuzzing of the decoder, full sync and devnet tests
 - [ ] Unit tests and consensus tests (#11)
 - [ ] Merged-mining support in a reference pool (#12)
