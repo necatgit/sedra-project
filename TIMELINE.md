@@ -2,7 +2,7 @@
 
 How long each step took from the start of the project, and how much AI work went into it. Regenerated with `python tools/update_timeline.py <transcripts>`; see the notes at the end for what the numbers mean.
 
-**Project start:** 2026-11-05 07:19 UTC (first message of the session in which the project began). **Last update:** 2026-11-10 19:53 UTC.
+**Project start:** 2026-11-05 07:19 UTC (first message of the session in which the project began). **Last update:** 2026-11-10 20:43 UTC.
 
 ## Milestones and closed issues
 
@@ -24,7 +24,7 @@ How long each step took from the start of the project, and how much AI work went
 | 2026-11-10 18:52 | 131 h 33 min | #10 M10 / Step 2: Port the AuxPoW verifier into the Rust Sedra node behind an activation point | 847 | 2,365 k / 745 k |
 | 2026-11-10 18:52 | 131 h 33 min | #11 Unit and consensus tests for AuxPoW | 0 | 0 k / 0 k |
 | 2026-11-10 18:53 | 131 h 34 min | #5 Effort and timeline estimate | 0 | 0 k / 0 k |
-| (open) | 132 h 34 min | work since the last closed issue | 1192 | 4,294 k / 1,094 k |
+| (open) | 133 h 24 min | work since the last closed issue | 1234 | 4,345 k / 1,128 k |
 
 A phase counts **all** AI work between two closed issues, not only the issue in that row. For example, the first row includes the project setup (repository, rules, identity), and the M2 row includes setting up the test VM, the build fix for GCC 15 and the coverage measurement. Several issues closed in the same minute share one phase; their AI effort is counted on the first of them.
 
@@ -39,16 +39,16 @@ A phase counts **all** AI work between two closed issues, not only the issue in 
 | 2026-11-07 | 252 | 1,445 k / 223 k | [soak-and-security-review](updates/2026-11-07-soak-and-security-review.md) |
 | 2026-11-08 | 17 | 53 k / 12 k | - |
 | 2026-11-09 | 385 | 1,111 k / 301 k | - |
-| 2026-11-10 | 613 | 1,604 k / 566 k | [merged-mining-node-and-pool](updates/2026-11-10-merged-mining-node-and-pool.md) |
+| 2026-11-10 | 655 | 1,655 k / 600 k | [merged-mining-node-and-pool](updates/2026-11-10-merged-mining-node-and-pool.md) |
 
 ## AI usage in total
 
 | | Tokens |
 |---|---|
-| Model calls | 3,329 (of which 623 by research agents) |
-| Fresh input (new text read: messages, files, command output) | 13,100,982 |
-| Output (text and code written by the AI) | 3,024,338 |
-| Re-read from cache (the conversation so far, read again on every call) | 1,018,695,470 |
+| Model calls | 3,371 (of which 623 by research agents) |
+| Fresh input (new text read: messages, files, command output) | 13,152,073 |
+| Output (text and code written by the AI) | 3,057,538 |
+| Re-read from cache (the conversation so far, read again on every call) | 1,031,502,669 |
 
 ## Notes
 
