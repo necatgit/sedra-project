@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | **Draft** for Nec's review (2026-11-10). Decisions Q46-Q51 open. Not agreed with the Sedra team |
+| Status | **Draft**, reviewed by Nec 2026-11-10: Q46-Q50 decided, Q51 proposed to the Sedra team. Not agreed with the Sedra team |
 | Author | Nec |
 | Created | 2026-11-10 |
 | Type | Process (no consensus change of its own) |
@@ -53,7 +53,7 @@ Merged mining needs Kaspa blocks whose coinbase carries the Sedra commitment. So
 | **B. Our own Kaspa test network** | Full control, CPU mining is enough, cheap; already done privately (M10 step 5c) | Proves little to outsiders: we would control both chains; everyone who joins must also run our Kaspa nodes |
 | **C. Kaspa mainnet** (a Sedra testnet merged-mined by real Kaspa miners) | Real hashrate and real miners, who keep earning KAS while testing: the strongest evidence | A mainnet pool has to carry a testnet commitment, which touches a production pool; a mistake there costs real money; only miners of that one pool take part |
 
-**Proposed:** A as the testnet. C later and optionally, as a short dress rehearsal on PuddlePool only, after A has
+**Decided 2026-11-10 (Q46):** A as the testnet. C later and optionally, as a short dress rehearsal on PuddlePool only, after A has
 passed and with Nec's explicit go. B stays our private test bench.
 
 ### 4.2 Which Sedra test chain? (Q47)
@@ -64,7 +64,7 @@ passed and with Nec's explicit go. B stays our private test bench.
 | **B. A new test chain with its own genesis** | Clean start under a clear name; no surprises from old data | Go nodes cannot join without a modified build, so criterion 3 cannot be shown with unmodified software |
 | **C. A copy of mainnet's state** | Realistic balances and history | Complex (a genesis from a snapshot), and it copies real balances into a test network: not worth it |
 
-**Proposed:** A, if a parity check (Go and Rust on the existing testnet with the same rules) passes; otherwise B.
+**Decided 2026-11-10 (Q47):** A, if a parity check (Go and Rust on the existing testnet with the same rules) passes; otherwise B.
 Whatever the chain, its parameters stay those of mainnet (block rate, finality depth, rewards) so the timing of the
 ban window and the activation is tested as it will happen.
 
@@ -75,7 +75,8 @@ ban window and the activation is tested as it will happen.
 | **A. From the first block** | Simple, merged mining from day one | The switch-over, the ban window and old nodes falling off are never tested |
 | **B. After a native phase** (e.g. activation a few days after launch, announced in advance) | Tests exactly the mainnet sequence: announcement, upgrade, ban start, activation | The testnet takes a few days longer |
 
-**Proposed:** B, with the activation score announced at launch, the same way it would be announced on mainnet.
+**Decided 2026-11-10 (Q48):** B, with the activation score announced at launch, the same way it would be announced on
+mainnet. The announcement should come from the Sedra team if they are willing (asked with Q51).
 
 ### 4.4 Who runs the infrastructure? (Q49)
 
@@ -88,7 +89,7 @@ page).
 | **A. This project runs all of it** | Fast, no dependencies | One operator, one host: exactly the single point of failure SIP-0002 warns about; less convincing |
 | **B. This project starts it, others join** (Sedra team, pools, anyone) | More realistic and independent; others gain experience before mainnet | Depends on others' time; coordination |
 
-**Proposed:** B. This project provides the first nodes, the pool (a separate Miningcore instance, never the production
+**Decided 2026-11-10 (Q49):** B. This project provides the first nodes, the pool (a separate Miningcore instance, never the production
 pool), the faucet and a status page, and invites the Sedra team, the known SDR pools (Q21) and the exchange to run a
 node or a pool. A full explorer is optional; a status page with recent blocks may be enough.
 
@@ -101,11 +102,12 @@ node or a pool. A full explorer is optional; a status page with recent blocks ma
 - **Pools:** the Miningcore changes as a public reference (#12), with the configuration used on the testnet.
 - **Reports:** GitHub issues in a public repository; a community channel only if the Sedra team wants one.
 
-**Proposed:** as above. Open: whether the testnet guide lives in the Sedra team's channels as well (their decision).
+**Decided 2026-11-10 (Q50):** as above. Open: whether the testnet guide lives in the Sedra team's channels as well (their decision).
 
 ### 4.6 How long, and what counts as passed? (Q51)
 
-**Proposed:** at least two weeks after activation, with the exit criteria of section 3. The results go into a dated
+**Proposed to the Sedra team (Q51, Nec 2026-11-10):** at least two weeks after activation, with the exit criteria of
+section 3, as the starting point; the Sedra team may change the duration and the criteria, since they set the condition. The results go into a dated
 report; the mainnet activation date is chosen with the Sedra team only after that report (SIP-0001 §5, Q33). A serious
 problem means fix, new testnet release and, if needed, a reset and a new activation on the testnet.
 

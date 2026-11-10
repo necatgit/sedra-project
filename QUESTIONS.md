@@ -11,7 +11,7 @@ Rules:
 Status: **Open** (not asked yet) · **Asked** (sent to someone, waiting) · **Investigating** (being worked on in this
 project) · **Proposed** (a draft answer exists, not decided) · **Answered** · **Dropped**
 
-Summary (2026-11-10): 52 questions; 16 answered, 16 asked and waiting, 10 open, 2 being investigated, 7 proposed,
+Summary (2026-11-10): 52 questions; 21 answered, 16 asked and waiting, 10 open, 2 being investigated, 2 proposed,
 1 split.
 
 ## A. Working with the Sedra team
@@ -88,10 +88,10 @@ Summary (2026-11-10): 52 questions; 16 answered, 16 asked and waiting, 10 open, 
 
 | ID | Question | Source | Asked whom / when | Status | Answer and source |
 |---|---|---|---|---|---|
-| Q46 | Which Kaspa network is the testnet's parent: Kaspa's public testnet, our own Kaspa test network, or Kaspa mainnet? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.1, #13 | Nec, 2026-11-10 | Proposed | Draft: Kaspa's public testnet; mainnet later and optional as a dress rehearsal on PuddlePool only |
-| Q47 | Which Sedra test chain: the testnet already in the code, a new genesis, or a copy of mainnet? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.2, #13 | Nec, 2026-11-10 | Proposed | Draft: The existing testnet if Go and Rust agree on its rules (unmodified Go nodes can then join), otherwise a new genesis; mainnet parameters either way |
-| Q48 | Does merged mining activate on the testnet from the first block or after an announced native phase? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.3, #13 | Nec, 2026-11-10 | Proposed | Draft: After a native phase, announced at launch, to test the mainnet sequence including the ban window |
-| Q49 | Who runs the testnet's nodes, pool, faucet and explorer? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.4, #13 | Nec, 2026-11-10 | Proposed | Draft: This project starts them (pool separate from production), the Sedra team, pools and the exchange are invited to join |
-| Q50 | How do outsiders join (node release and guide, miners, pools, reports)? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.5, #13 | Nec, 2026-11-10 | Proposed | Draft: Verified testnet release with a one-page guide, public reference pool, GitHub issues |
-| Q51 | How long does the testnet run and what counts as passed? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.6, #13 | Nec, 2026-11-10 | Proposed | Draft: At least two weeks after activation, exit criteria in SIP-0003 section 3, then a dated report |
+| Q46 | Which Kaspa network is the testnet's parent: Kaspa's public testnet, our own Kaspa test network, or Kaspa mainnet? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.1, #13 | Nec, 2026-11-10 | Answered | Decided by Nec 2026-11-10: Kaspa's public testnet; mainnet later and optional as a dress rehearsal on PuddlePool only |
+| Q47 | Which Sedra test chain: the testnet already in the code, a new genesis, or a copy of mainnet? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.2, #13 | Nec, 2026-11-10 | Answered | Decided by Nec 2026-11-10: The existing testnet if Go and Rust agree on its rules (unmodified Go nodes can then join), decided: the existing testnet (a Go/Rust parity check comes first); mainnet parameters |
+| Q48 | Does merged mining activate on the testnet from the first block or after an announced native phase? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.3, #13 | Nec, 2026-11-10 | Answered | Decided by Nec 2026-11-10: After a native phase, announced at launch, to test the mainnet sequence including the ban window; the announcement ideally by the Sedra team |
+| Q49 | Who runs the testnet's nodes, pool, faucet and explorer? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.4, #13 | Nec, 2026-11-10 | Answered | Decided by Nec 2026-11-10: This project starts them (pool separate from production), the Sedra team, pools and the exchange are invited to join |
+| Q50 | How do outsiders join (node release and guide, miners, pools, reports)? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.5, #13 | Nec, 2026-11-10 | Answered | Decided by Nec 2026-11-10: Verified testnet release with a one-page guide, public reference pool, GitHub issues |
+| Q51 | How long does the testnet run and what counts as passed? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.6, #13 | Nec, 2026-11-10; to the Sedra team | Proposed | Nec's proposal as the starting point, the Sedra team may adjust it: At least two weeks after activation, exit criteria in SIP-0003 section 3, then a dated report |
 | Q52 | Does anyone run Sedra's existing testnet (`testnet-10`, no seeders in the code), and do its rules match mainnet's v2.0.0 rules? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.2 | — (Sedra team) | Open | |
