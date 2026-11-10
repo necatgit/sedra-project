@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | **Draft**, reviewed by Nec 2026-11-10: Q46-Q50 decided, Q51 proposed to the Sedra team. Not agreed with the Sedra team |
+| Status | **Draft**, reviewed by Nec 2026-11-10: Q46-Q50 decided, Q51 and Q52 sent to the Sedra team on 2026-11-10 (with the request to announce the testnet activation); published in the SIP repository after their comments or one week. Not agreed with the Sedra team |
 | Author | Nec |
 | Created | 2026-11-10 |
 | Type | Process (no consensus change of its own) |

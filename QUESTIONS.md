@@ -11,7 +11,7 @@ Rules:
 Status: **Open** (not asked yet) · **Asked** (sent to someone, waiting) · **Investigating** (being worked on in this
 project) · **Proposed** (a draft answer exists, not decided) · **Answered** · **Dropped**
 
-Summary (2026-11-10): 52 questions; 21 answered, 16 asked and waiting, 10 open, 2 being investigated, 2 proposed,
+Summary (2026-11-10): 52 questions; 21 answered, 18 asked and waiting, 9 open, 2 being investigated, 1 proposed,
 1 split.
 
 ## A. Working with the Sedra team
@@ -93,5 +93,5 @@ Summary (2026-11-10): 52 questions; 21 answered, 16 asked and waiting, 10 open, 
 | Q48 | Does merged mining activate on the testnet from the first block or after an announced native phase? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.3, #13 | Nec, 2026-11-10 | Answered | Decided by Nec 2026-11-10: After a native phase, announced at launch, to test the mainnet sequence including the ban window; the announcement ideally by the Sedra team |
 | Q49 | Who runs the testnet's nodes, pool, faucet and explorer? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.4, #13 | Nec, 2026-11-10 | Answered | Decided by Nec 2026-11-10: This project starts them (pool separate from production), the Sedra team, pools and the exchange are invited to join |
 | Q50 | How do outsiders join (node release and guide, miners, pools, reports)? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.5, #13 | Nec, 2026-11-10 | Answered | Decided by Nec 2026-11-10: Verified testnet release with a one-page guide, public reference pool, GitHub issues |
-| Q51 | How long does the testnet run and what counts as passed? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.6, #13 | Nec, 2026-11-10; to the Sedra team | Proposed | Nec's proposal as the starting point, the Sedra team may adjust it: At least two weeks after activation, exit criteria in SIP-0003 section 3, then a dated report |
-| Q52 | Does anyone run Sedra's existing testnet (`testnet-10`, no seeders in the code), and do its rules match mainnet's v2.0.0 rules? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.2 | — (Sedra team) | Open | |
+| Q51 | How long does the testnet run and what counts as passed? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.6, #13 | Sedra team, 2026-11-10 (letter) | Asked | Nec's proposal as the starting point, the Sedra team may adjust it: At least two weeks after activation, exit criteria in SIP-0003 section 3, then a dated report |
+| Q52 | Does anyone run Sedra's existing testnet (`testnet-10`, no seeders in the code), and do its rules match mainnet's v2.0.0 rules? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.2 | Sedra team, 2026-11-10 (letter) | Asked | |
