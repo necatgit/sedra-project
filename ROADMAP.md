@@ -41,6 +41,7 @@ Code: `necatgit/sedra-rusty`, branch `dev`.
 - [~] M9: Seven-day soak next to Go nodes (#28) (running 2026-11-07 07:20 to 2026-11-14 07:20 UTC)
 - [ ] After M9: a public Rust node of this project as the first independent public Sedra node, on a machine separate from any pool ([SIP-0002](proposals/SIP-0002-network-resilience.md), #30)
   - [x] Release preparation (2026-11-09, `sedra-rusty@a87436d9`): Sedra version string (`0.1.0 (rusty-kaspa v1.0.1, commit …)`), reproducible build (`contrib/reproducible/`, pinned toolchain, image and Debian snapshot), `docs/RELEASE.md`, README for outsiders. Two clones built identical binaries on one host; the container route across two machines is still to be run
+  - [ ] The Go wallet daemon `sedrawallet` against the Rust node (balance, send, a pool payout) on a local devnet: not tested yet; pools, the game and exchanges pay out through it, so it has to work before anyone switches nodes
   - [ ] On 2026-11-14: make `sedra-rusty` public, test the container build on the test VM, tag `v0.1.0`, turn the test VM into the public node (decided 2026-11-09: same host as the pool, so not fully independent; a separate machine later)
 
 Step 2: the merged-mining hard fork.
@@ -57,7 +58,7 @@ Step 2: the merged-mining hard fork.
     - [x] 5a `f21ba68f` (2026-11-10): deterministic fuzzing of decoder, checks, PoW gate, P2P and RPC conversion; finding: the parent's cached hash field was the only free byte range, now normalized at both decode edges
     - [x] 5b `abffef04` (2026-11-10): two nodes, 240 blocks (half merged-mined) relayed through the P2P conversion, pruning proof with 319 merged-mined headers validated; a node without merged mining rejects block and proof; full suite 556 passed
     - [x] 5c (2026-11-10, sedra-rusty `9248ee20` devnet-only `--devnet-aux-pow-activation`; harness `tools/e2e-merged-mining/`): two Sedra and two Kaspa devnet nodes, Miningcore, CPU stratum miner; 401 of 401 merged-mined SDR blocks accepted, relayed to the second node, credited to the miner's SDR address. Found and fixed: a blue-work sign bug in the shared aux serializer (also latent for ZKAS in production, fixed on Miningcore `dev` `18862898`), the aux wallet host defaulting to the production ZKAS wallet IP, unrecognized Sedra test-network addresses
-  - [x] Pool side (Miningcore branch `sedra-merged-mining`, 2026-11-10): serializer checked against the node's interop vector, several aux chains per parent (KAS jobs carry ZKM1 and SDM1), per-chain miner addresses, aux pool `kaspa1-sedra` with its own wallet, display of every aux chain
+  - [x] Pool side (Miningcore branch `sedra-merged-mining`, 2026-11-10): serializer checked against the node's interop vector, several aux chains per parent (KAS jobs carry ZKM1 and SDM1), per-chain miner addresses, aux pool `kaspa1-sedra` with its own wallet, display of every aux chain, one payout-limit field per aux chain. The separate wallet exists (2026-11-10, its own wallet daemon); the pool configuration carries it as a disabled entry until go-live
 - [ ] Unit tests and consensus tests (#11)
 - [ ] Merged-mining support in a reference pool (#12)
 - [ ] Network resilience in the node code: more seeders and fallback peers from independent operators; peer memory ("parents") design ([SIP-0002](proposals/SIP-0002-network-resilience.md), #30)
