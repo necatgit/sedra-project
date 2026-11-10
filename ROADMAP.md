@@ -45,7 +45,12 @@ Code: `necatgit/sedra-rusty`, branch `dev`.
 
 Step 2: the merged-mining hard fork.
 
-- [ ] M10: Port the AuxPoW verifier into the Rust node behind an activation point (#10)
+- [~] M10: Port the AuxPoW verifier into the Rust node behind an activation point (#10), branch `m10-auxpow` of `sedra-rusty`
+  - [x] Step 1 (2026-11-10, `4638efe2`): Kaspa parents hashed as Kaspa does today; checked on 20 real Kaspa mainnet blocks (headers, kHeavyHash, coinbase hashes, Merkle branches). Finding: Kaspa coinbases are transaction version 1 since Toccata, so they need their own type (Q19 answered)
+  - [x] Step 2 (2026-11-10, `f3f589c3`): the proof format and its structural rules (SDM1 base64url commitment, exactly once, nonce binding, limits), tested on a real Kaspa block with every rule broken once
+  - [ ] Step 3: the parent's work against the Sedra target, dual acceptance (native first), block level from the parent's work
+  - [ ] Step 4: where the proof lives in the node (header field or separate store; design decision first), P2P/RPC transport, activation point
+  - [ ] Step 5: fuzzing of the decoder, full sync and devnet tests
 - [ ] Unit tests and consensus tests (#11)
 - [ ] Merged-mining support in a reference pool (#12)
 - [ ] Network resilience in the node code: more seeders and fallback peers from independent operators; peer memory ("parents") design ([SIP-0002](proposals/SIP-0002-network-resilience.md), #30)
