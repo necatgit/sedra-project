@@ -2,7 +2,7 @@
 
 How long each step took from the start of the project, and how much AI work went into it. Regenerated with `python tools/update_timeline.py <transcripts>`; see the notes at the end for what the numbers mean.
 
-**Project start:** 2026-11-05 07:19 UTC (first message of the session in which the project began). **Last update:** 2026-11-10 17:47 UTC.
+**Project start:** 2026-11-05 07:19 UTC (first message of the session in which the project began). **Last update:** 2026-11-10 17:49 UTC.
 
 ## Milestones and closed issues
 
@@ -21,7 +21,7 @@ How long each step took from the start of the project, and how much AI work went
 | 2026-11-06 17:21 | 34 h 02 min | #26 M7: UTXO commitment and supply parity with the Go node | 228 | 2,221 k / 242 k |
 | 2026-11-06 18:20 | 35 h 01 min | #24 M5: Full sync from a local Go node, then follow the tip | 17 | 11 k / 5 k |
 | 2026-11-09 09:09 | 97 h 50 min | #6 Publish the first full draft of SIP-0001 | 493 | 2,040 k / 400 k |
-| (open) | 130 h 28 min | work since the last closed issue | 1970 | 6,556 k / 1,774 k |
+| (open) | 130 h 30 min | work since the last closed issue | 1983 | 6,574 k / 1,784 k |
 
 A phase counts **all** AI work between two closed issues, not only the issue in that row. For example, the first row includes the project setup (repository, rules, identity), and the M2 row includes setting up the test VM, the build fix for GCC 15 and the coverage measurement. Several issues closed in the same minute share one phase; their AI effort is counted on the first of them.
 
@@ -36,16 +36,16 @@ A phase counts **all** AI work between two closed issues, not only the issue in 
 | 2026-11-07 | 252 | 1,445 k / 223 k | [soak-and-security-review](updates/2026-11-07-soak-and-security-review.md) |
 | 2026-11-08 | 17 | 53 k / 12 k | - |
 | 2026-11-09 | 385 | 1,111 k / 301 k | - |
-| 2026-11-10 | 544 | 1,501 k / 501 k | - |
+| 2026-11-10 | 557 | 1,519 k / 510 k | [merged-mining-node-and-pool](updates/2026-11-10-merged-mining-node-and-pool.md) |
 
 ## AI usage in total
 
 | | Tokens |
 |---|---|
-| Model calls | 3,260 (of which 623 by research agents) |
-| Fresh input (new text read: messages, files, command output) | 12,997,652 |
-| Output (text and code written by the AI) | 2,958,596 |
-| Re-read from cache (the conversation so far, read again on every call) | 1,003,206,014 |
+| Model calls | 3,273 (of which 623 by research agents) |
+| Fresh input (new text read: messages, files, command output) | 13,015,722 |
+| Output (text and code written by the AI) | 2,968,197 |
+| Re-read from cache (the conversation so far, read again on every call) | 1,005,607,451 |
 
 ## Notes
 
