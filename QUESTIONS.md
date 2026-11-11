@@ -11,7 +11,7 @@ Rules:
 Status: **Open** (not asked yet) · **Asked** (sent to someone, waiting) · **Investigating** (being worked on in this
 project) · **Proposed** (a draft answer exists, not decided) · **Answered** · **Dropped**
 
-Summary (2026-11-10): 52 questions; 21 answered, 18 asked and waiting, 9 open, 2 being investigated, 1 proposed,
+Summary (2026-11-11): 53 questions; 21 answered, 18 asked and waiting, 10 open, 2 being investigated, 1 proposed,
 1 split.
 
 ## A. Working with the Sedra team
@@ -95,3 +95,4 @@ Summary (2026-11-10): 52 questions; 21 answered, 18 asked and waiting, 9 open, 2
 | Q50 | How do outsiders join (node release and guide, miners, pools, reports)? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.5, #13 | Nec, 2026-11-10 | Answered | Decided by Nec 2026-11-10: Verified testnet release with a one-page guide, public reference pool, GitHub issues |
 | Q51 | How long does the testnet run and what counts as passed? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.6, #13 | Sedra team, 2026-11-10 (letter) | Asked | Nec's proposal as the starting point, the Sedra team may adjust it: At least two weeks after activation, exit criteria in SIP-0003 section 3, then a dated report |
 | Q52 | Does anyone run Sedra's existing testnet (`testnet-10`, no seeders in the code), and do its rules match mainnet's v2.0.0 rules? | [SIP-0003](proposals/SIP-0003-public-testnet.md) 4.2 | Sedra team, 2026-11-10 (letter) | Asked | |
+| Q53 | Where are opt-in "I am alive" node announcements recorded so that the list is not a new central point, who runs those lists, and how do they check an announcement before listing it? | [SIP-0002](proposals/SIP-0002-network-resilience.md) part 4, #30 (idea by Nec, 2026-11-11) | — | Open | |

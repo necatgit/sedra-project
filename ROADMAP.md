@@ -61,7 +61,7 @@ Step 2: the merged-mining hard fork.
   - [x] Pool side (Miningcore branch `sedra-merged-mining`, 2026-11-10): serializer checked against the node's interop vector, several aux chains per parent (KAS jobs carry ZKM1 and SDM1), per-chain miner addresses, aux pool `kaspa1-sedra` with its own wallet, display of every aux chain, one payout-limit field per aux chain. The separate wallet exists (2026-11-10, its own wallet daemon); the pool configuration carries it as a disabled entry until go-live
 - [x] Unit tests and consensus tests (#11, closed 2026-11-10: covered in M10 steps 2-5)
 - [~] Merged-mining support in a reference pool (#12): implemented and tested in PuddlePool's Miningcore (branch, see M10 pool side); publishing it as a reference is planned with the testnet (SIP-0003 §4.5)
-- [ ] Network resilience in the node code: more seeders and fallback peers from independent operators; peer memory ("parents") design ([SIP-0002](proposals/SIP-0002-network-resilience.md), #30)
+- [ ] Network resilience in the node code: more seeders and fallback peers from independent operators; peer memory ("parents and children") and opt-in "I am alive" announcements, design ([SIP-0002](proposals/SIP-0002-network-resilience.md), #30)
 
 ## Phase 3: Public testnet
 
