@@ -13,8 +13,7 @@ Where things belong:
 - **Code** goes to the code repositories: the Rust node `necatgit/sedra-rusty` (with its own AGENTS.md, build and test
   rules; the merged-mining end-to-end harness is there in `contrib/e2e-merged-mining/` on `m10-auxpow`) and the
   Miningcore pool. The only scripts here are the ones that build this repository's documents (`tools/`).
-- **Private material** (correspondence and chats with the Sedra team, holdings, takeover considerations, other
-  private findings) lives in a separate private repository and never comes here. A result from it is published here
+- **Private material** (private correspondence, personal details, unpublished notes) lives in a separate private repository and never comes here. A result from it is published here
   only when Nec says so, as a summary with checkable evidence.
 
 ## Public identity
