@@ -5,9 +5,17 @@ the Miningcore pool project this effort grew out of.
 
 ## What this repository is
 
-The public home of the Sedra merged-mining proposal: plan, roadmap, proposals (SIPs), research, questions and
-answers, and progress updates. Node code lives in a separate repository (a fork of `sedracoin/sedrad`) once
-implementation starts. That repository gets its own AGENTS.md with build and test rules.
+The public home of the Sedra project (`necatgit/sedra-project`, named `sedra-merged-mining` until 2026-11-15): plan,
+roadmap, decisions, proposals (SIPs), research and analyses, questions and answers, release notes and progress
+updates. It holds documents, not code.
+
+Where things belong:
+- **Code** goes to the code repositories: the Rust node `necatgit/sedra-rusty` (with its own AGENTS.md, build and test
+  rules; the merged-mining end-to-end harness is there in `contrib/e2e-merged-mining/` on `m10-auxpow`) and the
+  Miningcore pool. The only scripts here are the ones that build this repository's documents (`tools/`).
+- **Private material** (correspondence and chats with the Sedra team, holdings, takeover considerations, other
+  private findings) lives in a separate private repository and never comes here. A result from it is published here
+  only when Nec says so, as a summary with checkable evidence.
 
 ## Public identity
 

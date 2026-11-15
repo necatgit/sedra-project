@@ -16,7 +16,7 @@ import subprocess
 import sys
 from collections import defaultdict
 
-REPO = "necatgit/sedra-merged-mining"
+REPO = "necatgit/sedra-project"
 PROJECT_START = "2026-11-05T07:19:00Z"  # first message of the Claude Code session in which the project started
 KEYS = ("input_tokens", "cache_creation_input_tokens", "output_tokens", "cache_read_input_tokens")
 
