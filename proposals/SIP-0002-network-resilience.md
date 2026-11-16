@@ -27,13 +27,21 @@ network.
   appear in other nodes' address books as reachable. Opening a Go node's P2P port is currently risky (research 0007,
   Q37); the Rust node does not have the sync-serving freeze (Q38).
 
+**Update 2026-11-16 (Verified):** a network map on the test VM probes every address its Go node knows, every six
+hours. On 2026-11-15 18:31 UTC it knew 1,001 addresses and 4 of them accepted a P2P connection; in the runs since
+(2026-11-16 00:30 and 06:30 UTC) it knew 4 addresses, all 4 reachable. This project's public node is one of them.
+When the public node started on 2026-11-14, two of Sedra's three DNS seeders returned no addresses for its lookup
+(release checklist step 7; the seeder records were requested from the Sedra team the same day, no answer yet).
+
 **Consequence (Inferred):** if the few public nodes fail, new nodes cannot find the network, and existing nodes may be
 left with no peers, mining on an isolated chain until connections return.
 
 ## Proposed parts
 
 1. **More independent public nodes.** The decisive part, and an operations task more than a code task. This project
-   starts with one public Rust node of its own after M9, on a machine separate from any pool.
+   started with one public Rust node of its own: P2P only, running since 2026-11-14 (release v0.1.1 since 2026-11-15),
+   with outside nodes connecting since 2026-11-15. It runs on the same physical host as Nec's pool, so it is an
+   independent node, not independent hardware; a machine separate from any pool is the next step.
 2. **More seeders and fallback peers** from independent operators in the node code (a small change; needs the
    operators first). Planned for Step 2.
 3. **Peer memory ("parents and children").** Idea by Nec: a node remembers the peers it had good, long connections with

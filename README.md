@@ -75,16 +75,25 @@ How much time and AI work each milestone took is recorded in [TIMELINE.md](TIMEL
 
 ## Status
 
-**Phase 2, step 1: a Rust node with exactly Sedra mainnet's current rules** (no fork yet). Research and the decision
-to build on rusty-kaspa are done (#1-#4). The Rust node carries Sedra's network, block rewards and both v2.0.0
-relaunch rules, checked against sedrad and real Sedra blocks (M1-M4, M6, M8). It has synced the live Sedra chain
-from a Go node and holds exactly the same state (M5, M7), and carries the security fixes from later Kaspa releases
-(#29). Now running: a seven-day run next to a Go node (M9, until 2026-11-14). See [ROADMAP.md](ROADMAP.md) for details.
+**Phase 2, step 1 is done: the Rust node is released and runs as a public node** (no fork, exactly Sedra mainnet's
+current rules). It carries Sedra's network, block rewards and both v2.0.0 relaunch rules, checked against sedrad and
+real Sedra blocks (M1-M4, M6, M8), synced the live chain with exactly the same state as the Go node (M5, M7), carries
+the security fixes from later Kaspa releases (#29) and passed a seven-day run next to a Go node (M9, 2026-11-14:
+10,064 checks, 0 alerts, 0 differences).
+
+- **Releases:** [sedra-rusty v0.1.0](https://github.com/necatgit/sedra-rusty/releases/tag/sedra-v0.1.0) (2026-11-14)
+  and [v0.1.1](https://github.com/necatgit/sedra-rusty/releases/tag/sedra-v0.1.1) (2026-11-15, docs and build script
+  only). Signed tags, and the same bytes rebuilt on two machines; how to check: `docs/RELEASE.md` in sedra-rusty.
+- **Public node:** P2P only, running since 2026-11-14; outside nodes have connected to it since 2026-11-15. It runs on the same physical host
+  as Nec's pool PuddlePool, so it is an independent node but not independent hardware; a separate machine is still
+  open ([SIP-0002](proposals/SIP-0002-network-resilience.md), #30).
+- **Next:** the public testnet with merged mining ([SIP-0003](proposals/SIP-0003-public-testnet.md), #13).
 
 **Step 2, the merged-mining fork, is implemented and tested but not active anywhere** (M10, branch `m10-auxpow`,
 2026-11-10): the verifier, the proof as a header field, P2P and mining RPC, the activation gate (`never` on every
 network) and the self-parent ban, tested by fuzzing, a two-node sync and an end-to-end run through a pool on a local
 test network (401 of 401 merged-mined blocks accepted). Activation needs a date agreed with the Sedra team.
 
-Nothing here affects the running Sedra network: all tests run on a separate test machine or a local test network, and
-the Rust node under test connects only to a local Go node.
+The merged-mining code runs only on local test networks; nothing in it is active on the live Sedra network. The
+public node runs the released step-1 node, with the same rules as the Go node, and takes part in the live network like
+any other node.

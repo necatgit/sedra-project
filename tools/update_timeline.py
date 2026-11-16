@@ -55,7 +55,9 @@ def main(paths):
     closed = sorted((ts(i["closed_at"]), i["number"], i["title"]) for i in issues
                     if i.get("closed_at") and "pull_request" not in i)
     start = ts(PROJECT_START)
-    cs = calls(paths)
+    # only work from the project start on: older calls in the same transcripts are other work, and they used to
+    # land in the last (open) row because they fall before the first phase
+    cs = [c for c in calls(paths) if c[0] >= start]
     now = max([c[0] for c in cs] + [dt.datetime.now(dt.timezone.utc)])
 
     bounds = [start] + [c[0] for c in closed] + [now]

@@ -7,7 +7,7 @@ Each item links to its GitHub issue, which holds the details and discussion. Pha
 
 Status: `[ ]` open · `[~]` in progress · `[x]` done · `[-]` dropped
 
-## Phase 0: Research and planning (current)
+## Phase 0: Research and planning
 
 - [x] Set up the project repository (2026-11-05)
 - [x] Review what the current mainnet release `2.0.0-relaunch` changed and how it was activated (#1, [research/0001](research/0001-relaunch-review.md))
@@ -23,7 +23,7 @@ Status: `[ ]` open · `[~]` in progress · `[x]` done · `[-]` dropped
 - [~] Open SIP-0001 for public comment (#8): open since 2026-11-09 in the public repository [necatgit/sedra-sips](https://github.com/necatgit/sedra-sips) (comments: sedra-sips#1); this repository stays private until the security write-up (around 2026-11-23)
 - [ ] Reach out to pools, explorers and exchanges (#9): **for the Sedra team** (owner of the network and its contacts); Nec is not the owner and provides the technical information (SIP, node, test results) on request
 
-## Phase 2: Implementation
+## Phase 2: Implementation (current)
 
 Step 1: a Rust node with exactly Sedra mainnet's current consensus, running next to the Go nodes (no fork).
 Code: `necatgit/sedra-rusty`, branch `dev`.
@@ -37,12 +37,15 @@ Code: `necatgit/sedra-rusty`, branch `dev`.
 - [x] M6: v2.0.0 rules behave exactly like Go (#25, `sedra-rusty@4873e9af`)
 - [x] M7: UTXO commitment and supply parity (#26, 2026-11-06: identical supply, commitment, balances and UTXOs)
 - [x] M8: Mining parity on an isolated test setup (#27, private devnet, 1400 blocks)
-- [~] Security back-ports from later rusty-kaspa releases (#29, [research/0006](research/0006-security-backports.md)): must-fix and should items done and merged (`sedra-rusty@9cb74efc`, 518 tests pass; upstream `48b63582` deliberately not applied, it rejects real Sedra proofs); optional fixes ready on branch `optional-backports` (tested), to be merged after M9
-- [~] M9: Seven-day soak next to Go nodes (#28) (running 2026-11-07 07:20 to 2026-11-14 07:20 UTC)
-- [ ] After M9: a public Rust node of this project as the first independent public Sedra node, on a machine separate from any pool ([SIP-0002](proposals/SIP-0002-network-resilience.md), #30)
-  - [x] Release preparation (2026-11-09, `sedra-rusty@a87436d9`): Sedra version string (`0.1.0 (rusty-kaspa v1.0.1, commit …)`), reproducible build (`contrib/reproducible/`, pinned toolchain, image and Debian snapshot), `docs/RELEASE.md`, README for outsiders. Two clones built identical binaries on one host; the container route across two machines is still to be run
+- [x] Security back-ports from later rusty-kaspa releases (#29, [research/0006](research/0006-security-backports.md), closed 2026-11-16): must-fix and should items merged 2026-11-06 (`sedra-rusty@9cb74efc`, 518 tests pass; upstream `48b63582` deliberately not applied, it rejects real Sedra proofs); the optional fixes merged after M9 and shipped in v0.1.0 (2026-11-14, release branch = `dev` + `optional-backports`, 521 passed, 0 failed)
+- [x] M9: Seven-day soak next to Go nodes (#28, closed 2026-11-14): **passed**, 2026-11-07 07:20 to 2026-11-14 07:20 UTC, 10,064 checks, 0 alerts, 0 differences in supply or treasury
+- [~] After M9: a public Rust node of this project as the first independent public Sedra node, on a machine separate from any pool ([SIP-0002](proposals/SIP-0002-network-resilience.md), #30): **running since 2026-11-14** (see below); still open: a machine separate from the pool
+  - [x] Release preparation (2026-11-09, `sedra-rusty@a87436d9`): Sedra version string (`0.1.0 (rusty-kaspa v1.0.1, commit …)`), reproducible build (`contrib/reproducible/`, pinned toolchain, image and Debian snapshot), `docs/RELEASE.md`, README for outsiders. Two clones built identical binaries on one host. *Update 2026-11-14:* the container route was then run on two machines from the release tag, with identical checksums (release checklist step 4)
   - [x] The Go wallet daemon `sedrawallet` (sedrad v2.0.0) against the Rust node on a local devnet (2026-11-10, `wallet_test.sh` of the end-to-end harness, now in sedra-rusty `contrib/e2e-merged-mining/` on `m10-auxpow`): addresses, balance, CLI send and the daemon's `Send` as Miningcore's payout calls it all work; amounts and fees add up exactly. Operators keep the Go wallet binary and point `--rpcserver` at the Rust node (started with `--utxoindex`)
-  - [ ] On 2026-11-14: release v0.1.0 following [release/v0.1.0-checklist.md](release/v0.1.0-checklist.md) (decisions D1-D3 first): make `sedra-rusty` public, test the container build on the test VM, tag `v0.1.0`, turn the test VM into the public node (decided 2026-11-09: same host as the pool, so not fully independent; a separate machine later)
+  - [x] Release v0.1.0 on 2026-11-14 following [release/v0.1.0-checklist.md](release/v0.1.0-checklist.md): `sedra-rusty` public, signed tag `sedra-v0.1.0`, identical rebuilds on two machines, [GitHub release](https://github.com/necatgit/sedra-rusty/releases/tag/sedra-v0.1.0) with rebuild issue sedra-rusty#1
+  - [x] Release v0.1.1 on 2026-11-15 ([notes](release/v0.1.1-notes.md)): docs and a build-script exit code only, the node behaves exactly as 0.1.0; signed tag `sedra-v0.1.1`, identical rebuilds on two machines, [GitHub release](https://github.com/necatgit/sedra-rusty/releases/tag/sedra-v0.1.1)
+  - [x] Public node: the former test VM runs the release as a P2P-only node (RPC on localhost) since 2026-11-14, 0.1.1 since 2026-11-15 18:11 UTC; first three outside nodes connected inbound on 2026-11-15. 24 h comparison with the Go node (2026-11-14 15:13 to 11-15 15:14 UTC): 1,439 checks, no difference. It runs on the same physical host as PuddlePool, so it is an independent node, not independent hardware
+  - [ ] The public node on a machine separate from any pool
 
 Step 2: the merged-mining hard fork.
 
@@ -65,7 +68,7 @@ Step 2: the merged-mining hard fork.
 
 ## Phase 3: Public testnet
 
-- [~] Launch a public testnet with merged mining, with instructions so anyone can run a node and test (#13): plan drafted as [SIP-0003](proposals/SIP-0003-public-testnet.md) (2026-11-10), decisions Q46-Q51 open
+- [~] Launch a public testnet with merged mining, with instructions so anyone can run a node and test (#13): plan drafted as [SIP-0003](proposals/SIP-0003-public-testnet.md) (2026-11-10): Q46-Q50 decided by Nec 2026-11-10; Q51 (duration, pass criteria) and Q52 asked of the Sedra team on 2026-11-10, no answer yet (checked 2026-11-16); SIP-0003 goes to the public SIP repository after their reply or on 2026-11-17
 - [ ] Fix issues, publish release candidates (#14)
 
 ## Phase 4: Mainnet activation
