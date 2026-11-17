@@ -6,7 +6,7 @@
 | Date | 2026-11-06 |
 | Compared | rusty-kaspa `v1.0.1` (`fcd9c28f`) with `origin/master` (`4863866f`): 252 commits |
 | Applies to | sedra-rusty, which is based on v1.0.1 (checked at `42ea0c23`) |
-| Full report | [archive/2026-11-06-q31-backports-raw.md](archive/2026-11-06-q31-backports-raw.md) |
+| Full report | Held privately since 2026-11-17, see [archive/2026-11-06-q31-backports-held-private.md](archive/2026-11-06-q31-backports-held-private.md) |
 | Tracked in | Issue for the back-ports (see ROADMAP.md, Phase 2) |
 
 Labels: **Verified** (checked in the code), **Inferred** (reasoned), **Unknown**.
@@ -107,3 +107,7 @@ subtraction (`protocol/flows/src/flow_context.rs`, line 765 at v1.0.1, 762 in se
 
 *Public wording:* this document names the areas and the upstream commits, not how to trigger the problems. Kaspa fixed
 them publicly, but other networks may still run v1.0.1.
+
+*Note 2026-11-17:* the full raw report spelled out the triggers and is therefore held privately until at least
+2027-05-17; it was removed from this repository's history before the repository went public. Nothing in this summary
+changed. See [archive/2026-11-06-q31-backports-held-private.md](archive/2026-11-06-q31-backports-held-private.md).
