@@ -19,9 +19,9 @@ Status: `[ ]` open · `[~]` in progress · `[x]` done · `[-]` dropped
 
 ## Phase 1: Community and coordination
 
-- [~] Contact the Sedra owner: support, repository access, infrastructure (#7): questions sent 2026-11-05
+- [~] Contact the Sedra owner: support, repository access, infrastructure (#7): questions sent 2026-11-05; all open questions resent as one list on 2026-11-16; the Sedra team's reply of 2026-11-17 (a draft for team approval) proposes answers by 2026-11-30, 2026-12-07 and 2026-12-14 ([QUESTIONS](QUESTIONS.md))
 - [~] Open SIP-0001 for public comment (#8): open since 2026-11-09 in the public repository [necatgit/sedra-sips](https://github.com/necatgit/sedra-sips) (comments: sedra-sips#1); this repository stays private until the security write-up (around 2026-11-23)
-- [ ] Reach out to pools, explorers and exchanges (#9): **for the Sedra team** (owner of the network and its contacts); Nec is not the owner and provides the technical information (SIP, node, test results) on request
+- [ ] Reach out to pools, explorers and exchanges (#9): **for the Sedra team** (owner of the network and its contacts); Nec is not the owner and provides the technical information (SIP, node, test results) on request. Sedra team reply 2026-11-17 (draft): the team will ask its own pool and jsmining about merged mining (Q21) and the operators about their node versions (Q57)
 
 ## Phase 2: Implementation (current)
 
@@ -68,7 +68,7 @@ Step 2: the merged-mining hard fork.
 
 ## Phase 3: Public testnet
 
-- [~] Launch a public testnet with merged mining, with instructions so anyone can run a node and test (#13): plan drafted as [SIP-0003](proposals/SIP-0003-public-testnet.md) (2026-11-10): Q46-Q50 decided by Nec 2026-11-10; Q51 (duration, pass criteria) and Q52 asked of the Sedra team on 2026-11-10, no answer yet (checked 2026-11-17); SIP-0003 open for public comment since 2026-11-17 in [necatgit/sedra-sips](https://github.com/necatgit/sedra-sips) without waiting longer for the reply (copies in both repositories kept in sync)
+- [~] Launch a public testnet with merged mining, with instructions so anyone can run a node and test (#13): plan drafted as [SIP-0003](proposals/SIP-0003-public-testnet.md) (2026-11-10): Q46-Q50 decided by Nec 2026-11-10; Q51 (duration, pass criteria) and Q52 asked of the Sedra team on 2026-11-10; Sedra team reply 2026-11-17 (draft): the two-week minimum and the criteria accepted as a starting checklist, subject to agreement before launch (Q51 partial), Q52 promised by 2026-12-14; SIP-0003 open for public comment since 2026-11-17 in [necatgit/sedra-sips](https://github.com/necatgit/sedra-sips) without waiting longer for the reply (copies in both repositories kept in sync)
 - [ ] Fix issues, publish release candidates (#14)
 
 ## Phase 4: Mainnet activation
