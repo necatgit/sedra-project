@@ -2,11 +2,11 @@
 
 | | |
 |---|---|
-| Status | **Draft**, reviewed by Nec 2026-11-10: Q46-Q50 decided, Q51 and Q52 sent to the Sedra team on 2026-11-10 (with the request to announce the testnet activation); published in the SIP repository after their comments or one week. Not agreed with the Sedra team |
+| Status | **Draft, open for public comment** (since 2026-11-17). Reviewed by Nec 2026-11-10: Q46-Q50 decided, Q51 and Q52 sent to the Sedra team on 2026-11-10 (with the request to announce the testnet activation), not answered yet (open). Not agreed with the Sedra team |
 | Author | Nec |
 | Created | 2026-11-10 |
 | Type | Process (no consensus change of its own) |
-| Issue | #13 |
+| Issue | #13; public comment in [necatgit/sedra-sips](https://github.com/necatgit/sedra-sips) (public copy without links to private notes; keep both in sync) |
 | Depends on | [SIP-0001](SIP-0001-merged-mining.md) (the rules being tested), sedra-rusty v0.1.0 (2026-11-14) |
 
 Labels as in SIP-0001: **Verified** (checked in code or data), **Inferred** (reasoned, could be wrong), **Unknown**.
@@ -60,7 +60,7 @@ passed and with Nec's explicit go. B stays our private test bench.
 
 | Option | For | Against |
 |---|---|---|
-| **A. The testnet already in the code** (`testnet-10`, `sedratest:` addresses; same genesis in sedrad and sedra-rusty, **Verified**) | Unchanged Go `sedrad` v2.0.0 can join with `--testnet`, so we can show in public what happens to nodes that did not upgrade (criterion 3) | Its genesis is Kaspa's old testnet genesis (payload "kaspa-testnet", **Verified**); whether its rules match mainnet's v2.0.0 rules in Go and Rust alike is **Unknown** and must be checked first; it has no seeders, and whether anyone runs it is **Unknown** (ask Sedra) |
+| **A. The testnet already in the code** (`testnet-10`, `sedratest:` addresses; same genesis in sedrad and sedra-rusty, **Verified**) | Unchanged Go `sedrad` v2.0.0 can join with `--testnet`, so we can show in public what happens to nodes that did not upgrade (criterion 3) | Its genesis is Kaspa's old testnet genesis (payload "kaspa-testnet", **Verified**); whether its rules match mainnet's v2.0.0 rules in Go and Rust alike is **Unknown** and must be checked first; it has no seeders, and whether anyone runs it is **Unknown** (Q52, asked to the Sedra team, open) |
 | **B. A new test chain with its own genesis** | Clean start under a clear name; no surprises from old data | Go nodes cannot join without a modified build, so criterion 3 cannot be shown with unmodified software |
 | **C. A copy of mainnet's state** | Realistic balances and history | Complex (a genesis from a snapshot), and it copies real balances into a test network: not worth it |
 
@@ -76,7 +76,7 @@ ban window and the activation is tested as it will happen.
 | **B. After a native phase** (e.g. activation a few days after launch, announced in advance) | Tests exactly the mainnet sequence: announcement, upgrade, ban start, activation | The testnet takes a few days longer |
 
 **Decided 2026-11-10 (Q48):** B, with the activation score announced at launch, the same way it would be announced on
-mainnet. The announcement should come from the Sedra team if they are willing (asked with Q51).
+mainnet. The announcement should come from the Sedra team if they are willing (asked together with Q51, open).
 
 ### 4.4 Who runs the infrastructure? (Q49)
 
@@ -111,6 +111,8 @@ section 3, as the starting point; the Sedra team may change the duration and the
 report; the mainnet activation date is chosen with the Sedra team only after that report (SIP-0001 §5, Q33). A serious
 problem means fix, new testnet release and, if needed, a reset and a new activation on the testnet.
 
+**Open:** no answer from the Sedra team yet (as of 2026-11-16).
+
 ## 5. Rough timeline (Inferred, depends on the decisions)
 
 | Step | Earliest |
@@ -135,7 +137,14 @@ problem means fix, new testnet release and, if needed, a reset and a new activat
 Tracked in [QUESTIONS.md](../QUESTIONS.md):
 
 - Q46 Parent network (4.1) · Q47 Sedra test chain (4.2) · Q48 Activation on the testnet (4.3) · Q49 Infrastructure
-  (4.4) · Q50 How outsiders join (4.5) · Q51 Duration and exit criteria (4.6)
+  (4.4) · Q50 How outsiders join (4.5): decided 2026-11-10
+- Q51 Duration and exit criteria (4.6) · Q52 Does anyone run the existing testnet, do its rules match mainnet (4.2): asked
+  to the Sedra team 2026-11-10, open
+
+## Disclosure
+
+Nec holds about 250M SDR (roughly 1% of circulating supply) and has a direct interest in Sedra succeeding. The
+testnet itself creates nothing of value for anyone, Nec included.
 
 ## What this does NOT mean
 

@@ -68,7 +68,7 @@ Step 2: the merged-mining hard fork.
 
 ## Phase 3: Public testnet
 
-- [~] Launch a public testnet with merged mining, with instructions so anyone can run a node and test (#13): plan drafted as [SIP-0003](proposals/SIP-0003-public-testnet.md) (2026-11-10): Q46-Q50 decided by Nec 2026-11-10; Q51 (duration, pass criteria) and Q52 asked of the Sedra team on 2026-11-10, no answer yet (checked 2026-11-16); SIP-0003 goes to the public SIP repository after their reply or on 2026-11-17
+- [~] Launch a public testnet with merged mining, with instructions so anyone can run a node and test (#13): plan drafted as [SIP-0003](proposals/SIP-0003-public-testnet.md) (2026-11-10): Q46-Q50 decided by Nec 2026-11-10; Q51 (duration, pass criteria) and Q52 asked of the Sedra team on 2026-11-10, no answer yet (checked 2026-11-17); SIP-0003 open for public comment since 2026-11-17 in [necatgit/sedra-sips](https://github.com/necatgit/sedra-sips) without waiting longer for the reply (copies in both repositories kept in sync)
 - [ ] Fix issues, publish release candidates (#14)
 
 ## Phase 4: Mainnet activation
