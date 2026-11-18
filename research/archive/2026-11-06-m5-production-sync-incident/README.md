@@ -38,3 +38,7 @@ Read from the pool's own Miningcore log (read-only; miner addresses, workers and
 - **Verified:** about nine minutes without any Sedra block from the pool. At the usual rate that is roughly 250-290
   blocks the pool's miners did not find. **Not measured:** what that means in SDR for each miner. The pool's Kaspa
   side (its own node) logged no errors, stalls or reconnects in the same window.
+
+*Note 2026-11-18:* before this repository went public, the detail about how the freeze arises was shortened in this
+file and its history, under the promise of the 2026-11-09 security notice (no instructions for causing it). Details:
+[go-node-audit/kaspad-go-fixes-held-private.md](../2026-11-07-go-node-audit/kaspad-go-fixes-held-private.md).

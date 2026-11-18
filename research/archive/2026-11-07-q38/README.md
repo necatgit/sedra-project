@@ -20,3 +20,7 @@ without blocking its RPC.
 
 **What this does NOT mean:** one serving of one proof was tested, on an otherwise idle node. Serving many peers at once
 was not tested.
+
+*Note 2026-11-18:* before this repository went public, the detail about how the freeze arises was shortened in this
+file and its history, under the promise of the 2026-11-09 security notice (no instructions for causing it). The proof-size paragraph and the raw log `bytes.log` were removed for the same reason. Details:
+[go-node-audit/kaspad-go-fixes-held-private.md](../2026-11-07-go-node-audit/kaspad-go-fixes-held-private.md).
