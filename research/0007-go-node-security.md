@@ -37,6 +37,10 @@ Labels: **Verified** = checked in code or by a tool, with the output archived. *
 - **This project:** the Rust node is not affected by these Go findings; its own dependencies were audited separately
   (research 0006, `cargo audit`).
 
+*Added 2026-11-18:* the advice for operators, with the current status, is in the
+[operator advisory](0007-sedrad-v2.0.0-advisory.md). New there (Verified in code): sedrad opens both the P2P and the RPC
+port on all interfaces by default, and its `--nolisten` flag does not close the P2P port.
+
 ## What this does NOT mean
 
 - Not every listed vulnerability is necessarily exploitable in sedrad's configuration; govulncheck shows that the
