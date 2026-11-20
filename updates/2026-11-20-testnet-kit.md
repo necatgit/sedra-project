@@ -31,6 +31,9 @@ made every merged-mined testnet block invalid.
 ## Not done yet
 
 - Pool payouts were not part of the dry run; how the pool pays Kaspa testnet coins is still open.
+  *Later the same day:* the wallet daemon the pool uses for Kaspa payouts (Go `kaspawallet` v0.12.23) paid
+  correctly on a private chain with testnet-10's rules ([evidence](../research/archive/2026-11-20-0013-kas-tn10-payout-check.md));
+  the pool's own payout run on the public testnet is still to come.
 - Where the seed nodes and the testnet pool run is decided at launch.
 - Only a public run can show the rest: Kaspa's real testnet as the parent, outside participants, two weeks of running.
 

@@ -123,7 +123,9 @@ criterion, each with its measurement and evidence slot), and an issue template f
 - New gaps found and closed in the kit: the monitor cannot use gRPC with Go nodes (now `sedractl`); Miningcore needs
   `genesisHash` for the testnet; Miningcore refuses a `sedratest:` address when the parent is a Kaspa devnet; `--connect`
   disables inbound peers.
-- Still open: Kaspa TN10 payouts in Miningcore (which wallet daemon, **Unknown**); a Kaspa TN10 node's disk and memory
+- Kaspa TN10 payouts: Go `kaspawallet` v0.12.23 works as Miningcore's wallet daemon on testnet-10 rules (**Verified**
+  on a private chain 2026-11-20, [evidence](../research/archive/2026-11-20-0013-kas-tn10-payout-check.md)).
+- Still open: a Kaspa TN10 node's disk and memory
   need (**Unknown**); pruning proof with merged-mined headers on a public chain; where the infrastructure runs.
 
 ## What this does NOT mean

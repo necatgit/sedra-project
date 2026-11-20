@@ -48,7 +48,11 @@ independent; a second location is better.
   network. Kaspa TN10 + `sedratest:` match; a Kaspa devnet parent with `sedratest:` addresses is refused (dry run).
 - Sedra wallet: `protobufWalletRpcServiceName` = `sedrawalletd.sedrawalletd`, its own port (8182), so it does not
   collide with a Kaspa wallet daemon on 8082.
-- **Open:** Kaspa TN10 payouts. Criterion 5 needs them. What is known (2026-11-20):
+- **Kaspa TN10 payouts** (criterion 5). **Checked 2026-11-20 on a private chain:** Go `kaspawallet` v0.12.23 as the
+  daemon, kaspad 2.1.0 with testnet-10 (Crescendo) rules, `GetBalance` and `Send` called exactly as Miningcore calls
+  them: two payouts accepted and mined, balances exact
+  ([evidence](../research/archive/2026-11-20-0013-kas-tn10-payout-check.md)). Use v0.12.23 with `--testnet` on the
+  pool's Kaspa host. Still to show on the public testnet: Miningcore itself paying. Background:
   - Miningcore pays KAS only through the gRPC service `kaspawalletd.kaspawalletd` (`GetBalance`, then `Send`;
     `KaspaPayoutHandler`, Miningcore `57944adc`). **Verified** in the code.
   - The candidate daemon is Go `kaspawallet start-daemon` from kaspanet/kaspad (Go node deprecated; the wallet is
@@ -60,9 +64,7 @@ independent; a second location is better.
     coinbase v1 on both, so a wallet version that pays on mainnet should pay on TN10 with `--testnet`
     (**Inferred**, not run). Which `kaspawallet` version the production Kaspa host runs is not recorded in the
     repositories (**Unknown**).
-  - Test before launch: build `kaspawallet` v0.12.23 (or the production version), run it with `--testnet` against
-    kaspad 2.1.0 on a private testnet-10 chain (as in the dry run), mine to its address, wait for maturity, then
-    `GetBalance` and `Send` through the daemon exactly as Miningcore does. Then the same against public TN10.
+  - Done for the private chain (above); the public run comes with the testnet.
   - Any Miningcore change for it is asked first (the miningcore repository is not changed by this kit).
 
 ## 3. Launch
