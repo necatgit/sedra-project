@@ -87,7 +87,9 @@ the security fixes from later Kaspa releases (#29) and passed a seven-day run ne
 - **Public node:** P2P only, running since 2026-11-14; outside nodes have connected to it since 2026-11-15. It runs on the same physical host
   as Nec's pool PuddlePool, so it is an independent node but not independent hardware; a separate machine is still
   open ([SIP-0002](proposals/SIP-0002-network-resilience.md), #30).
-- **Next:** the public testnet with merged mining ([SIP-0003](proposals/SIP-0003-public-testnet.md), #13).
+- **Next:** the public testnet with merged mining ([SIP-0003](proposals/SIP-0003-public-testnet.md), #13). The kit
+  (guide, runbook, report template, tools) is ready since 2026-11-20 ([testnet/](testnet/README.md)); the launch waits
+  for the Sedra team's agreement on its duration and pass criteria (Q51) and the test chain (Q52). No date is set.
 
 **Step 2, the merged-mining fork, is implemented and tested but not active anywhere** (M10, branch `m10-auxpow`,
 2026-11-10): the verifier, the proof as a header field, P2P and mining RPC, the activation gate (`never` on every
