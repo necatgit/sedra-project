@@ -48,9 +48,22 @@ independent; a second location is better.
   network. Kaspa TN10 + `sedratest:` match; a Kaspa devnet parent with `sedratest:` addresses is refused (dry run).
 - Sedra wallet: `protobufWalletRpcServiceName` = `sedrawalletd.sedrawalletd`, its own port (8182), so it does not
   collide with a Kaspa wallet daemon on 8082.
-- **Open:** Kaspa TN10 payouts. Miningcore pays KAS through a `kaspawalletd` gRPC wallet daemon; which wallet daemon
-  works against kaspad 2.1.0 on testnet-10 is **Unknown** and must be tried before launch. Criterion 5 needs it.
-  Any Miningcore change for it is asked first (the miningcore repository is not changed by this kit).
+- **Open:** Kaspa TN10 payouts. Criterion 5 needs them. What is known (2026-11-20):
+  - Miningcore pays KAS only through the gRPC service `kaspawalletd.kaspawalletd` (`GetBalance`, then `Send`;
+    `KaspaPayoutHandler`, Miningcore `57944adc`). **Verified** in the code.
+  - The candidate daemon is Go `kaspawallet start-daemon` from kaspanet/kaspad (Go node deprecated; the wallet is
+    still released). Its release notes: v0.12.19 adapted the wallet gRPC interface to the Rust node's fee-estimation
+    and RBF APIs; v0.12.21 "Crescendo compatibility" (payload hash, coinbase maturity); v0.12.23 "Toccata Prep"
+    (updated proto) and a higher minimum fee rate. None mentions testnet-10. **Verified**:
+    https://github.com/kaspanet/kaspad/releases, read 2026-11-20.
+  - TN10 runs the same kaspad 2.1.0 as the Kaspa mainnet node our test vectors came from, with header v2 and
+    coinbase v1 on both, so a wallet version that pays on mainnet should pay on TN10 with `--testnet`
+    (**Inferred**, not run). Which `kaspawallet` version the production Kaspa host runs is not recorded in the
+    repositories (**Unknown**).
+  - Test before launch: build `kaspawallet` v0.12.23 (or the production version), run it with `--testnet` against
+    kaspad 2.1.0 on a private testnet-10 chain (as in the dry run), mine to its address, wait for maturity, then
+    `GetBalance` and `Send` through the daemon exactly as Miningcore does. Then the same against public TN10.
+  - Any Miningcore change for it is asked first (the miningcore repository is not changed by this kit).
 
 ## 3. Launch
 
