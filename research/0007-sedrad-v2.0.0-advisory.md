@@ -116,7 +116,9 @@ These steps work with the current sedrad v2.0.0; none of them needs a new releas
 ### An alternative node: sedra-rusty (with a conflict of interest)
 
 [sedra-rusty](https://github.com/necatgit/sedra-rusty) is an independent Sedra node written in Rust, based on Kaspa's
-current Rust node. **It is written and maintained by Nec, the author of this advisory, and is not a release of the
+Rust node rusty-kaspa v1.0.1, with the security fixes from later rusty-kaspa releases carried over
+([research/0006](0006-security-backports.md)). *Correction 2026-11-21: this sentence first said "based on Kaspa's current
+Rust node"; it is based on v1.0.1.* **It is written and maintained by Nec, the author of this advisory, and is not a release of the
 Sedra team**; sedrad remains Sedra's official node.
 
 - Against problem 1 (Verified, one test): while a Rust node served a brand-new node, its RPC kept answering within
