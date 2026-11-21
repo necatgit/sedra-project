@@ -84,3 +84,22 @@ advisories** with fixed versions, listed at `https://pkg.go.dev/vuln/<ID>`:
 
 There is no Sedra-specific advisory and no CVE for the RPC freeze (problem 1, Q37); Kaspa's Go node has the same
 behaviour and is no longer developed (research 0007).
+
+## 5. Re-check 2026-11-21
+
+Checked 2026-11-21 07:30 UTC with the same `gh` commands as in section 1:
+
+```
+$ gh release list -R sedracoin/sedrad --limit 3
+SEDRA v2.0.0 — Relaunch	Latest	v2.0.0	2026-08-11T14:46:34Z
+Sedrad v1.0.2		v1.0.2	2025-04-08T09:01:32Z
+Sedrad v1.0.0		v1.0.0	2024-02-16T12:44:24Z
+$ gh api repos/sedracoin/sedrad --jq .pushed_at
+2026-08-11T14:46:34Z
+branch tips: main e61214d5 (2025-04-08), relaunch/v2.0.0 4a1153d8 (2026-08-11), 1.0.0-new d1878914 (2024-01-02)
+$ gh api repos/sedracoin/sedrad/security-advisories --jq length
+0
+go.mod on relaunch/v2.0.0: grpc v1.38.0, protobuf v1.28.1, x/net v0.7.0 (unchanged)
+```
+
+No change since 2026-11-18. Q59 (were operators told, will the release fix both problems) has no answer yet.
