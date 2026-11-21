@@ -2,7 +2,11 @@
 
 The public home of the work: research, decisions, roadmap, proposals, questions and answers, release notes and
 updates. Code lives in [sedra-rusty](https://github.com/necatgit/sedra-rusty) (the Rust node). This repository was
-called `sedra-merged-mining` until 2026-11-15; old links redirect here.
+called `sedra-merged-mining` until 2026-11-15. *Correction 2026-11-21:* links with that old name no longer
+redirect here. The repository was recreated under the same name on 2026-11-21 so that commits removed from its history
+before publication cannot be reached (see
+[research/archive/2026-11-07-go-node-audit/kaspad-go-fixes-held-private.md](research/archive/2026-11-07-go-node-audit/kaspad-go-fixes-held-private.md));
+issues #1-#30 were moved over with their numbers and comments.
 
 An open proposal and development effort to let **Sedra (SDR)** be **merged-mined with Kaspa (KAS)**, the way ZKas
 already is. Kaspa miners would then secure Sedra with the same work they already do, at no extra cost.
