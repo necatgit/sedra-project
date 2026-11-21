@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Written | 2026-11-18 (status last checked 2026-11-21, 07:30 UTC) |
+| Written | 2026-11-18; published 2026-11-21 (status last checked 2026-11-21, 07:30 UTC) |
 | Affects | `sedracoin/sedrad` v2.0.0 (tag `v2.0.0` = `4a1153d`, the version Sedra mainnet runs); older sedrad versions use the same or older libraries (not checked one by one) |
 | Severity | Denial of service: nodes can be stopped or slowed down from outside. **None of these problems lets anyone take coins directly or change the chain's rules** |
 | Technical background | [research/0007](0007-go-node-security.md), [incident of 2026-11-06](archive/2026-11-06-m5-production-sync-incident/README.md), questions Q37, Q39, Q59 in [QUESTIONS.md](../QUESTIONS.md) |
@@ -143,6 +143,7 @@ Sedra team**; sedrad remains Sedra's official node.
 | 2026-11-18 | Asked the team whether pools and the exchange have been told and whether the release will fix both problems (Q59); no answer yet |
 | 2026-11-18 | Checked: no new sedrad release, no commit since 2026-08-11, no Sedra security advisory ([evidence](archive/2026-11-18-sedrad-advisory-checks/README.md#1-no-fixed-sedrad-release-yet)) |
 | 2026-11-21 | Checked again: still no new sedrad release or commit, no Sedra security advisory, libraries unchanged, no answer to Q59 ([evidence](archive/2026-11-18-sedrad-advisory-checks/README.md#5-re-check-2026-11-21)) |
+| 2026-11-21 | This advisory published, together with this repository |
 
 ## Current status (2026-11-21)
 
