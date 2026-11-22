@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | **Draft, open for public comment** (since 2026-11-17). Reviewed by Nec 2026-11-10: Q46-Q50 decided, Q51 and Q52 sent to the Sedra team on 2026-11-10 (with the request to announce the testnet activation), not answered yet (open). Not agreed with the Sedra team |
+| Status | **Draft, open for public comment** (since 2026-11-17). Reviewed by Nec 2026-11-10: Q46-Q50 decided, Q51 and Q52 sent to the Sedra team on 2026-11-10 (with the request to announce the testnet activation), open: the Sedra team reply 2026-11-17 (draft) accepts the two-week minimum and the criteria as a starting checklist, subject to agreement before launch (Q51), and promises Q52 by 2026-12-14. Not agreed with the Sedra team |
 | Author | Nec |
 | Created | 2026-11-10 |
 | Type | Process (no consensus change of its own) |

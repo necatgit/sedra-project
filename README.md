@@ -96,7 +96,9 @@ the security fixes from later Kaspa releases (#29) and passed a seven-day run ne
   [research/0007 advisory](research/0007-sedrad-v2.0.0-advisory.md).
 - **Next:** the public testnet with merged mining ([SIP-0003](proposals/SIP-0003-public-testnet.md), #13). The kit
   (guide, runbook, report template, tools) is ready since 2026-11-20 ([testnet/](testnet/README.md)); the launch waits
-  for the Sedra team's agreement on its duration and pass criteria (Q51) and the test chain (Q52). No date is set.
+  for the Sedra team's agreement on its duration and pass criteria (Q51) and the test chain (Q52). On 2026-11-20 Nec
+  asked the team for a written "yes" to the criteria and proposed a fresh test chain, so Q52 need not hold up the
+  launch; not agreed yet (2026-11-22). No date is set. Latest summary: [updates/2026-11-22-week.md](updates/2026-11-22-week.md).
 
 **Step 2, the merged-mining fork, is implemented and tested but not active anywhere** (M10, branch `m10-auxpow`,
 2026-11-10): the verifier, the proof as a header field, P2P and mining RPC, the activation gate (`never` on every

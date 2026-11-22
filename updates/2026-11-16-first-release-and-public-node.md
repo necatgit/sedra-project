@@ -59,5 +59,5 @@ yet.
 - SIP-0003, the public testnet plan, goes to the public SIP repository after the Sedra team's reply on Q51/Q52, or on
   2026-11-17.
 - A public write-up of the Go node security issues (research 0007) is planned for around 2026-11-23; this repository
-  becomes public then.
+  becomes public then. *Update 2026-11-22:* published on 2026-11-21, see [2026-11-22-week](2026-11-22-week.md).
 - The treasury trace with an archival node, now that M9 is over.
