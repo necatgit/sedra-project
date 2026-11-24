@@ -193,6 +193,8 @@ free tiers (can be reclaimed).
 Nec chose **netcup VPS 1000 G12.5** (4 vCore x86, 8 GB, 128 GB, 12-month term), the comfortable netcup plan named
 above, over the cheaper first-year price of Time4VPS. It fits all VPS roles at once (seed2, later the mainnet node,
 the status page) and keeps the same price in later years. Mining stays off the VPS (netcup T&Cs §5).
+It is an independent EU VPS on a 12-month minimum term. Whether it stays after that (as a mainnet seed and public node
+for SIP-0002, or not at all) is reviewed after the testnet report and decided well before the term ends.
 
 ## 6. What Nec does, and what Claude does after that
 
