@@ -43,8 +43,12 @@ blocks, as on mainnet).
 2. *The monitor* (`sedra-testnet-monitor`): asks several nodes every minute whether they have the same chain, and
    marks every block as **native** or **merged-mined** with its pool tag. Anyone can run it against their own node
    (GUIDE section 4). The operator posts a daily summary on issue #13.
-3. *A public page:* SIP-0003 §4.4 promises at least "a status page with recent blocks". **Not built yet**: today the
-   monitor writes files only. Decision D8 below.
+3. *A public status page* (SIP-0003 §4.4): built 2026-11-24 (sedra-rusty `testnet-kit`,
+   `contrib/testnet/status_page.py`). Refreshed every minute from the monitor's data, it shows the phase and the
+   progress to the ban start and the activation, every node and whether it still has the same chain, native and
+   merged-mined block counts, the share per pool tag and the most recent blocks, plus a `status.json` for scripts.
+   **Verified** on a private loopback testnet on 2026-11-24. Where it is served is part of D3. It is not a full
+   explorer: no transactions or addresses.
 
 **Do we need miners?** Yes, of two kinds.
 - *Native (CPU) miners* from day one. Without them there are no blocks at all. The operator's seed node mines at
@@ -81,7 +85,7 @@ show it; the reaction is in RUNBOOK §6 (pause, report, reset if needed). Accept
 | Testnet pool (Miningcore) + database + wallets | merged mining, payouts (criteria 2, 5) | Nec | config ready; Kaspa testnet payout path checked on a private chain |
 | Monitor + daily summary | evidence for criteria 1, 2, 3, 8 | Nec | ready (dry run) |
 | Faucet (test coins on request) | people without miners | Nec, by hand from GitHub issues | ready (dry run) |
-| Public status page | anyone checking blocks | not decided (D8) | not built |
+| Public status page | anyone checking blocks | Nec (any static web server next to the monitor) | built and tested on a private chain 2026-11-24; host part of D3 |
 | Announcement | people knowing it exists | the Sedra team, if they agree (Q48) | waiting |
 
 ## 4. Decision points
@@ -95,7 +99,7 @@ show it; the reaction is in RUNBOOK §6 (pause, report, reset if needed). Accept
 | D5 | Activation and ban scores | design (RUNBOOK 3.1) | Decided: activation DAA 345,600, ban start 172,800, built into the release |
 | D6 | Publish the release (tag, signature, pre-release) | Nec, after D1 | Prepared; the go steps are in [release/v0.2.0-testnet.1-go.md](../release/v0.2.0-testnet.1-go.md) |
 | D7 | Who announces, and the text | Sedra team (Q48), text from Nec | Waiting; the announcement must say: test network only, no mainnet date, no change to supply |
-| D8 | Public status page or explorer (promised in SIP-0003 §4.4) | Nec | Open: a simple page from the monitor's data, or the daily posts on #13 only |
+| D8 | Public status page or explorer (promised in SIP-0003 §4.4) | Nec | Decided 2026-11-24: a status page from the monitor's data (built); a full explorer is not planned |
 | D9 | Pause, fix, reset during the test | Nec, and the Sedra team if they take part | Rules set in RUNBOOK §6: a consensus failure pauses the test, the fix is re-tested, the two-week clock restarts (also the Sedra team's condition in its 2026-11-23 draft) |
 | D10 | Pass or fail, and what follows | the report, then the Sedra team and Nec together | After the test. A mainnet date is only discussed after a passed report |
 

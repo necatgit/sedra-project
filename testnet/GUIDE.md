@@ -107,6 +107,7 @@ cat /tmp/sedra-check/nodes.csv
 ```
 
 `network` must be `sedra-testnet-10`, `is_synced` 1, and `virtual_daa_score` close to what the seed nodes show.
+The public status page (`<at launch>`: its address) shows the seed nodes' DAA score, the phase and the recent blocks.
 
 ## 5. Wallet
 
