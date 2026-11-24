@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | **Not launched.** This guide is prepared in advance (2026-11-20). The launch waits for the Sedra team's agreement on the testnet's duration and pass criteria (Q51) and on which test chain to use (Q52). Values marked `<at launch>` are filled in then |
+| Status | **Not launched.** This guide is prepared in advance (2026-11-20; release candidate `0.2.0-testnet.1` prepared 2026-11-24, not published). The launch waits for the Sedra team's agreement on the testnet's duration and pass criteria (Q51) and on which test chain to use (Q52). Values marked `<at launch>` are filled in then |
 | Process | [SIP-0003](../proposals/SIP-0003-public-testnet.md): what the testnet must show. [SIP-0001](../proposals/SIP-0001-merged-mining.md): the merged-mining rules being tested |
 | Questions, problems | GitHub issue in this repository, template "Testnet report" (section 8) |
 
@@ -21,9 +21,9 @@ value and never will.** Never use a mainnet wallet, key or address on the testne
 | Block rate, rewards, finality | as on mainnet (1 block per second, finality depth 86,400) |
 | Parent chain for merged mining | Kaspa testnet-10 (`kaspatest:` addresses) |
 | Seed nodes | `<at launch>` (no DNS seeders; you add them with `--addpeer`) |
-| Merged-mining activation | DAA score `<at launch>` (about 4 days after launch) |
-| Self-parent ban start | activation - 172,800 (about 2 days after launch) |
-| Node release | sedra-rusty `sedra-v0.2.0-testnet.N` `<at launch>` |
+| Merged-mining activation | DAA score **345,600** (about 4 days after launch), built into the release |
+| Self-parent ban start | DAA score **172,800** = activation - 172,800 (about 2 days after launch) |
+| Node release | sedra-rusty `sedra-v0.2.0-testnet.1` (release candidate prepared 2026-11-24, **not published yet**) |
 
 The testnet cannot connect to Sedra mainnet or to Kaspa's networks: it has its own network name, genesis, ports and
 address prefix, and nodes reject a peer from another network in the handshake.
@@ -48,15 +48,26 @@ address prefix, and nodes reject a peer from another network in the handshake.
 
 ## 3. Get the node
 
-**Download** (`<at launch>`): `kaspad` (the binary name is still upstream's), `SHA256SUMS` and its signature from the
-sedra-rusty release `sedra-v0.2.0-testnet.N`. Verify before you run it:
+**Download** (`<at launch>`): `sedra-rusty-0.2.0-testnet.1-linux-amd64.tar.gz` and `SHA256SUMS` from the sedra-rusty
+pre-release `sedra-v0.2.0-testnet.1`. The node binary inside is `kaspad` (the binary name is still upstream's).
+Verify before you run it:
 
 ```
-sha256sum -c SHA256SUMS
+sha256sum -c --ignore-missing SHA256SUMS          # the archive
+tar xzf sedra-rusty-0.2.0-testnet.1-linux-amd64.tar.gz
+sha256sum -c SHA256SUMS                           # now both lines: archive and kaspad
 ```
 
-and the signature as described in sedra-rusty `docs/RELEASE.md` (the release tags and checksums are signed with an
-SSH key published on puddlepool.com). The release is built reproducibly; you can rebuild it and compare checksums.
+The tag `sedra-v0.2.0-testnet.1` is signed by Nec with the SSH key published on puddlepool.com, and its message
+carries the same two checksums, so a good signature covers the checksums too:
+
+```
+git clone https://github.com/necatgit/sedra-rusty && cd sedra-rusty
+curl -sO https://puddlepool.com/keys/allowed_signers
+git -c gpg.ssh.allowedSignersFile=allowed_signers tag -v sedra-v0.2.0-testnet.1
+```
+
+The release is built reproducibly; you can rebuild it and compare checksums (sedra-rusty `docs/RELEASE.md`).
 
 **Or build it:**
 
@@ -64,12 +75,14 @@ SSH key published on puddlepool.com). The release is built reproducibly; you can
 sudo apt install build-essential clang llvm libclang-dev pkg-config libssl-dev protobuf-compiler cmake git
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 git clone https://github.com/necatgit/sedra-rusty && cd sedra-rusty
-git checkout sedra-v0.2.0-testnet.N          # <at launch>
+git checkout sedra-v0.2.0-testnet.1          # once published
 cargo build --release --bin kaspad
 bash contrib/testnet/build_tools.sh          # sedra-testnet-miner and sedra-testnet-monitor
 ```
 
-Check the version: `./target/release/kaspad --version` must print the testnet release.
+Check the version: `kaspad --version` must print `0.2.0-testnet.1 (rusty-kaspa v1.0.1, commit <12 hex digits>)`.
+The testnet release refuses to start without `--testnet`: it cannot run as a mainnet node by accident. For Sedra
+mainnet use a mainnet release (`sedra-v0.1.1`).
 
 ## 4. Run a node
 

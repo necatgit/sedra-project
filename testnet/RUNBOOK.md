@@ -78,6 +78,10 @@ independent; a second location is better.
 
 ### 3.2 Release
 
+Prepared 2026-11-24 for the fresh chain (steps 1 and the test part of 2 done on sedra-rusty `release-0.2.0-testnet.1`,
+not tagged): [release/v0.2.0-testnet.1-checklist.md](../release/v0.2.0-testnet.1-checklist.md), day-of steps in
+[release/v0.2.0-testnet.1-go.md](../release/v0.2.0-testnet.1-go.md).
+
 1. On `testnet-kit`: set `TESTNET_PARAMS.aux_pow_activation = ForkActivation::new(<score>)` with a `SEDRA:` comment,
    add the boundary test (score - 1 rejects a merged-mined block, score accepts; ban start - 1 accepts an `SDM1`
    coinbase, ban start rejects), set `sedra_release()` to `0.2.0-testnet.1`.
