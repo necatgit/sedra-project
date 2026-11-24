@@ -5,6 +5,7 @@ the Sedra team agrees on its duration and pass criteria (Q51) and on the test ch
 
 | File | For |
 |---|---|
+| [OVERVIEW.md](OVERVIEW.md) | Everyone: what runs, how blocks are found, the decision points and the step-by-step plan per stakeholder |
 | [GUIDE.md](GUIDE.md) | Participants: get and verify the node, run it, wallet, native and merged mining, reporting |
 | [RUNBOOK.md](RUNBOOK.md) | The operator: go/no-go checks, infrastructure, launch, daily routine, how each criterion is measured, problems, reset, ending |
 | [PASS-REPORT-TEMPLATE.md](PASS-REPORT-TEMPLATE.md) | The dated report, one section per SIP-0003 §3 criterion |
