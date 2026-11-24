@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | **Decided 2026-11-24: Nec ordered netcup VPS 1000 G12.5 (12 months, location "EU", no preference between Vienna, Nuremberg and Amsterdam).** Not delivered or set up yet. The comparison below is kept as it was when the choice was made |
+| Status | **Decided 2026-11-24: Nec ordered netcup VPS 1000 G12.5 (12 months, location "EU", no preference between Vienna, Nuremberg and Amsterdam).** Delivered the same day (Debian 13 preinstalled) and hardened: SSH keys only, no root login, firewall open only for SSH and testnet P2P 22211, automatic security updates. seed2 itself is installed with the signed release, before the rehearsal. The comparison below is kept as it was when the choice was made |
 | Decision | D3 in [OVERVIEW.md](OVERVIEW.md) section 4 |
 | Why it matters | [SIP-0003](../proposals/SIP-0003-public-testnet.md) §6: all of this project's machines share one physical host and one home network, so two seeds there are not independent. A second, independent place is needed for an honest pass report |
 | Budget | About USD 100-200 for a year, prepaid is fine (Nec's own money; nothing comes from the Sedra project) |
