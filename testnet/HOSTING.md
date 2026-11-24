@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | **Comparison done 2026-11-24, waiting for Nec's choice.** Nothing rented, nothing set up. Updated the same day: OVHcloud VPS-2 cannot be ordered in Europe, so netcup is now the suggestion; Leaseweb added (see the correction note in section 5). Later the same day: 18 more EU/EFTA providers checked (section 2.1); Time4VPS Linux 8 now suggested, netcup VPS 500 G12.5 the alternative |
+| Status | **Decided 2026-11-24: Nec ordered netcup VPS 1000 G12.5 (12 months, location "EU", no preference between Vienna, Nuremberg and Amsterdam).** Not delivered or set up yet. The comparison below is kept as it was when the choice was made |
 | Decision | D3 in [OVERVIEW.md](OVERVIEW.md) section 4 |
 | Why it matters | [SIP-0003](../proposals/SIP-0003-public-testnet.md) §6: all of this project's machines share one physical host and one home network, so two seeds there are not independent. A second, independent place is needed for an honest pass report |
 | Budget | About USD 100-200 for a year, prepaid is fine (Nec's own money; nothing comes from the Sedra project) |
@@ -187,6 +187,12 @@ and picking an EU location at checkout. **Leaseweb VPS 2** only if Leaseweb appr
 
 **Not recommended:** Hetzner (terms on nodes), Leaseweb without written approval (terms, business customers only), Contabo (reliability, 24-month lock-in), ARM plans (no ARM release),
 free tiers (can be reclaimed).
+
+### Decision (2026-11-24)
+
+Nec chose **netcup VPS 1000 G12.5** (4 vCore x86, 8 GB, 128 GB, 12-month term), the comfortable netcup plan named
+above, over the cheaper first-year price of Time4VPS. It fits all VPS roles at once (seed2, later the mainnet node,
+the status page) and keeps the same price in later years. Mining stays off the VPS (netcup T&Cs §5).
 
 ## 6. What Nec does, and what Claude does after that
 

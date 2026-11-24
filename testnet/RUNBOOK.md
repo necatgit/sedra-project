@@ -26,7 +26,7 @@ If any check fails: no launch. Record why in #13.
 
 ## 2. Infrastructure
 
-Where it runs is decided at launch (not yet chosen; comparison and suggestion in [HOSTING.md](HOSTING.md)). SIP-0003 §6: two seed nodes on one physical host are not
+Where it runs: decided 2026-11-24 ([HOSTING.md](HOSTING.md)): seed2 on a rented netcup VPS in the EU, everything else at home. SIP-0003 §6: two seed nodes on one physical host are not
 independent; a second location is better.
 
 | Role | Software | Ports | Notes |
