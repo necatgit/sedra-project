@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | **Comparison done 2026-11-24, waiting for Nec's choice.** Nothing rented, nothing set up. Updated the same day: OVHcloud VPS-2 cannot be ordered in Europe, so netcup is now the suggestion; Leaseweb added (see the correction note in section 5) |
+| Status | **Comparison done 2026-11-24, waiting for Nec's choice.** Nothing rented, nothing set up. Updated the same day: OVHcloud VPS-2 cannot be ordered in Europe, so netcup is now the suggestion; Leaseweb added (see the correction note in section 5). Later the same day: 18 more EU/EFTA providers checked (section 2.1); Time4VPS Linux 8 now suggested, netcup VPS 500 G12.5 the alternative |
 | Decision | D3 in [OVERVIEW.md](OVERVIEW.md) section 4 |
 | Why it matters | [SIP-0003](../proposals/SIP-0003-public-testnet.md) §6: all of this project's machines share one physical host and one home network, so two seeds there are not independent. A second, independent place is needed for an honest pass report |
 | Budget | About USD 100-200 for a year, prepaid is fine (Nec's own money; nothing comes from the Sedra project) |
@@ -94,6 +94,39 @@ Caveats seen while checking:
   both in an automated browser and in Nec's own browser: it cannot be ordered in Europe today.
 - netcup shows prices with German VAT on its site; the netcup deals page may add Black Friday offers later this week.
 
+### 2.1 Further European providers (list from eucloud.tech, checked 2026-11-24)
+
+Nec asked for the VPS providers listed at [eucloud.tech/eu-providers/vps-hosting](https://www.eucloud.tech/eu-providers/vps-hosting)
+to be checked before deciding. Each was read on its own website on 2026-11-24 (prices, terms). Prices are as shown,
+usually excluding VAT; "with VAT" adds 25 % (see section 2). Only Time4VPS's Linux 8 prices were re-read for this
+note; the other rows come from the same day's checks and should be re-read on the order page.
+
+| Provider (company country; DC) | Cheapest plan at the minimum (and 8 GB plan) | Price as shown | Per year with VAT | Terms on crypto (quoted) | Verdict |
+|---|---|---|---|---|---|
+| **Time4VPS** (LT; Vilnius) | **Linux 8**: 3 vCPU, 8 GB, 100 GB SSD, 16 TB/month | €5.67/month on a 1-year term, "15,76 € / month when you renew" (Black Month sale; plus VAT) | **€85 ≈ USD 93** first year; renewal about €236 + VAT | Terms of service rev. 2025-05-30: crypto, mining and nodes not mentioned. Consumers explicitly allowed ("Customer Consumer") | **Best value; now suggested** |
+| MVPS (CY; NL, DE, FR, IE, ES, UK) | VPS BASIC 2 vCPU, 4 GB, 50 GB NVMe (POWER 4/8/100: €19) | €7.00/month excl. VAT | €105 | Prohibits "Cryptocurrency mining"; nodes not mentioned. "The average CPU usage should not go above 50% in the timespan of a day"; no DDoS warranty, may null-route | Possible, weaker than netcup |
+| eVPS, formerly VPSag (CY; NL) | VPS 2: 3 vCPU, 6 GB, 75 GB NVMe, 10 TB | €8/month yearly (€10 monthly) | about €120 if VAT is added | Terms 2026-10-27: crypto only as a payment method; prohibits "Tor exit nodes"; 50 % CPU cap | Possible; IPv4 and DDoS not stated |
+| CloudMonsters (NL; NL) | Nano 2/4/40 GB SSD (Starter 4/8/80: €8.95) | €4.95/month excl. 21 % BTW | €74 (Nano), €134 (Starter) | Algemene voorwaarden: crypto, mining, nodes not mentioned | Small company; terms say a one-year term with automatic renewal (art. 14.1) while the product page says monthly; 40 GB is exactly the minimum |
+| eCompute (RO; NL) | Plus 2/4/50 GB NVMe | €7.20/month yearly | about €108 | "Unacceptable material" includes "bitcoin miners"; 50 % CPU cap | No advantage over netcup |
+| Infomaniak (CH; CH) | VPS Lite 2/4/60 GB | €7.20/month on 12 months | about €108 | VPS terms §5.4 ban "file sharing services (Peer-to-Peer software)" and crypto mining | **Not suitable**: a node is peer-to-peer software |
+| Cloudzy (company location not stated; London, Amsterdam, Frankfurt, Bern) | 2/4/120 GB NVMe | USD 14.48/month paid 12 months ahead ("50% off") | USD 174 + tax | Mining and nodes not mentioned | Over the budget once tax is added |
+| UpCloud (FI) | 2/4/30 GB + 10 GB storage | about €13.15/month | about €197 | Mining only with written approval | **Not suitable**: terms exclude "consumers or private persons for their personal use" |
+| Virtua.Cloud (FR) | vCS-4 2/4/80 GB | €20.40/month yearly | €306 | Bans "Crypto currency mining, farming, plotting or any resource-intensive utilization related to crypto currency" | Over budget |
+| Scaleway (FR) | DEV1-M + IPv4 + 40 GB block | about €22/month | about €330 | Bans "cryptocurrency mining" | Over budget |
+| 1gbits (LT; many EU DCs) | Linux VPS 3 2/4/80 GB | USD 22.49/month on 36 months | over USD 270 | No crypto wording; markets a "Bitcoin VPS" | Over budget, 36-month term |
+| 2Cloud (LV) | VPS-2 2/4/40 GB | €20.50/month | about €300 | Not mentioned | Over budget |
+| Gandi (FR) | V-R4 + 15 GB | €15.90/month excl. VAT | about €238 | Not mentioned | Over budget |
+| Serverspace (AE operator) | 2/4/80 GB | €36.93/month (no EU location orderable in the calculator) | - | Not mentioned | Over budget, no EU location |
+| Nordhost (NO) | CloudVPS L 2/8 GB | NOK 513/month incl. VAT | far over | Terms ban "bakgrunnsprosesser" (background processes); scope unclear | Over budget |
+| Hidora (CH) | s1.medium 2/4 | CHF 48/month + IPv4 | far over | Digital-asset activities ("minage, staking ou masternodes") only with written approval; professional customers only | Not suitable |
+| Timme Hosting (DE) | - | from €62.50/month | far over | Not mentioned | **Not suitable**: no contracts with consumers (AGB) |
+| Stuxhost (NL) | - | site unreachable 2026-11-24 | - | - | Not evaluated |
+
+Not checked in detail: the Swedish providers on the list (Binero, City Cloud, Elastx, Oderland, WebbPlatsen),
+because the second place should be outside the operator's home country; ayedo (Kubernetes platform), Combell
+(managed hosting), Greenhost (non-profit host for civil society), MainVPS (India-based), PerLod (no country given),
+OperaVPS and MonoVM (same kind of offer as Cloudzy). netcup, OVHcloud, Hetzner and Contabo are in section 2.
+
 ## 3. Terms of service on crypto nodes
 
 | Provider | What the terms say | Effect for us |
@@ -125,8 +158,21 @@ on the order page also showed no location available in Europe, so it cannot be o
 moves to netcup; OVHcloud stays the better option if VPS-2 comes back in stock. Leaseweb VPS 2 was checked as a
 replacement and is not recommended without Leaseweb's written approval (section 3).
 
-**Primary (now): netcup VPS 500 G12.5** (2 vCore x86, 4 GB, 64 GB SSD, 12-month term), Amsterdam or Nuremberg.
-About **€104 (≈ USD 114) a year**. Meets the minimum spec. To stay inside 4 GB, the mainnet node starts only after the
+**Second update 2026-11-24 (same day):** after the wider check in section 2.1, Time4VPS Linux 8 gives twice the
+memory of netcup VPS 500 G12.5 for less money in the first year, and its terms say nothing against crypto at all.
+It becomes the suggestion; netcup VPS 500 G12.5 stays as the alternative.
+
+**Primary (now): Time4VPS Linux 8**, 3 vCPU, 8 GB RAM, 100 GB SSD, 16 TB/month, **1-year term**, Vilnius (Lithuania).
+About **€85 (≈ USD 93) for the first year** with 25 % VAT. Why: the comfortable spec (both nodes and the status page
+fit at once) at the lowest price found; terms that do not mention crypto, mining or nodes; consumers explicitly
+allowed; DDoS mitigation in the data centre (FAQ). Watch: the price is a sale price for the first period only, the
+renewal is €15.76 a month plus VAT (about €236 a year), so after a year either pay that, move, or cancel. The page
+does not state the disk type beyond "SSD" or that an IPv4 address is included: check both on the order page (Inferred
+that IPv4 is included, as is usual for a VPS).
+
+**Alternative: netcup VPS 500 G12.5** (2 vCore x86, 4 GB, 64 GB SSD, 12-month term), Amsterdam or Nuremberg.
+About **€104 (≈ USD 114) a year**, and the same price in later years (netcup's deals FAQ: the price does not change
+after the first year). Meets the minimum spec; mining is banned, nodes are not named. To stay inside 4 GB, the mainnet node starts only after the
 testnet seed stops (no overlap week). If the budget allows, **netcup VPS 1000 G12.5** (4 vCore, 8 GB, 128 GB, about
 €183 ≈ USD 200 a year) is the comfortable version and can also host the static status page (D8).
 
