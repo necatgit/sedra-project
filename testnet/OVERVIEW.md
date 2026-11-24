@@ -94,7 +94,7 @@ show it; the reaction is in RUNBOOK §6 (pause, report, reset if needed). Accept
 |---|---|---|---|
 | D1 | Duration (at least two weeks after activation) and the eight pass criteria | Sedra team (Q51) | Conditional yes in an unapproved working draft (2026-11-23); an approved yes is awaited |
 | D2 | Which chain: fresh chain from the existing testnet genesis | Nec (Q47, Q52) | Decided: fresh chain. Q52 (does anyone run the old one) stays open as information |
-| D3 | Where the seeds, Go node, Kaspa node and pool run (one host, a rented second place, or a volunteer's seed) | Nec | Open; SIP-0003 §6 says one physical host is not independent. Comparison done 2026-11-24 ([HOSTING.md](HOSTING.md)): seed2 on a rented VPS (suggested OVHcloud VPS-2, alternative netcup VPS 500 G12.5, about USD 115-120 a year), everything else at home; waiting for Nec's choice |
+| D3 | Where the seeds, Go node, Kaspa node and pool run (one host, a rented second place, or a volunteer's seed) | Nec | Open; SIP-0003 §6 says one physical host is not independent. Comparison done 2026-11-24 ([HOSTING.md](HOSTING.md)): seed2 on a rented VPS (suggested netcup VPS 500 G12.5, about USD 115 a year; OVHcloud VPS-2 not orderable in Europe on 11-24; Leaseweb needs written approval for node use), everything else at home; waiting for Nec's choice |
 | D4 | Start date | Nec, with the Sedra team | Proposed Tue 2026-12-01; not agreed, not announced |
 | D5 | Activation and ban scores | design (RUNBOOK 3.1) | Decided: activation DAA 345,600, ban start 172,800, built into the release |
 | D6 | Publish the release (tag, signature, pre-release) | Nec, after D1 | Prepared; the go steps are in [release/v0.2.0-testnet.1-go.md](../release/v0.2.0-testnet.1-go.md) |
