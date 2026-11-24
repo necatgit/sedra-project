@@ -75,9 +75,9 @@ show it; the reaction is in RUNBOOK §6 (pause, report, reset if needed). Accept
 |---|---|---|---|
 | Testnet node release `0.2.0-testnet.1` | everyone who runs a node | this project builds, Nec signs | release candidate ready 2026-11-24, not published |
 | Seed node 1 (also mines the first blocks) | the chain to exist | Nec | host not chosen (D3) |
-| Seed node 2 | a second place to connect | Nec or a volunteer | host not chosen (D3) |
+| Seed node 2 | a second place to connect | Nec or a volunteer | host not chosen (D3); suggested: a rented VPS outside the home network ([HOSTING.md](HOSTING.md)) |
 | Unchanged Go node | criterion 3 | Nec | host not chosen |
-| Kaspa testnet-10 node | the pool | Nec | host not chosen; disk and memory need **Unknown** |
+| Kaspa testnet-10 node | the pool | Nec | host not chosen; too big for a cheap VPS (Kaspa guidance: 8 cores, 16 GB RAM, 640 GB SSD), so at home on SSD; real testnet-10 need **Unknown** ([HOSTING.md](HOSTING.md) 1.2) |
 | Testnet pool (Miningcore) + database + wallets | merged mining, payouts (criteria 2, 5) | Nec | config ready; Kaspa testnet payout path checked on a private chain |
 | Monitor + daily summary | evidence for criteria 1, 2, 3, 8 | Nec | ready (dry run) |
 | Faucet (test coins on request) | people without miners | Nec, by hand from GitHub issues | ready (dry run) |
@@ -90,7 +90,7 @@ show it; the reaction is in RUNBOOK §6 (pause, report, reset if needed). Accept
 |---|---|---|---|
 | D1 | Duration (at least two weeks after activation) and the eight pass criteria | Sedra team (Q51) | Conditional yes in an unapproved working draft (2026-11-23); an approved yes is awaited |
 | D2 | Which chain: fresh chain from the existing testnet genesis | Nec (Q47, Q52) | Decided: fresh chain. Q52 (does anyone run the old one) stays open as information |
-| D3 | Where the seeds, Go node, Kaspa node and pool run (one host, a rented second place, or a volunteer's seed) | Nec | Open; SIP-0003 §6 says one physical host is not independent |
+| D3 | Where the seeds, Go node, Kaspa node and pool run (one host, a rented second place, or a volunteer's seed) | Nec | Open; SIP-0003 §6 says one physical host is not independent. Comparison done 2026-11-24 ([HOSTING.md](HOSTING.md)): seed2 on a rented VPS (suggested OVHcloud VPS-2, alternative netcup VPS 500 G12.5, about USD 115-120 a year), everything else at home; waiting for Nec's choice |
 | D4 | Start date | Nec, with the Sedra team | Proposed Tue 2026-12-01; not agreed, not announced |
 | D5 | Activation and ban scores | design (RUNBOOK 3.1) | Decided: activation DAA 345,600, ban start 172,800, built into the release |
 | D6 | Publish the release (tag, signature, pre-release) | Nec, after D1 | Prepared; the go steps are in [release/v0.2.0-testnet.1-go.md](../release/v0.2.0-testnet.1-go.md) |

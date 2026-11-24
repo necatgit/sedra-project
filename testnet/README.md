@@ -8,6 +8,7 @@ the Sedra team agrees on its duration and pass criteria (Q51) and on the test ch
 | [OVERVIEW.md](OVERVIEW.md) | Everyone: what runs, how blocks are found, the decision points and the step-by-step plan per stakeholder |
 | [GUIDE.md](GUIDE.md) | Participants: get and verify the node, run it, wallet, native and merged mining, reporting |
 | [RUNBOOK.md](RUNBOOK.md) | The operator: go/no-go checks, infrastructure, launch, daily routine, how each criterion is measured, problems, reset, ending |
+| [HOSTING.md](HOSTING.md) | Where it runs (decision D3): requirements per role, VPS offers compared 2026-11-24, recommendation |
 | [PASS-REPORT-TEMPLATE.md](PASS-REPORT-TEMPLATE.md) | The dated report, one section per SIP-0003 §3 criterion |
 | [DESIGN.md](DESIGN.md) | Gaps between the local end-to-end harness and a public testnet, and the design chosen (approved by Nec 2026-11-20) |
 | [`.github/ISSUE_TEMPLATE/testnet-report.md`](../.github/ISSUE_TEMPLATE/testnet-report.md) | Reports and faucet requests |
