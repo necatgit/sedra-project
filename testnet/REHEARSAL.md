@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | Planned. seed2 (VPS), seed1 + old-go + monitor + status page (home VM 204) installed and running 2026-11-25, at genesis, nothing mining; the Kaspa testnet-10 VM does not exist yet |
+| Status | Planned. seed2 (VPS), seed1 + old-go + monitor + status page (home VM 204) installed and running 2026-11-25, at genesis, nothing mining; public status page live; Kaspa testnet-10 node syncing on VM 206 |
 | Release | `sedra-v0.2.0-testnet.1`, signed by Nec 2026-11-25, **not pushed** until the rehearsal passed ([go runbook](../release/v0.2.0-testnet.1-go.md)) |
 | Goal | Start the whole testnet once on the real hosts with the signed binary, check every part, then stop and wipe it. Nothing is announced |
 | Overview | [OVERVIEW.md](OVERVIEW.md) step 3; operator details [RUNBOOK.md](RUNBOOK.md) §2-§3; hosts [HOSTING.md](HOSTING.md) |
@@ -83,8 +83,10 @@ Not used for any of it: the public mainnet Rust node VM and the production pool'
 - Public page (2026-11-25, Nec's go): DNS `testnet.puddlepool.com` A/AAAA → the VPS (Nec); on the VPS nftables also
   allows 80/443 and Caddy 2.6.2 (Debian package) serves `/var/www/sedra-testnet` with `contrib/testnet/web/Caddyfile`
   (Let's Encrypt certificate, HSTS, CSP, no client IPs in the log). HTTPS checked from outside over IPv4 and IPv6.
-  **Verified**. The restyled page (`testnet-status-ui` `71ff3e3`) is uploaded over the link once VM 204 runs it
-  with `--publish testnetlink@62.83.121.25:/`.
+  **Verified**. Since 2026-11-25 10:37 UTC VM 204 runs the restyled page (`testnet-status-ui` `71ff3e3a`; its 10
+  tests pass there, Python 3.14) and uploads it every minute over the link (`--publish testnetlink@62.83.121.25:/`,
+  no push while the link is down). First push checked from outside: HTTP 200, `status.json` served. **Verified**.
+  Seed, pool and release links stay off the page until launch.
 
 ### 2.6 Kaspa testnet-10 node on VM 206 (started 2026-11-25)
 
