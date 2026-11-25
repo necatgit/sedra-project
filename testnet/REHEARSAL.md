@@ -140,7 +140,11 @@ Not used for any of it: the public mainnet Rust node VM and the production pool'
   active before DAA 345,600, as planned. **Verified**.
 - The status page classifies the ZKas blocks as merged (`status.json`: `zkas.blocks_all_time.merged` 677 at its
   12:19 UTC refresh, no native ones, as expected without a native ZKas miner). `shared_parents` stays 0 until Sedra
-  merged blocks exist. **Verified**.
+  merged blocks exist. Consistent with the pool's log; **the native direction is untested** (corrected the same day:
+  this line first said "Verified"). A merged block fails its own PoW check whatever the classifier does, so "all
+  merged" would come out the same even if the native check were wrong; what could go wrong, a native ZKas block
+  counted as merged, needs a native ZKas block, and there is none. `zkas.synced` is false at DAA 740: ZKas blocks
+  only come with pool shares, so its newest block is not recent.
 - First payout cycle, 12:20 UTC: the pool paid **64 KAS** (testnet-10) to the miner's address through the Go
   kaspawallet daemon, capped by the matured part of its balance (log "Payout Settlement Completed", `payments` table:
   1 row, 64). **Verified** for Kaspa; Sedra and ZKas payouts are not shown yet. The ZKas blocks stay pending: the
