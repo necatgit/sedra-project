@@ -1,8 +1,8 @@
-# Testnet rehearsal (planned 2026-11-30)
+# Testnet rehearsal (run 2026-11-25, planned for 11-30)
 
 | | |
 |---|---|
-| Status | Planned. seed2 (VPS), seed1 + old-go + monitor + status page (home VM 204) installed and running 2026-11-25, at genesis, nothing mining; public status page live; Kaspa testnet-10 node syncing on VM 206 |
+| Status | **Run 2026-11-25 13:04-13:15 UTC** (moved forward from 11-30 on Nec's call, launch date unchanged): R1-R9 and R11 passed, R10 (wipe) waits for Nec. Results in 3.1 |
 | Release | `sedra-v0.2.0-testnet.1`, signed by Nec 2026-11-25, **not pushed** until the rehearsal passed ([go runbook](../release/v0.2.0-testnet.1-go.md)) |
 | Goal | Start the whole testnet once on the real hosts with the signed binary, check every part, then stop and wipe it. Nothing is announced |
 | Overview | [OVERVIEW.md](OVERVIEW.md) step 3; operator details [RUNBOOK.md](RUNBOOK.md) §2-§3; hosts [HOSTING.md](HOSTING.md) |
@@ -184,6 +184,32 @@ run of 2026-11-20 with a short override and are part of the public test itself.
 **If the rehearsal fails:** the tag is not pushed, the fault is fixed, and a new release (`0.2.0-testnet.2`) goes
 through the release steps again; the launch moves. **If it passes:** on Nec's go, push the tag and publish the
 pre-release (go runbook steps 4-5), fill the GUIDE's seed and pool values, send the post text to the owner.
+
+### 3.1 Results (run 2026-11-25)
+
+Nec moved the rehearsal forward ("Start the rehearsal now"): all hosts were ready and an early run leaves time for a
+`0.2.0-testnet.2` if something fails. The 12-01 launch date stays. The public status page was paused for the run
+(`sedra-testnet-status.timer` stopped; the page shows its last data as stale) and the page was rendered privately for
+R8, so nothing of the rehearsal chain was public. Times UTC.
+
+| # | Result | Evidence |
+|---|---|---|
+| R1 | **Pass.** `api-tn10.kaspa.org/info/kaspad`: 2.1.0, synced; tip block `081f2148…` header version 2, coinbase version 1; the VM 206 node synced since 12:10 | API answers 13:04 |
+| R2 | **Pass.** seed1 restarted 13:05:21 with `--enable-unsynced-mining`; `sedra-testnet-miner --threads 2` (2.1 MH/s) to a new faucet wallet: 490 blocks after 30 s, DAA 2,824 at 13:10 (past the 2,641 fast blocks), then 0.8 DAA/s over the hour so far | miner log; `status.json` (private render) |
+| R3 | **Pass.** seed2 (VPS) at the same DAA as seed1 at every minute: 977/977 (13:06), 1,905/1,905 (13:07), 2,824/2,824, 2,988/2,989 (13:13); `has_reference_chain` true | `nodes.csv` |
+| R4 | **Pass.** old-go (Go sedrad v2.0.0, unchanged) followed: 979, 1,906, 2,824, 2,989; synced; no miss of the reference chain | `nodes.csv`, `status.json` `first_miss_daa` none |
+| R5 | **Pass.** The release archive in WSL (`sha256sum -c` OK, `kaspad` `c0e0d23d…`), `--addpeer` both seeds by public IP: connected outbound to 62.83.121.25:22211 and to seed1's public address, IBD from seed2 (2,308 headers and blocks in 2.5 s), then blocks via relay | node log 13:07:50-13:14 |
+| R6 | **Pass.** `faucet.sh` sent 1,000 tSDR from the faucet wallet to the pool's Sedra wallet, transaction `e7f6505357e39ccab36d82d1c820c0badcbe11aa71f797ffabcf84e5cb1cf409`; the receiving wallet shows 1,000 | wallet balances |
+| R7 | **Pass, with a finding.** The CPU stratum miner (`kaspatest:…+zkastest:p….rig1`, `a=sedratest:…`) for 120 s: 65 Kaspa testnet-10 blocks; 820 shares accepted. Sedra refused every merged block with "block has invalid proof-of-work" (311): before the activation a block is checked as a native block and a merged one has no native work, as planned (**Inferred** from SIP-0001's activation rule; merged Sedra blocks are shown after DAA 345,600). **Finding:** from 45 s on, 908 shares were rejected as "low difficulty share" while the pool logged repeated "Emergency Swarm Retarget" for the worker; in the first run (12:19) there were none. Whether the pool's difficulty change reaches the miner (`mining.set_difficulty`) or the test miner mishandles it is **Unknown**; to be checked with a real GPU miner before launch | miner log, pool log |
+| R8 | **Pass.** Private render: seed1, seed2, old-go reachable and synced at DAA 2,824, phase "Native phase", 30 recent blocks, the ZKas chain; data 34 s old | `status.json` in `/data/testnet/www-rehearsal` |
+| R9 | **Pass, with a note.** seed1 restarted 13:11:08 without the flag: stays synced; the native miner does not reconnect after a node restart ("template: Not connected to server") and was restarted by hand at 13:12:45, then 220 blocks in 90 s (difficulty catching up after the gap) with seed2 and old-go in step | miner log, `nodes.csv` |
+| R11 | **Pass.** Kaspa testnet-10 block `f346523f9c97cdddaaee616466a7cb500b6a3d006f3fd64189264621a2092829` (found by the pool): coinbase payload 193 bytes (limit 204), exactly one `ZKM1` (offset 78) and one `SDM1` (offset 146) after the pool tag `sedra-testnet`. ZKas accepted 699 merged blocks, rejected 0, with the `SDM1` tag present. The Sedra side of the shared tag is shown after the activation | `api-tn10.kaspa.org/blocks/f346523f…?includeTransactions=true`, pool log |
+| R10 | **Waiting for Nec.** | |
+
+Also seen: seed1 logs a failed inbound handshake from 192.168.0.1 (the router) about every 30 s since 13:08, when the
+WSL node started dialling seed1's public address from inside the home network (**Inferred**: NAT hairpin; it does not
+affect the outside peers). New since the plan: a faucet wallet daemon (`sedra-testnet-wallet-faucet`, 127.0.0.1:8183,
+keys in `/data/testnet/faucet/`, password in the secrets file).
 
 ## What this does NOT mean
 
