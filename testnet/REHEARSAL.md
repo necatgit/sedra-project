@@ -141,6 +141,11 @@ Not used for any of it: the public mainnet Rust node VM and the production pool'
 - The status page classifies the ZKas blocks as merged (`status.json`: `zkas.blocks_all_time.merged` 677 at its
   12:19 UTC refresh, no native ones, as expected without a native ZKas miner). `shared_parents` stays 0 until Sedra
   merged blocks exist. **Verified**.
+- First payout cycle, 12:20 UTC: the pool paid **64 KAS** (testnet-10) to the miner's address through the Go
+  kaspawallet daemon, capped by the matured part of its balance (log "Payout Settlement Completed", `payments` table:
+  1 row, 64). **Verified** for Kaspa; Sedra and ZKas payouts are not shown yet. The ZKas blocks stay pending: the
+  pool pauses ZKas block classification while the ZKas node reports "not synced", which it does while nobody
+  mines that chain.
 - Not checked yet: the byte layout of one parent coinbase (exactly one `ZKM1` and one `SDM1`, payload ≤ 204 bytes).
   Kaspa testnet-10 accepted the 82 blocks, which it would not with a payload over its limit (**Inferred**); the
   tag count is read from a block at the rehearsal (R11). These blocks and the ZKas test chain are wiped in R10.
