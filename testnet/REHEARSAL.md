@@ -15,8 +15,8 @@ Labels: **Verified** (checked, with evidence), **Inferred**, **Unknown**.
 |---|---|---|
 | seed2 (no mining) | netcup VPS (HOSTING.md) | **Installed 2026-11-25** (see 2.1) |
 | seed1 (mines the first blocks), old Go node, testnet pool with its database and wallets, monitor, status page, faucet | **VM 204** (`sedra-rusty`, next to the public mainnet node and its Go reference node): own user `sedratn`, own directory `/data/testnet`, own ports, every testnet service niced with `MemoryMax`. If the mainnet node or its RPC ever lags, the testnet part moves to its own VM | seed1 and old-go running (2.4) |
-| Kaspa testnet-10 node (for the pool) | a **separate new home VM on SSD** that Nec creates | not created; must be synced before 11-30 |
-| Router | TCP 22211 forwarded to seed1 (Nec) | not done |
+| Kaspa testnet-10 node (for the pool) | **VM 206 `kaspa-tn10`** (Ubuntu 26.04, 6 cores, 12 GB, 150 GB on `nvme-dev` with discard, CPU type host) | created by Nec 2026-11-25; node not installed yet; must be synced before 11-30 |
+| Router | TCP 22211 forwarded to seed1 on VM 204 (Nec) | done 2026-11-25; reachable from the internet (tested from the VPS) |
 
 Not used for any of it: the public mainnet Rust node VM and the production pool's VMs.
 
@@ -36,9 +36,10 @@ Not used for any of it: the public mainnet Rust node VM and the production pool'
 ### 2.2 Nec
 
 1. ~~Create the home VM for seed1 and the rest~~: VM 204 is used instead (decided 2026-11-25).
-2. Create the Kaspa testnet-10 VM on SSD: Kaspa's guide asks for about 8 cores, 16 GB RAM, 640 GB SSD (HOSTING.md
-   1.2; the real need on testnet-10 is **Unknown** and measured during the sync).
-3. Forward TCP 22211 on the router to VM 204 (seed1).
+2. ~~Create the Kaspa testnet-10 VM on SSD~~: done 2026-11-25 (VM 206). Sized at 150 GB rather than Kaspa's
+   general 640 GB: the production Kaspa mainnet node uses 36 GB inside its VM (measured 2026-11-23), so 150 GB is
+   **Inferred** to be enough for testnet-10; measured during the sync.
+3. ~~Forward TCP 22211 on the router to VM 204 (seed1)~~: done 2026-11-25.
 4. Tell the AI when the VMs are up.
 
 ### 2.3 AI, once the VMs are up (each host-changing step reported)
