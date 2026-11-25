@@ -100,7 +100,7 @@ show it; the reaction is in RUNBOOK §6 (pause, report, reset if needed). Accept
 
 | # | Decision | Who decides | Status (2026-11-24) |
 |---|---|---|---|
-| D1 | Duration (at least two weeks after activation) and the eight pass criteria | Sedra team (Q51) | Conditional yes in an unapproved working draft (2026-11-23); an approved yes is awaited |
+| D1 | Duration (at least two weeks after activation) and the eight pass criteria | Sedra team (Q51) | Conditional yes in an unapproved working draft (2026-11-23); **yes in writing 2026-11-24** (chat, Sedra owner): SIP-0003 as it stands, fresh chain (Q51) |
 | D2 | Which chain: fresh chain from the existing testnet genesis | Nec (Q47, Q52) | Decided: fresh chain. Q52 (does anyone run the old one) stays open as information |
 | D3 | Where the seeds, Go node, Kaspa node and pool run (one host, a rented second place, or a volunteer's seed) | Nec | **Decided 2026-11-24** ([HOSTING.md](HOSTING.md)): seed2 (and later a public mainnet node and the status page) on a rented netcup VPS 1000 G12.5 in the EU, outside the home network; seed1 (mining), the old Go node, the Kaspa testnet-10 node, the pool and the monitor at home. VPS delivered and hardened 2026-11-24; seed2 not installed yet |
 | D4 | Start date | Nec, with the Sedra team | Proposed Tue 2026-12-01; not agreed, not announced |

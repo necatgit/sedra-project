@@ -1,7 +1,11 @@
 # Public testnet kit (#13)
 
 Prepared so the merged-mining testnet of [SIP-0003](../proposals/SIP-0003-public-testnet.md) can start soon after
-the Sedra team agrees on its duration and pass criteria (Q51) and on the test chain (Q52). **Not launched**; no date.
+the Sedra team agrees on its duration and pass criteria (Q51) and on the test chain (Q52). *Update 2026-11-25:* the
+Sedra team agreed in writing on 2026-11-24 (Q51); the node release [`sedra-v0.2.0-testnet.1`](https://github.com/necatgit/sedra-rusty/releases/tag/sedra-v0.2.0-testnet.1)
+is published as a pre-release, the rehearsal on the real hosts passed ([REHEARSAL.md](REHEARSAL.md)), and the public
+status page is <https://testnet.puddlepool.com>. **Not launched**; proposed start Tue 2026-12-01, not announced yet
+([OVERVIEW.md](OVERVIEW.md) D4).
 
 | File | For |
 |---|---|
