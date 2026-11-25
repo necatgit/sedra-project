@@ -86,7 +86,7 @@ the security fixes from later Kaspa releases (#29) and passed a seven-day run ne
 10,064 checks, 0 alerts, 0 differences).
 
 - **Releases:** [sedra-rusty v0.1.0](https://github.com/necatgit/sedra-rusty/releases/tag/sedra-v0.1.0) (2026-11-14)
-  and [v0.1.1](https://github.com/necatgit/sedra-rusty/releases/tag/sedra-v0.1.1) (2026-11-15, docs and build script
+  and [v0.1.1](https://github.com/necatgit/sedra-rusty/releases/tag/sedra-v0.1.1) (tagged 2026-11-14, release published 2026-11-15, docs and build script
   only). Signed tags, and the same bytes rebuilt on two machines; how to check: `docs/RELEASE.md` in sedra-rusty.
 - **Public node:** P2P only, running since 2026-11-14; outside nodes have connected to it since 2026-11-15. It runs on the same physical host
   as Nec's pool PuddlePool, so it is an independent node but not independent hardware; a separate machine is still
