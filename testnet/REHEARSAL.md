@@ -110,8 +110,9 @@ Not used for any of it: the public mainnet Rust node VM and the production pool'
   ZKas network. Reachable from VM 204 over gRPC. **Verified** 2026-11-25.
 - First ZKas blocks come from the testnet pool's merged shares once the Kaspa testnet-10 node is synced; there is no
   native ZKas miner in the kit.
-- The new status-page monitor (`testnet-status-ui` `c93f6c79`) cannot read it yet: its RPC client rejects the
-  network name `zkas-testnet-10` ("expected prefix 'kaspa'"). Being fixed in that branch; not installed until then.
+- The status-page monitor reads it since 2026-11-25 12:32 UTC (`testnet-status-ui` `f9243875`, after a fix: the first
+  version's RPC client rejected the network name `zkas-testnet-10`). Checked from VM 204: ZKas `ok`, DAA 0, sink =
+  the ZKas testnet genesis `d5d97eec…`; the public `status.json` shows the ZKas node. **Verified**.
 - Pool config with the ZKas aux entry and both units: sedra-rusty `testnet-kit` `45ab33b1`.
 
 ## 3. The rehearsal (11-30)
