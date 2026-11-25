@@ -2,8 +2,8 @@
 
 | | |
 |---|---|
-| Status | **Run 2026-11-25 13:04-13:15 UTC** (moved forward from 11-30 on Nec's call, launch date unchanged): R1-R9 and R11 passed, R10 (wipe) waits for Nec. Results in 3.1 |
-| Release | `sedra-v0.2.0-testnet.1`, signed by Nec 2026-11-25, **not pushed** until the rehearsal passed ([go runbook](../release/v0.2.0-testnet.1-go.md)) |
+| Status | **Run and passed 2026-11-25 13:04-13:24 UTC** (moved forward from 11-30 on Nec's call, launch date unchanged): R1-R11 passed, everything wiped back to genesis. Results in 3.1 |
+| Release | `sedra-v0.2.0-testnet.1`, signed by Nec 2026-11-25, **tag pushed 2026-11-25** after the rehearsal on Nec's go; pre-release not published yet ([go runbook](../release/v0.2.0-testnet.1-go.md)) |
 | Goal | Start the whole testnet once on the real hosts with the signed binary, check every part, then stop and wipe it. Nothing is announced |
 | Overview | [OVERVIEW.md](OVERVIEW.md) step 3; operator details [RUNBOOK.md](RUNBOOK.md) §2-§3; hosts [HOSTING.md](HOSTING.md) |
 
@@ -204,7 +204,10 @@ R8, so nothing of the rehearsal chain was public. Times UTC.
 | R8 | **Pass.** Private render: seed1, seed2, old-go reachable and synced at DAA 2,824, phase "Native phase", 30 recent blocks, the ZKas chain; data 34 s old | `status.json` in `/data/testnet/www-rehearsal` |
 | R9 | **Pass, with a note.** seed1 restarted 13:11:08 without the flag: stays synced; the native miner does not reconnect after a node restart ("template: Not connected to server") and was restarted by hand at 13:12:45, then 220 blocks in 90 s (difficulty catching up after the gap) with seed2 and old-go in step | miner log, `nodes.csv` |
 | R11 | **Pass.** Kaspa testnet-10 block `f346523f9c97cdddaaee616466a7cb500b6a3d006f3fd64189264621a2092829` (found by the pool): coinbase payload 193 bytes (limit 204), exactly one `ZKM1` (offset 78) and one `SDM1` (offset 146) after the pool tag `sedra-testnet`. ZKas accepted 699 merged blocks, rejected 0, with the `SDM1` tag present. The Sedra side of the shared tag is shown after the activation | `api-tn10.kaspa.org/blocks/f346523f…?includeTransactions=true`, pool log |
-| R10 | **Waiting for Nec.** | |
+| R10 | **Pass, at the second attempt.** On Nec's go (13:16): stopped the miner and every testnet service, kept the evidence in `/data/testnet/archive-rehearsal-2026-11-25/` on VM 204 (monitor CSVs, page state, private render, a `pg_dump` of the pool database), removed the data directories of seed1, old-go and seed2 and the ZKas test chain, emptied every pool table. **First attempt failed:** the WSL participant node from R5 was still running when seed2 came back, and at 13:17:44 seed2 downloaded the rehearsal chain from it (inbound from the home IP); seed1 then took it from seed2, and the public page showed DAA 1,287 for about two minutes. Second attempt with every node stopped first (the WSL node gone): seed1, seed2 and old-go at DAA 0, sink = the testnet genesis `f896a303…`; the public `status.json` shows DAA 0, no blocks, ZKas DAA 0. Wallet keys kept | `nodes.csv` 13:22, public `status.json` 13:24 |
+
+Lesson for 12-01 and any later wipe: stop every node that ever held the chain, including participants' test nodes, before
+any node starts again; a wiped node at genesis takes the longest chain it is offered.
 
 Also seen: seed1 logs a failed inbound handshake from 192.168.0.1 (the router) about every 30 s since 13:08, when the
 WSL node started dialling seed1's public address from inside the home network (**Inferred**: NAT hairpin; it does not
