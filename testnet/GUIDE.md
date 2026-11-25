@@ -107,7 +107,9 @@ cat /tmp/sedra-check/nodes.csv
 ```
 
 `network` must be `sedra-testnet-10`, `is_synced` 1, and `virtual_daa_score` close to what the seed nodes show.
-The public status page (`<at launch>`: its address) shows the seed nodes' DAA score, the phase and the recent blocks.
+The public status page, **https://testnet.puddlepool.com**, shows the seed nodes' DAA score, the phase, the countdowns
+to the ban start and the activation, native and merged-mined blocks, the SIP-0003 pass criteria and the recent blocks
+(`/status.json` for scripts). It is a TEST network page: the coins have no value.
 
 ## 5. Wallet
 

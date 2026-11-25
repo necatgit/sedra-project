@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | **Decided 2026-11-24: Nec ordered netcup VPS 1000 G12.5 (12 months, location "EU", no preference between Vienna, Nuremberg and Amsterdam).** Delivered the same day (Debian 13 preinstalled) and hardened: SSH keys only, no root login, firewall open only for SSH and testnet P2P 22211, automatic security updates. seed2 itself is installed with the signed release, before the rehearsal. The comparison below is kept as it was when the choice was made |
+| Status | **Decided 2026-11-24: Nec ordered netcup VPS 1000 G12.5 (12 months, location "EU", no preference between Vienna, Nuremberg and Amsterdam).** Delivered the same day (Debian 13 preinstalled) and hardened: SSH keys only, no root login, firewall open only for SSH and testnet P2P 22211 (since 2026-11-25 also 80/443 for the status page, Caddy), automatic security updates. seed2 itself is installed with the signed release, before the rehearsal. The comparison below is kept as it was when the choice was made |
 | Decision | D3 in [OVERVIEW.md](OVERVIEW.md) section 4 |
 | Why it matters | [SIP-0003](../proposals/SIP-0003-public-testnet.md) §6: all of this project's machines share one physical host and one home network, so two seeds there are not independent. A second, independent place is needed for an honest pass report |
 | Budget | About USD 100-200 for a year, prepaid is fine (Nec's own money; nothing comes from the Sedra project) |
@@ -22,6 +22,7 @@ change; check them again on the order page.
 | Kaspa testnet-10 node | home (SSD only) | Far too big for this budget, see 1.2 |
 | Testnet pool (Miningcore + Postgres + wallets) | home VM | Needs the Kaspa testnet-10 node next to it; separate from production as RUNBOOK §2 requires |
 | Monitor, faucet | home VM | The monitor reaches seed2 through an SSH tunnel (RUNBOOK §2), so seed2's RPC stays closed |
+| Status page (https://testnet.puddlepool.com) | built at home (VM 204), served by Caddy on the VPS | Static files uploaded over the same SSH link; the VPS needs no access to the home network |
 | After the testnet: public mainnet Sedra Rust node (seed peer) | the same VPS | SIP-0002: a reachable node outside the home network |
 
 ### 1.1 Size of the VPS roles
@@ -208,7 +209,8 @@ Nec (Claude never creates accounts, pays or enters payment data):
 
 Claude, after that:
 1. Log in with the key, create user `nec` with sudo, disable password and root SSH login.
-2. Firewall (nftables or the provider's firewall): allow 22/tcp, 22211/tcp; later 22111/tcp; drop everything else.
+2. Firewall (nftables or the provider's firewall): allow 22/tcp, 22211/tcp, 80/443 for the status page (done
+   2026-11-25); later 22111/tcp; drop everything else.
    Unattended security updates on.
 3. Install the verified testnet release as seed2 with the systemd unit from the kit (`MemoryMax`), and the SSH tunnel
    from the home monitor. Then the rehearsal on 11-30 (OVERVIEW step 3).

@@ -38,7 +38,7 @@ independent; a second location is better.
 | testnet pool | Miningcore branch `sedra-merged-mining`, `pool/miningcore-testnet.json` | stratum 15555 public, API localhost | own Postgres database; `genesisHash` set (see 2.1) |
 | wallets | Go sedrawallet v2.0.0 `--testnet` (pool and faucet, separate keys files), Kaspa TN10 wallet for the pool | localhost only | testnet keys only; never a key that exists on mainnet |
 | monitor | `sedra-testnet-monitor`, `systemd/sedra-testnet-monitor.service` | none | reaches seed2 through an SSH tunnel, old-go through `sedractl://` |
-| status page | `status_page.py`, `systemd/sedra-testnet-status.{service,timer}` (every minute) | HTTP(S) via any static web server | on the monitor host; reads the monitor's CSVs, writes `/var/www/sedra-testnet`; needs no node access. Set the seed and pool addresses in the unit at launch |
+| status page | `status_page.py`, `systemd/sedra-testnet-status.{service,timer}` (every minute) | HTTPS 443 (and 80 for the redirect and the certificate) on the web host | on the monitor host; reads the monitor's CSVs, writes `/var/www/sedra-testnet` and uploads it with `--publish` over the one SSH link to the VPS, where Caddy (`web/Caddyfile`) serves https://testnet.puddlepool.com; needs no node access. Set the seed and pool addresses in the unit at launch |
 
 ### 2.1 Pool settings that matter
 

@@ -79,9 +79,12 @@ Not used for any of it: the public mainnet Rust node VM and the production pool'
   seed2 (through the link) and old-go (`sedractl`) every 60 s. First rows: all three reachable, DAA 0, same sink =
   the testnet genesis `f896a303…`; "not synced" alerts are expected at genesis. **Verified**. (The Rust nodes report
   the network as `testnet-10`, the Go node as `sedra-testnet-10`: a naming difference between the two RPCs only.)
-- `sedra-testnet-status.timer` writes the status page to `/data/testnet/www` every minute. The public page
-  (testnet.puddlepool.com, restyled version uploaded over the link) is a separate step that needs Nec's go, DNS and
-  ports 80/443 on the VPS.
+- `sedra-testnet-status.timer` writes the status page to `/data/testnet/www` every minute.
+- Public page (2026-11-25, Nec's go): DNS `testnet.puddlepool.com` A/AAAA → the VPS (Nec); on the VPS nftables also
+  allows 80/443 and Caddy 2.6.2 (Debian package) serves `/var/www/sedra-testnet` with `contrib/testnet/web/Caddyfile`
+  (Let's Encrypt certificate, HSTS, CSP, no client IPs in the log). HTTPS checked from outside over IPv4 and IPv6.
+  **Verified**. The restyled page (`testnet-status-ui` `71ff3e3`) is uploaded over the link once VM 204 runs it
+  with `--publish testnetlink@62.83.121.25:/`.
 
 ### 2.6 Kaspa testnet-10 node on VM 206 (started 2026-11-25)
 
