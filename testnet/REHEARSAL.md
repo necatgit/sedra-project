@@ -150,6 +150,14 @@ Not used for any of it: the public mainnet Rust node VM and the production pool'
   1 row, 64). **Verified** for Kaspa; Sedra and ZKas payouts are not shown yet. The ZKas blocks stay pending: the
   pool pauses ZKas block classification while the ZKas node reports "not synced", which it does while nobody
   mines that chain.
+- **ZKas test chain wiped again the same day, 12:40 UTC** (Nec's call): the test run went against "nothing mines
+  before the rehearsal" (section 2), and its 742 ZKas blocks showed on the public page before any announcement.
+  Stopped pool, ZKas wallet and monitor; removed the ZKas node's data directory (back at the ZKas testnet genesis,
+  DAA 0); deleted the ZKas rows from the pool database (741 blocks, 2,034 shares; the 82 Kaspa testnet-10 blocks and
+  the payout stay, they are on Kaspa's public testnet); moved the monitor's ZKas files and the page's state to
+  `/data/testnet/archive-zkas-test-2026-11-25/` on VM 204 and reset the page's ZKas counters (they live in
+  `.status-state.json`, which removing the monitor's files alone does not reset: worth knowing for R10). The pool's
+  ZKas wallet keeps its seed and address. The public `status.json` shows ZKas at DAA 0 with no blocks. **Verified**.
 - Not checked yet: the byte layout of one parent coinbase (exactly one `ZKM1` and one `SDM1`, payload ≤ 204 bytes).
   Kaspa testnet-10 accepted the 82 blocks, which it would not with a payload over its limit (**Inferred**); the
   tag count is read from a block at the rehearsal (R11). These blocks and the ZKas test chain are wiped in R10.
