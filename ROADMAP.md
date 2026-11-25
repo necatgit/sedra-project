@@ -19,7 +19,7 @@ Status: `[ ]` open · `[~]` in progress · `[x]` done · `[-]` dropped
 
 ## Phase 1: Community and coordination
 
-- [~] Contact the Sedra owner: support, repository access, infrastructure (#7): questions sent 2026-11-05; all open questions resent as one list on 2026-11-16; the Sedra team's reply of 2026-11-17 (a draft for team approval) proposes answers by 2026-11-30, 2026-12-07 and 2026-12-14 ([QUESTIONS](QUESTIONS.md))
+- [x] Contact the Sedra owner: support, repository access, infrastructure (#7, closed 2026-11-25; open questions continue in #19): questions sent 2026-11-05; all open questions resent as one list on 2026-11-16; the Sedra team's reply of 2026-11-17 (a draft for team approval) proposes answers by 2026-11-30, 2026-12-07 and 2026-12-14 ([QUESTIONS](QUESTIONS.md))
 - [~] Open SIP-0001 for public comment (#8): open since 2026-11-09 in the public repository [necatgit/sedra-sips](https://github.com/necatgit/sedra-sips) (comments: sedra-sips#1); this repository is public since 2026-11-21, together with the [operator security advisory](research/0007-sedrad-v2.0.0-advisory.md)
 - [ ] Reach out to pools, explorers and exchanges (#9): **for the Sedra team** (owner of the network and its contacts); Nec is not the owner and provides the technical information (SIP, node, test results) on request. Sedra team reply 2026-11-17 (draft): the team will ask its own pool and jsmining about merged mining (Q21) and the operators about their node versions (Q57)
 
