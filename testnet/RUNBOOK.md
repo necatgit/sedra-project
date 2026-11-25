@@ -156,6 +156,7 @@ alerts and what they were). Answer reports. Bad news is posted like good news.
 | same for **old-go** before the first merged-mined block | old node split early | investigate (criterion 3: should follow until then) |
 | same for **old-go** after the first merged-mined block | expected | record the first miss (criterion 3) |
 | `reference chain reorg` | a chain block left the selected chain | normal for shallow reorgs; investigate if deep |
+| one worker at the pool far above the rest (GH/s rather than MH/s) | very likely a Kaspa ASIC, against the guide's request (no ASICs, Nec 2026-11-25) | ask the miner in #13 to stop; if it goes on, ban the worker at the pool before it leaves Kaspa testnet-10 with a difficulty the remaining miners cannot meet |
 
 ## 5. Criterion by criterion (how each is measured)
 

@@ -60,7 +60,8 @@ blocks, as on mainnet).
 **Do we need miners?** Yes, of two kinds.
 - *Native (CPU) miners* from day one. Without them there are no blocks at all. The operator's seed node mines at
   launch; more CPUs make the chain more realistic.
-- *Kaspa testnet-10 miners* (GPU or ASIC software that speaks Kaspa stratum) from activation on, at the testnet pool.
+- *Kaspa testnet-10 miners* (GPU or CPU software that speaks Kaspa stratum; **no Kaspa ASICs**, decided by Nec
+  2026-11-25: one would overwhelm Kaspa testnet-10, see GUIDE §7) from activation on, at the testnet pool.
   Without them, merged mining cannot be shown (criterion 2). Kaspa testnet-10 itself had about 46 MH/s in total on
   2026-11-20 (**Verified**, api-tn10.kaspa.org). A few GPUs are enough; how many will join is **Unknown**.
 
@@ -175,7 +176,8 @@ Dates are the proposal for a 2026-12-01 start; if D1 or D4 moves, every later da
   draft, and RUNBOOK §6).
 - **Node runners:** use only the testnet release, always with `--testnet`. It refuses to start without it, so it
   cannot run on mainnet by accident. Keep the RPC port (22210) closed to the internet.
-- **Miners:** CPU mining works from day one; GPUs and ASICs count only through merged mining after activation. Testnet
+- **Miners:** CPU mining works from day one; GPUs count only through merged mining after activation. Please no Kaspa
+  ASICs (GUIDE §7). Testnet
   coins have no value.
 - **Pool operators:** you can run your own testnet pool from the published config; set the testnet `genesisHash`, use
   separate databases and wallets, never your production pool.

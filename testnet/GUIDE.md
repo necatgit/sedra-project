@@ -43,8 +43,8 @@ address prefix, and nodes reject a peer from another network in the handshake.
 - Linux x86-64 (tested: Ubuntu 24.04 and 26.04). Other systems: build from source and tell us how it went.
 - About 2 CPU cores, 4 GB RAM, 20 GB disk for a node (**Inferred** from mainnet's Rust node; the testnet starts
   empty and grows by about one block per second).
-- For mining natively: any CPU (the miner below). For merged mining: a Kaspa miner (GPU or ASIC software that speaks
-  Kaspa stratum) and a Kaspa testnet-10 address.
+- For mining natively: any CPU (the miner below). For merged mining: a Kaspa GPU or CPU miner that speaks Kaspa
+  stratum, and a Kaspa testnet-10 address. **No Kaspa ASICs** (section 7).
 
 ## 3. Get the node
 
@@ -152,7 +152,13 @@ testnet-10 templates carrying a Sedra commitment.
 - user: `kaspatest:YOUR_KASPA_TN10_ADDRESS.rig1`
 - password: `a=sedratest:YOUR_SEDRA_TESTNET_ADDRESS`
 
-Any Kaspa stratum miner works (kHeavyHash). The pool credits Kaspa testnet coins to the first address and Sedra
+Any Kaspa stratum miner on a GPU or CPU works (kHeavyHash). **Please no Kaspa ASICs** (IceRiver, Bitmain and the like). All of Kaspa testnet-10 has only about 28-46 MH/s; one
+small ASIC (around 200 GH/s) is thousands of times that. While it runs it floods Kaspa's public testnet with blocks,
+and when it stops, the difficulty it left behind leaves the other miners finding hardly any blocks for hours: Kaspa's
+testnet and the Sedra merged mining on top of it would nearly stall (**Inferred** from the numbers, not tried). CPUs
+and a few GPUs are what the test needs.
+
+The pool credits Kaspa testnet coins to the first address and Sedra
 testnet coins to the second. Without the `a=` part your Sedra share is not paid to you.
 
 **ZKas as well (since 2026-11-25).** The testnet pool also merges a private ZKas test chain (for the pool only; it
