@@ -61,8 +61,34 @@ reporting the work as done:
 - the evidence in `research/archive/`, and the issue (comment or close);
 - `TIMELINE.md` (regenerate) and, for bigger steps or at the end of a working day, a dated `updates/` post.
 
+**One fact, one source.** Every fact has one document that owns it; everywhere else links to it or mirrors it, and
+mirrors must say the same. When two documents disagree, the owner is right and the other one gets fixed.
+
+| Fact | Owner | Mirrors |
+|---|---|---|
+| Public plan and phase status | `ROADMAP.md` | `README.md` status, `TIMELINE.md` (generated) |
+| Status of one piece of work | its GitHub issue (here, in `sedra-rusty` or in `sedra-sips`) | `ROADMAP.md` ticks |
+| Questions and answers | `QUESTIONS.md` (by Q-ID) | other documents cite the ID only |
+| A SIP's rules and status | `proposals/SIP-*.md` here | the public copy in `necatgit/sedra-sips` (same substance, no links to private notes) and its README table |
+| Testnet facts (kit, decisions, rehearsal, launch state) | `testnet/` | `contrib/testnet/` in `sedra-rusty` |
+| Node changes and releases | `SEDRA.md` in `sedra-rusty` (branch `dev`) and its GitHub releases | `README.md`, `ROADMAP.md` |
+| Dated posts, raw evidence | the dated file (`updates/`, `research/archive/`): history, never rewritten | none |
+
+When a fact changes:
+- update the owner first, then every mirror; then search this repository, `sedra-sips` and `sedra-rusty` (and the
+  issues) for the old wording, number or date and fix every live copy in the same session;
+- when the state of a piece of work changes (milestone done, date moved, answer in, blocker gone or new), post a
+  short dated comment on its issue in the same session: neutral facts and links to public documents only;
+- never write "Verified", "done", "passed" or "live" before the check ran; link the evidence and give time-sensitive
+  claims their observation date; corrections get a dated note, never a silent rewrite.
+
 Before ending a working session, check for documents that have fallen behind (stale status lines, open items that are
-done, numbers that changed) and fix them. Documentation that is wrong is worse than documentation that is missing.
+done, numbers and dates that differ between documents, issues that are open or closed in the wrong state, SIP copies
+that differ) and fix them. Documentation that is wrong is worse than documentation that is missing.
+
+This is the public part of the shared documentation rule "One fact, one source"; the full rule, which also covers the
+maintainer's private notes and the pool repository, is kept in the Miningcore pool repository's `AGENTS.md`. Nothing
+private comes here (see "Public identity").
 
 ## Changes, commits and pushes
 
