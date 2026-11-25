@@ -15,7 +15,7 @@ Labels: **Verified** (checked, with evidence), **Inferred**, **Unknown**.
 |---|---|---|
 | seed2 (no mining) | netcup VPS (HOSTING.md) | **Installed 2026-11-25** (see 2.1) |
 | seed1 (mines the first blocks), old Go node, testnet pool with its database and wallets, monitor, status page, faucet | **VM 204** (`sedra-rusty`, next to the public mainnet node and its Go reference node): own user `sedratn`, own directory `/data/testnet`, own ports, every testnet service niced with `MemoryMax`. If the mainnet node or its RPC ever lags, the testnet part moves to its own VM | seed1 and old-go running (2.4) |
-| Kaspa testnet-10 node (for the pool) | **VM 206 `kaspa-tn10`** (Ubuntu 26.04, 6 cores, 12 GB, 150 GB on `nvme-dev` with discard, CPU type host) | created by Nec 2026-11-25; node not installed yet; must be synced before 11-30 |
+| Kaspa testnet-10 node (for the pool) | **VM 206 `kaspa-tn10`** (Ubuntu 26.04, 6 cores, 12 GB, 150 GB on `nvme-dev` with discard, CPU type host) | created by Nec 2026-11-25; node installed and syncing since 10:04 UTC (2.6); must be synced before 11-30 |
 | Router | TCP 22211 forwarded to seed1 on VM 204 (Nec) | done 2026-11-25; reachable from the internet (tested from the VPS) |
 
 Not used for any of it: the public mainnet Rust node VM and the production pool's VMs.
@@ -82,6 +82,18 @@ Not used for any of it: the public mainnet Rust node VM and the production pool'
 - `sedra-testnet-status.timer` writes the status page to `/data/testnet/www` every minute. The public page
   (testnet.puddlepool.com, restyled version uploaded over the link) is a separate step that needs Nec's go, DNS and
   ports 80/443 on the VPS.
+
+### 2.6 Kaspa testnet-10 node on VM 206 (started 2026-11-25)
+
+- Hardened like the other VMs: SSH keys only (Nec's and the AI's), no root login, unattended security updates;
+  nftables: SSH from the LAN, Kaspa P2P 16211 open, gRPC 16210 only from VM 204 (the future testnet pool).
+- Node: upstream rusty-kaspa **v2.1.0**, built from source at the release tag (commit `01b532e8`, "Bump version to
+  v2.1.0"), binary sha256 `5c6208b6…`; `kaspad 2.1.0`. Correction to the 11-20 records: the node used then,
+  `4863866f`, is upstream `master` 12 commits after the v2.1.0 tag (`git describe`: `v2.1.0-12-g4863866f`), which also
+  reports itself as 2.1.0. The release tag is used here.
+- Service `kaspa-tn10`: `--testnet --netsuffix=10 --utxoindex --ram-scale=0.6`, data in `/var/lib/kaspa-tn10`,
+  `MemoryMax=10G`. Started 10:04 UTC, found testnet-10 peers through Kaspa's DNS seeders, validating the pruning-point
+  proof. Disk and memory during the sync are measured here when it finishes.
 
 ## 3. The rehearsal (11-30)
 
