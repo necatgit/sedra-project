@@ -15,8 +15,8 @@ Labels: **Verified** (checked, with evidence), **Inferred**, **Unknown**.
 |---|---|---|
 | seed2 (no mining) | netcup VPS (HOSTING.md) | **Installed 2026-11-25** (see 2.1) |
 | seed1 (mines the first blocks), old Go node, testnet pool with its database and wallets, monitor, status page, faucet | **VM 204** (`sedra-rusty`, next to the public mainnet node and its Go reference node): own user `sedratn`, own directory `/data/testnet`, own ports, every testnet service niced with `MemoryMax`. If the mainnet node or its RPC ever lags, the testnet part moves to its own VM | seed1 and old-go running (2.4) |
-| Kaspa testnet-10 node (for the pool) | **VM 206 `kaspa-tn10`** (Ubuntu 26.04, 6 cores, 12 GB, 150 GB on `nvme-dev` with discard, CPU type host) | created by Nec 2026-11-25; node installed and syncing since 10:04 UTC (2.6); must be synced before 11-30 |
-| Private ZKas test node (D11) | VM 206, next to the Kaspa node | running since 2026-11-25 11:24 UTC, at genesis (2.7) |
+| Kaspa testnet-10 node (for the pool) | **VM 206 `kaspa-tn10`** (Ubuntu 26.04, 6 cores, 12 GB, 150 GB on `nvme-dev` with discard, CPU type host) | created by Nec 2026-11-25; node installed 10:04 UTC, **synced 12:10 UTC** (2.6) |
+| Private ZKas test node (D11) | VM 206, next to the Kaspa node | running since 2026-11-25 11:24 UTC; first merged-mined blocks 12:19 UTC (2.7, 2.8) |
 | Router | TCP 22211 forwarded to seed1 on VM 204 (Nec) | done 2026-11-25; reachable from the internet (tested from the VPS) |
 
 Not used for any of it: the public mainnet Rust node VM and the production pool's VMs.
@@ -98,8 +98,10 @@ Not used for any of it: the public mainnet Rust node VM and the production pool'
   `4863866f`, is upstream `master` 12 commits after the v2.1.0 tag (`git describe`: `v2.1.0-12-g4863866f`), which also
   reports itself as 2.1.0. The release tag is used here.
 - Service `kaspa-tn10`: `--testnet --netsuffix=10 --utxoindex --ram-scale=0.6`, data in `/var/lib/kaspa-tn10`,
-  `MemoryMax=10G`. Started 10:04 UTC, found testnet-10 peers through Kaspa's DNS seeders, validating the pruning-point
-  proof. Disk and memory during the sync are measured here when it finishes.
+  `MemoryMax=10G`. Started 10:04 UTC, found testnet-10 peers through Kaspa's DNS seeders, validated the pruning-point
+  proof; block IBD ran about 11:48-12:10 UTC ("IBD with peer 157.90.7.39:16211 completed successfully" at 12:10 UTC, then
+  blocks via relay). Measured every two minutes during the sync: disk 40% to 48% of 146 GB (66 GB used at the end),
+  kaspad RSS 5.5-6.4 GB, never near the 10 GB cap. **Verified** 2026-11-25.
 
 ### 2.7 Private ZKas test node on VM 206 (D11, 2026-11-25)
 
@@ -110,10 +112,38 @@ Not used for any of it: the public mainnet Rust node VM and the production pool'
   ZKas network. Reachable from VM 204 over gRPC. **Verified** 2026-11-25.
 - First ZKas blocks come from the testnet pool's merged shares once the Kaspa testnet-10 node is synced; there is no
   native ZKas miner in the kit.
-- The status-page monitor reads it since 2026-11-25 12:32 UTC (`testnet-status-ui` `f9243875`, after a fix: the first
+- The status-page monitor reads it since 2026-11-25 11:28 UTC (corrected the same day: this line first said 12:32 UTC,
+  a local-time slip; `testnet-status-ui` `f9243875`, after a fix: the first
   version's RPC client rejected the network name `zkas-testnet-10`). Checked from VM 204: ZKas `ok`, DAA 0, sink =
   the ZKas testnet genesis `d5d97eec…`; the public `status.json` shows the ZKas node. **Verified**.
 - Pool config with the ZKas aux entry and both units: sedra-rusty `testnet-kit` `45ab33b1`.
+
+### 2.8 Testnet pool on VM 204 (2026-11-25)
+
+- Miningcore branch `sedra-merged-mining` `1a72553a`, built on VM 204 (.NET 10, `-p:DisableGitVersionTask=true` because
+  the source copy has no `.git`); service `sedra-testnet-pool` as `sedratn`, `Nice=10`, `MemoryMax=2G`, API on
+  127.0.0.1:4100, stratum 15555 (LAN only: no router forward until launch). Own Postgres role and database
+  `miningcore_testnet`. The filled config and all wallet secrets are in `/data/testnet/pool/secrets/` (mode 700,
+  `sedratn`), not in any repository.
+- Wallet daemons, all `127.0.0.1`, new testnet-only keys: Go kaspawallet v0.12.23 `--testnet` against the Kaspa node
+  on VM 206 (8082), Go sedrawallet `--testnet` against seed1 (8182), zkas-walletd `--network testnet` against the ZKas
+  node (8501, sha256 `116e056e…`). The Go wallets take their password on the command line, so it is visible in the
+  process list of VM 204 (test keys only).
+- Two config fixes found while starting it (RUNBOOK 2.1): the pool's ZKas address must be a shielded one, and the
+  default reward cross-checks against the mainnet explorers are switched off. Template and units with both fixes:
+  sedra-rusty `testnet-kit` `9273fc7e`.
+- First run, 12:19 UTC: one single-thread CPU stratum miner (the e2e miner from `contrib/e2e-merged-mining`,
+  1.76 MH/s) for 120 s with `kaspatest:…+zkastest:p….rig1` and `a=sedratest:…`. Result: 1,804 shares accepted, 0
+  rejected; **82 Kaspa testnet-10 blocks** found by the pool (database `blocks`, status confirmed); **741 ZKas blocks
+  accepted, 0 rejected** (pool log; ZKas node: no validation failure in that window). Every Sedra submission was
+  refused with "node is not synced [IsInIbd]": the Sedra testnet is still at genesis and merged mining is not
+  active before DAA 345,600, as planned. **Verified**.
+- The status page classifies the ZKas blocks as merged (`status.json`: `zkas.blocks_all_time.merged` 677 at its
+  12:19 UTC refresh, no native ones, as expected without a native ZKas miner). `shared_parents` stays 0 until Sedra
+  merged blocks exist. **Verified**.
+- Not checked yet: the byte layout of one parent coinbase (exactly one `ZKM1` and one `SDM1`, payload ≤ 204 bytes).
+  Kaspa testnet-10 accepted the 82 blocks, which it would not with a payload over its limit (**Inferred**); the
+  tag count is read from a block at the rehearsal (R11). These blocks and the ZKas test chain are wiped in R10.
 
 ## 3. The rehearsal (11-30)
 

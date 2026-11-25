@@ -58,8 +58,21 @@ independent; a second location is better.
     `2.1.0/`, Miningcore adds `2.1.0.` before the pool tag; `ZKM1` takes 68 and `SDM1` 47 bytes. That leaves about
     **24 bytes** for the pool's own `extraData` (**Inferred** from verified constants; SIP-0001 §6 correction of
     2026-11-25). Keep the tag short.
+  - **The pool's ZKas address must be shielded** (Orchard, `zkastest:p…`). ZKas testnet rejects a coinbase that pays
+    a transparent address: with a Kaspa-style `zkastest:q…` address every merged block failed with "coinbase payout
+    address is not a canonical Orchard address (required on a shielded network)" (zkas node log, 2026-11-25 12:15 UTC;
+    rule in zkas-rusty `consensus/src/pipeline/body_processor/body_validation_in_context.rs`). **Verified**.
+  - Getting a shielded address on a chain at genesis: zkas-walletd's `/api/wallet/create` refuses while the node's
+    DAA score is 0 ("not connected to a node yet"), so the pool wallet is made with `/api/wallet/import` and a fresh
+    random 32-byte seed, `birthday` 0. zkas-walletd runs on the pool host, `--network testnet --listen 127.0.0.1:8501`,
+    its token and at-rest secret in the pool's secrets file; `walletPassword` of the ZKas entry is that token.
   - ZKas payouts (zkas-walletd, REST) on the test chain: **Unknown** whether they work; tried if cheap, otherwise
     "not shown" in the report (criterion 9).
+- **No mainnet cross-checks.** Miningcore cross-checks block rewards against `api.kaspa.org` (KAS) and
+  `api.sedracoin.com` (SDR) by default, both mainnet. Set `extra.rewardCrossCheckUrl` to `"off"` on the parent pool.
+  The synthesized Sedra aux pool does not inherit that setting (`Program.cs` `ValidateConfig` @ `1a72553a`), so the
+  config writes the Sedra aux pool out as its own entry (`id` `<parent>-sedra`, `enableInternalStratum` false,
+  `rewardCrossCheckUrl` `"off"`). Fixing the inheritance is a Miningcore change and is asked first.
 
 - `genesisHash` of the Sedra entry = `f896a3034873be1739fc4359236899fd3d65d2bc94f9780df0d0da3eb1cc4370` (testnet
   genesis, confirmed by the dry-run node 2026-11-20). Miningcore's default is the mainnet genesis; without the

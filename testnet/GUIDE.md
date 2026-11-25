@@ -159,7 +159,8 @@ testnet coins to the second. Without the `a=` part your Sedra share is not paid 
 is not a public ZKas network, and its coins have no value either). To have ZKas test credits recorded for you, add a
 ZKas test address to the **user name**, not the password: user `kaspatest:YOUR_KASPA_TN10_ADDRESS+zkastest:YOUR_ZKAS_TEST_ADDRESS.rig1`.
 A `zkastest:` address in the password is ignored by the pool today. Without one, your share of ZKas blocks goes to
-the pool's own ZKas test address.
+the pool's own ZKas test address. ZKas test addresses are shielded (they start with `zkastest:p`) and come from
+zkas-walletd in testnet mode; since the ZKas test chain is private, most testers leave this out.
 
 A Kaspa testnet-10 address comes from any Kaspa wallet in testnet mode (for example rusty-kaspa's `kaspa-wallet` with
 `network testnet-10`).
