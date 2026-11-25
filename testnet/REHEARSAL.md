@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | Planned. seed2 (VPS) and seed1 + old-go (home VM 204) installed and running 2026-11-25, at genesis, nothing mining; the Kaspa testnet-10 VM does not exist yet |
+| Status | Planned. seed2 (VPS), seed1 + old-go + monitor + status page (home VM 204) installed and running 2026-11-25, at genesis, nothing mining; the Kaspa testnet-10 VM does not exist yet |
 | Release | `sedra-v0.2.0-testnet.1`, signed by Nec 2026-11-25, **not pushed** until the rehearsal passed ([go runbook](../release/v0.2.0-testnet.1-go.md)) |
 | Goal | Start the whole testnet once on the real hosts with the signed binary, check every part, then stop and wipe it. Nothing is announced |
 | Overview | [OVERVIEW.md](OVERVIEW.md) step 3; operator details [RUNBOOK.md](RUNBOOK.md) §2-§3; hosts [HOSTING.md](HOSTING.md) |
@@ -64,6 +64,23 @@ Not used for any of it: the public mainnet Rust node VM and the production pool'
   the service user got `/data/testnet/home`. Connected to seed1; `GetBlockDagInfo`: `sedra-testnet-10`, block count 1,
   DAA 0. **Verified**.
 - The mainnet node and the Go reference node on the same VM stayed active.
+
+### 2.5 Link, monitor and status page (done 2026-11-25)
+
+- VPS: Nec created user `testnetlink` whose only key (from VM 204) is limited to `restrict`, a port forward to
+  seed2's localhost gRPC (`permitopen="127.0.0.1:22210"`) and a write-only upload into `/var/www/sedra-testnet`
+  (`rrsync -wo`). Tested from VM 204: forward works, upload works, a shell command and a read are refused.
+  **Verified**.
+- VM 204: `sedra-testnet-link.service`, ONE long-lived SSH connection to that user (forward 127.0.0.1:22220 → seed2's
+  22210, ControlMaster socket for the uploads), reconnecting at most once a minute (the home router blocked port 22
+  to the VPS after many connections on 2026-11-24).
+- Testnet tools built on VM 204 from `testnet-kit` `0b4cadf1`; `sedra-testnet-monitor.service` polls seed1 (reference),
+  seed2 (through the link) and old-go (`sedractl`) every 60 s. First rows: all three reachable, DAA 0, same sink =
+  the testnet genesis `f896a303…`; "not synced" alerts are expected at genesis. **Verified**. (The Rust nodes report
+  the network as `testnet-10`, the Go node as `sedra-testnet-10`: a naming difference between the two RPCs only.)
+- `sedra-testnet-status.timer` writes the status page to `/data/testnet/www` every minute. The public page
+  (testnet.puddlepool.com, restyled version uploaded over the link) is a separate step that needs Nec's go, DNS and
+  ports 80/443 on the VPS.
 
 ## 3. The rehearsal (11-30)
 
