@@ -155,6 +155,12 @@ testnet-10 templates carrying a Sedra commitment.
 Any Kaspa stratum miner works (kHeavyHash). The pool credits Kaspa testnet coins to the first address and Sedra
 testnet coins to the second. Without the `a=` part your Sedra share is not paid to you.
 
+**ZKas as well (since 2026-11-25).** The testnet pool also merges a private ZKas test chain (for the pool only; it
+is not a public ZKas network, and its coins have no value either). To have ZKas test credits recorded for you, add a
+ZKas test address to the **user name**, not the password: user `kaspatest:YOUR_KASPA_TN10_ADDRESS+zkastest:YOUR_ZKAS_TEST_ADDRESS.rig1`.
+A `zkastest:` address in the password is ignored by the pool today. Without one, your share of ZKas blocks goes to
+the pool's own ZKas test address.
+
 A Kaspa testnet-10 address comes from any Kaspa wallet in testnet mode (for example rusty-kaspa's `kaspa-wallet` with
 `network testnet-10`).
 

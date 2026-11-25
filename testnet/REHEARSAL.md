@@ -16,6 +16,7 @@ Labels: **Verified** (checked, with evidence), **Inferred**, **Unknown**.
 | seed2 (no mining) | netcup VPS (HOSTING.md) | **Installed 2026-11-25** (see 2.1) |
 | seed1 (mines the first blocks), old Go node, testnet pool with its database and wallets, monitor, status page, faucet | **VM 204** (`sedra-rusty`, next to the public mainnet node and its Go reference node): own user `sedratn`, own directory `/data/testnet`, own ports, every testnet service niced with `MemoryMax`. If the mainnet node or its RPC ever lags, the testnet part moves to its own VM | seed1 and old-go running (2.4) |
 | Kaspa testnet-10 node (for the pool) | **VM 206 `kaspa-tn10`** (Ubuntu 26.04, 6 cores, 12 GB, 150 GB on `nvme-dev` with discard, CPU type host) | created by Nec 2026-11-25; node installed and syncing since 10:04 UTC (2.6); must be synced before 11-30 |
+| Private ZKas test node (D11) | VM 206, next to the Kaspa node | being set up 2026-11-25 |
 | Router | TCP 22211 forwarded to seed1 on VM 204 (Nec) | done 2026-11-25; reachable from the internet (tested from the VPS) |
 
 Not used for any of it: the public mainnet Rust node VM and the production pool's VMs.
@@ -113,7 +114,8 @@ Not used for any of it: the public mainnet Rust node VM and the production pool'
 | R7 | Pool: stratum reachable, a CPU stratum miner connects with `kaspatest:` + `a=sedratest:` | shares accepted on Kaspa testnet-10 (Sedra blocks only after activation, which is not reached in the rehearsal) |
 | R8 | Status page and monitor | the page shows both seeds, old-go, the phase and recent blocks; data under five minutes old |
 | R9 | Restart seed1 without `--enable-unsynced-mining` | it stays synced and keeps mining through the miner |
-| R10 | Stop everything, wipe every testnet data directory (seed1, seed2, old-go, pool database, monitor, status state) | clean state for 12-01; the wallets' keys are kept |
+| R11 | ZKas (D11): the pool merges the private ZKas test chain next to Sedra | a Kaspa testnet-10 coinbase with exactly one `ZKM1` and one `SDM1`; ZKas blocks accepted from the pool's shares; payload within 204 bytes; no rejected block on either chain because of the other's tag |
+| R10 | Stop everything, wipe every testnet data directory (seed1, seed2, old-go, pool database, monitor, status state, the ZKas test chain) | clean state for 12-01; the wallets' keys are kept |
 
 The rehearsal does not reach the ban start or the activation (that takes days); those were shown in the private dry
 run of 2026-11-20 with a short override and are part of the public test itself.

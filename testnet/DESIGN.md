@@ -128,6 +128,15 @@ criterion, each with its measurement and evidence slot), and an issue template f
 - Still open: a Kaspa TN10 node's disk and memory
   need (**Unknown**); pruning proof with merged-mined headers on a public chain; where the infrastructure runs.
 
+## 6. Addition 2026-11-25: ZKas in the same coinbase (D11)
+
+Nec decided that the testnet pool also merges ZKas under the same Kaspa testnet-10 parents, as the mainnet pool would
+after activation. Reason: a Kaspa coinbase with both a ZKas and a Sedra commitment was never tested against real
+nodes. The local end-to-end run of 2026-11-10 merged Sedra only, contrary to what SIP-0001 §9 said (corrected
+2026-11-25). Design: a private ZKas test chain (zkas-rusty `zkas-v1.0.14-1`, `--testnet --netsuffix=10`, no outside
+peers) used by the testnet pool only; ZKas aux entry in the testnet Miningcore config with the ZKas testnet genesis;
+proposed criterion 9 in SIP-0003 and section 9 of the pass-report template. Nothing in the Sedra node changes.
+
 ## What this does NOT mean
 
 - It does not launch a testnet or set a date. The launch waits for the Sedra team's agreement on Q51 and Q52.

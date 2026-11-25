@@ -35,6 +35,7 @@ header. Every result is Verified (evidence a reader can check), Inferred (from w
 | 6 | Wallets: the Go `sedrawallet` sends and receives | |
 | 7 | At least one participant outside this project runs a node or mines, and reports what they saw | |
 | 8 | At least two weeks after activation without a consensus failure; every problem found is fixed and re-tested | |
+| 9 | *Proposed addition (2026-11-25), beyond the eight criteria the Sedra team accepted:* one Kaspa testnet-10 coinbase with both a ZKas and a Sedra commitment; both aux chains accept, no tag interference, no double credit | |
 
 Overall: PASSED / NOT PASSED. One sentence why.
 
@@ -105,10 +106,23 @@ Overall: PASSED / NOT PASSED. One sentence why.
 - Evidence:
 - Result:
 
+## 9. Triple coinbase: Kaspa parent with ZKas and Sedra commitments (proposed addition)
+
+- Setup: the testnet pool merges ZKas (a private ZKas testnet chain for the pool only, its own genesis) and Sedra
+  under Kaspa testnet-10 parents; ZKas build and version; the pool's `extraData` length and the payload length.
+- Shown: Kaspa testnet-10 coinbases carrying exactly one `ZKM1` and one `SDM1`; ZKas blocks and Sedra blocks accepted
+  from the same parent work (block hashes on both chains, the parent hash they share); the payload stays within
+  Kaspa's 204-byte limit.
+- No interference: no block rejected on either chain because of the other chain's tag (node logs, pool logs).
+- No double credit: per share and per chain, one credit only, in the pool's accounting.
+- ZKas payouts: transaction IDs, or "not shown" if the ZKas wallet daemon was not run on the test chain.
+- Evidence:
+- Result:
+
 ## Open items and things not shown
 
-List everything a reader might assume was tested but was not (for example: Kaspa mainnet as the parent, ZKas and Sedra
-in the same coinbase on public networks, a large pool joining and leaving).
+List everything a reader might assume was tested but was not (for example: Kaspa mainnet as the parent, ZKas on a
+public ZKas network rather than a private test chain, a large pool joining and leaving).
 
 ## Corrections
 

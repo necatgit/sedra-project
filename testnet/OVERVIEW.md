@@ -85,7 +85,8 @@ show it; the reaction is in RUNBOOK §6 (pause, report, reset if needed). Accept
 | Seed node 2 | a second place to connect | Nec (volunteers welcome as extra seeds) | rented VPS (netcup, EU), hardened 2026-11-24, node not installed yet ([HOSTING.md](HOSTING.md)) |
 | Unchanged Go node | criterion 3 | Nec | host not chosen |
 | Kaspa testnet-10 node | the pool | Nec | at home on SSD (D3), VM not chosen; too big for a cheap VPS (Kaspa guidance: 8 cores, 16 GB RAM, 640 GB SSD), so at home on SSD; real testnet-10 need **Unknown** ([HOSTING.md](HOSTING.md) 1.2) |
-| Testnet pool (Miningcore) + database + wallets | merged mining, payouts (criteria 2, 5) | Nec | config ready; Kaspa testnet payout path checked on a private chain |
+| Testnet pool (Miningcore) + database + wallets | merged mining, payouts (criteria 2, 5, proposed 9) | Nec | config ready; Kaspa testnet payout path checked on a private chain; ZKas aux entry added 2026-11-25 (D11) |
+| Private ZKas test node (pool only) | criterion 9 (proposed) | Nec | VM 206, next to the Kaspa node; being set up 2026-11-25 |
 | Monitor + daily summary | evidence for criteria 1, 2, 3, 8 | Nec | ready (dry run) |
 | Faucet (test coins on request) | people without miners | Nec, by hand from GitHub issues | ready (dry run) |
 | Public status page | anyone checking blocks | Nec | https://testnet.puddlepool.com: Caddy with HTTPS on the VPS since 2026-11-25; page built on VM 204 and uploaded every minute |
@@ -105,6 +106,7 @@ show it; the reaction is in RUNBOOK §6 (pause, report, reset if needed). Accept
 | D8 | Public status page or explorer (promised in SIP-0003 §4.4) | Nec | Decided 2026-11-24: a status page from the monitor's data (built), served at https://testnet.puddlepool.com (2026-11-25); a full explorer is not planned |
 | D9 | Pause, fix, reset during the test | Nec, and the Sedra team if they take part | Rules set in RUNBOOK §6: a consensus failure pauses the test, the fix is re-tested, the two-week clock restarts (also the Sedra team's condition in its 2026-11-23 draft) |
 | D10 | Pass or fail, and what follows | the report, then the Sedra team and Nec together | After the test. A mainnet date is only discussed after a passed report |
+| D11 | ZKas in the same coinbase as Sedra, as the mainnet pool would do it | Nec | Decided 2026-11-25: yes. The testnet pool also merges a **private ZKas test chain** (pool only, not a public network) under the same Kaspa testnet-10 parents. Proposed as an extra criterion 9 in SIP-0003, beyond the eight the Sedra team accepted. Reason: this combination was never tested against real nodes (SIP-0001 §9, corrected 2026-11-25) |
 
 ## 5. Step by step
 

@@ -2,7 +2,7 @@
 
 How long each step took from the start of the project, and how much AI work went into it. Regenerated with `python tools/update_timeline.py <transcripts>`; see the notes at the end for what the numbers mean.
 
-**Project start:** 2026-11-05 07:19 UTC (first message of the session in which the project began). **Last update:** 2026-11-24 21:18 UTC.
+**Project start:** 2026-11-05 07:19 UTC (first message of the session in which the project began). **Last update:** 2026-11-25 10:58 UTC.
 
 ## Milestones and closed issues
 
@@ -26,7 +26,7 @@ How long each step took from the start of the project, and how much AI work went
 | 2026-11-10 18:53 | 131 h 34 min | #5 Effort and timeline estimate | 0 | 0 k / 0 k |
 | 2026-11-14 10:47 | 219 h 28 min | #28 M9: Seven-day soak next to Go nodes | 381 | 1,399 k / 339 k |
 | 2026-11-16 08:30 | 265 h 11 min | #29 Security back-ports from later rusty-kaspa releases (Q31) | 496 | 1,696 k / 480 k |
-| (open) | 469 h 59 min | work since the last closed issue | 2333 | 13.0 M / 1,767 k |
+| (open) | 483 h 39 min | work since the last closed issue | 2685 | 15.0 M / 2,033 k |
 
 A phase counts **all** AI work between two closed issues, not only the issue in that row. For example, the first row includes the project setup (repository, rules, identity), and the M2 row includes setting up the test VM, the build fix for GCC 15 and the coverage measurement. Several issues closed in the same minute share one phase; their AI effort is counted on the first of them.
 
@@ -46,22 +46,23 @@ A phase counts **all** AI work between two closed issues, not only the issue in 
 | 2026-11-15 | 160 | 734 k / 162 k | - |
 | 2026-11-16 | 556 | 1,256 k / 402 k | [first-release-and-public-node](updates/2026-11-16-first-release-and-public-node.md) |
 | 2026-11-17 | 281 | 929 k / 219 k | - |
-| 2026-11-18 | 303 | 1,629 k / 251 k | - |
+| 2026-11-18 | 296 | 1,602 k / 249 k | - |
 | 2026-11-19 | 170 | 807 k / 155 k | - |
 | 2026-11-20 | 310 | 2,996 k / 232 k | [testnet-kit](updates/2026-11-20-testnet-kit.md) |
 | 2026-11-21 | 99 | 850 k / 75 k | - |
 | 2026-11-22 | 178 | 1,398 k / 133 k | [week](updates/2026-11-22-week.md) |
 | 2026-11-23 | 92 | 1,406 k / 85 k | - |
-| 2026-11-24 | 469 | 2,002 k / 302 k | - |
+| 2026-11-24 | 499 | 2,712 k / 323 k | - |
+| 2026-11-25 | 329 | 1,312 k / 246 k | - |
 
 ## AI usage in total
 
 | | Tokens |
 |---|---|
-| Model calls | 5,347 (of which 509 by research agents) |
-| Fresh input (new text read: messages, files, command output) | 24,910,984 |
-| Output (text and code written by the AI) | 4,516,251 |
-| Re-read from cache (the conversation so far, read again on every call) | 1,335,157,693 |
+| Model calls | 5,699 (of which 539 by research agents) |
+| Fresh input (new text read: messages, files, command output) | 26,905,843 |
+| Output (text and code written by the AI) | 4,781,742 |
+| Re-read from cache (the conversation so far, read again on every call) | 1,425,605,618 |
 
 ## Notes
 

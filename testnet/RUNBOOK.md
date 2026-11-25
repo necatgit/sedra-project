@@ -35,12 +35,31 @@ independent; a second location is better.
 | seed2 | same, second host or location | same | |
 | old-go | unmodified Go sedrad v2.0.0, `systemd/sedrad-go-testnet.service` | P2P 22231, RPC 22230 localhost | never upgraded during the test |
 | Kaspa TN10 node | upstream rusty-kaspa, the version Kaspa runs on testnet-10 (2.1.0 on 2026-11-19), `--testnet --netsuffix=10 --utxoindex` | its defaults (16210/16211) | disk and memory need **Unknown**: measure during sync before launch |
-| testnet pool | Miningcore branch `sedra-merged-mining`, `pool/miningcore-testnet.json` | stratum 15555 public, API localhost | own Postgres database; `genesisHash` set (see 2.1) |
+| testnet pool | Miningcore branch `sedra-merged-mining`, `pool/miningcore-testnet.json` | stratum 15555 public, API localhost | own Postgres database; `genesisHash` set for both aux chains (see 2.1) |
+| private ZKas test node (D11, since 2026-11-25) | zkasd built from zkas-rusty `zkas-v1.0.14-1-g312c6fb7`, `--testnet --netsuffix=10`, no DNS seeding, no outside peers | gRPC localhost/LAN only | a ZKas test chain for the pool only; never connected to a public ZKas network |
 | wallets | Go sedrawallet v2.0.0 `--testnet` (pool and faucet, separate keys files), Kaspa TN10 wallet for the pool | localhost only | testnet keys only; never a key that exists on mainnet |
 | monitor | `sedra-testnet-monitor`, `systemd/sedra-testnet-monitor.service` | none | reaches seed2 through an SSH tunnel, old-go through `sedractl://` |
 | status page | `status_page.py`, `systemd/sedra-testnet-status.{service,timer}` (every minute) | HTTPS 443 (and 80 for the redirect and the certificate) on the web host | on the monitor host; reads the monitor's CSVs, writes `/var/www/sedra-testnet` and uploads it with `--publish` over the one SSH link to the VPS, where Caddy (`web/Caddyfile`) serves https://testnet.puddlepool.com; needs no node access. Set the seed and pool addresses in the unit at launch |
 
 ### 2.1 Pool settings that matter
+
+- **ZKas aux entry (D11, 2026-11-25).** ZKas is merged next to Sedra under the same Kaspa testnet-10 parent:
+  - `genesisHash` of the ZKas entry = `d5d97eecaa0bad6a4a05627bcb4d99aa22f1632458e18a7b2b30e2fd5b4c2f9b` (ZKas testnet genesis, zkas-rusty
+    `consensus/core/src/config/genesis.rs`). Miningcore's default is the ZKas **mainnet** genesis
+    (`KaspaAuxChain.cs:24-26`), the same trap as for Sedra.
+  - On ZKas testnet, merged mining and the `ZKM1` rule are active from genesis (zkas-rusty `params.rs:1194-1195`).
+    ZKas checks the parent's work against its own target and binds the commitment to its own genesis; the parent's
+    network is not checked (**Inferred** from the code, shown at the rehearsal).
+  - Pool and miner ZKas addresses are `zkastest:` (Miningcore checks them against the parent's network).
+    **Known gap:** a ZKas address in the password (`a=zkastest:…`) is silently ignored; Miningcore only recognises
+    `zkas:` there (`KaspaUtils.cs:272-307`). Use the username form `kaspatest:…+zkastest:…` (GUIDE §7). A fix is a
+    Miningcore change and is asked first.
+  - **Coinbase space:** Kaspa allows 204 bytes of payload. After the fixed part, the payout script and the node's
+    `2.1.0/`, Miningcore adds `2.1.0.` before the pool tag; `ZKM1` takes 68 and `SDM1` 47 bytes. That leaves about
+    **24 bytes** for the pool's own `extraData` (**Inferred** from verified constants; SIP-0001 §6 correction of
+    2026-11-25). Keep the tag short.
+  - ZKas payouts (zkas-walletd, REST) on the test chain: **Unknown** whether they work; tried if cheap, otherwise
+    "not shown" in the report (criterion 9).
 
 - `genesisHash` of the Sedra entry = `f896a3034873be1739fc4359236899fd3d65d2bc94f9780df0d0da3eb1cc4370` (testnet
   genesis, confirmed by the dry-run node 2026-11-20). Miningcore's default is the mainnet genesis; without the
