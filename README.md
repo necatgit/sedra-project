@@ -98,9 +98,10 @@ the security fixes from later Kaspa releases (#29) and passed a seven-day run ne
   (guide, runbook, report template, tools) is ready since 2026-11-20 ([testnet/](testnet/README.md)); the launch waits
   for the Sedra team's agreement on its duration and pass criteria (Q51) and the test chain (Q52). On 2026-11-20 Nec
   asked the team for a written "yes" to the criteria and proposed a fresh test chain, so Q52 need not hold up the
-  launch; not agreed yet (2026-11-22). No date is set. The testnet node release `0.2.0-testnet.1` is prepared as a
-  release candidate (2026-11-24: tested and rebuilt identically on two machines, **not tagged or published**;
-  [release/v0.2.0-testnet.1-checklist.md](release/v0.2.0-testnet.1-checklist.md)). Latest summary: [updates/2026-11-22-week.md](updates/2026-11-22-week.md).
+  launch; not agreed yet (2026-11-22). No date is set. The testnet node release `0.2.0-testnet.1` was
+  **published as a pre-release on 2026-11-25** ([sedra-v0.2.0-testnet.1](https://github.com/necatgit/sedra-rusty/releases/tag/sedra-v0.2.0-testnet.1): signed tag, tested and rebuilt
+  identically on two machines, [checklist](release/v0.2.0-testnet.1-checklist.md)) after a rehearsal on the real hosts
+  ([testnet/REHEARSAL.md](testnet/REHEARSAL.md)). The launch date is announced separately. Latest summary: [updates/2026-11-22-week.md](updates/2026-11-22-week.md).
 
 **Step 2, the merged-mining fork, is implemented and tested but not active anywhere** (M10, branch `m10-auxpow`,
 2026-11-10): the verifier, the proof as a header field, P2P and mining RPC, the activation gate (`never` on every

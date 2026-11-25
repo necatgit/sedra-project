@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | Status | **Run and passed 2026-11-25 13:04-13:24 UTC** (moved forward from 11-30 on Nec's call, launch date unchanged): R1-R11 passed, everything wiped back to genesis. Results in 3.1 |
-| Release | `sedra-v0.2.0-testnet.1`, signed by Nec 2026-11-25, **tag pushed 2026-11-25** after the rehearsal on Nec's go; pre-release not published yet ([go runbook](../release/v0.2.0-testnet.1-go.md)) |
+| Release | `sedra-v0.2.0-testnet.1`, signed by Nec 2026-11-25, **tag pushed and [pre-release](https://github.com/necatgit/sedra-rusty/releases/tag/sedra-v0.2.0-testnet.1) published 2026-11-25** after the rehearsal, on Nec's go ([go runbook](../release/v0.2.0-testnet.1-go.md)) |
 | Goal | Start the whole testnet once on the real hosts with the signed binary, check every part, then stop and wipe it. Nothing is announced |
 | Overview | [OVERVIEW.md](OVERVIEW.md) step 3; operator details [RUNBOOK.md](RUNBOOK.md) §2-§3; hosts [HOSTING.md](HOSTING.md) |
 

@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | **Not launched** (2026-11-24). Node release prepared as a candidate (`0.2.0-testnet.1`, not published). Waiting for the Sedra team's approved agreement (Q51) |
+| Status | **Not launched** (2026-11-24). Node release `0.2.0-testnet.1` published as a [pre-release](https://github.com/necatgit/sedra-rusty/releases/tag/sedra-v0.2.0-testnet.1) 2026-11-25, after a rehearsal on the real hosts the same day ([REHEARSAL.md](REHEARSAL.md)). Waiting for the Sedra team's approved agreement (Q51) |
 | For | The Sedra team, node runners, miners, pool operators, exchanges and wallet users, and anyone who wants to understand the test before reading the details |
 | Details | [GUIDE.md](GUIDE.md) (participants), [RUNBOOK.md](RUNBOOK.md) (operator), [SIP-0003](../proposals/SIP-0003-public-testnet.md) (why and pass criteria), [SIP-0001](../proposals/SIP-0001-merged-mining.md) (the rules tested) |
 
