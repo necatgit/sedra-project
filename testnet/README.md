@@ -6,6 +6,7 @@ the Sedra team agrees on its duration and pass criteria (Q51) and on the test ch
 | File | For |
 |---|---|
 | [OVERVIEW.md](OVERVIEW.md) | Everyone: what runs, how blocks are found, the decision points and the step-by-step plan per stakeholder |
+| [REHEARSAL.md](REHEARSAL.md) | The rehearsal on the real hosts before launch (planned 11-30), and seed2's install |
 | [GUIDE.md](GUIDE.md) | Participants: get and verify the node, run it, wallet, native and merged mining, reporting |
 | [RUNBOOK.md](RUNBOOK.md) | The operator: go/no-go checks, infrastructure, launch, daily routine, how each criterion is measured, problems, reset, ending |
 | [HOSTING.md](HOSTING.md) | Where it runs (decision D3): requirements per role, VPS offers compared 2026-11-24, recommendation |
