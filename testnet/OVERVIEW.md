@@ -51,6 +51,10 @@ blocks, as on mainnet).
    (sedra-rusty branch `testnet-status-ui` `71ff3e3`: TESTNET banner, countdowns, difficulty and hashrate, the eight
    pass criteria with live status, join guide, faucet and release links). Served at **https://testnet.puddlepool.com**
    by Caddy on the VPS (Let's Encrypt, set up 2026-11-25); VM 204 builds it and uploads it over its one SSH link.
+   Since 2026-11-25 (`f924387`) it also shows the private ZKas test chain (D11) and proposed criterion 9: the monitor
+   reads zkasd directly and pairs Sedra and ZKas blocks from one Kaspa parent by their nonce (on both chains a
+   merged-mined block's nonce is the first 8 bytes of its parent's hash). Native/merged classification of ZKas blocks
+   is **not yet checked** on real blocks (none exist yet).
    It is not a full explorer: no transactions or addresses.
 
 **Do we need miners?** Yes, of two kinds.

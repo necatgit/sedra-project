@@ -114,6 +114,8 @@ Overall: PASSED / NOT PASSED. One sentence why.
   from the same parent work (block hashes on both chains, the parent hash they share); the payload stays within
   Kaspa's 204-byte limit.
 - No interference: no block rejected on either chain because of the other chain's tag (node logs, pool logs).
+- Shared parents as measured: the monitor's `shared_parents.csv` (Sedra and ZKas block with the same nonce, i.e. the
+  same Kaspa parent prefix), count and first pair; the status page shows the same count.
 - No double credit: per share and per chain, one credit only, in the pool's accounting.
 - ZKas payouts: transaction IDs, or "not shown" if the ZKas wallet daemon was not run on the test chain.
 - Evidence:

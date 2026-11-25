@@ -38,7 +38,7 @@ independent; a second location is better.
 | testnet pool | Miningcore branch `sedra-merged-mining`, `pool/miningcore-testnet.json` | stratum 15555 public, API localhost | own Postgres database; `genesisHash` set for both aux chains (see 2.1) |
 | private ZKas test node (D11, since 2026-11-25) | zkasd built from zkas-rusty `zkas-v1.0.14-1-g312c6fb7`, `--testnet --netsuffix=10`, no DNS seeding, no outside peers | gRPC localhost/LAN only | a ZKas test chain for the pool only; never connected to a public ZKas network |
 | wallets | Go sedrawallet v2.0.0 `--testnet` (pool and faucet, separate keys files), Kaspa TN10 wallet for the pool | localhost only | testnet keys only; never a key that exists on mainnet |
-| monitor | `sedra-testnet-monitor`, `systemd/sedra-testnet-monitor.service` | none | reaches seed2 through an SSH tunnel, old-go through `sedractl://` |
+| monitor | `sedra-testnet-monitor`, `systemd/sedra-testnet-monitor.service` | none | reaches seed2 through an SSH tunnel, old-go through `sedractl://`; with `--zkas zkas=grpc://192.168.0.28:16820` (D11) also the private ZKas node: `zkas.csv`, `zkas_blocks.csv`, `shared_parents.csv` |
 | status page | `status_page.py`, `systemd/sedra-testnet-status.{service,timer}` (every minute) | HTTPS 443 (and 80 for the redirect and the certificate) on the web host | on the monitor host; reads the monitor's CSVs, writes `/var/www/sedra-testnet` and uploads it with `--publish` over the one SSH link to the VPS, where Caddy (`web/Caddyfile`) serves https://testnet.puddlepool.com; needs no node access. Set the seed and pool addresses in the unit at launch |
 
 ### 2.1 Pool settings that matter
