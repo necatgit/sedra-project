@@ -16,7 +16,7 @@ Labels: **Verified** (checked, with evidence), **Inferred**, **Unknown**.
 | seed2 (no mining) | netcup VPS (HOSTING.md) | **Installed 2026-11-25** (see 2.1) |
 | seed1 (mines the first blocks), old Go node, testnet pool with its database and wallets, monitor, status page, faucet | **VM 204** (`sedra-rusty`, next to the public mainnet node and its Go reference node): own user `sedratn`, own directory `/data/testnet`, own ports, every testnet service niced with `MemoryMax`. If the mainnet node or its RPC ever lags, the testnet part moves to its own VM | seed1 and old-go running (2.4) |
 | Kaspa testnet-10 node (for the pool) | **VM 206 `kaspa-tn10`** (Ubuntu 26.04, 6 cores, 12 GB, 150 GB on `nvme-dev` with discard, CPU type host) | created by Nec 2026-11-25; node installed and syncing since 10:04 UTC (2.6); must be synced before 11-30 |
-| Private ZKas test node (D11) | VM 206, next to the Kaspa node | being set up 2026-11-25 |
+| Private ZKas test node (D11) | VM 206, next to the Kaspa node | running since 2026-11-25 11:24 UTC, at genesis (2.7) |
 | Router | TCP 22211 forwarded to seed1 on VM 204 (Nec) | done 2026-11-25; reachable from the internet (tested from the VPS) |
 
 Not used for any of it: the public mainnet Rust node VM and the production pool's VMs.
@@ -100,6 +100,19 @@ Not used for any of it: the public mainnet Rust node VM and the production pool'
 - Service `kaspa-tn10`: `--testnet --netsuffix=10 --utxoindex --ram-scale=0.6`, data in `/var/lib/kaspa-tn10`,
   `MemoryMax=10G`. Started 10:04 UTC, found testnet-10 peers through Kaspa's DNS seeders, validating the pruning-point
   proof. Disk and memory during the sync are measured here when it finishes.
+
+### 2.7 Private ZKas test node on VM 206 (D11, 2026-11-25)
+
+- zkasd built from source: zkas-rusty `zkas-v1.0.14-1-g312c6fb7` (the local copy next to PuddlePool's Miningcore;
+  the production ZKas node runs v1.0.14), `kaspad 2.0.1 (zkas-v1.0.14)`, sha256 `f9f23b5f…`. Service `zkas-testnet`:
+  `--testnet --netsuffix=10` (ZKas testnet rules: merged mining and `ZKM1` from genesis), `--nodnsseed --outpeers=0`,
+  P2P on 127.0.0.1:16821, gRPC 16820 reachable from VM 204 only (nftables), `MemoryMax=3G`. It never joins a public
+  ZKas network. Reachable from VM 204 over gRPC. **Verified** 2026-11-25.
+- First ZKas blocks come from the testnet pool's merged shares once the Kaspa testnet-10 node is synced; there is no
+  native ZKas miner in the kit.
+- The new status-page monitor (`testnet-status-ui` `c93f6c79`) cannot read it yet: its RPC client rejects the
+  network name `zkas-testnet-10` ("expected prefix 'kaspa'"). Being fixed in that branch; not installed until then.
+- Pool config with the ZKas aux entry and both units: sedra-rusty `testnet-kit` `45ab33b1`.
 
 ## 3. The rehearsal (11-30)
 
