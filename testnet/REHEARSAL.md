@@ -2,19 +2,19 @@
 
 | | |
 |---|---|
-| Status | Planned. seed2 installed and running 2026-11-25; the home VMs do not exist yet |
+| Status | Planned. seed2 (VPS) and seed1 + old-go (home VM 204) installed and running 2026-11-25, at genesis, nothing mining; the Kaspa testnet-10 VM does not exist yet |
 | Release | `sedra-v0.2.0-testnet.1`, signed by Nec 2026-11-25, **not pushed** until the rehearsal passed ([go runbook](../release/v0.2.0-testnet.1-go.md)) |
 | Goal | Start the whole testnet once on the real hosts with the signed binary, check every part, then stop and wipe it. Nothing is announced |
 | Overview | [OVERVIEW.md](OVERVIEW.md) step 3; operator details [RUNBOOK.md](RUNBOOK.md) §2-§3; hosts [HOSTING.md](HOSTING.md) |
 
 Labels: **Verified** (checked, with evidence), **Inferred**, **Unknown**.
 
-## 1. Hosts (decided by Nec 2026-11-25)
+## 1. Hosts (decided by Nec 2026-11-25; home part moved to VM 204 the same day)
 
 | Role | Host | State |
 |---|---|---|
 | seed2 (no mining) | netcup VPS (HOSTING.md) | **Installed 2026-11-25** (see 2.1) |
-| seed1 (mines the first blocks), old Go node, testnet pool with its database and wallets, monitor, status page, faucet | a **new home VM** that Nec creates | not created |
+| seed1 (mines the first blocks), old Go node, testnet pool with its database and wallets, monitor, status page, faucet | **VM 204** (`sedra-rusty`, next to the public mainnet node and its Go reference node): own user `sedratn`, own directory `/data/testnet`, own ports, every testnet service niced with `MemoryMax`. If the mainnet node or its RPC ever lags, the testnet part moves to its own VM | seed1 and old-go running (2.4) |
 | Kaspa testnet-10 node (for the pool) | a **separate new home VM on SSD** that Nec creates | not created; must be synced before 11-30 |
 | Router | TCP 22211 forwarded to seed1 (Nec) | not done |
 
@@ -35,11 +35,10 @@ Not used for any of it: the public mainnet Rust node VM and the production pool'
 
 ### 2.2 Nec
 
-1. Create the home VM for seed1 and the rest: Ubuntu 24.04 or 26.04, about 4 cores, 8 GB RAM, 100 GB on SSD; add
-   the AI's SSH key as for the other VMs.
+1. ~~Create the home VM for seed1 and the rest~~: VM 204 is used instead (decided 2026-11-25).
 2. Create the Kaspa testnet-10 VM on SSD: Kaspa's guide asks for about 8 cores, 16 GB RAM, 640 GB SSD (HOSTING.md
    1.2; the real need on testnet-10 is **Unknown** and measured during the sync).
-3. Forward TCP 22211 on the router to the seed1 VM.
+3. Forward TCP 22211 on the router to VM 204 (seed1).
 4. Tell the AI when the VMs are up.
 
 ### 2.3 AI, once the VMs are up (each host-changing step reported)
@@ -53,6 +52,18 @@ Not used for any of it: the public mainnet Rust node VM and the production pool'
    (Go sedrawallet `--testnet`, Go kaspawallet v0.12.23 `--testnet`) with new testnet-only keys, the monitor with an
    SSH tunnel to seed2's RPC, the status page and its timer.
 3. Nothing mines and nothing is announced before the rehearsal.
+
+### 2.4 seed1 and old-go on VM 204 (done 2026-11-25)
+
+- seed1: the verified release `kaspad` (`sha256sum -c` OK, `0.2.0-testnet.1 … 24511407f157`) as
+  `sedra-testnet-seed1.service`: P2P 0.0.0.0:22211, gRPC 127.0.0.1:22210, `--externalip` from the home DynDNS name (as
+  the mainnet node does), `--addpeer` seed2, `Nice=10`, idle IO class, `MemoryMax=4G`. Connected to seed2 at once.
+  **Verified** (log: "P2P Connected to outgoing peer … :22211").
+- old-go: unchanged Go `sedrad` v2.0.0 `--testnet` as `sedra-testnet-oldgo.service`, P2P and RPC on localhost
+  (22231/22230), dialling seed1, `MemoryMax=3G`. Go sedrad needs a writable home directory for its default config;
+  the service user got `/data/testnet/home`. Connected to seed1; `GetBlockDagInfo`: `sedra-testnet-10`, block count 1,
+  DAA 0. **Verified**.
+- The mainnet node and the Go reference node on the same VM stayed active.
 
 ## 3. The rehearsal (11-30)
 
