@@ -70,6 +70,8 @@ passed and with Nec's explicit go. B stays our private test bench.
 | **C. A copy of mainnet's state** | Realistic balances and history | Complex (a genesis from a snapshot), and it copies real balances into a test network: not worth it |
 
 **Decided 2026-11-10 (Q47):** A, if a parity check (Go and Rust on the existing testnet with the same rules) passes; otherwise B.
+*Update 2026-11-25:* run as a fresh chain from this same `testnet-10` genesis (RUNBOOK §3.1), since nobody is known to
+run `testnet-10`; unmodified Go nodes still join with `--testnet`.
 Whatever the chain, its parameters stay those of mainnet (block rate, finality depth, rewards) so the timing of the
 ban window and the activation is tested as it will happen.
 
