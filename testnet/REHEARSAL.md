@@ -19,7 +19,7 @@ Labels: **Verified** (checked, with evidence), **Inferred**, **Unknown**.
 | Private ZKas test node (D11) | VM 206, next to the Kaspa node | running since 2026-11-25 11:24 UTC; first merged-mined blocks 12:19 UTC (2.7, 2.8) |
 | Router | TCP 22211 forwarded to seed1 on VM 204 (Nec) | done 2026-11-25; reachable from the internet (tested from the VPS) |
 
-Not used for any of it: the public mainnet Rust node VM and the production pool's VMs.
+Not used for any of it: the public mainnet Rust node itself (VM 204 only hosts the testnet next to it, as above) and the production pool's VMs.
 
 ## 2. Before 11-30
 

@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | **Draft, open for public comment** (since 2026-11-17). Reviewed by Nec 2026-11-10: Q46-Q50 decided, Q51 and Q52 sent to the Sedra team on 2026-11-10 (with the request to announce the testnet activation), open: the Sedra team reply 2026-11-17 (draft) accepts the two-week minimum and the criteria as a starting checklist, subject to agreement before launch (Q51), and promises Q52 by 2026-12-14. Not agreed with the Sedra team |
+| Status | **Draft, open for public comment** (since 2026-11-17). Reviewed by Nec 2026-11-10: Q46-Q50 decided, Q51 and Q52 sent to the Sedra team on 2026-11-10 (with the request to announce the testnet activation), open: the Sedra team reply 2026-11-17 (draft) accepts the two-week minimum and the criteria as a starting checklist, subject to agreement before launch (Q51), and promises Q52 by 2026-12-14. *Update 2026-11-25:* the Sedra team agreed in writing on 2026-11-24 to run the testnet under this SIP as it stands, on a fresh chain (Q51 answered; Q52 no longer a condition). Not final; the mainnet change (SIP-0001) is not agreed |
 | Author | Nec |
 | Created | 2026-11-10 |
 | Type | Process (no consensus change of its own) |

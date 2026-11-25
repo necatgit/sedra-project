@@ -14,6 +14,10 @@ change; check them again on the order page.
 
 ## 1. What goes where
 
+*Update 2026-11-25:* the "home VM" below turned out to be VM 204 (next to the public mainnet node, own user and
+directory) plus VM 206 for the Kaspa testnet-10 node, and the rehearsal ran on 11-25 instead of 11-30: see
+[REHEARSAL.md](REHEARSAL.md) §1. The comparison below is kept as it was.
+
 | Role | Where | Why |
 |---|---|---|
 | seed1 (testnet release, mines the first blocks with the CPU miner) | home VM | Mining happens here only: both shortlisted providers forbid mining in their terms (section 3), even worthless testnet CPU mining |

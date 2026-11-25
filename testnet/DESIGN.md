@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | **Approved by Nec 2026-11-20** and implemented (sedra-rusty `testnet-kit`, `582be8a5`); dry run done the same day (section 5). Nothing launched; the launch waits for the Sedra team's agreement on Q51 and Q52 |
+| Status | **Approved by Nec 2026-11-20** and implemented (sedra-rusty `testnet-kit`, `582be8a5`); dry run done the same day (section 5). Nothing launched; the launch waited for the Sedra team's agreement on Q51 and Q52. *Update 2026-11-25:* the Sedra team agreed in writing on 2026-11-24 (Q51, SIP-0003 as it stands); the fresh chain means Q52 no longer holds up the launch. Proposed start 2026-12-01, not announced yet ([OVERVIEW.md](OVERVIEW.md) D4). |
 | Issue | #13 |
 | Process | [SIP-0003](../proposals/SIP-0003-public-testnet.md) (the testnet), [SIP-0001](../proposals/SIP-0001-merged-mining.md) (the rules tested) |
 | Code base | sedra-rusty `m10-auxpow` @ `ac98145` (merged mining, e2e harness in `contrib/e2e-merged-mining/`) |

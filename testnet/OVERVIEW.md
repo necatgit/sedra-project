@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | **Not launched** (2026-11-24). Node release `0.2.0-testnet.1` published as a [pre-release](https://github.com/necatgit/sedra-rusty/releases/tag/sedra-v0.2.0-testnet.1) 2026-11-25, after a rehearsal on the real hosts the same day ([REHEARSAL.md](REHEARSAL.md)). Waiting for the Sedra team's approved agreement (Q51) |
+| Status | **Not launched** (2026-11-25). Node release `0.2.0-testnet.1` published as a [pre-release](https://github.com/necatgit/sedra-rusty/releases/tag/sedra-v0.2.0-testnet.1) 2026-11-25, after a rehearsal on the real hosts the same day ([REHEARSAL.md](REHEARSAL.md)). The Sedra team agreed in writing on 2026-11-24 (Q51, D1); proposed start Tue 2026-12-01, not announced yet (D4) |
 | For | The Sedra team, node runners, miners, pool operators, exchanges and wallet users, and anyone who wants to understand the test before reading the details |
 | Details | [GUIDE.md](GUIDE.md) (participants), [RUNBOOK.md](RUNBOOK.md) (operator), [SIP-0003](../proposals/SIP-0003-public-testnet.md) (why and pass criteria), [SIP-0001](../proposals/SIP-0001-merged-mining.md) (the rules tested) |
 
@@ -84,13 +84,13 @@ show it; the reaction is in RUNBOOK §6 (pause, report, reset if needed). Accept
 
 | Part | Needed for | Runs it | Status |
 |---|---|---|---|
-| Testnet node release `0.2.0-testnet.1` | everyone who runs a node | this project builds, Nec signs | release candidate ready 2026-11-24, not published |
-| Seed node 1 (also mines the first blocks) | the chain to exist | Nec | at home (D3); VM not set up yet |
-| Seed node 2 | a second place to connect | Nec (volunteers welcome as extra seeds) | rented VPS (netcup, EU), hardened 2026-11-24, node not installed yet ([HOSTING.md](HOSTING.md)) |
-| Unchanged Go node | criterion 3 | Nec | host not chosen |
-| Kaspa testnet-10 node | the pool | Nec | at home on SSD (D3), VM not chosen; too big for a cheap VPS (Kaspa guidance: 8 cores, 16 GB RAM, 640 GB SSD), so at home on SSD; real testnet-10 need **Unknown** ([HOSTING.md](HOSTING.md) 1.2) |
+| Testnet node release `0.2.0-testnet.1` | everyone who runs a node | this project builds, Nec signs | signed and published as a pre-release 2026-11-25 |
+| Seed node 1 (also mines the first blocks) | the chain to exist | Nec | at home on VM 204 (D3, [REHEARSAL.md](REHEARSAL.md) §1); rehearsed 2026-11-25, wiped to genesis |
+| Seed node 2 | a second place to connect | Nec (volunteers welcome as extra seeds) | rented VPS (netcup, EU), hardened 2026-11-24, node installed 2026-11-25 ([HOSTING.md](HOSTING.md), [REHEARSAL.md](REHEARSAL.md)) |
+| Unchanged Go node | criterion 3 | Nec | at home on VM 204; rehearsed 2026-11-25 |
+| Kaspa testnet-10 node | the pool | Nec | at home on SSD, VM 206 (D3); synced 2026-11-25; too big for a cheap VPS (Kaspa guidance: 8 cores, 16 GB RAM, 640 GB SSD), so at home on SSD; real testnet-10 need **Unknown** ([HOSTING.md](HOSTING.md) 1.2) |
 | Testnet pool (Miningcore) + database + wallets | merged mining, payouts (criteria 2, 5, proposed 9) | Nec | config ready; Kaspa testnet payout path checked on a private chain; ZKas aux entry added 2026-11-25 (D11) |
-| Private ZKas test node (pool only) | criterion 9 (proposed) | Nec | VM 206, next to the Kaspa node; being set up 2026-11-25 |
+| Private ZKas test node (pool only) | criterion 9 (proposed) | Nec | VM 206, next to the Kaspa node; running since 2026-11-25 |
 | Monitor + daily summary | evidence for criteria 1, 2, 3, 8 | Nec | ready (dry run) |
 | Faucet (test coins on request) | people without miners | Nec, by hand from GitHub issues | ready (dry run) |
 | Public status page | anyone checking blocks | Nec | https://testnet.puddlepool.com: Caddy with HTTPS on the VPS since 2026-11-25; page built on VM 204 and uploaded every minute |
@@ -98,14 +98,14 @@ show it; the reaction is in RUNBOOK §6 (pause, report, reset if needed). Accept
 
 ## 4. Decision points
 
-| # | Decision | Who decides | Status (2026-11-24) |
+| # | Decision | Who decides | Status (2026-11-25) |
 |---|---|---|---|
 | D1 | Duration (at least two weeks after activation) and the eight pass criteria | Sedra team (Q51) | Conditional yes in an unapproved working draft (2026-11-23); **yes in writing 2026-11-24** (chat, Sedra owner): SIP-0003 as it stands, fresh chain (Q51) |
 | D2 | Which chain: fresh chain from the existing testnet genesis | Nec (Q47, Q52) | Decided: fresh chain. Q52 (does anyone run the old one) stays open as information |
-| D3 | Where the seeds, Go node, Kaspa node and pool run (one host, a rented second place, or a volunteer's seed) | Nec | **Decided 2026-11-24** ([HOSTING.md](HOSTING.md)): seed2 (and later a public mainnet node and the status page) on a rented netcup VPS 1000 G12.5 in the EU, outside the home network; seed1 (mining), the old Go node, the Kaspa testnet-10 node, the pool and the monitor at home. VPS delivered and hardened 2026-11-24; seed2 not installed yet |
+| D3 | Where the seeds, Go node, Kaspa node and pool run (one host, a rented second place, or a volunteer's seed) | Nec | **Decided 2026-11-24** ([HOSTING.md](HOSTING.md)): seed2 (and later a public mainnet node and the status page) on a rented netcup VPS 1000 G12.5 in the EU, outside the home network; seed1 (mining), the old Go node, the Kaspa testnet-10 node, the pool and the monitor at home. VPS delivered and hardened 2026-11-24; seed2 installed 2026-11-25; the home part runs on VM 204 and VM 206 ([REHEARSAL.md](REHEARSAL.md) §1) |
 | D4 | Start date | Nec, with the Sedra team | Proposed Tue 2026-12-01; not agreed, not announced |
 | D5 | Activation and ban scores | design (RUNBOOK 3.1) | Decided: activation DAA 345,600, ban start 172,800, built into the release |
-| D6 | Publish the release (tag, signature, pre-release) | Nec, after D1 | Prepared; the go steps are in [release/v0.2.0-testnet.1-go.md](../release/v0.2.0-testnet.1-go.md) |
+| D6 | Publish the release (tag, signature, pre-release) | Nec, after D1 | **Done 2026-11-25**: tag pushed, pre-release published; the go steps are in [release/v0.2.0-testnet.1-go.md](../release/v0.2.0-testnet.1-go.md) |
 | D7 | Who announces, and the text | Sedra team (Q48), text from Nec | Waiting; the announcement must say: test network only, no mainnet date, no change to supply |
 | D8 | Public status page or explorer (promised in SIP-0003 §4.4) | Nec | Decided 2026-11-24: a status page from the monitor's data (built), served at https://testnet.puddlepool.com (2026-11-25); a full explorer is not planned |
 | D9 | Pause, fix, reset during the test | Nec, and the Sedra team if they take part | Rules set in RUNBOOK §6: a consensus failure pauses the test, the fix is re-tested, the two-week clock restarts (also the Sedra team's condition in its 2026-11-23 draft) |
@@ -123,7 +123,7 @@ Dates are the proposal for a 2026-12-01 start; if D1 or D4 moves, every later da
 |---|---|---|---|
 | 1. Agreement | Approve the duration and the criteria (D1), say whether you announce (D7) | Choose the hosts (D3) | - |
 | 2. Release | - | Sign and publish `0.2.0-testnet.1` (D6) | - |
-| 3. Rehearsal (proposed 11-30) | - | Start everything on the real hosts without announcing, stop, wipe | - |
+| 3. Rehearsal (run and passed 2026-11-25, moved forward from 11-30) | - | Start everything on the real hosts without announcing, stop, wipe | - |
 | 4. Readiness check | - | RUNBOOK §1: Kaspa testnet-10 up and unchanged, hosts reachable, release verified | Optional: download and verify the release (GUIDE §3) |
 
 ### Launch day (proposed 12-01)

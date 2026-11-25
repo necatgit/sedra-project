@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | Prepared 2026-11-20, **not launched**. Launch only after the Sedra team agrees on Q51 (duration, pass criteria) and Q52 (which chain); see section 1 |
+| Status | Prepared 2026-11-20, **not launched**. Launch only after the Sedra team agrees on Q51 (duration, pass criteria) and Q52 (which chain); see section 1. *Update 2026-11-25:* the Sedra team agreed in writing on 2026-11-24 (Q51, SIP-0003 as it stands); the fresh chain means Q52 no longer holds up the launch. Proposed start 2026-12-01, not announced yet ([OVERVIEW.md](OVERVIEW.md) D4). |
 | Operator | Nec |
 | Process | [SIP-0003](../proposals/SIP-0003-public-testnet.md); design and gaps in [DESIGN.md](DESIGN.md); participant side in [GUIDE.md](GUIDE.md) |
 | Kit | sedra-rusty branch `testnet-kit`, directory `contrib/testnet/` (tools, units, pool config, dry-run scripts) |
@@ -111,8 +111,9 @@ independent; a second location is better.
 
 ### 3.2 Release
 
-Prepared 2026-11-24 for the fresh chain (steps 1 and the test part of 2 done on sedra-rusty `release-0.2.0-testnet.1`,
-not tagged): [release/v0.2.0-testnet.1-checklist.md](../release/v0.2.0-testnet.1-checklist.md), day-of steps in
+Prepared 2026-11-24 for the fresh chain (steps 1 and the test part of 2 done on sedra-rusty `release-0.2.0-testnet.1`;
+*update 2026-11-25:* tagged, signed and published as a
+[pre-release](https://github.com/necatgit/sedra-rusty/releases/tag/sedra-v0.2.0-testnet.1)): [release/v0.2.0-testnet.1-checklist.md](../release/v0.2.0-testnet.1-checklist.md), day-of steps in
 [release/v0.2.0-testnet.1-go.md](../release/v0.2.0-testnet.1-go.md).
 
 1. On `testnet-kit`: set `TESTNET_PARAMS.aux_pow_activation = ForkActivation::new(<score>)` with a `SEDRA:` comment,
