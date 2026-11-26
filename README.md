@@ -91,7 +91,8 @@ the security fixes from later Kaspa releases (#29) and passed a seven-day run ne
 - **Public node:** P2P only, running since 2026-11-14; outside nodes have connected to it since 2026-11-15. It runs on the same physical host
   as Nec's pool PuddlePool, so it is an independent node but not independent hardware; a separate machine is still
   open ([SIP-0002](proposals/SIP-0002-network-resilience.md), #30). SIP-0002 is a staged draft since 2026-11-25; its
-  first stage would make the rented testnet server a second public node after the testnet.
+  first stage would make the rented testnet server this project's main public node after the testnet (Nec's decision of
+  2026-11-26).
 - **Security advisory for Sedra node operators** (published 2026-11-21): sedrad v2.0.0 nodes with the RPC or P2P port
   open to the internet can be frozen or crashed from outside; no fixed release yet. Protection steps:
   [research/0007 advisory](research/0007-sedrad-v2.0.0-advisory.md).
