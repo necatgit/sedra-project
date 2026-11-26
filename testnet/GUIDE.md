@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | **Not launched yet** (2026-11-26). Start **Tue 2026-12-01**, announced by the Sedra team on 2026-11-26 ([#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)); the Sedra team agreed in writing on 2026-11-24 to SIP-0003 as it stands (Q51), and the fresh chain makes Q52 no longer a condition ([OVERVIEW.md](OVERVIEW.md) D4). Node release `0.2.0-testnet.1` published as a pre-release 2026-11-25. Values marked `<at launch>` (seed and pool addresses) are filled in on launch day |
+| Status | **Not launched yet** (2026-11-26). Chain start **Fri 2026-11-27 10:00 UTC** from genesis, so merged mining switches on about **Tue 2026-12-01**, the start day the Sedra team announced on 2026-11-26 ([#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)); the earlier chain start (same release, same heights) was decided by Nec on 2026-11-26 ([OVERVIEW.md](OVERVIEW.md) D4); the Sedra team agreed in writing on 2026-11-24 to SIP-0003 as it stands (Q51), and the fresh chain makes Q52 no longer a condition ([OVERVIEW.md](OVERVIEW.md) D4). Node release `0.2.0-testnet.1` published as a pre-release 2026-11-25. Values marked `<at launch>` (seed and pool addresses) are filled in at the chain start |
 | Process | [SIP-0003](../proposals/SIP-0003-public-testnet.md): what the testnet must show. [SIP-0001](../proposals/SIP-0001-merged-mining.md): the merged-mining rules being tested |
 | Questions, problems | GitHub issue in this repository, template "Testnet report" (section 8) |
 
@@ -21,8 +21,8 @@ value and never will.** Never use a mainnet wallet, key or address on the testne
 | Block rate, rewards, finality | as on mainnet (1 block per second, finality depth 86,400) |
 | Parent chain for merged mining | Kaspa testnet-10 (`kaspatest:` addresses) |
 | Seed nodes | `<at launch>` (no DNS seeders; you add them with `--addpeer`) |
-| Merged-mining activation | DAA score **345,600** (about 4 days after launch), built into the release |
-| Self-parent ban start | DAA score **172,800** = activation - 172,800 (about 2 days after launch) |
+| Merged-mining activation | DAA score **345,600** (about 4 days after the chain start: about 2026-12-01 10:00 UTC), built into the release |
+| Self-parent ban start | DAA score **172,800** = activation - 172,800 (about 2 days after the chain start: about 2026-11-29) |
 | Node release | sedra-rusty [`sedra-v0.2.0-testnet.1`](https://github.com/necatgit/sedra-rusty/releases/tag/sedra-v0.2.0-testnet.1) (pre-release, published 2026-11-25) |
 
 The testnet cannot connect to Sedra mainnet or to Kaspa's networks: it has its own network name, genesis, ports and
@@ -30,7 +30,7 @@ address prefix, and nodes reject a peer from another network in the handshake.
 
 ### Phases
 
-1. **Native phase** (launch to activation, about 4 days): normal Sedra mining. Old Go nodes (sedrad v2.0.0) follow.
+1. **Native phase** (chain start 2026-11-27 to activation, about 4 days): normal Sedra mining. Old Go nodes (sedrad v2.0.0) follow.
 2. **Ban start** (about day 2): from here a Sedra block whose own coinbase carries a merged-mining commitment (`SDM1`)
    is invalid for the new node (SIP-0001 §4.5). Old nodes do not know this rule.
 3. **Activation** (about day 4): blocks proven by a Kaspa testnet-10 parent (merged-mined) become valid. Native mining
@@ -108,8 +108,9 @@ cat /tmp/sedra-check/nodes.csv
 
 `network` must be `sedra-testnet-10`, `is_synced` 1, and `virtual_daa_score` close to what the seed nodes show.
 The public status page, **https://testnet.puddlepool.com**, shows each monitored node with its software (the two Rust seeds, the unchanged Go control node
-that is expected to stop following at the activation) and the version it reports, its DAA score, the phase, the countdowns
-to the ban start and the activation, native and merged-mined blocks, the SIP-0003 pass criteria and the recent blocks
+that is expected to stop following at the activation) and the version it reports, its DAA score, the phase, a countdown to the
+announced chain start until the first block, the countdowns to the ban start and the activation (planned at one block
+per second before the start, then estimated from the last hour's block rate; no estimate while the chain stalls), native and merged-mined blocks, the SIP-0003 pass criteria and the recent blocks
 (`/status.json` for scripts). It is a TEST network page: the coins have no value.
 
 ## 5. Wallet
@@ -210,7 +211,8 @@ merged-mined block. If you see anything else, report it.
 
 ## What this does NOT mean
 
-- The testnet is not running before Tuesday 2026-12-01. (*Corrected 2026-11-26:* this line said "no launch date is
+- The testnet chain is not running before Friday 2026-11-27 10:00 UTC. (*Corrected 2026-11-26 evening:* it said
+  "before Tuesday 2026-12-01"; the chain start moved so that merged mining is on by 12-01.) (*Corrected 2026-11-26:* this line said "no launch date is
   set ... starts after the Sedra team agrees (Q51, Q52)"; the team agreed on 2026-11-24 and announced the date on
   2026-11-26.)
 - Passing the testnet does not schedule merged mining on mainnet. A mainnet date is chosen with the Sedra team after

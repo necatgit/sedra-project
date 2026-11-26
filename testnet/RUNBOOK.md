@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | Prepared 2026-11-20, **not launched yet** (2026-11-26). Start **Tue 2026-12-01**, announced by the Sedra team on 2026-11-26 ([#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)); the Sedra team agreed in writing on 2026-11-24 to SIP-0003 as it stands (Q51), and the fresh chain makes Q52 no longer a condition ([OVERVIEW.md](OVERVIEW.md) D4); go/no-go state in section 1. Rehearsal on the real hosts passed 2026-11-25 ([REHEARSAL.md](REHEARSAL.md)) |
+| Status | Prepared 2026-11-20, **not launched yet** (2026-11-26). Chain start **Fri 2026-11-27 10:00 UTC** from genesis, so merged mining switches on about **Tue 2026-12-01**, the start day the Sedra team announced on 2026-11-26 ([#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)); the earlier chain start (same release, same heights) was decided by Nec on 2026-11-26 ([OVERVIEW.md](OVERVIEW.md) D4); the Sedra team agreed in writing on 2026-11-24 to SIP-0003 as it stands (Q51), and the fresh chain makes Q52 no longer a condition ([OVERVIEW.md](OVERVIEW.md) D4); go/no-go state in section 1. Rehearsal on the real hosts passed 2026-11-25 ([REHEARSAL.md](REHEARSAL.md)) |
 | Operator | Nec |
 | Process | [SIP-0003](../proposals/SIP-0003-public-testnet.md); design and gaps in [DESIGN.md](DESIGN.md); participant side in [GUIDE.md](GUIDE.md) |
 | Kit | sedra-rusty branch `testnet-kit`, directory `contrib/testnet/` (tools, units, pool config, dry-run scripts) |
@@ -29,6 +29,18 @@ parity shown in the rehearsal of 2026-11-25 (R4: old-go followed the Rust-mined 
 chain (criterion 3); hosts running and rehearsed ([REHEARSAL.md](REHEARSAL.md)); announcement posted by the Sedra
 team 2026-11-26 ([#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)); the Kaspa testnet-10 check is repeated on launch day.
 
+*State 2026-11-26 evening (chain start moved to 2026-11-27 10:00 UTC, OVERVIEW.md D4).* The Sedra owner agreed to the
+earlier start "if all audited and working fine". What that rests on:
+- **Verified:** the release passed the full test suite (566 passed, 0 failed) and rebuilt identically on two machines
+  (2026-11-24, [checklist](../release/v0.2.0-testnet.1-checklist.md)); the rehearsal on the real hosts passed R1-R11
+  (2026-11-25, [REHEARSAL.md](REHEARSAL.md)); on 2026-11-26 evening seed1, seed2 and old-go are at genesis (DAA 0)
+  and connected to each other, the pool, wallets and monitor run, and Kaspa testnet-10 reports synced
+  (`api-tn10.kaspa.org/info/kaspad`, server 2.1.0).
+- **Open:** in the rehearsal the pool rejected shares as "low difficulty" after its emergency swarm retarget (R7;
+  pool or test miner, **Unknown**); merged mining has not been tried with a real GPU miner; activation, the ban and the
+  old node dropping off were shown in the private dry run of 2026-11-20 and in the boundary tests, and happen on the
+  real hosts for the first time on the public chain. There is no outside audit of the code.
+
 ## 2. Infrastructure
 
 Where it runs: decided 2026-11-24 ([HOSTING.md](HOSTING.md)): seed2 on a rented netcup VPS in the EU, everything else at home. SIP-0003 §6: two seed nodes on one physical host are not
@@ -44,7 +56,7 @@ independent; a second location is better.
 | private ZKas test node (D11, since 2026-11-25) | zkasd built from zkas-rusty `zkas-v1.0.14-1-g312c6fb7`, `--testnet --netsuffix=10`, no DNS seeding, no outside peers | gRPC localhost/LAN only | a ZKas test chain for the pool only; never connected to a public ZKas network |
 | wallets | Go sedrawallet v2.0.0 `--testnet` (pool and faucet, separate keys files), Kaspa TN10 wallet for the pool | localhost only | testnet keys only; never a key that exists on mainnet |
 | monitor | `sedra-testnet-monitor`, `systemd/sedra-testnet-monitor.service` | none | reaches seed2 through an SSH tunnel, old-go through `sedractl://`; with `--zkas zkas=grpc://192.168.0.28:16820` (D11) also the private ZKas node: `zkas.csv`, `zkas_blocks.csv`, `shared_parents.csv` |
-| status page | `status_page.py`, `systemd/sedra-testnet-status.{service,timer}` (every minute) | HTTPS 443 (and 80 for the redirect and the certificate) on the web host | on the monitor host; reads the monitor's CSVs, writes `/var/www/sedra-testnet` and uploads it with `--publish` over the one SSH link to the VPS, where Caddy (`web/Caddyfile`) serves https://testnet.puddlepool.com; needs no node access. Set the seed and pool addresses and the node labels (`--software`, `--about`: software and one-line role per node, no hosts) in the unit at launch |
+| status page | `status_page.py`, `systemd/sedra-testnet-status.{service,timer}` (every minute) | HTTPS 443 (and 80 for the redirect and the certificate) on the web host | on the monitor host; reads the monitor's CSVs, writes `/var/www/sedra-testnet` and uploads it with `--publish` over the one SSH link to the VPS, where Caddy (`web/Caddyfile`) serves https://testnet.puddlepool.com; needs no node access. Set the seed and pool addresses and the node labels (`--software`, `--about`: software and one-line role per node, no hosts) and the announced start (`--start-time`, UTC) in the unit at launch |
 
 ### 2.1 Pool settings that matter
 
@@ -109,7 +121,8 @@ independent; a second location is better.
 
 ### 3.1 Chain and activation score
 
-- **Fresh chain** (chosen; nobody is known to run testnet-10): launch DAA score = 0. Activation = **345,600** (about 4 days
+- **Fresh chain** (chosen; nobody is known to run testnet-10; started 2026-11-27 10:00 UTC, so ban start about 11-29
+  and activation about 12-01 10:00 UTC, **Inferred**): launch DAA score = 0. Activation = **345,600** (about 4 days
   at one block per second after the first difficulty window), ban start = activation - 2 x 86,400 = **172,800**.
   The first 2,641 blocks are mined at genesis difficulty and come within minutes; the clock starts after that.
 - **Existing chain:** activation = current virtual DAA score + 345,600 at release time.
@@ -134,6 +147,9 @@ Prepared 2026-11-24 for the fresh chain (steps 1 and the test part of 2 done on 
    until it has a recent block). Mine the first blocks to the faucet wallet:
    `sedra-testnet-miner --rpc grpc://127.0.0.1:22210 --address <faucet address> --threads 2`.
    Restart seed1 **without** `--enable-unsynced-mining` once the tip is recent.
+   *2026-11-27:* triggered by a one-time systemd timer on the operator host at 10:00:00 UTC, which runs a small
+   start script: seed1 with the flag, then the native miner as a unit that restarts together with seed1 (rehearsal R9:
+   the miner does not reconnect by itself). The same script removes the flag once the tip is recent.
 2. seed2 with `--addpeer=<seed1>` (not `--connect`: a node started with `--connect` accepts no inbound peers).
 3. old-go, Kaspa TN10 node, pool, monitor. Check the monitor's first rows.
 4. Announce: issue in #13 with the GUIDE link, the release, seed addresses, activation and ban-start scores; the Sedra
@@ -216,7 +232,8 @@ A reset is a decision for Nec (and the Sedra team, if they take part), announced
 
 ## What this does NOT mean
 
-- It does not launch the testnet by itself; the start date (2026-12-01) is agreed and announced (OVERVIEW.md D4).
+- It does not launch the testnet by itself; the start date (2026-12-01) is agreed and announced, and the chain starts
+  on 2026-11-27 so that merged mining is on by then (OVERVIEW.md D4).
 - The pass criteria are SIP-0003 §3 as the Sedra team accepted them on 2026-11-24 (Q51); criterion 9 (ZKas) is a
   proposed addition beyond them.
 - A passed testnet does not schedule mainnet activation.
