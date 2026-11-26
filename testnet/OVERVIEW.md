@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | **Not launched** (2026-11-26). Node release `0.2.0-testnet.1` published as a [pre-release](https://github.com/necatgit/sedra-rusty/releases/tag/sedra-v0.2.0-testnet.1) 2026-11-25, after a rehearsal on the real hosts the same day ([REHEARSAL.md](REHEARSAL.md)). The Sedra team agreed in writing on 2026-11-24 (Q51, D1); start Tue 2026-12-01, announced by the Sedra team on 2026-11-26 (confirmed on [#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)) (D4) |
+| Status | **Not launched** (2026-11-26). Node release `0.2.0-testnet.1` published as a [pre-release](https://github.com/necatgit/sedra-rusty/releases/tag/sedra-v0.2.0-testnet.1) 2026-11-25, after a rehearsal on the real hosts the same day ([REHEARSAL.md](REHEARSAL.md)). The Sedra team agreed in writing on 2026-11-24 (Q51, D1); chain start **Fri 2026-11-27 10:00 UTC**, so merged mining switches on about **Tue 2026-12-01**, the start day the Sedra team announced on 2026-11-26 (confirmed on [#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)) (D4) |
 | For | The Sedra team, node runners, miners, pool operators, exchanges and wallet users, and anyone who wants to understand the test before reading the details |
 | Details | [GUIDE.md](GUIDE.md) (participants), [RUNBOOK.md](RUNBOOK.md) (operator), [SIP-0003](../proposals/SIP-0003-public-testnet.md) (why and pass criteria), [SIP-0001](../proposals/SIP-0001-merged-mining.md) (the rules tested) |
 
@@ -11,8 +11,8 @@ Labels: **Verified** (checked, with evidence), **Inferred** (reasoned, could be 
 ## 1. In one paragraph
 
 The testnet is a separate Sedra network with worthless test coins. It runs the merged-mining rules of SIP-0001 in
-public before anyone decides anything about Sedra mainnet. It starts as a normal Sedra chain mined by CPUs ("native
-phase"). About two days in, a safety rule starts (the self-parent ban). About four days in, merged mining switches
+public before anyone decides anything about Sedra mainnet. It starts (2026-11-27) as a normal Sedra chain mined by CPUs ("native
+phase"). About two days in, a safety rule starts (the self-parent ban). About four days in (about 2026-12-01), merged mining switches
 on: from then on, Kaspa testnet-10 miners working through a merge-mining pool also produce Sedra testnet blocks.
 Native mining keeps working. The testnet then runs at least two more weeks, and ends with a dated public report
 against eight pass criteria. **Nothing in it touches Sedra mainnet.**
@@ -105,7 +105,7 @@ show it; the reaction is in RUNBOOK §6 (pause, report, reset if needed). Accept
 | D1 | Duration (at least two weeks after activation) and the eight pass criteria | Sedra team (Q51) | Conditional yes in an unapproved working draft (2026-11-23); **yes in writing 2026-11-24** (chat, Sedra owner): SIP-0003 as it stands, fresh chain (Q51) |
 | D2 | Which chain: fresh chain from the existing testnet genesis | Nec (Q47, Q52) | Decided: fresh chain. Q52 (does anyone run the old one) stays open as information |
 | D3 | Where the seeds, Go node, Kaspa node and pool run (one host, a rented second place, or a volunteer's seed) | Nec | **Decided 2026-11-24** ([HOSTING.md](HOSTING.md)): seed2 (and later a public mainnet node and the status page) on a rented netcup VPS 1000 G12.5 in the EU, outside the home network; seed1 (mining), the old Go node, the Kaspa testnet-10 node, the pool and the monitor at home. VPS delivered and hardened 2026-11-24; seed2 installed 2026-11-25; the home part runs on VM 204 and VM 206 ([REHEARSAL.md](REHEARSAL.md) §1) |
-| D4 | Start date | Nec, with the Sedra team | **Agreed: Tue 2026-12-01**; announced by the Sedra team 2026-11-26 and confirmed on [#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626) |
+| D4 | Start date | Nec, with the Sedra team | **Agreed: Tue 2026-12-01**; announced by the Sedra team 2026-11-26 and confirmed on [#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626). *Changed 2026-11-26 (Nec):* the chain starts from genesis on **Fri 2026-11-27 10:00 UTC** with the same release and the same heights, so merged mining activates about 2026-12-01 10:00 UTC, on the announced day. The Sedra owner agreed "if all audited and working fine"; what is verified and what is open: [RUNBOOK.md](RUNBOOK.md) §1 |
 | D5 | Activation and ban scores | design (RUNBOOK 3.1) | Decided: activation DAA 345,600, ban start 172,800, built into the release |
 | D6 | Publish the release (tag, signature, pre-release) | Nec, after D1 | **Done 2026-11-25**: tag pushed, pre-release published; the go steps are in [release/v0.2.0-testnet.1-go.md](../release/v0.2.0-testnet.1-go.md) |
 | D7 | Who announces, and the text | Sedra team (Q48), text from Nec | **Done 2026-11-26**: the Sedra team announced the start on its channels, with test network only, no mainnet date, no change to supply, and confirmed it on [#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626) |
@@ -116,7 +116,8 @@ show it; the reaction is in RUNBOOK §6 (pause, report, reset if needed). Accept
 
 ## 5. Step by step
 
-Dates follow from the agreed 2026-12-01 start; if D1 or D4 moves, every later date moves by the same amount.
+Dates follow from the chain start on 2026-11-27 10:00 UTC (D4; *changed 2026-11-26:* the plan until then was a
+12-01 start with activation about 12-05); if D1 or D4 moves, every later date moves by the same amount.
 "Day N" counts from the launch.
 
 ### Before launch
@@ -128,7 +129,7 @@ Dates follow from the agreed 2026-12-01 start; if D1 or D4 moves, every later da
 | 3. Rehearsal (run and passed 2026-11-25, moved forward from 11-30) | - | Start everything on the real hosts without announcing, stop, wipe | - |
 | 4. Readiness check | - | RUNBOOK §1: Kaspa testnet-10 up and unchanged, hosts reachable, release verified | Optional: download and verify the release (GUIDE §3) |
 
-### Launch day (Tue 2026-12-01)
+### Chain start (Fri 2026-11-27, 10:00 UTC)
 
 | Step | Who | What happens |
 |---|---|---|
@@ -137,15 +138,15 @@ Dates follow from the agreed 2026-12-01 start; if D1 or D4 moves, every later da
 | 7. Announce | Nec on #13 (the Sedra team announced the date on 2026-11-26) | The guide link, seed addresses, the release, the two scores (172,800 and 345,600) |
 | 8. Join | Participants | Run a node (GUIDE §4), create a testnet wallet (§5), mine with a CPU (§6), ask the faucet for coins (§5) |
 
-### Native phase (day 0 to about day 4)
+### Native phase (day 0 to about day 4: 2026-11-27 to about 12-01)
 
 | Step | What to watch |
 |---|---|
 | 9. Normal Sedra mining | Blocks at about one per second; the Go node follows the Rust nodes; wallets send and receive (criterion 6) |
-| 10. Ban start (DAA 172,800, about day 2) | From here, a Sedra block whose own coinbase carries an `SDM1` commitment is invalid on upgraded nodes. Nec tests it once just before and once just after (criterion 1) |
+| 10. Ban start (DAA 172,800, about day 2, about 11-29) | From here, a Sedra block whose own coinbase carries an `SDM1` commitment is invalid on upgraded nodes. Nec tests it once just before and once just after (criterion 1) |
 | 11. Prepare merged mining | Kaspa miners set up: Kaspa testnet-10 address, Sedra testnet address, pool login (GUIDE §7) |
 
-### Activation (DAA 345,600, about day 4)
+### Activation (DAA 345,600, about day 4: about 2026-12-01 10:00 UTC)
 
 | Step | What to watch |
 |---|---|
@@ -158,11 +159,11 @@ Dates follow from the agreed 2026-12-01 start; if D1 or D4 moves, every later da
 | Step | What happens |
 |---|---|
 | 15. Daily | Nec posts the numbers on #13: blocks native and merged, nodes up, agreement, alerts. Bad news is posted like good news |
-| 16. Fresh node (from about day 7) | After the first pruning point above the activation, a new node syncs from scratch, including merged-mined headers (criterion 4) |
+| 16. Fresh node (from about day 7, about 12-03) | After the first pruning point above the activation, a new node syncs from scratch, including merged-mined headers (criterion 4) |
 | 17. Payouts | The pool pays both coins to at least two test miners with different addresses (criterion 5) |
 | 18. Problems | Anyone reports through the "Testnet report" issue template. A consensus failure pauses the test; the fix is re-tested and the two-week clock restarts |
 
-### End (earliest about day 18, report about 12-21, **Inferred** from the block rate)
+### End (earliest about day 18 = about 12-15, report about 12-17, **Inferred** from the block rate)
 
 | Step | Who | What |
 |---|---|---|
@@ -187,7 +188,8 @@ Dates follow from the agreed 2026-12-01 start; if D1 or D4 moves, every later da
 ## What this does NOT mean
 
 - It does not launch the testnet. (*Corrected 2026-11-26:* this line said the dates are a proposal; the start
-  2026-12-01 is agreed and announced. Later dates are estimates from the block rate.)
+  2026-12-01 is agreed and announced. Later dates are estimates from the block rate. *Updated 2026-11-26 evening:*
+  the chain itself starts 2026-11-27 so that merged mining is on by the announced 2026-12-01, D4.)
 - The Sedra team's 2026-11-23 reply is an unapproved working draft; the agreement counted is the yes of 2026-11-24 (D1).
 - A passed testnet does not schedule merged mining on mainnet.
 - Values marked Inferred (block counts, timings, how merged miners change the difficulty) are predictions, not results.

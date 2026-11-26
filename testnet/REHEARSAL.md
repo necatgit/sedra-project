@@ -219,4 +219,4 @@ keys in `/data/testnet/faucet/`, password in the secrets file).
 - The rehearsal is not the launch, and nothing from it is announced.
 - A passed rehearsal shows the hosts and the setup work; it is not a pass of any SIP-0003 criterion.
 - seed2 running now does not mean the testnet runs: after the rehearsal it is back at genesis until the launch on
-  2026-12-01.
+  2026-12-01 (*updated 2026-11-26:* the chain starts 2026-11-27 10:00 UTC, OVERVIEW.md D4).

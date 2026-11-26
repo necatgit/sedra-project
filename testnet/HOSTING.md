@@ -6,7 +6,7 @@
 | Decision | D3 in [OVERVIEW.md](OVERVIEW.md) section 4 |
 | Why it matters | [SIP-0003](../proposals/SIP-0003-public-testnet.md) §6: all of this project's machines share one physical host and one home network, so two seeds there are not independent. A second, independent place is needed for an honest pass report |
 | Budget | About USD 100-200 for a year, prepaid is fine (Nec's own money; nothing comes from the Sedra project) |
-| Plan | Testnet from about 2026-12-01 to the report about 12-21, wind-down a week later; then the rented machine becomes this project's main public **mainnet** Sedra node and seed peer for the rest of the year (Nec's decision of 2026-11-26; [SIP-0002](../proposals/SIP-0002-network-resilience.md), network resilience) |
+| Plan | Testnet from 2026-11-27 (chain start; merged mining about 12-01) to the report about 12-17 (*updated 2026-11-26:* was 12-01 to 12-21), wind-down a week later; then the rented machine becomes this project's main public **mainnet** Sedra node and seed peer for the rest of the year (Nec's decision of 2026-11-26; [SIP-0002](../proposals/SIP-0002-network-resilience.md), network resilience) |
 
 Labels: **Verified** (checked, with source and date), **Inferred** (reasoned, could be wrong), **Unknown**.
 All prices were read on the providers' own pages on **2026-11-24** unless marked otherwise. Prices, stock and terms

@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | **Approved by Nec 2026-11-20** and implemented (sedra-rusty `testnet-kit`, `582be8a5`); dry run done the same day (section 5). Not launched yet (2026-11-26). Start **Tue 2026-12-01**, announced by the Sedra team on 2026-11-26 ([#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)); the Sedra team agreed in writing on 2026-11-24 to SIP-0003 as it stands (Q51), and the fresh chain makes Q52 no longer a condition ([OVERVIEW.md](OVERVIEW.md) D4). |
+| Status | **Approved by Nec 2026-11-20** and implemented (sedra-rusty `testnet-kit`, `582be8a5`); dry run done the same day (section 5). Not launched yet (2026-11-26). Chain start **Fri 2026-11-27 10:00 UTC** from genesis, so merged mining switches on about **Tue 2026-12-01**, the start day the Sedra team announced on 2026-11-26 ([#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)); the earlier chain start (same release, same heights) was decided by Nec on 2026-11-26 ([OVERVIEW.md](OVERVIEW.md) D4); the Sedra team agreed in writing on 2026-11-24 to SIP-0003 as it stands (Q51), and the fresh chain makes Q52 no longer a condition ([OVERVIEW.md](OVERVIEW.md) D4). |
 | Issue | #13 |
 | Process | [SIP-0003](../proposals/SIP-0003-public-testnet.md) (the testnet), [SIP-0001](../proposals/SIP-0001-merged-mining.md) (the rules tested) |
 | Code base | sedra-rusty `m10-auxpow` @ `ac98145` (merged mining, e2e harness in `contrib/e2e-merged-mining/`) |
@@ -72,6 +72,8 @@ proof (M10 step 5b).
   So: days 0-2 native only, Go nodes join; day 2 ban starts; day 4 activation; first pruning point after activation
   about 2.15 days later (pruning depth 185,798), so criterion 4 can be tested from about day 7; earliest end day 18
   (two weeks after activation, Q51). **Inferred** from the parameters; real block rate depends on hashrate.
+  *Update 2026-11-26:* chain start 2026-11-27 10:00 UTC: ban start about 11-29, activation about 12-01, criterion 4
+  from about 12-03, earliest end about 12-15, report about 12-17 (OVERVIEW.md D4).
 
 ### 3.3 Infrastructure (G4, G8; Q49)
 
@@ -144,7 +146,7 @@ proposed criterion 9 in SIP-0003 and section 9 of the pass-report template. Noth
 ## What this does NOT mean
 
 - It does not launch a testnet. (*Corrected 2026-11-26:* this line said the launch waits for Q51 and Q52; the Sedra
-  team agreed on 2026-11-24 and the start is 2026-12-01, OVERVIEW.md D4.)
+  team agreed on 2026-11-24 and the start is 2026-12-01, OVERVIEW.md D4; the chain itself starts 2026-11-27.)
 - It does not change SIP-0003's decisions (Q46-Q50); it implements them.
 - Kaspa TN10 being up on 2026-11-20 does not mean it will stay up or keep its format during the test.
 - Testnet coins have no value.
