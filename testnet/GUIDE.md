@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | **Not launched.** This guide is prepared in advance (2026-11-20; node release `0.2.0-testnet.1` published as a pre-release 2026-11-25). The launch waited for the Sedra team's agreement on the testnet's duration and pass criteria (Q51) and on which test chain to use (Q52). *Update 2026-11-25:* the Sedra team agreed in writing on 2026-11-24 (Q51, SIP-0003 as it stands); the fresh chain means Q52 no longer holds up the launch. Proposed start 2026-12-01, not announced yet ([OVERVIEW.md](OVERVIEW.md) D4). Values marked `<at launch>` are filled in then |
+| Status | **Not launched.** This guide is prepared in advance (2026-11-20; node release `0.2.0-testnet.1` published as a pre-release 2026-11-25). The launch waited for the Sedra team's agreement on the testnet's duration and pass criteria (Q51) and on which test chain to use (Q52). *Update 2026-11-25:* the Sedra team agreed in writing on 2026-11-24 (Q51, SIP-0003 as it stands); the fresh chain means Q52 no longer holds up the launch. Start Tue 2026-12-01, announced by the Sedra team on 2026-11-26 (confirmed on [#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)) ([OVERVIEW.md](OVERVIEW.md) D4). Values marked `<at launch>` are filled in then |
 | Process | [SIP-0003](../proposals/SIP-0003-public-testnet.md): what the testnet must show. [SIP-0001](../proposals/SIP-0001-merged-mining.md): the merged-mining rules being tested |
 | Questions, problems | GitHub issue in this repository, template "Testnet report" (section 8) |
 

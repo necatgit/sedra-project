@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | Prepared 2026-11-20, **not launched**. Launch only after the Sedra team agrees on Q51 (duration, pass criteria) and Q52 (which chain); see section 1. *Update 2026-11-25:* the Sedra team agreed in writing on 2026-11-24 (Q51, SIP-0003 as it stands); the fresh chain means Q52 no longer holds up the launch. Proposed start 2026-12-01, not announced yet ([OVERVIEW.md](OVERVIEW.md) D4). |
+| Status | Prepared 2026-11-20, **not launched**. Launch only after the Sedra team agrees on Q51 (duration, pass criteria) and Q52 (which chain); see section 1. *Update 2026-11-25:* the Sedra team agreed in writing on 2026-11-24 (Q51, SIP-0003 as it stands); the fresh chain means Q52 no longer holds up the launch. Start Tue 2026-12-01, announced by the Sedra team on 2026-11-26 (confirmed on [#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)) ([OVERVIEW.md](OVERVIEW.md) D4). |
 | Operator | Nec |
 | Process | [SIP-0003](../proposals/SIP-0003-public-testnet.md); design and gaps in [DESIGN.md](DESIGN.md); participant side in [GUIDE.md](GUIDE.md) |
 | Kit | sedra-rusty branch `testnet-kit`, directory `contrib/testnet/` (tools, units, pool config, dry-run scripts) |

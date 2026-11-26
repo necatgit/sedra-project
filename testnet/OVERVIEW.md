@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | **Not launched** (2026-11-25). Node release `0.2.0-testnet.1` published as a [pre-release](https://github.com/necatgit/sedra-rusty/releases/tag/sedra-v0.2.0-testnet.1) 2026-11-25, after a rehearsal on the real hosts the same day ([REHEARSAL.md](REHEARSAL.md)). The Sedra team agreed in writing on 2026-11-24 (Q51, D1); proposed start Tue 2026-12-01, not announced yet (D4) |
+| Status | **Not launched** (2026-11-26). Node release `0.2.0-testnet.1` published as a [pre-release](https://github.com/necatgit/sedra-rusty/releases/tag/sedra-v0.2.0-testnet.1) 2026-11-25, after a rehearsal on the real hosts the same day ([REHEARSAL.md](REHEARSAL.md)). The Sedra team agreed in writing on 2026-11-24 (Q51, D1); start Tue 2026-12-01, announced by the Sedra team on 2026-11-26 (confirmed on [#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)) (D4) |
 | For | The Sedra team, node runners, miners, pool operators, exchanges and wallet users, and anyone who wants to understand the test before reading the details |
 | Details | [GUIDE.md](GUIDE.md) (participants), [RUNBOOK.md](RUNBOOK.md) (operator), [SIP-0003](../proposals/SIP-0003-public-testnet.md) (why and pass criteria), [SIP-0001](../proposals/SIP-0001-merged-mining.md) (the rules tested) |
 
@@ -104,7 +104,7 @@ show it; the reaction is in RUNBOOK §6 (pause, report, reset if needed). Accept
 | D1 | Duration (at least two weeks after activation) and the eight pass criteria | Sedra team (Q51) | Conditional yes in an unapproved working draft (2026-11-23); **yes in writing 2026-11-24** (chat, Sedra owner): SIP-0003 as it stands, fresh chain (Q51) |
 | D2 | Which chain: fresh chain from the existing testnet genesis | Nec (Q47, Q52) | Decided: fresh chain. Q52 (does anyone run the old one) stays open as information |
 | D3 | Where the seeds, Go node, Kaspa node and pool run (one host, a rented second place, or a volunteer's seed) | Nec | **Decided 2026-11-24** ([HOSTING.md](HOSTING.md)): seed2 (and later a public mainnet node and the status page) on a rented netcup VPS 1000 G12.5 in the EU, outside the home network; seed1 (mining), the old Go node, the Kaspa testnet-10 node, the pool and the monitor at home. VPS delivered and hardened 2026-11-24; seed2 installed 2026-11-25; the home part runs on VM 204 and VM 206 ([REHEARSAL.md](REHEARSAL.md) §1) |
-| D4 | Start date | Nec, with the Sedra team | Proposed Tue 2026-12-01; not agreed, not announced |
+| D4 | Start date | Nec, with the Sedra team | **Agreed: Tue 2026-12-01**; announced by the Sedra team 2026-11-26 and confirmed on [#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626) |
 | D5 | Activation and ban scores | design (RUNBOOK 3.1) | Decided: activation DAA 345,600, ban start 172,800, built into the release |
 | D6 | Publish the release (tag, signature, pre-release) | Nec, after D1 | **Done 2026-11-25**: tag pushed, pre-release published; the go steps are in [release/v0.2.0-testnet.1-go.md](../release/v0.2.0-testnet.1-go.md) |
 | D7 | Who announces, and the text | Sedra team (Q48), text from Nec | Waiting; the announcement must say: test network only, no mainnet date, no change to supply |
@@ -115,7 +115,7 @@ show it; the reaction is in RUNBOOK §6 (pause, report, reset if needed). Accept
 
 ## 5. Step by step
 
-Dates are the proposal for a 2026-12-01 start; if D1 or D4 moves, every later date moves by the same amount.
+Dates follow from the agreed 2026-12-01 start; if D1 or D4 moves, every later date moves by the same amount.
 "Day N" counts from the launch.
 
 ### Before launch
