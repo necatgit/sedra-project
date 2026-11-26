@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | **Approved by Nec 2026-11-20** and implemented (sedra-rusty `testnet-kit`, `582be8a5`); dry run done the same day (section 5). Nothing launched; the launch waited for the Sedra team's agreement on Q51 and Q52. *Update 2026-11-25:* the Sedra team agreed in writing on 2026-11-24 (Q51, SIP-0003 as it stands); the fresh chain means Q52 no longer holds up the launch. Start Tue 2026-12-01, announced by the Sedra team on 2026-11-26 (confirmed on [#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)) ([OVERVIEW.md](OVERVIEW.md) D4). |
+| Status | **Approved by Nec 2026-11-20** and implemented (sedra-rusty `testnet-kit`, `582be8a5`); dry run done the same day (section 5). Not launched yet (2026-11-26). Start **Tue 2026-12-01**, announced by the Sedra team on 2026-11-26 ([#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)); the Sedra team agreed in writing on 2026-11-24 to SIP-0003 as it stands (Q51), and the fresh chain makes Q52 no longer a condition ([OVERVIEW.md](OVERVIEW.md) D4). |
 | Issue | #13 |
 | Process | [SIP-0003](../proposals/SIP-0003-public-testnet.md) (the testnet), [SIP-0001](../proposals/SIP-0001-merged-mining.md) (the rules tested) |
 | Code base | sedra-rusty `m10-auxpow` @ `ac98145` (merged mining, e2e harness in `contrib/e2e-merged-mining/`) |
@@ -61,12 +61,13 @@ proof (M10 step 5b).
 - **TN10 parent vectors:** a test like `sedra_auxpow_parent_test` on about 20 consecutive real Kaspa TN10 blocks
   (headers from a TN10 node's `getBlock`, coinbases from api-tn10.kaspa.org).
 - Version `0.2.0-testnet.N`, built reproducibly and signed like v0.1.x (`docs/RELEASE.md`). Cut only after the
-  Sedra team agrees (Q51/Q52).
+  Sedra team agrees (Q51/Q52). *Update 2026-11-26:* cut after the team's yes of 2026-11-24 and published as
+  [`sedra-v0.2.0-testnet.1`](https://github.com/necatgit/sedra-rusty/releases/tag/sedra-v0.2.0-testnet.1) (pre-release, 2026-11-25).
 
 ### 3.2 Chain and timing (G5, Q48)
 
 - `sedra-testnet-10` from genesis, unless Q52 shows a live chain worth joining (then the activation score is set
-  relative to that chain's DAA score at release time).
+  relative to that chain's DAA score at release time). *Update 2026-11-26:* fresh chain from genesis (RUNBOOK §3.1).
 - Activation = launch DAA + 345,600 (about 4 days at 1 block/s). Ban start = activation - 172,800 (about day 2).
   So: days 0-2 native only, Go nodes join; day 2 ban starts; day 4 activation; first pruning point after activation
   about 2.15 days later (pruning depth 185,798), so criterion 4 can be tested from about day 7; earliest end day 18
@@ -105,7 +106,8 @@ criterion, each with its measurement and evidence slot), and an issue template f
 1. The design as proposed: hard-coded score in the testnet release plus the override flag, branch `testnet-kit` from
    `m10-auxpow` with v0.1.1 merged in. Merged from `dev` (which holds the v0.1.1 release content under the Git Flow
    rules of sedra-rusty; `main` differs from `dev` only in two documentation lines).
-2. Where the infrastructure runs stays open in the runbook and is chosen at launch.
+2. Where the infrastructure runs stays open in the runbook and is chosen at launch (*decided 2026-11-24*,
+   [HOSTING.md](HOSTING.md)).
 3. Private dry run on sedra-dev: yes, loopback only, own ports and data directory, `MemoryMax`, with a local Kaspa
    chain instead of a synced TN10 node.
 
@@ -127,6 +129,8 @@ criterion, each with its measurement and evidence slot), and an issue template f
   on a private chain 2026-11-20, [evidence](../research/archive/2026-11-20-0013-kas-tn10-payout-check.md)).
 - Still open: a Kaspa TN10 node's disk and memory
   need (**Unknown**); pruning proof with merged-mined headers on a public chain; where the infrastructure runs.
+  *Update 2026-11-26:* hosts decided 2026-11-24 ([HOSTING.md](HOSTING.md)); the TN10 node measured during its sync
+  2026-11-25 (66 GB disk, RSS 5.5-6.4 GB, [REHEARSAL.md](REHEARSAL.md) 2.6). The pruning proof stays open (criterion 4).
 
 ## 6. Addition 2026-11-25: ZKas in the same coinbase (D11)
 
@@ -139,7 +143,8 @@ proposed criterion 9 in SIP-0003 and section 9 of the pass-report template. Noth
 
 ## What this does NOT mean
 
-- It does not launch a testnet or set a date. The launch waits for the Sedra team's agreement on Q51 and Q52.
+- It does not launch a testnet. (*Corrected 2026-11-26:* this line said the launch waits for Q51 and Q52; the Sedra
+  team agreed on 2026-11-24 and the start is 2026-12-01, OVERVIEW.md D4.)
 - It does not change SIP-0003's decisions (Q46-Q50); it implements them.
 - Kaspa TN10 being up on 2026-11-20 does not mean it will stay up or keep its format during the test.
 - Testnet coins have no value.

@@ -162,7 +162,7 @@ Not used for any of it: the public mainnet Rust node itself (VM 204 only hosts t
   Kaspa testnet-10 accepted the 82 blocks, which it would not with a payload over its limit (**Inferred**); the
   tag count is read from a block at the rehearsal (R11). These blocks and the ZKas test chain are wiped in R10.
 
-## 3. The rehearsal (11-30)
+## 3. The rehearsal (planned for 11-30, run 2026-11-25)
 
 | # | Step | Pass when |
 |---|---|---|
@@ -218,4 +218,5 @@ keys in `/data/testnet/faucet/`, password in the secrets file).
 
 - The rehearsal is not the launch, and nothing from it is announced.
 - A passed rehearsal shows the hosts and the setup work; it is not a pass of any SIP-0003 criterion.
-- seed2 running now does not mean the testnet runs: it is a single node at genesis until the rehearsal.
+- seed2 running now does not mean the testnet runs: after the rehearsal it is back at genesis until the launch on
+  2026-12-01.

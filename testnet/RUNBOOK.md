@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | Prepared 2026-11-20, **not launched**. Launch only after the Sedra team agrees on Q51 (duration, pass criteria) and Q52 (which chain); see section 1. *Update 2026-11-25:* the Sedra team agreed in writing on 2026-11-24 (Q51, SIP-0003 as it stands); the fresh chain means Q52 no longer holds up the launch. Start Tue 2026-12-01, announced by the Sedra team on 2026-11-26 (confirmed on [#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)) ([OVERVIEW.md](OVERVIEW.md) D4). |
+| Status | Prepared 2026-11-20, **not launched yet** (2026-11-26). Start **Tue 2026-12-01**, announced by the Sedra team on 2026-11-26 ([#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)); the Sedra team agreed in writing on 2026-11-24 to SIP-0003 as it stands (Q51), and the fresh chain makes Q52 no longer a condition ([OVERVIEW.md](OVERVIEW.md) D4); go/no-go state in section 1. Rehearsal on the real hosts passed 2026-11-25 ([REHEARSAL.md](REHEARSAL.md)) |
 | Operator | Nec |
 | Process | [SIP-0003](../proposals/SIP-0003-public-testnet.md); design and gaps in [DESIGN.md](DESIGN.md); participant side in [GUIDE.md](GUIDE.md) |
 | Kit | sedra-rusty branch `testnet-kit`, directory `contrib/testnet/` (tools, units, pool config, dry-run scripts) |
@@ -24,6 +24,11 @@ never a peer; the testnet pool never shares a host role, database or wallet with
 
 If any check fails: no launch. Record why in #13.
 
+*State 2026-11-26:* Q51 agreed in writing 2026-11-24; Q52 no longer a condition (fresh chain, 3.1); live Go/Rust
+parity shown in the rehearsal of 2026-11-25 (R4: old-go followed the Rust-mined chain), to be repeated on the public
+chain (criterion 3); hosts running and rehearsed ([REHEARSAL.md](REHEARSAL.md)); announcement posted by the Sedra
+team 2026-11-26 ([#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)); the Kaspa testnet-10 check is repeated on launch day.
+
 ## 2. Infrastructure
 
 Where it runs: decided 2026-11-24 ([HOSTING.md](HOSTING.md)): seed2 on a rented netcup VPS in the EU, everything else at home. SIP-0003 §6: two seed nodes on one physical host are not
@@ -34,7 +39,7 @@ independent; a second location is better.
 | seed1 | testnet release, `systemd/sedra-testnet-node.service` | P2P 22211 open to the internet, gRPC 22210 localhost | `--externalip` set; `MemoryMax=6G` |
 | seed2 | same, second host or location | same | |
 | old-go | unmodified Go sedrad v2.0.0, `systemd/sedrad-go-testnet.service` | P2P 22231, RPC 22230 localhost | never upgraded during the test |
-| Kaspa TN10 node | upstream rusty-kaspa, the version Kaspa runs on testnet-10 (2.1.0 on 2026-11-19), `--testnet --netsuffix=10 --utxoindex` | its defaults (16210/16211) | disk and memory need **Unknown**: measure during sync before launch |
+| Kaspa TN10 node | upstream rusty-kaspa, the version Kaspa runs on testnet-10 (2.1.0 on 2026-11-19), `--testnet --netsuffix=10 --utxoindex` | its defaults (16210/16211) | measured during the sync 2026-11-25: 66 GB disk used, RSS 5.5-6.4 GB ([REHEARSAL.md](REHEARSAL.md) 2.6) |
 | testnet pool | Miningcore branch `sedra-merged-mining`, `pool/miningcore-testnet.json` | stratum 15555 public, API localhost | own Postgres database; `genesisHash` set for both aux chains (see 2.1) |
 | private ZKas test node (D11, since 2026-11-25) | zkasd built from zkas-rusty `zkas-v1.0.14-1-g312c6fb7`, `--testnet --netsuffix=10`, no DNS seeding, no outside peers | gRPC localhost/LAN only | a ZKas test chain for the pool only; never connected to a public ZKas network |
 | wallets | Go sedrawallet v2.0.0 `--testnet` (pool and faucet, separate keys files), Kaspa TN10 wallet for the pool | localhost only | testnet keys only; never a key that exists on mainnet |
@@ -104,7 +109,7 @@ independent; a second location is better.
 
 ### 3.1 Chain and activation score
 
-- **Fresh chain** (if Q52 shows nobody runs testnet-10): launch DAA score = 0. Activation = **345,600** (about 4 days
+- **Fresh chain** (chosen; nobody is known to run testnet-10): launch DAA score = 0. Activation = **345,600** (about 4 days
   at one block per second after the first difficulty window), ban start = activation - 2 x 86,400 = **172,800**.
   The first 2,641 blocks are mined at genesis difficulty and come within minutes; the clock starts after that.
 - **Existing chain:** activation = current virtual DAA score + 345,600 at release time.
@@ -211,7 +216,8 @@ A reset is a decision for Nec (and the Sedra team, if they take part), announced
 
 ## What this does NOT mean
 
-- It does not launch the testnet or set a date.
-- The pass criteria are SIP-0003's proposal; the Sedra team may change them (Q51) and their version wins.
+- It does not launch the testnet by itself; the start date (2026-12-01) is agreed and announced (OVERVIEW.md D4).
+- The pass criteria are SIP-0003 §3 as the Sedra team accepted them on 2026-11-24 (Q51); criterion 9 (ZKas) is a
+  proposed addition beyond them.
 - A passed testnet does not schedule mainnet activation.
 - Values marked Inferred (timings, predicted old-node behaviour) are predictions to be checked, not results.

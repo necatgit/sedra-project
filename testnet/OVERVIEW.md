@@ -54,7 +54,8 @@ blocks, as on mainnet).
    Since 2026-11-25 (`f924387`) it also shows the private ZKas test chain (D11) and proposed criterion 9: the monitor
    reads zkasd directly and pairs Sedra and ZKas blocks from one Kaspa parent by their nonce (on both chains a
    merged-mined block's nonce is the first 8 bytes of its parent's hash). Native/merged classification of ZKas blocks
-   is **not yet checked** on real blocks (none exist yet).
+   is **not yet checked** on real blocks (none exist yet). *Update 2026-11-26:* the merged direction was seen in the
+   rehearsal of 2026-11-25; the native direction is untested, as no native ZKas miner exists ([REHEARSAL.md](REHEARSAL.md) 2.8).
    It is not a full explorer: no transactions or addresses.
 
 **Do we need miners?** Yes, of two kinds.
@@ -89,17 +90,17 @@ show it; the reaction is in RUNBOOK §6 (pause, report, reset if needed). Accept
 | Seed node 1 (also mines the first blocks) | the chain to exist | Nec | at home on VM 204 (D3, [REHEARSAL.md](REHEARSAL.md) §1); rehearsed 2026-11-25, wiped to genesis |
 | Seed node 2 | a second place to connect | Nec (volunteers welcome as extra seeds) | rented VPS (netcup, EU), hardened 2026-11-24, node installed 2026-11-25 ([HOSTING.md](HOSTING.md), [REHEARSAL.md](REHEARSAL.md)) |
 | Unchanged Go node | criterion 3 | Nec | at home on VM 204; rehearsed 2026-11-25 |
-| Kaspa testnet-10 node | the pool | Nec | at home on SSD, VM 206 (D3); synced 2026-11-25; too big for a cheap VPS (Kaspa guidance: 8 cores, 16 GB RAM, 640 GB SSD), so at home on SSD; real testnet-10 need **Unknown** ([HOSTING.md](HOSTING.md) 1.2) |
-| Testnet pool (Miningcore) + database + wallets | merged mining, payouts (criteria 2, 5, proposed 9) | Nec | config ready; Kaspa testnet payout path checked on a private chain; ZKas aux entry added 2026-11-25 (D11) |
+| Kaspa testnet-10 node | the pool | Nec | at home on SSD, VM 206 (D3); synced 2026-11-25; too big for a cheap VPS (Kaspa guidance: 8 cores, 16 GB RAM, 640 GB SSD), so at home on SSD; measured during the sync 2026-11-25: 66 GB disk, RSS 5.5-6.4 GB ([REHEARSAL.md](REHEARSAL.md) 2.6) |
+| Testnet pool (Miningcore) + database + wallets | merged mining, payouts (criteria 2, 5, proposed 9) | Nec | running on VM 204 since 2026-11-25 with the ZKas aux entry (D11); rehearsed 2026-11-25 (R7, R11), wiped; one Kaspa testnet payout shown 2026-11-25 ([REHEARSAL.md](REHEARSAL.md) 2.8) |
 | Private ZKas test node (pool only) | criterion 9 (proposed) | Nec | VM 206, next to the Kaspa node; running since 2026-11-25 |
-| Monitor + daily summary | evidence for criteria 1, 2, 3, 8 | Nec | ready (dry run) |
-| Faucet (test coins on request) | people without miners | Nec, by hand from GitHub issues | ready (dry run) |
+| Monitor + daily summary | evidence for criteria 1, 2, 3, 8 | Nec | running on VM 204 since 2026-11-25; rehearsed |
+| Faucet (test coins on request) | people without miners | Nec, by hand from GitHub issues | wallet on VM 204; rehearsed 2026-11-25 (R6) |
 | Public status page | anyone checking blocks | Nec | https://testnet.puddlepool.com: Caddy with HTTPS on the VPS since 2026-11-25; page built on VM 204 and uploaded every minute |
-| Announcement | people knowing it exists | the Sedra team, if they agree (Q48) | waiting |
+| Announcement | people knowing it exists | the Sedra team (Q48) | **Posted 2026-11-26** on the Sedra channels, confirmed on [#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626) |
 
 ## 4. Decision points
 
-| # | Decision | Who decides | Status (2026-11-25) |
+| # | Decision | Who decides | Status (2026-11-26) |
 |---|---|---|---|
 | D1 | Duration (at least two weeks after activation) and the eight pass criteria | Sedra team (Q51) | Conditional yes in an unapproved working draft (2026-11-23); **yes in writing 2026-11-24** (chat, Sedra owner): SIP-0003 as it stands, fresh chain (Q51) |
 | D2 | Which chain: fresh chain from the existing testnet genesis | Nec (Q47, Q52) | Decided: fresh chain. Q52 (does anyone run the old one) stays open as information |
@@ -107,7 +108,7 @@ show it; the reaction is in RUNBOOK §6 (pause, report, reset if needed). Accept
 | D4 | Start date | Nec, with the Sedra team | **Agreed: Tue 2026-12-01**; announced by the Sedra team 2026-11-26 and confirmed on [#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626) |
 | D5 | Activation and ban scores | design (RUNBOOK 3.1) | Decided: activation DAA 345,600, ban start 172,800, built into the release |
 | D6 | Publish the release (tag, signature, pre-release) | Nec, after D1 | **Done 2026-11-25**: tag pushed, pre-release published; the go steps are in [release/v0.2.0-testnet.1-go.md](../release/v0.2.0-testnet.1-go.md) |
-| D7 | Who announces, and the text | Sedra team (Q48), text from Nec | Waiting; the announcement must say: test network only, no mainnet date, no change to supply |
+| D7 | Who announces, and the text | Sedra team (Q48), text from Nec | **Done 2026-11-26**: the Sedra team announced the start on its channels, with test network only, no mainnet date, no change to supply, and confirmed it on [#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626) |
 | D8 | Public status page or explorer (promised in SIP-0003 §4.4) | Nec | Decided 2026-11-24: a status page from the monitor's data (built), served at https://testnet.puddlepool.com (2026-11-25); a full explorer is not planned |
 | D9 | Pause, fix, reset during the test | Nec, and the Sedra team if they take part | Rules set in RUNBOOK §6: a consensus failure pauses the test, the fix is re-tested, the two-week clock restarts (also the Sedra team's condition in its 2026-11-23 draft) |
 | D10 | Pass or fail, and what follows | the report, then the Sedra team and Nec together | After the test. A mainnet date is only discussed after a passed report |
@@ -122,18 +123,18 @@ Dates follow from the agreed 2026-12-01 start; if D1 or D4 moves, every later da
 
 | Step | Sedra team | Nec (operator) | Participants |
 |---|---|---|---|
-| 1. Agreement | Approve the duration and the criteria (D1), say whether you announce (D7) | Choose the hosts (D3) | - |
-| 2. Release | - | Sign and publish `0.2.0-testnet.1` (D6) | - |
+| 1. Agreement (done: D1 and D3 2026-11-24, D7 2026-11-26) | Approve the duration and the criteria (D1), say whether you announce (D7) | Choose the hosts (D3) | - |
+| 2. Release (done 2026-11-25) | - | Sign and publish `0.2.0-testnet.1` (D6) | - |
 | 3. Rehearsal (run and passed 2026-11-25, moved forward from 11-30) | - | Start everything on the real hosts without announcing, stop, wipe | - |
 | 4. Readiness check | - | RUNBOOK §1: Kaspa testnet-10 up and unchanged, hosts reachable, release verified | Optional: download and verify the release (GUIDE §3) |
 
-### Launch day (proposed 12-01)
+### Launch day (Tue 2026-12-01)
 
 | Step | Who | What happens |
 |---|---|---|
 | 5. First blocks | Nec | Seed 1 starts and mines the first blocks to the faucet wallet. The 2,641 low-difficulty blocks come within minutes, then the chain settles at about one block per second |
 | 6. Network up | Nec | Seed 2, the Go node, the Kaspa node, the pool and the monitor start; the monitor shows all nodes on the same chain |
-| 7. Announce | Sedra team (if agreed), Nec on #13 | The guide link, seed addresses, the release, the two scores (172,800 and 345,600) |
+| 7. Announce | Nec on #13 (the Sedra team announced the date on 2026-11-26) | The guide link, seed addresses, the release, the two scores (172,800 and 345,600) |
 | 8. Join | Participants | Run a node (GUIDE §4), create a testnet wallet (§5), mine with a CPU (§6), ask the faucet for coins (§5) |
 
 ### Native phase (day 0 to about day 4)
@@ -161,7 +162,7 @@ Dates follow from the agreed 2026-12-01 start; if D1 or D4 moves, every later da
 | 17. Payouts | The pool pays both coins to at least two test miners with different addresses (criterion 5) |
 | 18. Problems | Anyone reports through the "Testnet report" issue template. A consensus failure pauses the test; the fix is re-tested and the two-week clock restarts |
 
-### End (earliest about day 18, proposed report about 12-21)
+### End (earliest about day 18, report about 12-21, **Inferred** from the block rate)
 
 | Step | Who | What |
 |---|---|---|
@@ -171,7 +172,7 @@ Dates follow from the agreed 2026-12-01 start; if D1 or D4 moves, every later da
 
 ## 6. What each group should know
 
-- **Sedra team:** your part is D1, D7 and, if you like, running a node or a seed. Report anything you see on #13;
+- **Sedra team:** your parts D1 and D7 are done (2026-11-24, 2026-11-26); if you like, run a node or a seed. Report anything you see on #13;
   a consensus failure pauses the test until it is fixed and re-tested (your condition in the 2026-11-23 working
   draft, and RUNBOOK §6).
 - **Node runners:** use only the testnet release, always with `--testnet`. It refuses to start without it, so it
@@ -185,8 +186,9 @@ Dates follow from the agreed 2026-12-01 start; if D1 or D4 moves, every later da
 
 ## What this does NOT mean
 
-- It does not launch the testnet or fix a date; the dates above are a proposal.
-- The Sedra team's 2026-11-23 reply is an unapproved working draft; it is not counted as agreement.
+- It does not launch the testnet. (*Corrected 2026-11-26:* this line said the dates are a proposal; the start
+  2026-12-01 is agreed and announced. Later dates are estimates from the block rate.)
+- The Sedra team's 2026-11-23 reply is an unapproved working draft; the agreement counted is the yes of 2026-11-24 (D1).
 - A passed testnet does not schedule merged mining on mainnet.
 - Values marked Inferred (block counts, timings, how merged miners change the difficulty) are predictions, not results.
 - Testnet coins have no value, now or later. There is no reward, airdrop or allocation for taking part.

@@ -102,7 +102,7 @@ the security fixes from later Kaspa releases (#29) and passed a seven-day run ne
   chain, so Q52 no longer holds up the launch. Start Tue 2026-12-01, announced by the Sedra team on 2026-11-26 (confirmed on [#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)). The testnet node release `0.2.0-testnet.1` was
   **published as a pre-release on 2026-11-25** ([sedra-v0.2.0-testnet.1](https://github.com/necatgit/sedra-rusty/releases/tag/sedra-v0.2.0-testnet.1): signed tag, tested and rebuilt
   identically on two machines, [checklist](release/v0.2.0-testnet.1-checklist.md)) after a rehearsal on the real hosts
-  ([testnet/REHEARSAL.md](testnet/REHEARSAL.md)). The launch date is announced separately. Latest summary: [updates/2026-11-25-testnet-release.md](updates/2026-11-25-testnet-release.md).
+  ([testnet/REHEARSAL.md](testnet/REHEARSAL.md)). Latest summary: [updates/2026-11-25-testnet-release.md](updates/2026-11-25-testnet-release.md).
 
 **Step 2, the merged-mining fork, is implemented and tested but not active anywhere** (M10, branch `m10-auxpow`,
 2026-11-10): the verifier, the proof as a header field, P2P and mining RPC, the activation gate (`never` on every

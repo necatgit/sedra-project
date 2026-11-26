@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | **Not launched.** This guide is prepared in advance (2026-11-20; node release `0.2.0-testnet.1` published as a pre-release 2026-11-25). The launch waited for the Sedra team's agreement on the testnet's duration and pass criteria (Q51) and on which test chain to use (Q52). *Update 2026-11-25:* the Sedra team agreed in writing on 2026-11-24 (Q51, SIP-0003 as it stands); the fresh chain means Q52 no longer holds up the launch. Start Tue 2026-12-01, announced by the Sedra team on 2026-11-26 (confirmed on [#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)) ([OVERVIEW.md](OVERVIEW.md) D4). Values marked `<at launch>` are filled in then |
+| Status | **Not launched yet** (2026-11-26). Start **Tue 2026-12-01**, announced by the Sedra team on 2026-11-26 ([#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)); the Sedra team agreed in writing on 2026-11-24 to SIP-0003 as it stands (Q51), and the fresh chain makes Q52 no longer a condition ([OVERVIEW.md](OVERVIEW.md) D4). Node release `0.2.0-testnet.1` published as a pre-release 2026-11-25. Values marked `<at launch>` (seed and pool addresses) are filled in on launch day |
 | Process | [SIP-0003](../proposals/SIP-0003-public-testnet.md): what the testnet must show. [SIP-0001](../proposals/SIP-0001-merged-mining.md): the merged-mining rules being tested |
 | Questions, problems | GitHub issue in this repository, template "Testnet report" (section 8) |
 
@@ -209,7 +209,9 @@ merged-mined block. If you see anything else, report it.
 
 ## What this does NOT mean
 
-- The testnet is not launched yet, and no launch date is set. It starts after the Sedra team agrees (Q51, Q52).
+- The testnet is not running before Tuesday 2026-12-01. (*Corrected 2026-11-26:* this line said "no launch date is
+  set ... starts after the Sedra team agrees (Q51, Q52)"; the team agreed on 2026-11-24 and announced the date on
+  2026-11-26.)
 - Passing the testnet does not schedule merged mining on mainnet. A mainnet date is chosen with the Sedra team after
   the testnet report, if at all.
 - Taking part does not mean you or anyone else supports SIP-0001.

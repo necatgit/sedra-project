@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | **Decided 2026-11-24: Nec ordered netcup VPS 1000 G12.5 (12 months, location "EU", no preference between Vienna, Nuremberg and Amsterdam).** Delivered the same day (Debian 13 preinstalled) and hardened: SSH keys only, no root login, firewall open only for SSH and testnet P2P 22211 (since 2026-11-25 also 80/443 for the status page, Caddy), automatic security updates. seed2 itself is installed with the signed release, before the rehearsal. The comparison below is kept as it was when the choice was made |
+| Status | **Decided 2026-11-24: Nec ordered netcup VPS 1000 G12.5 (12 months, location "EU", no preference between Vienna, Nuremberg and Amsterdam).** Delivered the same day (Debian 13 preinstalled) and hardened: SSH keys only, no root login, firewall open only for SSH and testnet P2P 22211 (since 2026-11-25 also 80/443 for the status page, Caddy), automatic security updates. seed2 installed with the signed release on 2026-11-25 ([REHEARSAL.md](REHEARSAL.md) 2.1). The comparison below is kept as it was when the choice was made |
 | Decision | D3 in [OVERVIEW.md](OVERVIEW.md) section 4 |
 | Why it matters | [SIP-0003](../proposals/SIP-0003-public-testnet.md) §6: all of this project's machines share one physical host and one home network, so two seeds there are not independent. A second, independent place is needed for an honest pass report |
 | Budget | About USD 100-200 for a year, prepaid is fine (Nec's own money; nothing comes from the Sedra project) |
@@ -56,7 +56,8 @@ only. Everything else closed, including every RPC port (22210, 23110, 17210, 182
   80 Mbit/s; preferred 12-16 cores, 32 GB RAM, 1 TB SSD, and pool operators are "strongly recommended" to go toward
   the preferred end. **Verified**: rusty-kaspa `docs/toccata-guide.md` @ `46bf884` (2026-06-21), read 2026-11-24.
   That guide is written for mainnet; testnet-10 runs the same software at the same block rate, so the need is
-  **Inferred** to be similar. The real figure for testnet-10 is still **Unknown** (RUNBOOK §2: measure during sync).
+  **Inferred** to be similar. The real figure for testnet-10 is still **Unknown** (RUNBOOK §2: measure during sync). *Update 2026-11-26:*
+  measured during the sync on 2026-11-25: 66 GB disk, kaspad RSS 5.5-6.4 GB (**Verified**, [REHEARSAL.md](REHEARSAL.md) 2.6).
 - The cheapest VPS near that size on this list (netcup VPS 4000 G12.5: 12 vCore, 32 GB, 512 GB) costs €45.36 a month
   (€544 a year incl. 19 % VAT), about three times the whole budget. **Verified**, netcup.com, 2026-11-24.
 - So it runs at home, on SSD (not the HDD pool), next to the testnet pool. Where exactly is Nec's call; measure its
@@ -217,16 +218,19 @@ Claude, after that:
    2026-11-25); later 22111/tcp; drop everything else.
    Unattended security updates on.
 3. Install the verified testnet release as seed2 with the systemd unit from the kit (`MemoryMax`), and the SSH tunnel
-   from the home monitor. Then the rehearsal on 11-30 (OVERVIEW step 3).
+   from the home monitor. Then the rehearsal on 11-30 (OVERVIEW step 3). *Done:* seed2 and the link 2026-11-25, the
+   rehearsal the same day.
 4. After the testnet: the mainnet Rust node (verified release v0.1.1 or later), P2P 22111 public, RPC on localhost.
 
 ## What this does NOT mean
 
-- Nothing has been rented or set up; the choice is Nec's.
+- *Corrected 2026-11-26:* this line said "nothing has been rented or set up". Nec rented the VPS on 2026-11-24 and
+  seed2 runs on it since 2026-11-25 (Decision above). The choice stays Nec's.
 - The prices are what the pages showed on 2026-11-24; they are not a quote, and the yearly totals depend on VAT and
   currency.
 - "Allowed by the terms" is our reading of the published wording, not the provider's confirmation. A provider can
   still suspend a server; that is why there are two seeds.
 - One VPS plus home is two places, not a decentralised network. Outside participants running seeds (criterion 7)
   still matter.
-- The Kaspa testnet-10 node size is still unmeasured; the figure above is Kaspa's general guidance.
+- The Kaspa testnet-10 figure in 1.2 is Kaspa's general guidance; the node measured on 2026-11-25 used less (66 GB
+  disk, about 6 GB RAM), which may grow during the test.
