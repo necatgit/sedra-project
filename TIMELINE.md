@@ -2,7 +2,7 @@
 
 How long each step took from the start of the project, and how much AI work went into it. Regenerated with `python tools/update_timeline.py <transcripts>`; see the notes at the end for what the numbers mean.
 
-**Project start:** 2026-11-05 07:19 UTC (first message of the session in which the project began). **Last update:** 2026-11-27 12:40 UTC.
+**Project start:** 2026-11-05 07:19 UTC (first message of the session in which the project began). **Last update:** 2026-11-27 13:38 UTC.
 
 ## Milestones and closed issues
 
@@ -27,7 +27,7 @@ How long each step took from the start of the project, and how much AI work went
 | 2026-11-14 10:47 | 219 h 28 min | #28 M9: Seven-day soak next to Go nodes | 381 | 1,399 k / 339 k |
 | 2026-11-16 08:30 | 265 h 11 min | #29 Security back-ports from later rusty-kaspa releases (Q31) | 496 | 1,696 k / 480 k |
 | 2026-11-25 13:46 | 486 h 27 min | #7 Contact the Sedra owner | 3047 | 15.6 M / 2,281 k |
-| (open) | 533 h 21 min | work since the last closed issue | 960 | 4,183 k / 596 k |
+| (open) | 534 h 19 min | work since the last closed issue | 1050 | 4,296 k / 652 k |
 
 A phase counts **all** AI work between two closed issues, not only the issue in that row. For example, the first row includes the project setup (repository, rules, identity), and the M2 row includes setting up the test VM, the build fix for GCC 15 and the coverage measurement. Several issues closed in the same minute share one phase; their AI effort is counted on the first of them.
 
@@ -56,16 +56,16 @@ A phase counts **all** AI work between two closed issues, not only the issue in 
 | 2026-11-24 | 499 | 2,712 k / 323 k | - |
 | 2026-11-25 | 1,025 | 3,425 k / 737 k | [testnet-release](updates/2026-11-25-testnet-release.md) |
 | 2026-11-26 | 428 | 1,855 k / 251 k | - |
-| 2026-11-27 | 198 | 836 k / 103 k | [testnet-chain-started](updates/2026-11-27-testnet-chain-started.md) |
+| 2026-11-27 | 288 | 949 k / 158 k | [testnet-chain-started](updates/2026-11-27-testnet-chain-started.md) |
 
 ## AI usage in total
 
 | | Tokens |
 |---|---|
-| Model calls | 7,079 (of which 568 by research agents) |
-| Fresh input (new text read: messages, files, command output) | 32,037,195 |
-| Output (text and code written by the AI) | 5,678,416 |
-| Re-read from cache (the conversation so far, read again on every call) | 1,691,582,858 |
+| Model calls | 7,169 (of which 568 by research agents) |
+| Fresh input (new text read: messages, files, command output) | 32,150,475 |
+| Output (text and code written by the AI) | 5,733,643 |
+| Re-read from cache (the conversation so far, read again on every call) | 1,714,882,139 |
 
 ## Notes
 
