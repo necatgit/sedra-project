@@ -101,7 +101,8 @@ the security fixes from later Kaspa releases (#29) and passed a seven-day run ne
   agreed in writing on 2026-11-24 to its duration and pass criteria (Q51, SIP-0003 as it stands) and to a fresh test
   chain, so Q52 no longer holds up the launch. The Sedra team announced 1 December as the start on 2026-11-26 (confirmed on [#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)); on 2026-11-26 Nec moved
   the chain start to **2026-11-27 10:00 UTC** (same release, same heights) so that merged mining switches on about
-  2026-12-01 ([testnet/OVERVIEW.md](testnet/OVERVIEW.md) D4). The testnet node release `0.2.0-testnet.1` was
+  2026-12-01 ([testnet/OVERVIEW.md](testnet/OVERVIEW.md) D4). **The test chain is running since 2026-11-27 10:00 UTC**
+  ([start report](updates/2026-11-27-testnet-chain-started.md), status <https://testnet.puddlepool.com>). The testnet node release `0.2.0-testnet.1` was
   **published as a pre-release on 2026-11-25** ([sedra-v0.2.0-testnet.1](https://github.com/necatgit/sedra-rusty/releases/tag/sedra-v0.2.0-testnet.1): signed tag, tested and rebuilt
   identically on two machines, [checklist](release/v0.2.0-testnet.1-checklist.md)) after a rehearsal on the real hosts
   ([testnet/REHEARSAL.md](testnet/REHEARSAL.md)). Latest summary: [updates/2026-11-25-testnet-release.md](updates/2026-11-25-testnet-release.md).

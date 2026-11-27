@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | Prepared 2026-11-20, **not launched yet** (2026-11-26). Chain start **Fri 2026-11-27 10:00 UTC** from genesis, so merged mining switches on about **Tue 2026-12-01**, the start day the Sedra team announced on 2026-11-26 ([#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)); the earlier chain start (same release, same heights) was decided by Nec on 2026-11-26 ([OVERVIEW.md](OVERVIEW.md) D4); the Sedra team agreed in writing on 2026-11-24 to SIP-0003 as it stands (Q51), and the fresh chain makes Q52 no longer a condition ([OVERVIEW.md](OVERVIEW.md) D4); go/no-go state in section 1. Rehearsal on the real hosts passed 2026-11-25 ([REHEARSAL.md](REHEARSAL.md)) |
+| Status | Prepared 2026-11-20, **running since Fri 2026-11-27 10:00 UTC** (chain started from genesis on time, ([start report](../updates/2026-11-27-testnet-chain-started.md))); merged mining switches on about **Tue 2026-12-01**, the start day the Sedra team announced on 2026-11-26 ([#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)); the earlier chain start (same release, same heights) was decided by Nec on 2026-11-26 ([OVERVIEW.md](OVERVIEW.md) D4); the Sedra team agreed in writing on 2026-11-24 to SIP-0003 as it stands (Q51), and the fresh chain makes Q52 no longer a condition ([OVERVIEW.md](OVERVIEW.md) D4); go/no-go state in section 1. Rehearsal on the real hosts passed 2026-11-25 ([REHEARSAL.md](REHEARSAL.md)) |
 | Operator | Nec |
 | Process | [SIP-0003](../proposals/SIP-0003-public-testnet.md); design and gaps in [DESIGN.md](DESIGN.md); participant side in [GUIDE.md](GUIDE.md) |
 | Kit | sedra-rusty branch `testnet-kit`, directory `contrib/testnet/` (tools, units, pool config, dry-run scripts) |
@@ -150,6 +150,9 @@ Prepared 2026-11-24 for the fresh chain (steps 1 and the test part of 2 done on 
    *2026-11-27:* triggered by a one-time systemd timer on the operator host at 10:00:00 UTC, which runs a small
    start script: seed1 with the flag, then the native miner as a unit that restarts together with seed1 (rehearsal R9:
    the miner does not reconnect by itself). The same script removes the flag once the tip is recent.
+   *Done 2026-11-27:* the timer fired at 10:00:00 UTC, the miner started at 10:00:16; the flag was removed
+   (`launch-start.sh synced`) at 10:41:05 UTC, miner back at 10:41:32, all nodes on the same tip afterwards
+   ([start report](../updates/2026-11-27-testnet-chain-started.md)).
 2. seed2 with `--addpeer=<seed1>` (not `--connect`: a node started with `--connect` accepts no inbound peers).
 3. old-go, Kaspa TN10 node, pool, monitor. Check the monitor's first rows.
 4. Announce: issue in #13 with the GUIDE link, the release, seed addresses, activation and ban-start scores; the Sedra

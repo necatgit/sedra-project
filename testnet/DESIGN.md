@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | **Approved by Nec 2026-11-20** and implemented (sedra-rusty `testnet-kit`, `582be8a5`); dry run done the same day (section 5). Not launched yet (2026-11-26). Chain start **Fri 2026-11-27 10:00 UTC** from genesis, so merged mining switches on about **Tue 2026-12-01**, the start day the Sedra team announced on 2026-11-26 ([#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)); the earlier chain start (same release, same heights) was decided by Nec on 2026-11-26 ([OVERVIEW.md](OVERVIEW.md) D4); the Sedra team agreed in writing on 2026-11-24 to SIP-0003 as it stands (Q51), and the fresh chain makes Q52 no longer a condition ([OVERVIEW.md](OVERVIEW.md) D4). |
+| Status | **Approved by Nec 2026-11-20** and implemented (sedra-rusty `testnet-kit`, `582be8a5`); dry run done the same day (section 5). **Running since Fri 2026-11-27 10:00 UTC** (chain started from genesis on time, ([start report](../updates/2026-11-27-testnet-chain-started.md))); merged mining switches on about **Tue 2026-12-01**, the start day the Sedra team announced on 2026-11-26 ([#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)); the earlier chain start (same release, same heights) was decided by Nec on 2026-11-26 ([OVERVIEW.md](OVERVIEW.md) D4); the Sedra team agreed in writing on 2026-11-24 to SIP-0003 as it stands (Q51), and the fresh chain makes Q52 no longer a condition ([OVERVIEW.md](OVERVIEW.md) D4). |
 | Issue | #13 |
 | Process | [SIP-0003](../proposals/SIP-0003-public-testnet.md) (the testnet), [SIP-0001](../proposals/SIP-0001-merged-mining.md) (the rules tested) |
 | Code base | sedra-rusty `m10-auxpow` @ `ac98145` (merged mining, e2e harness in `contrib/e2e-merged-mining/`) |

@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | **Not launched** (2026-11-26). Node release `0.2.0-testnet.1` published as a [pre-release](https://github.com/necatgit/sedra-rusty/releases/tag/sedra-v0.2.0-testnet.1) 2026-11-25, after a rehearsal on the real hosts the same day ([REHEARSAL.md](REHEARSAL.md)). The Sedra team agreed in writing on 2026-11-24 (Q51, D1); chain start **Fri 2026-11-27 10:00 UTC**, so merged mining switches on about **Tue 2026-12-01**, the start day the Sedra team announced on 2026-11-26 (confirmed on [#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)) (D4) |
+| Status | **Running since Fri 2026-11-27 10:00 UTC** (chain started from genesis on time, ([start report](../updates/2026-11-27-testnet-chain-started.md))). Node release `0.2.0-testnet.1` published as a [pre-release](https://github.com/necatgit/sedra-rusty/releases/tag/sedra-v0.2.0-testnet.1) 2026-11-25, after a rehearsal on the real hosts the same day ([REHEARSAL.md](REHEARSAL.md)). The Sedra team agreed in writing on 2026-11-24 (Q51, D1); chain started **Fri 2026-11-27 10:00 UTC**, so merged mining switches on about **Tue 2026-12-01**, the start day the Sedra team announced on 2026-11-26 (confirmed on [#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)) (D4) |
 | For | The Sedra team, node runners, miners, pool operators, exchanges and wallet users, and anyone who wants to understand the test before reading the details |
 | Details | [GUIDE.md](GUIDE.md) (participants), [RUNBOOK.md](RUNBOOK.md) (operator), [SIP-0003](../proposals/SIP-0003-public-testnet.md) (why and pass criteria), [SIP-0001](../proposals/SIP-0001-merged-mining.md) (the rules tested) |
 

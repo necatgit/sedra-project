@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Status | **Not launched yet** (2026-11-26). Chain start **Fri 2026-11-27 10:00 UTC** from genesis, so merged mining switches on about **Tue 2026-12-01**, the start day the Sedra team announced on 2026-11-26 ([#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)); the earlier chain start (same release, same heights) was decided by Nec on 2026-11-26 ([OVERVIEW.md](OVERVIEW.md) D4); the Sedra team agreed in writing on 2026-11-24 to SIP-0003 as it stands (Q51), and the fresh chain makes Q52 no longer a condition ([OVERVIEW.md](OVERVIEW.md) D4). Node release `0.2.0-testnet.1` published as a pre-release 2026-11-25. Values marked `<at launch>` (seed and pool addresses) are filled in at the chain start |
+| Status | **Running since Fri 2026-11-27 10:00 UTC** (chain started from genesis on time, ([start report](../updates/2026-11-27-testnet-chain-started.md))); merged mining switches on about **Tue 2026-12-01**, the start day the Sedra team announced on 2026-11-26 ([#13](https://github.com/necatgit/sedra-project/issues/13#issuecomment-7192048626)); the earlier chain start (same release, same heights) was decided by Nec on 2026-11-26 ([OVERVIEW.md](OVERVIEW.md) D4); the Sedra team agreed in writing on 2026-11-24 to SIP-0003 as it stands (Q51), and the fresh chain makes Q52 no longer a condition ([OVERVIEW.md](OVERVIEW.md) D4). Node release `0.2.0-testnet.1` published as a pre-release 2026-11-25. Seed addresses in section 1; values still marked `<at launch>` (seed1 and the pool) are filled in when they open to the public |
 | Process | [SIP-0003](../proposals/SIP-0003-public-testnet.md): what the testnet must show. [SIP-0001](../proposals/SIP-0001-merged-mining.md): the merged-mining rules being tested |
 | Questions, problems | GitHub issue in this repository, template "Testnet report" (section 8) |
 
@@ -20,8 +20,8 @@ value and never will.** Never use a mainnet wallet, key or address on the testne
 | Genesis hash | `f896a3034873be1739fc4359236899fd3d65d2bc94f9780df0d0da3eb1cc4370` |
 | Block rate, rewards, finality | as on mainnet (1 block per second, finality depth 86,400) |
 | Parent chain for merged mining | Kaspa testnet-10 (`kaspatest:` addresses) |
-| Seed nodes | `<at launch>` (no DNS seeders; you add them with `--addpeer`) |
-| Merged-mining activation | DAA score **345,600** (about 4 days after the chain start: about 2026-12-01 10:00 UTC), built into the release |
+| Seed nodes | seed2 `62.83.121.25:22211`; seed1 `<at launch>` (no DNS seeders; you add them with `--addpeer`) |
+| Merged-mining activation | DAA score **345,600** (about 4 days after the chain start: about 2026-12-01 10:00 UTC; *2026-11-27:* the first half hour ran faster than 1 block/s, so now about 09:00 UTC, live estimate on the status page), built into the release |
 | Self-parent ban start | DAA score **172,800** = activation - 172,800 (about 2 days after the chain start: about 2026-11-29) |
 | Node release | sedra-rusty [`sedra-v0.2.0-testnet.1`](https://github.com/necatgit/sedra-rusty/releases/tag/sedra-v0.2.0-testnet.1) (pre-release, published 2026-11-25) |
 
