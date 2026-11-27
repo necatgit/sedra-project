@@ -68,7 +68,7 @@ blocks, as on mainnet).
 
 **Do we need nodes?** Yes.
 - *Two seed nodes* reachable from the internet (port 22211), ideally at two different places. The testnet has no
-  DNS seeders, so everyone connects to these with `--addpeer`. (*2026-11-27:* seed1 is not published (it runs on the operator's home network); the pool address follows later.)
+  DNS seeders, so everyone connects to these with `--addpeer`. (*2026-11-27, corrected the same day:* seed1 is `puddlepool.com:22211` and the pool `stratum+tcp://puddlepool.com:15555`; an earlier note here said seed1 would not be published and the pool address would follow later.)
 - *One unchanged Go node* (sedrad v2.0.0 `--testnet`), never upgraded, to show what happens to nodes that do not
   upgrade (criterion 3: it follows until the first merged-mined block, then stops).
 - *One Kaspa testnet-10 node* for the pool (upstream Kaspa software).
@@ -135,7 +135,7 @@ Dates follow from the chain start on 2026-11-27 10:00 UTC (D4; *changed 2026-11-
 |---|---|---|
 | 5. First blocks | Nec | Seed 1 starts and mines the first blocks to the faucet wallet. The 2,641 low-difficulty blocks come within minutes, then the chain settles at about one block per second |
 | 6. Network up | Nec | Seed 2, the Go node, the Kaspa node, the pool and the monitor start; the monitor shows all nodes on the same chain |
-| 7. Announce | Nec on #13 (the Sedra team announced the date on 2026-11-26) | The guide link, seed addresses, the release, the two scores (172,800 and 345,600) (*2026-11-27:* seed1 is not published (it runs on the operator's home network); the pool address follows later) |
+| 7. Announce | Nec on #13 (the Sedra team announced the date on 2026-11-26) | The guide link, seed addresses, the release, the two scores (172,800 and 345,600) (*2026-11-27, corrected the same day:* seed1 `puddlepool.com:22211` and the pool `stratum+tcp://puddlepool.com:15555`; an earlier note here said seed1 would not be published and the pool address would follow later) |
 | 8. Join | Participants | Run a node (GUIDE §4), create a testnet wallet (§5), mine with a CPU (§6), ask the faucet for coins (§5) |
 
 ### Native phase (day 0 to about day 4: 2026-11-27 to about 12-01)

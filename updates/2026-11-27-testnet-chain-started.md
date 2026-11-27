@@ -39,6 +39,8 @@ estimate; in the first hour its rate-based estimates were skewed by the fast sta
   in [#13](https://github.com/necatgit/sedra-project/issues/13) once they are open to the public.
   *Correction 2026-11-27 (later the same day):* seed1 will not be published (it runs on the operator's home
   network); the pool address follows once there is public access that does not expose that network.
+  *Second correction 2026-11-27 (afternoon):* both are public after all, by name: seed1 `puddlepool.com:22211`, pool
+  `stratum+tcp://puddlepool.com:15555` (the name already pointed to the same network, so it reveals nothing new).
 - **Pool with a real GPU miner:** in the rehearsal the pool rejected shares as "low difficulty" after a difficulty
   change with CPU miners (cause **Unknown**), and no real GPU miner has mined at the testnet pool yet. This is planned
   before activation.

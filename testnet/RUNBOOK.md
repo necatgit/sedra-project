@@ -139,7 +139,7 @@ Prepared 2026-11-24 for the fresh chain (steps 1 and the test part of 2 done on 
    coinbase, ban start rejects), set `sedra_release()` to `0.2.0-testnet.1`.
 2. Full test suite, then build and verify reproducibly as in `docs/RELEASE.md`; signed tag `sedra-v0.2.0-testnet.1`
    on `testnet-kit` (never on `main`, which holds mainnet releases).
-3. Publish binaries, `SHA256SUMS`, signature; fill the `<at launch>` values in GUIDE.md. (*2026-11-27:* seed1 is not published (it runs on the operator's home network); the pool address follows later.)
+3. Publish binaries, `SHA256SUMS`, signature; fill the `<at launch>` values in GUIDE.md. (*2026-11-27, corrected the same day:* seed1 is `puddlepool.com:22211` and the pool `stratum+tcp://puddlepool.com:15555`; an earlier note here said seed1 would not be published and the pool address would follow later.)
 
 ### 3.3 Start
 
@@ -155,7 +155,7 @@ Prepared 2026-11-24 for the fresh chain (steps 1 and the test part of 2 done on 
    ([start report](../updates/2026-11-27-testnet-chain-started.md)).
 2. seed2 with `--addpeer=<seed1>` (not `--connect`: a node started with `--connect` accepts no inbound peers).
 3. old-go, Kaspa TN10 node, pool, monitor. Check the monitor's first rows.
-4. Announce: issue in #13 with the GUIDE link, the release, seed addresses (*2026-11-27:* seed2 only; seed1 and the pool are not published, operator's home network), activation and ban-start scores; the Sedra
+4. Announce: issue in #13 with the GUIDE link, the release, seed addresses (*2026-11-27, corrected the same day:* seed1 `puddlepool.com:22211`, seed2 `62.83.121.25:22211`, pool `stratum+tcp://puddlepool.com:15555`; seed1 and the pool only by the name puddlepool.com, never by IP or another host name; an earlier note said seed2 only), activation and ban-start scores; the Sedra
    team's channels if they agreed (Q48).
 
 ## 4. During the test

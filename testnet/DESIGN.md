@@ -78,7 +78,7 @@ proof (M10 step 5b).
 ### 3.3 Infrastructure (G4, G8; Q49)
 
 - Two Sedra seed nodes reachable from the internet on 22211, listed by host:port in the guide (`--addpeer`)
-  (*2026-11-27:* seed1 is not published (it runs on the operator's home network); the pool address follows later); one
+  (*2026-11-27, corrected the same day:* seed1 is `puddlepool.com:22211` and the pool `stratum+tcp://puddlepool.com:15555`; an earlier note here said seed1 would not be published and the pool address would follow later); one
   unmodified Go sedrad v2.0.0 `--testnet` node as the "old node" (criterion 3).
 - One Kaspa TN10 node (upstream rusty-kaspa, the version TN10 runs) for the pool.
 - One testnet Miningcore instance, separate database, separate host role from production, stratum on its own port,
