@@ -160,6 +160,13 @@ and when it stops, the difficulty it left behind leaves the other miners finding
 testnet and the Sedra merged mining on top of it would nearly stall (**Inferred** from the numbers, not tried). CPUs
 and a few GPUs are what the test needs.
 
+*Added 2026-11-27:* **Until the activation (about 2026-12-01), please keep your hashrate low**: a CPU, or one GPU at
+reduced intensity. Before activation the pool's share difficulty follows the Sedra testnet's network difficulty, which
+is low because only seed1's CPU miner mines that chain, so a fast GPU sends hundreds of shares per second (about 250
+per second at 500 MH/s, **Inferred** from the numbers, not tried). Once merged mining raises Sedra's difficulty after
+activation this should settle by itself (**Inferred**). Evidence:
+[research/archive/2026-11-27-0013-pool-share-difficulty-raw.md](../research/archive/2026-11-27-0013-pool-share-difficulty-raw.md).
+
 The pool credits Kaspa testnet coins to the first address and Sedra
 testnet coins to the second. Without the `a=` part your Sedra share is not paid to you.
 

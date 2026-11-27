@@ -180,7 +180,8 @@ Dates follow from the chain start on 2026-11-27 10:00 UTC (D4; *changed 2026-11-
   cannot run on mainnet by accident. Keep the RPC port (22210) closed to the internet.
 - **Miners:** CPU mining works from day one; GPUs count only through merged mining after activation. Please no Kaspa
   ASICs (GUIDE §7). Testnet
-  coins have no value.
+  coins have no value. *Added 2026-11-27:* until the activation, please keep GPU hashrate low at the testnet pool
+  (GUIDE §7 says why).
 - **Pool operators:** you can run your own testnet pool from the published config; set the testnet `genesisHash`, use
   separate databases and wallets, never your production pool.
 - **Exchanges, wallets, mainnet users:** nothing to do. Mainnet is not affected and no mainnet date exists.
