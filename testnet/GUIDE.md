@@ -110,7 +110,7 @@ cat /tmp/sedra-check/nodes.csv
 The public status page, **https://testnet.puddlepool.com**, shows each monitored node with its software (the two Rust seeds, the unchanged Go control node
 that is expected to stop following at the activation) and the version it reports, its DAA score, the phase, a countdown to the
 announced chain start until the first block, the countdowns to the ban start and the activation (planned at one block
-per second before the start, then estimated from the last hour's block rate; no estimate while the chain stalls), native and merged-mined blocks, the SIP-0003 pass criteria and the recent blocks
+per second before the start, then estimated from the block rate of the last 30 minutes; no estimate while the chain stalls), native and merged-mined blocks, the SIP-0003 pass criteria and the recent blocks
 (`/status.json` for scripts). It is a TEST network page: the coins have no value.
 
 ## 5. Wallet
