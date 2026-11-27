@@ -40,6 +40,10 @@ earlier start "if all audited and working fine". What that rests on:
   pool or test miner, **Unknown**); merged mining has not been tried with a real GPU miner; activation, the ban and the
   old node dropping off were shown in the private dry run of 2026-11-20 and in the boundary tests, and happen on the
   real hosts for the first time on the public chain. There is no outside audit of the code.
+  *Update 2026-11-27:* a diagnosis with logging found that the private ZKAS test chain pinned every miner's share
+  difficulty at 2.7e-5 (vardiff never moved); fixed in the pool (Miningcore 9dcab452, `capShareDifficulty: false` for
+  ZKAS) and deployed. The rejections did not recur (0 of 2,672 shares), cause still **Unknown**. Before activation the
+  share difficulty now follows the low Sedra testnet difficulty, so a fast GPU sends many shares per second [evidence](../research/archive/2026-11-27-0013-pool-share-difficulty-raw.md).
 
 ## 2. Infrastructure
 
