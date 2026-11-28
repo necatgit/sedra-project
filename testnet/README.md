@@ -8,6 +8,7 @@ status page is <https://testnet.puddlepool.com>. **Running since Fri 2026-11-27 
 
 | File | For |
 |---|---|
+| [EXPLAINER.md](EXPLAINER.md) | Community and holders: why we test and what, in plain words (also shown on the status page) |
 | [OVERVIEW.md](OVERVIEW.md) | Everyone: what runs, how blocks are found, the decision points and the step-by-step plan per stakeholder |
 | [REHEARSAL.md](REHEARSAL.md) | The rehearsal on the real hosts before launch (run and passed 2026-11-25, moved forward from 11-30), and seed2's install |
 | [GUIDE.md](GUIDE.md) | Participants: get and verify the node, run it, wallet, native and merged mining, reporting |
